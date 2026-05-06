@@ -261,15 +261,44 @@ function goToTag(tag) {
 function loadFooter() {
   const footerHTML = `
     <footer>
-      <p class="footer-meta">
-	    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      <div class="footer-meta">
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
           <span class="icon sun">☀️</span>
           <span class="icon moon">🌙</span>
         </button>
-        Soft Alchemy | Built with Tea and Puppy Distractions 🐾
-	  </p>
+
+        <div class="footer-center">
+          <span class="footer-text">
+            Soft Alchemy | Built with Tea and Puppy Distractions
+          </span>
+
+          <div class="paw-trail">
+            <img class="paw-print" style="--i:1" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:2" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:3" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:4" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:5" src="images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:6" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:7" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:8" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:9" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:10" src="images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:11" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:12" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:13" src="images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:14" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:15" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:16" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:17" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:18" src="images/paw-print.png" alt="">
+          </div>
+        </div>
+
+      </div>
     </footer>
   `;
+
   document.body.insertAdjacentHTML('beforeend', footerHTML);
 }
 
@@ -280,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logo) {
     setTimeout(() => {
       logo.src = "images/soft_alchemy_final_frame.png";
-    }, 5700);
+    }, 5500);
   }
   
   loadFooter();

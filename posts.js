@@ -6,30 +6,29 @@ const posts = [
     tags: ["self-improvement"],
     excerpt: "The time I joined the self-improvement internet hype three years late...",
     content: `
-	<p><b>TLDR:</b> My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses water & 45 minutes exercise. The plan is set in theory, time will tell how it works out in practice.</p>
+	<p><b>TLDR:</b> My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses of water & 45 minutes of exercise. The plan is set in theory, time will tell how it works out in practice.</p>
 	<h2>What actually is a 75 Soft Challenge?</h2>
-	<p>In case you missed the frenzy back in 2023, 75 Soft is the less harsh cousin of the 75 Hard Challenge. It focuses on building healthy routines rather than creating your own personal miliatary bootcamp hell. <br>
-	While the challenge spans 75 days, my hope is to create habits that are sustainable beyond that rather than collapsing in drooling psychological heap 3 months from now. Typical rules/areas of focus include:</p>
+	<p>In case you missed the frenzy back in 2023; 75 Soft is the less harsh cousin of the 75 Hard Challenge. It focuses on building healthy routines rather than creating your own personal military bootcamp hell. <br>
+	While the challenge spans 75 days, my hope is to create habits that are sustainable beyond that rather than collapsing in a drooling psychological heap 3 months from now. Typical rules/areas of focus include:</p>
     <ul>
-      <li>🥑 Healthy eating/following some specific diet <br>
-      (This can also involve being mindful of alcohol & treats)</li>
+      <li>🥑 Healthy eating/following some specific diet (this can also involve being mindful of alcohol & treats)</li>
       <li>💧 Hydration (drinking lots of water)</li>	
       <li>📖 Reading</li>	
       <li>🧘🏻‍♀️ Meditation</li>
       <li>💪 Daily exercise</li>	  
     </ul>
 	<p> One of the main advantages of 75 Soft is that it allows for a lot of individual customisation, it also doesn't insist you restart the count to 75 if a day doesn't go as planned!</p>
-	<h2>Planning my 75 Soft Comittments</h2>
+	<h2>Planning my 75 Soft Commitments</h2>
 	<ul>
 	  <li>🍽️ <b>Diet:</b> Originally the plan was to reduce my snack addiction but after realising just how many snacks we have in the house after Easter & the latest bulk food shop I decided to leave that for a later challenge and switch gears.<br>
-	  Generally I don't eat breakfast, and am powered by a combination of tea & sunshine. Having said that I learned that unlike for men where intermittant fasting & a reduced eating window is very healthy; women's bodies are different to men's(!) and as a fairly skinny woman in her 30's I would majorly benefit from telling my body it doesn't need to panic and go into starvation mode each morning.<br>
+	  Generally I don't eat breakfast, and am powered by a combination of tea & sunshine. Having said that, I learned that unlike for men where intermittent fasting & a reduced eating window is very healthy; women's bodies are different to men's(!) and as a fairly skinny woman in her 30's I would majorly benefit from telling my body it doesn't need to panic and go into starvation mode each morning.<br>
 	  ➜ Interested? Look up Dr. Stacy Sims <a href="https://www.youtube.com/watch?v=gZF-Ehfb3_o">Why Women Shouldn't Skip Breakfast</a></li><br>
-	  <li>🫖 <b>Hydration:</b> I really don't want to spend all my time on the porcelain altar so rather than buying a mega water bottle & chugging 3L of water a day, I'm going to keep it simple. The NHS guideline recommends 2 litres of fluid per day, my mugs & glasses contain roughly ~300-350ml, so I'm good as long as I have 6 drinks per day. Also notice how I said fluid rather than water? That means TEA COUNTS! 🎉🎉🎉 <br>
+	  <li>🫖 <b>Hydration:</b> I really don't want to spend all my time on the porcelain altar so rather than buying a mega water bottle & chugging 3L of water a day, I'm going to keep it simple. The NHS guideline for an adult woman recommends 2 litres of fluid per day; my mugs & glasses contain roughly ~300-350ml, so I'm good as long as I have 6 drinks per day. Also notice how I said fluid rather than water? That means TEA COUNTS! 🎉🎉🎉 <br>
 	  In short my goal is: glass of water as I wake up (~9am), morning english breakfast tea (~10am), water/drink with my lunch (~2pm), afternoon mint tea (~4pm), water/drink with dinner (~7.30pm), evening mint tea or even a celebratory chai/hot chocolate! (~9pm)
 	  </li>
 	  <br>
 	  <li>🎧 <b>Reading:</b> I love reading, especially fantasy. Needless to say I'm not overly worried about this part. Having said that, I seem to have an existing to-do item in my backlog to actually read the many physical books gathering dust on the bookshelves, what's more I've had this to-do item for at least 6 years... 😅<br>
-	  While I will happily add the daily commitment to either listen to 10 mins of audiobook or read 10 physical pages, I'm secretly hoping I won't always dafault to the audiobook and may actually finish a physical book or two!</li>
+	  While I will happily add the daily commitment to either listen to 10 mins of audiobook or read 10 physical pages, I'm secretly hoping I won't always default to the audiobook and may actually finish a physical book or two!</li>
 	  <br>
 	  <li><img class="emoji" src="images/medito-logo.png"><b>Meditation:</b> This is where I'm ahead of the game because one of last months growth areas was learning how to meditate! (Yes I might have been paranoid about committing to so many things in the 75 soft challenge and figured I would set myself up for success as much as possible without cheating the system.)<br>
 	  I currently am using the Medito app to follow daily guided meditations in the morning before my first tea (don't underestimate that specific caveat, it's a very powerful motivator for me!). The plan is to aim for 10 minutes with the option to increase or decrease the time as required by the day's commitments.</li>
@@ -49,9 +48,9 @@ const posts = [
 	  <img src="images/75-soft-plan.jpg">
 	  <figcaption>Commitment Summary Notes</figcaption>
     </figure>	
-	<h2>Implementing my 75 Soft Comittments</h2>
-	<p>Did you notice how the tracker in my 75 Soft journal plan started with 1st May? That was meant to be my test day before I start properly on Wednesday 6th May after getting back from my Devon trip (yes James & I went to Devon to celebrate 2 year anniversary - more on that in a later post!). Did you also notice how that test day doesn't have a complete row of ticks, and just a normal walk as my exercise? Turns out I might have been wrong to be so confident in all my commitment areas... 😅<br>
-	Now that I've been suitably humbled, it's Wednesday 6th May 2026 and just turned 3pm on my first proper day of 75 Soft, and I think it's time to actually have lunch & do some exercise before I have to go back and pretend I meant to start tomorrow all along!
+	<h2>Implementing my 75 Soft Commitments</h2>
+	<p>Did you notice how the tracker in my 75 Soft journal plan started with 1st May? That was meant to be my test day before I start properly on Wednesday 6th May after getting back from my Devon trip (yes James & I went to Devon to celebrate our 2 year anniversary - more on that in a later post!). Did you also notice how that test day doesn't have a complete row of ticks, and just a normal walk as my exercise? Turns out I might have been wrong to be so confident in all my commitment areas... 😅<br>
+	Now that I've been suitably humbled, it's Wednesday 6th May 2026 and just turned 3pm on my first proper day of 75 Soft, and I think it's time to actually have lunch & do some exercise before I have to go back and pretend I meant to start tomorrow all along!</p>
 	`
   },
 {
