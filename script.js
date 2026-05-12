@@ -270,7 +270,7 @@ function loadFooter() {
 
         <div class="footer-center">
           <span class="footer-text">
-            Soft Alchemy | Built with Tea and Puppy Distractions
+            Soft Alchemy | Built with Tea & Puppy Distractions
           </span>
 
           <div class="paw-trail">
@@ -290,8 +290,6 @@ function loadFooter() {
 			<img class="paw-print" style="--i:14" src="images/paw-print.png" alt="">
             <img class="paw-print" style="--i:15" src="images/paw-print.png" alt="">
             <img class="paw-print" style="--i:16" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:17" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:18" src="images/paw-print.png" alt="">
           </div>
         </div>
 

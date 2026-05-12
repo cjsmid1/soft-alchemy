@@ -1,12 +1,83 @@
 const posts = [
 {
+    id: "sourdough-starter",
+    title: "🥣 Starting a Sourdough Starter",
+    category: "Recipe",
+    tags: ["sourdough", "vegan"],
+    excerpt: "The time I made a stinky needy yeast pet and never looked back...",
+    content: `
+	  <img class="card-image" src="images/sourdough-starter.jpg" alt="Nice view">
+	  <section class="summary-note">
+	    <div class="summary-note-label"></div>
+		<p>All sourdough recipes call for a mysterious "starter", this is how you actually make your own: congrats on your new yeast baby! Yes it does take at least a week of daily feeding unless you can steal some from a friend or want to throw money at the problem.</p>
+      </section>
+      <h2>Ingredients</h2>
+      <ul>
+        <li>Flour (Which type? <a href="#qa">Check the Q&A below</a>)</li>
+        <li>Water</li>
+        <li>Patience</li>
+      </ul>
+      <h2>Instructions</h2>
+      <ol>
+        <li><b>Conception:</b> To start your starter mix together 50g of flour with 50ml water. Then abandon it with a loose lid for ~24 hours.</li>
+        <li><b>Nurturing:</b> To grow your doughy lump into a strong bubbly starter you need to feed it daily. It wants equal parts starter, flour and water (e.g. 50g starter mixed with 50g flour & 50ml water).<br> 
+		When it inevitably gets too big you'll want to remove some starter before adding the flour and water, this is called sourdough discard & can be used for multiple recipes (pancakes, crumpets, wraps, etc - just don't expect your discard to act as a raising agent the way an active starter will!)</li>
+        <li><b>Maturity:</b> After about a week of daily feeding, your sourdough starter is ready to explore the wide world of making bread! You should be seeing the starter increase in size after it's daily feeding and then partially collapse back down again. Timing your baking to use the starter at peak growth (~4 hours after it's last feeding) will set you up for maximum success.</li>
+	  </ol>
+	  <div class="qa-board" id="qa">
+	  <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">Does the container matter?</span>
+		</summary>
+        <p>Not really as long as it's food safe! I've got one starter in an old food processor container & another in a plastic ex-crispy onions pot. Glass mason jars seem to be the internet's go to favourite option. Ideally your container will have some form of lid that you can loosely place on top to allow for airflow while minimising things falling in. (Having said that, even with a loose lid my kitchen's fly population seem annoyingly interested in both starters - just do what you can! 😅)</p>
+      </details>
+	  <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">What type of flour should I use?</span>
+		</summary>
+        <p>The easiest (& usually cheapest) flour to start with is white bread flour, it keeps things civil & there are plenty of resources online to ask for help if things get sticky. You can also try using brown bread flour or rye flour. I would recommend sticking with one type while you're setting up your initial yeast colony & once it's mature you can change up what type you feed it based on what's available in the cupboard.<br>
+		My first sourdough starter is now a combination of mostly white bread flour and occassionally brown bread flour. My second sourdough starter is pure rye flour (I also added some apple peel & left it outside for 24 hours as an experiment to see if that changes up the yeast & hence the bread flavour)</p>
+      </details >
+	  <details class="qa-card">
+        <summary class="qa-click-area">
+		<span class="qa-label">I have a life so can't feed daily - are my sourdough dreams ruined?</span>
+		</summary>
+        <p>No! Well... it depends, but probably not!<br>
+		Ideally you will have a period of roughly a week where you can feed your starter daily, but after that your starter will be able to handle extended time alone provided you leave it in the fridge. This slows down the yeast & means it doesn't require feeding anywhere near as often - think of it as a time out for your starter. Once you're back and wanting to use it, take it back out of the fridge to room temperature & continue feeding daily as before. This is exactly what I do for both my starters if I'm gone for a long weekend or even if I'm just overwhelmed by the endless supply of discard dictating my lunch options because I refuse to throw away food.</p>
+      </details>
+	  <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">Why does it smell like nail varnish remover...?</span>
+		</summary>
+        <p>Don't worry - so do mine! 😅 It just means that your starter is hungry, and is still perfectly safe to bake with. Supposedly occassionally underfeeding a mature starter can improve the bread flavour but I may have just wanted to believe that as I naturally end up feeding inconsistently regardless!</p>
+      </details>
+      <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">My bread is dense - help!</span>
+		</summary>
+        <p>If your first loaf is a little dense fear not, your starter will continue to mature & improve over time (both of my starters first loaves were a bit dense). You can also add more starter to your recipe to help it along, just bare in mind you'll be changing the hydration proportion so your dough will likely be stickier unless you adjust the water/liquid to accommodate.<br>
+		I also got a pretty dense loaf when I tried adding in a mix of whey & buttermilk instead of water, most likely I should have given it longer to rise to accommodate, another failed experiment to learn from!</p>
+      </details>
+	  <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">You make your starters sound like your babies - are you okay?</span>
+		</summary>
+        <p>It's perfectly normal to name your starters I'll have you know! The daily commitment and stinkiness of my starters just made the analogy inevitable, so there's nothing to read into. At all. So there.</p>
+      </details>
+    </div>
+    `
+  },
+{
     id: "75-soft-plan",
     title: "🏆 75 Soft Challenge",
     category: "Life",
     tags: ["self-improvement"],
     excerpt: "The time I joined the self-improvement internet hype three years late...",
     content: `
-	<p><b>TLDR:</b> My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses of water & 45 minutes of exercise. The plan is set in theory, time will tell how it works out in practice.</p>
+	<section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses of water & 45 minutes of exercise. The plan is set in theory, time will tell how it works out in practice.</p>
+	</section>
 	<h2>What actually is a 75 Soft Challenge?</h2>
 	<p>In case you missed the frenzy back in 2023; 75 Soft is the less harsh cousin of the 75 Hard Challenge. It focuses on building healthy routines rather than creating your own personal military bootcamp hell. <br>
 	While the challenge spans 75 days, my hope is to create habits that are sustainable beyond that rather than collapsing in a drooling psychological heap 3 months from now. Typical rules/areas of focus include:</p>
@@ -61,7 +132,10 @@ const posts = [
     excerpt: "The time I discovered Pierogi, and then decided I wanted tuna instead...",
     content: `
       <img class="card-image" src="images/tuna-sweetcorn-dumplings.jpg" alt="Nice view">
-	  <p><b>TLDR:</b> Polish dumplings meet tuna sweetcorn filling, very moreish! Time consuming but worth it, makes around 30 depending on size & they freeze well for batch cooking.<br>Recipe inspired by <a href="https://www.recipetineats.com/pierogi-ruskie-polish-dumplings/">Pierogi Ruskie Polish Dumplings</a></p>
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Polish dumplings meet tuna sweetcorn filling, very moreish! Time consuming but worth it, makes around 30 depending on size & they freeze well for batch cooking.<br>Recipe inspired by <a href="https://www.recipetineats.com/pierogi-ruskie-polish-dumplings/">Pierogi Ruskie Polish Dumplings</a></p>
+	  </section>
 	  <h2>Ingredients</h2>
 	  <p class="ingredient-section">Dough:</p>
       <ul>
@@ -119,8 +193,10 @@ const posts = [
     tags: ["dog-approved", "recommendation", "dog recipe"],
     excerpt: "The time my puppy turned one and got very spoiled...",
     content: `
-	<p><b>TLDR:</b> Echo had his first birthday, <a href="#wisley">RHS Wisley gardens</a> do a dog event, he also got <a href="#ice-cream">dog ice cream</a> and his own <a href="#birthday-cake">birthday cake</a>!</p>
-	<br>
+	<section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Echo had his first birthday, <a href="#wisley">RHS Wisley gardens</a> do a dog event, he also got <a href="#ice-cream">dog ice cream</a> and his own <a href="#birthday-cake">birthday cake</a>!</p>
+	</section>
 	<p>
 	It turns out for me dog birthdays definitely count. While I won't go as far as to organise a full on birthday party, it is a wonderful excuse to crack out the dog cookbook I got for christmas and give the dog approved birthday cake recipe a go. It is also the perfect excuse to upgrade the usual walk... 
 	<h3 id="wisley">Exploring Wisley Gardens</h3>
@@ -185,7 +261,7 @@ const posts = [
     id: "growth-areas",
     title: "🌿 Growth Areas",
     category: "Life",
-    tags: ["self-improvment", "goals"],
+    tags: ["self-improvement", "goals"],
     excerpt: "The time I learned how to not overcommit myself while unofficially sending myself back to school...",
     content: `
 	<p>
@@ -247,14 +323,18 @@ const posts = [
 	  <img src="images/grow-area-summary.jpg" alt="Grow Area Overview">
     </figure>
 	<div class="qa-board">
-      <div class="qa-card">
-        <div class="qa-label">Can I still do tasks outside my planned growth areas?</div>
-        <p class="answer">Of course! You can think of them as one off fun tasks to do alongside the growth areas without committing to a whole new project. In fact one off tasks are a great way to explore what future growth areas you might enjoy, for example playing a single song on an instrument for the fun of it without the pressure of needing to practice daily.</p>
-      </div>
-      <div class="qa-card">
-        <div class="qa-label">I'm doing a no-buy, would that count as a growth area?</div>
-        <p class="answer">Unless your no-buy comes with learning about budgets & finance, it would count as a constraint not a growth area. Something is only a growth area if you are actively learning something (usually for the first time). Having said that, a no-buy is definitely something to keep in mind when deciding which growth areas to focus on so that those areas are possible without spending any money!</p>
-      </div>
+      <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">Can I still do tasks outside my planned growth areas?</span>
+		</summary>
+        <p>Of course! You can think of them as one off fun tasks to do alongside the growth areas without committing to a whole new project. In fact one off tasks are a great way to explore what future growth areas you might enjoy, for example playing a single song on an instrument for the fun of it without the pressure of needing to practice daily.</p>
+      </details>
+      <details class="qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">I'm doing a no-buy, would that count as a growth area?</span>
+		</summary>
+        <p>Unless your no-buy comes with learning about budgets & finance, it would count as a constraint not a growth area. Something is only a growth area if you are actively learning something (usually for the first time). Having said that, a no-buy is definitely something to keep in mind when deciding which growth areas to focus on so that those areas are possible without spending any money!</p>
+      </details>
     </div>
 	`
   },
@@ -262,11 +342,14 @@ const posts = [
     id: "sourdough-bread",
     title: "🍞 Sourdough Bread",
     category: "Recipe",
-    tags: ["bread", "vegan", "vegetarian"],
+    tags: ["sourdough", "vegan", "vegetarian"],
     excerpt: "The time I joined the 30 year old woman bandwagon and made sourdough bread...",
     content: `
-	  <img class="card-image" src="images/sourdough-slices.jpg" alt="Nice view">
-	  <p><b>TLDR:</b> Sourdough is epic and surprisingly less effort than traditional bread as it requires minimal kneading! I make mine over a 2 day period so heads up, it does take patience and some preplanning. Also note you don't need special equipment to make good bread: I use my hands, a bowl, weighing scales & my glass caserole dish - that's it!</h2>
+	  <img class="card-image" src="images/sourdough-bread-half.jpg" alt="Nice view">
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Sourdough is epic and surprisingly less effort than traditional bread as it requires minimal kneading! I make mine over a 2 day period so heads up, it does take patience and some preplanning. Also note you don't need special equipment to make good bread: I use my hands, a bowl, weighing scales & my glass caserole dish - that's it!</p>
+	  </section>
       <h2>Ingredients</h2>
 	  <ul>
 		<li>500g White Bread Flour (I'm sure you can use other bread flours I just haven't tried that yet!)</li>
@@ -306,6 +389,7 @@ const posts = [
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	  <p>Enjoy! I'm sure I don't need to tell you what to put on bread.<br> 
 	  If you do get as obsessed with making sourdough as I have I highly recommend an electric bread knife!</p>
+	  <img class="card-image" src="images/sourdough-slices.jpg" alt="Nice view">
     `
   },
 {
@@ -316,7 +400,10 @@ const posts = [
     excerpt: "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
     content: `
       <img class="card-image" src="images/mushroom-wellington-puff.jpg" alt="Nice view">
-	  <p><b>TLDR:</b> Great pastry centre piece for a roast, I fed 7 people and had left over filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!</p>
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Great pastry centre piece for a roast, I fed 7 people and had left over filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!</p>
+	  </section>
 	  <h2>Ingredients</h2>
 	  <p class="ingredient-section">Filling:</p>
       <ul>
@@ -363,27 +450,6 @@ const posts = [
       </ol>
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	  <p>Enjoy! I served mine with a honey onion gravy, though if you want to fully embrace the Asian influence you can also use a soy & rice vinegar dip, or just more hoisin sauce!</p>
-    `
-  },
-  {
-    id: "mushroom-burgers",
-    title: "🍔 Mushroom Burgers",
-    category: "Recipe",
-    tags: ["vegan", "quick", "dinner"],
-    excerpt: "A rich, juicy plant-based burger...",
-    content: `
-      <h2>Ingredients</h2>
-      <ul>
-        <li>2 cups mushrooms</li>
-        <li>1 onion</li>
-        <li>Bread crumbs</li>
-      </ul>
-      <h2>Instructions</h2>
-      <ol>
-        <li>Chop mushrooms</li>
-        <li>Mix ingredients</li>
-        <li>Cook until golden</li>
-      </ol>
     `
   },
   {

@@ -614,6 +614,99 @@ p, ul {
   margin-top: 0.1rem;
 }
 
+.summary-note {
+  position: relative;
+  margin: 1.5rem auto 1rem;
+  max-width: 620px;
+
+  padding: 1rem 1.5rem 1rem;
+
+  background: rgba(248, 246, 241, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 22px 18px 24px 20px;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+
+  transform: rotate(-0.35deg);
+}
+
+
+.summary-note-label {
+  position: absolute;
+  top: -14px;
+  left: -6px;
+
+  width: 170px;
+  height: 46px;
+
+  background: url("images/summary-note.png") left center / contain no-repeat;
+
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+.summary-note p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(0,0,0,0.68);
+  
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.summary-note::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.03),
+      rgba(0,0,0,0.01)
+    );
+
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.summary-note::after {
+  content: "🐾";
+  position: absolute;
+  right: -10px;
+  bottom: -15px;
+
+  font-size: 2rem;
+  opacity: 0.22;
+
+  transform: rotate(-18deg);
+}
+
+html.dark .summary-note {
+  background: rgba(34, 34, 34, 0.72);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  color: rgba(255,255,255,0.86);
+}
+
+html.dark .summary-note-label {
+  filter: invert(1) brightness(1.15);
+}
+html.dark .summary-note::after {
+  filter: invert(2) brightness(1.5);
+}
+
 /* Post ingredient organiser */
 .ingredient-section {
   font-weight: 700;          /* bolder */
@@ -794,7 +887,22 @@ p, ul {
   justify-content: center;
 }
 
+.qa-click-area {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.qa-click-area::-webkit-details-marker {
+  display: none;
+}
+
 .qa-card {
+  cursor: pointer;
   position: relative;
   width: 100%;
   max-width: 520px;
@@ -817,6 +925,14 @@ p, ul {
     0 6px 18px rgba(0,0,0,0.06);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qa-card p {
+  position: relative;
+  z-index: 4;
+  pointer-events: auto;
+
+  margin: 0.2rem;
 }
 
 .qa-card:nth-child(odd) {
@@ -842,17 +958,37 @@ p, ul {
   left: 14px;
 
   padding: 0.15rem 0.7rem;
+
   background: #fff;
 
   border: 1.2px solid rgba(0, 0, 0, 0.6);
   border-radius: 999px;
 
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.02em;
 
   transform: rotate(-0.4deg);
+  
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  
+  z-index: 3;
+  pointer-events: none;
 }
+
+/* Add arrow inside the label */
+.qa-label::before {
+  content: "▶";
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.qa-card[open] .qa-label::before {
+  content: "▼";
+}
+
 
 .dog-review {
   padding: 1.5rem 1.5rem 1.5rem 200px; /* 👈 space for image */
@@ -1101,7 +1237,7 @@ p, ul {
 
 /* Hover effect */
 .photo-collage img:hover {
-  transform: scale(1.15);
+  transform: scale(1.35);
   z-index: 10;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
@@ -1352,7 +1488,7 @@ footer {
   text-align: center;
   margin-top: 1rem;
   padding: 1rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
   display: flex;
   justify-content: center;
