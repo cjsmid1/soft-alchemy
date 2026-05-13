@@ -4,16 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Chaos</title>
+  <title>Soft Alchemy</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/watercolour-background.jpg">
+  <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
 <body>
   <header>
     <h1>Soft Alchemy</h1>
     <h3>by Claire</h3>
-	<br><br><br>
+	<br>
     <p>Transforming everyday life with gentle productivity, small experiments, and domestic chaos</p>
   </header>
+  <div class="two-column-layout right-wide">
+
+  <section class="card">
+    <h2>👋 Welcome!</h2>
+    <p>If you're new here, I recommend wandering the archive...<br>or letting Echo decide <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
+  </section>
+
+  <section class="card quote-content">
+    <blockquote>
+      “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
+    </blockquote>
+  
+    <cite>
+      — Dorothy Parker
+    </cite>
+  </section>
+</div>
+  
   <section id="experiments" class="card">
     <h2>Current Experiments</h2>
     <div class="project">
@@ -22,35 +47,50 @@
     </div>
 	<div class="project">
       <h3>🌱 Vegetable Garden</h3>
-      <p>Current focus: planting tomato saplings outside</p>
+	  <ul>
+      <li>Tomatoes are hardening off outdoors</li>
+      <li>Basil is still tiny and sulking that it's too cold</li>
+      <li>Slugs have (temporarily) been beaten by placing threatened plants on the shed roof</li>
+	  </ul>
     </div>
 	<div class="project">
       <h3>🐶 Dog Training</h3>
-	  <p>Current focus: reducing barking (especially when someone knocks on the front door)</p>
-      <p></p>
+	  <ul>
+        <li>Door barking diplomacy</li>
+        <li>Practising calmer attention around Very Exciting Things</li>
+        <li>Heel training so walks feel less like being towed by a tiny opinionated kite</li>
+	  </ul>
     </div>
   </section>
   
   <section class="card">
-  <h3>In case you need a little extra positivity today</h3>
-  <figure class="card-figure">
-    <div class="card-image">
-      <img src="images/echo-cute.jpg" alt="Echo looking cute">
-
-      <div class="image-text">
-        <img 
-          class="overlay-note overlay-note--top-right" 
-          src="images/I-think-youre-awesome.png"
-        >
+    <h2><img class="emoji" src="images/paw-print.png">Echo Interuption!</h2> 
+	<p>In case you need a little extra positivity today</p>
+    <figure class="card-figure">
+      <div class="card-image">
+        <img src="images/echo-cute.jpg" alt="Echo looking cute">
+    
+        <div class="image-text">
+          <img 
+            class="overlay-note overlay-note--top-right" 
+            src="images/I-think-youre-awesome.png"
+          >
+        </div>
       </div>
-    </div>
-    <figcaption>
-      I refuse to use the paw pun - you can't make me!
-    </figcaption>
-  </figure>
-</section>
+      <figcaption>
+        I refuse to use the paw pun - you can't make me!
+      </figcaption>
+    </figure>
+  </section>
   
+  <section class="card reading-shelf">
+    <h2>Current Bookshelf</h2>
+    <div id="current-bookshelf" class="shelf"></div>
+  </section>
+  
+  <script src="books.js"></script>
   <script src="posts.js"></script>
   <script src="script.js"></script>
+  <script>renderBookshelf("current-bookshelf", currentBooks);</script>
 </body>
 </html>

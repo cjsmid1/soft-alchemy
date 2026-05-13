@@ -1,10 +1,35 @@
 const posts = [
 {
+    id: "the-library",
+    title: "📚 The Library",
+    category: "Life",
+    tags: ["recommendation"],
+    excerpt: "The time I tried to read in peace and was immediately supervised...",
+    content: `
+	<section class="card reading-shelf">
+      <h3>⏳ Current Bookshelf</h3>
+      <div id="current-bookshelf" class="shelf"></div>
+    </section>
+	<section class="card reading-shelf">
+	  <h3>✨ Fantasy Favourites </h3>
+      <div id="fantasy-bookshelf" class="shelf"></div>
+    </section> 
+	<section class="card reading-shelf">
+	  <h3>🔍 Non-Fiction to Understand the World</h3>
+      <div id="nonfiction-bookshelf" class="shelf"></div>
+    </section>
+	<section class="card reading-shelf">
+	  <h3>💖 Charm your Inner Child</h3>
+      <div id="nostalgia-bookshelf" class="shelf"></div>
+    </section>
+	`
+  },
+{
     id: "sourdough-starter",
     title: "🥣 Starting a Sourdough Starter",
     category: "Recipe",
     tags: ["sourdough", "vegan"],
-    excerpt: "The time I made a stinky needy yeast pet and never looked back...",
+    excerpt: "The time I made a stinky, needy yeast pet and never looked back...",
     content: `
 	  <img class="card-image" src="images/sourdough-starter.jpg" alt="Nice view">
 	  <section class="summary-note">
@@ -129,7 +154,7 @@ const posts = [
     title: "🥟 Tuna Sweetcorn Dumplings",
     category: "Recipe",
     tags: ["dinner-party", "fish"],
-    excerpt: "The time I discovered Pierogi, and then decided I wanted tuna instead...",
+    excerpt: "The time I discovered pierogi and immediately made them less traditional...",
     content: `
       <img class="card-image" src="images/tuna-sweetcorn-dumplings.jpg" alt="Nice view">
 	  <section class="summary-note">
@@ -191,7 +216,7 @@ const posts = [
     title: "🎂 Do Dog Birthdays Count?",
     category: "Life",
     tags: ["dog-approved", "recommendation", "dog recipe"],
-    excerpt: "The time my puppy turned one and got very spoiled...",
+    excerpt: "The time my puppy turned one and somehow acquired an itinerary...",
     content: `
 	<section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -262,7 +287,7 @@ const posts = [
     title: "🌿 Growth Areas",
     category: "Life",
     tags: ["self-improvement", "goals"],
-    excerpt: "The time I learned how to not overcommit myself while unofficially sending myself back to school...",
+    excerpt: "The time I learned how to not overcommit myself...",
     content: `
 	<p>
 	Have you ever felt overwhelmed & like you should be doing a thousand things, while each day ends with the disappointment of having done what feels like nothing? If so, then I empathise and have been there with you most of my adult life! Each day dawns with the potential of 24 glorious hours to be filled with...

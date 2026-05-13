@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post | Life Chaos</title>
+  <title>Soft Alchemy Post</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/watercolour-background.jpg">
+  <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
 
 <body>
@@ -13,6 +20,7 @@
     <!-- Content injected by script.js -->
   </section>
 
+  <script src="books.js"></script>
   <script src="posts.js"></script>
   <script src="script.js"></script>
 </body>

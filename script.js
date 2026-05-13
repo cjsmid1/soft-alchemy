@@ -54,7 +54,7 @@ function loadNavigation() {
       <div class="nav-box">
         <div class="nav-left">
           <a href="about.html">About</a>
-          <a href="index.html#experiments">Experiments</a>
+          <a href="index.html#experiments">Projects</a>
         </div>
 
         <a class="nav-logo" href="index.html">
@@ -232,6 +232,8 @@ if (postContainer) {
         window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
       });
     });
+	
+	renderBookshelvesForPage(bookshelfConfigs);
   }
 }
 
@@ -258,6 +260,119 @@ function goToTag(tag) {
   window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
 }
 
+// -----------------------------
+// RANDOM POST
+// -----------------------------
+function goToRandomPost() {
+  if (!posts || posts.length === 0) return;
+
+  const randomIndex = Math.floor(Math.random() * posts.length);
+  const randomPost = posts[randomIndex];
+
+  window.location.href = `post.html?id=${randomPost.id}`;
+}
+
+document.addEventListener("click", (e) => {
+  const randomBtn = e.target.closest("#randomPostBtn");
+  if (!randomBtn) return;
+
+  e.preventDefault();
+  goToRandomPost();
+});
+
+// -----------------------------
+// BOOKSHELF
+// -----------------------------
+function renderBookshelf(shelfId, books, allowEcho = false) {
+  const shelf = document.getElementById(shelfId);
+  if (!shelf) return;
+
+  const echoIndex = allowEcho && books.length > 0
+    ? Math.floor(Math.random() * books.length)
+    : -1;
+
+  shelf.innerHTML = books.map((book, index) => `
+    <a 
+      class="book-card ${index === echoIndex ? "echo-interruption-card" : ""}"
+      href="${book.url}"
+      target="_blank"
+      rel="noopener noreferrer"
+
+      data-original-title="${book.title}"
+      data-original-author="${book.author || ""}"
+      data-original-image="${book.image}"
+      data-original-alt="${book.title} cover"
+
+      data-echo-image="images/echo-book.jpg"
+      data-echo-title="🐾 Echo Interruption!"
+      data-echo-author="Every library needs a familiar"
+    >
+      <img src="${book.image}" alt="${book.title} cover">
+
+      <div class="book-info">
+        <h3>${book.title}</h3>
+
+        <p class="book-author">
+          ${book.author || ""}
+        </p>
+
+        ${book.status
+          ? `<span class="book-status">${book.status}</span>`
+          : ""}
+
+        ${book.genre
+          ? `<span class="book-genre-stamp">${book.genre}</span>`
+          : ""}
+      </div>
+    </a>
+  `).join("");
+
+  addEchoInterruption(shelf);
+}
+
+function renderBookshelvesForPage(configs = []) {
+  const validShelves = configs.filter(config =>
+    Array.isArray(config.books) && document.getElementById(config.id)
+  );
+
+  // Only add Echo if there are more than 2 shelves
+  const echoShelfIndex = validShelves.length > 2
+    ? Math.floor(Math.random() * validShelves.length)
+    : -1;
+
+  validShelves.forEach((config, index) => {
+    renderBookshelf(config.id, config.books, index === echoShelfIndex);
+  });
+}
+
+function addEchoInterruption(shelf) {
+  const echoCard = shelf.querySelector(".echo-interruption-card");
+  if (!echoCard) return;
+
+  const img = echoCard.querySelector("img");
+  const title = echoCard.querySelector("h3");
+  const author = echoCard.querySelector(".book-author");
+
+  echoCard.addEventListener("mouseenter", () => {
+    img.src = echoCard.dataset.echoImage;
+    img.alt = "Echo interrupting the bookshelf";
+    title.innerHTML = echoCard.dataset.echoTitle;
+    author.textContent = echoCard.dataset.echoAuthor;
+    echoCard.classList.add("is-echo");
+  });
+
+  echoCard.addEventListener("mouseleave", () => {
+    img.src = echoCard.dataset.originalImage;
+    img.alt = echoCard.dataset.originalAlt;
+    title.innerHTML = echoCard.dataset.originalTitle;
+    author.textContent = echoCard.dataset.originalAuthor;
+    echoCard.classList.remove("is-echo");
+  });
+}
+
+// -----------------------------
+// FOOTER
+// -----------------------------
 function loadFooter() {
   const footerHTML = `
     <footer>
@@ -312,10 +427,4 @@ document.addEventListener("DOMContentLoaded", () => {
   
   loadFooter();
   applyTheme();
-
-  // force correct icon state after insertion
-  document.documentElement.classList.toggle(
-    "dark",
-    getTheme() === "dark"
-  );
 });

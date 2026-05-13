@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <title>Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/watercolour-background.jpg">
+  <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
 <body>
 <div class="filters">
+  <button id="randomPostBtn" class="archive-paw-button" type="button" aria-label="Open a random post">
+    <img src="images/paw-print-handwritten.png" alt="">
+  </button>
   <input type="text" id="search" placeholder="Search posts...">
   <select id="categoryFilter">
     <option value="">All Categories</option>
