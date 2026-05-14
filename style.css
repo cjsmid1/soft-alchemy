@@ -1092,9 +1092,7 @@ p, ul {
 
   position: relative;
   transition: transform 0.2s ease, z-index 0.2s ease;
-}
-
-.chaos-list li {
+  
   z-index: 1;
   overflow: visible;
 }
@@ -1121,19 +1119,24 @@ p, ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-
-  padding: 0;
+  
+  gap: 0;
+  padding: 1rem;
   margin: 1rem 0 0;
 }
 
 .picture-list li {
   list-style: none;
+  transition: transform 0.2s ease, z-index 0.2s ease;
+}
+.picture-list.picture-rectangle li {
+  margin: -0.4rem 0.15rem;
+}
+.picture-list.picture-square li {
+  margin: -0.4rem -0.3rem;
 }
 
-.picture-list img {
-  width: 150px;
-  height: 250px;
+.picture-list.picture-rectangle img {
   display: block;
 
   border-radius: 14px;
@@ -1145,7 +1148,30 @@ p, ul {
     box-shadow 0.25s ease;
 }
 
-.picture-list img:hover {
+.picture-list.picture-rectangle img {
+  width: 150px;
+  height: 250px;
+}
+
+
+.picture-list.picture-square img {
+  width: 120px;
+  height: auto;
+}
+
+.picture-list li:nth-child(odd) {
+  transform: rotate(-1deg) translateY(3px);
+}
+
+.picture-list li:nth-child(even) {
+  transform: rotate(1deg) translateY(-3px);
+}
+
+.picture-list li:nth-child(3n) {
+  transform: rotate(-2deg) translateY(2px);
+}
+
+.picture-list li:hover {
   transform: scale(1.2);
   box-shadow: 0 12px 24px rgba(0,0,0,0.18);
   z-index: 20;

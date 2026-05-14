@@ -60,10 +60,10 @@ function loadNavigation() {
             </button>
           
             <div class="nav-dropdown-menu">
-              <a href="post.html?id=the-library">The Library</a>
               <a href="kitchen.html">The Kitchen</a>
               <a href="study.html">The Study</a>
-              <a href="post.html?id=dnd-creating-character">The Dungeon</a>
+              <a href="post.html?id=the-library">The Library</a>
+              <a href="garden.html">The Garden</a>
             </div>
           </div>
         </div>

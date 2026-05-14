@@ -142,7 +142,36 @@ const nostalgiaBooks = [
     url: "https://www.goodreads.com/book/show/34504.Wyrd_Sisters"
   },
 ];
+const otherMedia = [
+  {
+    title: "Book Goblin",
+    author: "Elizabeth Wheatley",
+    image: "images/books/book-goblin.jpg",
+    url: "https://www.youtube.com/playlist?list=PLp2rdT0vHSlEefx-Sbw-HLXJYZlDILNh5"
+  },{
+    title: "Romance Genres",
+    author: "Elizabeth Wheatley",
+    image: "images/books/romance-genres.jpg",
+    url: "https://www.youtube.com/playlist?list=PLp2rdT0vHSlEvjderiN_wEsDILwCZEoMX"
+  },{
+    title: "Princess Bride Analysis",
+    author: "Cinema Therapy",
+    image: "images/books/cinema-therapy.jpg",
+    url: "https://www.youtube.com/watch?v=Llyf83OLcAk"
+  },{
+    title: "Just Stab Me Now",
+    author: "Jill Bearup",
+    image: "images/books/just-stab-me-now.jpg",
+    url: "https://www.youtube.com/playlist?list=PLj4N-R1RQxAuAQ4qBpaUbGLb1ZWpWySAz"
+  },
+];
 const currentBubbling = [
+  {
+    title: "Preserved Satsumas",
+	author: "Started 23/4/26",
+	status: "In Progress",
+    image: "images/preserved-satsumas.jpg"
+  },
   {
     title: "Kombucha Scoby",
     author: "Started 16/4/26",
@@ -150,16 +179,22 @@ const currentBubbling = [
     image: "images/kombucha-scoby.jpg"
   },
   {
-    title: "Satsuma Vinegar",
-	author: "Started 3/3/26",
-	status: "Almost Ready?",
-    image: "images/satsuma-vinegar.jpg"
+    title: "Garlic Honey",
+    author: "Started 31/3/26",
+	status: "Ready",
+    image: "images/honey-garlic.jpg",
   },
   {
     title: "'Soy' Sauce",
     author: "Started 5/3/26",
 	status: "Deceased",
     image: "images/fake-soy-sauce.jpg",
+  },
+  {
+    title: "Satsuma Vinegar",
+	author: "Started 3/3/26",
+	status: "Almost Ready?",
+    image: "images/satsuma-vinegar.jpg"
   },
 ];
 const bookshelfConfigs = [
@@ -178,5 +213,9 @@ const bookshelfConfigs = [
   {
     id: "nostalgia-bookshelf",
     books: nostalgiaBooks
+  },
+  {
+    id: "other-media-bookshelf",
+    books: otherMedia
   }
 ];
