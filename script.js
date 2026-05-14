@@ -54,7 +54,18 @@ function loadNavigation() {
       <div class="nav-box">
         <div class="nav-left">
           <a href="about.html">About</a>
-          <a href="index.html#experiments">Projects</a>
+		  <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button">
+              Explore
+            </button>
+          
+            <div class="nav-dropdown-menu">
+              <a href="post.html?id=the-library">The Library</a>
+              <a href="kitchen.html">The Kitchen</a>
+              <a href="study.html">The Study</a>
+              <a href="post.html?id=dnd-creating-character">The Dungeon</a>
+            </div>
+          </div>
         </div>
 
         <a class="nav-logo" href="index.html">
@@ -71,6 +82,19 @@ function loadNavigation() {
 
   document.body.insertAdjacentHTML("afterbegin", navigationHTML);
 }
+
+document.addEventListener("click", (e) => {
+  const toggle = e.target.closest(".nav-dropdown-toggle");
+  const dropdown = e.target.closest(".nav-dropdown");
+
+  document.querySelectorAll(".nav-dropdown.open").forEach(menu => {
+    if (menu !== dropdown) menu.classList.remove("open");
+  });
+
+  if (toggle && dropdown) {
+    dropdown.classList.toggle("open");
+  }
+});
 
 
 // -----------------------------
@@ -98,40 +122,86 @@ function formatTag(tag) {
 // -----------------------------
 // RENDER BLOG POSTS
 // -----------------------------
+function createPostPreviewHTML(post, options = {}) {
+  const { activeTag = null } = options;
+
+  return `
+    <div class="title-row">
+      <h2>
+        <a href="post.html?id=${post.id}">${post.title}</a>
+      </h2>
+
+      <div class="category-title ${post.category.toLowerCase()}">
+        ${post.category}
+      </div>
+    </div>
+
+    <p>${post.excerpt}</p>
+
+    <div class="tag-list">
+      ${post.tags.map(tag => `
+        <span class="tag ${tag === activeTag ? "active" : ""}" data-tag="${tag}">
+          ${formatTag(tag)}
+        </span>
+      `).join("")}
+    </div>
+  `;
+}
+
+function addTagClickHandlers(container, callback) {
+  container.querySelectorAll(".tag").forEach(el => {
+    el.addEventListener("click", () => {
+      callback(el.dataset.tag);
+    });
+  });
+}
+
 function renderPosts(filteredPosts) {
   if (!postsContainer) return;
 
-  postsContainer.innerHTML = ""; // clear old posts
+  postsContainer.innerHTML = "";
 
   filteredPosts.forEach((post, i) => {
     const card = document.createElement("div");
     card.className = "card fade-in";
-    card.style.animationDelay = `${i * 50}ms`; // staggered animation
+    card.style.animationDelay = `${i * 50}ms`;
 
-    card.innerHTML = `
-  <div class="title-row">
-    <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
-    <div class="category-title ${post.category.toLowerCase()}">${post.category}</div>
-  </div>
-  <p>${post.excerpt}</p>
-  <div class="tag-list">
-    ${post.tags.map(tag => `
-      <span class="tag ${tag === activeTag ? "active" : ""}" data-tag="${tag}">
-        ${formatTag(tag)}
-      </span>
-    `).join("")}
-  </div>
-`;
+    card.innerHTML = createPostPreviewHTML(post, { activeTag });
 
     postsContainer.appendChild(card);
   });
 
-  // Add click event to tags
-  document.querySelectorAll(".tag").forEach(el => {
-    el.addEventListener("click", () => {
-      const tag = el.dataset.tag;
-      setTagFilter(tag);
-    });
+  addTagClickHandlers(postsContainer, setTagFilter);
+}
+
+function renderLatestPost(containerId, category = null) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const latestPost = category
+    ? posts.find(post => post.category.toLowerCase() === category.toLowerCase())
+    : posts[0];
+
+  if (!latestPost) return;
+
+  container.innerHTML = createPostPreviewHTML(latestPost);
+
+  addTagClickHandlers(container, tag => {
+    window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
+  });
+}
+
+function renderFeaturedPost(postId, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const post = posts.find(p => p.id === postId);
+  if (!post) return;
+
+  container.innerHTML = createPostPreviewHTML(post);
+
+  addTagClickHandlers(container, tag => {
+    window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -291,41 +361,48 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
     ? Math.floor(Math.random() * books.length)
     : -1;
 
-  shelf.innerHTML = books.map((book, index) => `
-    <a 
-      class="book-card ${index === echoIndex ? "echo-interruption-card" : ""}"
-      href="${book.url}"
-      target="_blank"
-      rel="noopener noreferrer"
-
-      data-original-title="${book.title}"
-      data-original-author="${book.author || ""}"
-      data-original-image="${book.image}"
-      data-original-alt="${book.title} cover"
-
-      data-echo-image="images/echo-book.jpg"
-      data-echo-title="🐾 Echo Interruption!"
-      data-echo-author="Every library needs a familiar"
-    >
-      <img src="${book.image}" alt="${book.title} cover">
-
-      <div class="book-info">
-        <h3>${book.title}</h3>
-
-        <p class="book-author">
-          ${book.author || ""}
-        </p>
-
-        ${book.status
-          ? `<span class="book-status">${book.status}</span>`
-          : ""}
-
-        ${book.genre
-          ? `<span class="book-genre-stamp">${book.genre}</span>`
-          : ""}
-      </div>
-    </a>
-  `).join("");
+  shelf.innerHTML = books.map((book, index) => {
+    const tag = book.url ? "a" : "div";
+  
+    return `
+      <${tag}
+        class="book-card ${index === echoIndex ? "echo-interruption-card" : ""}"
+  
+        ${book.url ? `
+          href="${book.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+        ` : ""}
+  
+        data-original-title="${book.title}"
+        data-original-author="${book.author || ""}"
+        data-original-image="${book.image}"
+        data-original-alt="${book.title} cover"
+  
+        data-echo-image="images/echo-book.jpg"
+        data-echo-title="🐾 Echo Interruption!"
+        data-echo-author="Every library needs a familiar"
+      >
+        <img src="${book.image}" alt="${book.title} cover">
+  
+        <div class="book-info">
+          <h3>${book.title}</h3>
+  
+          <p class="book-author">
+            ${book.author || ""}
+          </p>
+  
+          ${book.status
+            ? `<span class="book-status">${book.status}</span>`
+            : ""}
+  
+          ${book.genre
+            ? `<span class="book-genre-stamp">${book.genre}</span>`
+            : ""}
+        </div>
+      </${tag}>
+    `;
+  }).join("");
 
   addEchoInterruption(shelf);
 }

@@ -142,6 +142,26 @@ const nostalgiaBooks = [
     url: "https://www.goodreads.com/book/show/34504.Wyrd_Sisters"
   },
 ];
+const currentBubbling = [
+  {
+    title: "Kombucha Scoby",
+    author: "Started 16/4/26",
+	status: "In Progress",
+    image: "images/kombucha-scoby.jpg"
+  },
+  {
+    title: "Satsuma Vinegar",
+	author: "Started 3/3/26",
+	status: "Almost Ready?",
+    image: "images/satsuma-vinegar.jpg"
+  },
+  {
+    title: "'Soy' Sauce",
+    author: "Started 5/3/26",
+	status: "Deceased",
+    image: "images/fake-soy-sauce.jpg",
+  },
+];
 const bookshelfConfigs = [
   {
     id: "current-bookshelf",

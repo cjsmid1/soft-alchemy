@@ -63,7 +63,7 @@ const posts = [
         <p>The easiest (& usually cheapest) flour to start with is white bread flour, it keeps things civil & there are plenty of resources online to ask for help if things get sticky. You can also try using brown bread flour or rye flour. I would recommend sticking with one type while you're setting up your initial yeast colony & once it's mature you can change up what type you feed it based on what's available in the cupboard.<br>
 		My first sourdough starter is now a combination of mostly white bread flour and occassionally brown bread flour. My second sourdough starter is pure rye flour (I also added some apple peel & left it outside for 24 hours as an experiment to see if that changes up the yeast & hence the bread flavour)</p>
       </details >
-	  <details class="qa-card">
+	  <details class="qa-card qa-card--long">
         <summary class="qa-click-area">
 		<span class="qa-label">I have a life so can't feed daily - are my sourdough dreams ruined?</span>
 		</summary>
@@ -83,7 +83,7 @@ const posts = [
         <p>If your first loaf is a little dense fear not, your starter will continue to mature & improve over time (both of my starters first loaves were a bit dense). You can also add more starter to your recipe to help it along, just bare in mind you'll be changing the hydration proportion so your dough will likely be stickier unless you adjust the water/liquid to accommodate.<br>
 		I also got a pretty dense loaf when I tried adding in a mix of whey & buttermilk instead of water, most likely I should have given it longer to rise to accommodate, another failed experiment to learn from!</p>
       </details>
-	  <details class="qa-card">
+	  <details class="qa-card qa-card--long">
 	    <summary class="qa-click-area">
         <span class="qa-label">You make your starters sound like your babies - are you okay?</span>
 		</summary>
@@ -348,13 +348,13 @@ const posts = [
 	  <img src="images/grow-area-summary.jpg" alt="Grow Area Overview">
     </figure>
 	<div class="qa-board">
-      <details class="qa-card">
+      <details class="qa-card qa-card--long">
 	    <summary class="qa-click-area">
         <span class="qa-label">Can I still do tasks outside my planned growth areas?</span>
 		</summary>
         <p>Of course! You can think of them as one off fun tasks to do alongside the growth areas without committing to a whole new project. In fact one off tasks are a great way to explore what future growth areas you might enjoy, for example playing a single song on an instrument for the fun of it without the pressure of needing to practice daily.</p>
       </details>
-      <details class="qa-card">
+      <details class="qa-card qa-card--long">
 	    <summary class="qa-click-area">
         <span class="qa-label">I'm doing a no-buy, would that count as a growth area?</span>
 		</summary>

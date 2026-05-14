@@ -3,6 +3,7 @@
    ============================= */
 html {
   min-height: 100%;
+  background-color: #f8f7f4;;
 
   background:
     linear-gradient(
@@ -11,7 +12,7 @@ html {
     ),
     url("images/watercolour-background.jpg");
 
-  background-size: 1600px auto;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -258,6 +259,43 @@ nav a:hover, nav button:hover {
   z-index: 10;
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  font: inherit;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+
+  min-width: 150px;
+  padding: 0.4rem;
+
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  z-index: 2000;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu a {
+  white-space: nowrap;
+}
+
 
 
 @media (max-width: 600px) {
@@ -380,6 +418,15 @@ nav a:hover, nav button:hover {
 .project p {
   margin: 0;
   opacity: 0.85;
+}
+
+.project ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.project li:last-child {
+  margin-bottom: 0;
 }
 
 .card img {
@@ -1049,6 +1096,7 @@ p, ul {
 
 .chaos-list li {
   z-index: 1;
+  overflow: visible;
 }
 
 .chaos-list li:nth-child(odd) {
@@ -1067,6 +1115,40 @@ p, ul {
   z-index: 999;
   transform: scale(1.15) !important;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.picture-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.picture-list li {
+  list-style: none;
+}
+
+.picture-list img {
+  width: 150px;
+  height: 250px;
+  display: block;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.picture-list img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  z-index: 20;
 }
 
 .qa-board {
@@ -1097,7 +1179,7 @@ p, ul {
   position: relative;
   width: 100%;
   max-width: 520px;
-  padding: 1.5rem 1.2rem 1.2rem;
+  padding: 1rem 1.2rem 0.5rem;
   background: linear-gradient(
     to bottom,
     #ffffff,
@@ -1147,6 +1229,10 @@ p, ul {
   position: absolute;
   top: -12px;
   left: 14px;
+  max-width: calc(100% - 28px);
+
+  white-space: normal;
+  line-height: 1.25;
 
   padding: 0.15rem 0.7rem;
 
@@ -1179,6 +1265,21 @@ p, ul {
 .qa-card[open] .qa-label::before {
   content: "▼";
 }
+
+@media (max-width: 600px) {
+  .qa-card.qa-card--long {
+    padding-top: 2rem;
+  }
+  
+  .qa-label {
+    font-size: 0.8rem;
+  }
+  
+  .qa-card p {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 .dog-review {
@@ -1346,7 +1447,6 @@ p, ul {
    DOG REVIEW – MOBILE LAYOUT
    ----------------------------- */
 @media (max-width: 750px) {
-
   .dog-review {
     padding: 1rem 1rem 1rem 215px;
     display: flex;
@@ -1395,26 +1495,14 @@ p, ul {
     width: 100%;
     flex: none;
   }
-
 }
-
 
 
 .photo-collage {
   column-count: 2;
   column-gap: 1rem;
   max-width: 700px;
-  margin: 2rem auto;
-  margin-top: 0;
-}
-
-.photo-collage img {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
+  margin: 0 auto 2rem;
 }
 
 .collage-caption {
@@ -1426,16 +1514,58 @@ p, ul {
   margin-top: -2rem;
 }
 
-/* Hover effect */
-.photo-collage img:hover {
-  transform: scale(1.35);
-  z-index: 10;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+/* plain collage images */
+.photo-collage > img {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Make sure hovered image appears above others */
-.photo-collage img {
+.photo-collage > img:hover {
+  transform: scale(1.2);
   position: relative;
+  z-index: 20;
+}
+
+/* linked collage images */
+.photo-collage a {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.photo-collage a:hover {
+  transform: scale(1.2);
+  z-index: 20;
+}
+
+.photo-collage a > img:not(.paw-stamp) {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.photo-collage img.paw-stamp {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  width: 52px !important;
+  height: auto !important;
+
+  opacity: 0.9;
+  transform: rotate(-18deg);
+
+  z-index: 5;
+  pointer-events: none;
 }
 
 /* Responsive */
@@ -1669,7 +1799,7 @@ html.dark {
     ),
     url("images/watercolour-background-dark.png");
 	
-  background-size: 1600px auto;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   
@@ -1734,6 +1864,11 @@ html.dark .nav-logo {
 
 html.dark .nav-logo img {
   filter: invert(1) brightness(1.2);
+}
+
+html.dark .nav-dropdown-menu {
+  background: rgba(20,20,20,0.92);
+  border-color: rgba(255,255,255,0.12);
 }
 
 html.dark .filters input,

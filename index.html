@@ -22,46 +22,42 @@
     <p>Transforming everyday life with gentle productivity, small experiments, and domestic chaos</p>
   </header>
   <div class="two-column-layout right-wide">
-
+    <section class="card">
+      <h2>👋 Welcome!</h2>
+      <p>If you're new here, I recommend investigating the archive...<br>or letting Echo decide <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
+    </section>
+  
+    <section class="card quote-content">
+      <blockquote>
+        “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
+      </blockquote>
+      <cite>
+        — Dorothy Parker
+      </cite>
+    </section>
+  </div>
+  
   <section class="card">
-    <h2>👋 Welcome!</h2>
-    <p>If you're new here, I recommend wandering the archive...<br>or letting Echo decide <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
+    <h2>Where to wander?</h2>
+    <ul class="picture-list">
+      <li><a href="post.html?id=the-library"><img src="images/echo-book-pretty.jpg">The Library</a></li>
+      <li><a href="kitchen.html"><img src="images/james-kitchen.jpg">The Kitchen</a></li>
+      <li><a href="study.html"><img src="images/echo-destruction.jpg">The Study</a></li>
+      <li><a href="garden.html"><img src="images/echo-snow-garden.jpg">The Garden</a></li>
+    </ul>
   </section>
-
-  <section class="card quote-content">
-    <blockquote>
-      “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
-    </blockquote>
   
-    <cite>
-      — Dorothy Parker
-    </cite>
-  </section>
-</div>
+  <div class="two-column-layout equal">
+    <section class="card">
+      <h3>Latest Adventure</h3>
+      <div id="latest-post"></div>
+    </section>
   
-  <section id="experiments" class="card">
-    <h2>Current Experiments</h2>
-    <div class="project">
-      <h3>🌐 Soft Alchemy</h3>
-      <p>It's this website, be patient!</p>
-    </div>
-	<div class="project">
-      <h3>🌱 Vegetable Garden</h3>
-	  <ul>
-      <li>Tomatoes are hardening off outdoors</li>
-      <li>Basil is still tiny and sulking that it's too cold</li>
-      <li>Slugs have (temporarily) been beaten by placing threatened plants on the shed roof</li>
-	  </ul>
-    </div>
-	<div class="project">
-      <h3>🐶 Dog Training</h3>
-	  <ul>
-        <li>Door barking diplomacy</li>
-        <li>Practising calmer attention around Very Exciting Things</li>
-        <li>Heel training so walks feel less like being towed by a tiny opinionated kite</li>
-	  </ul>
-    </div>
-  </section>
+    <section class="card">
+      <h3>Favourite Adventure</h3>
+      <div id="favourite-post"></div>
+    </section>
+  </div>
   
   <section class="card">
     <h2><img class="emoji" src="images/paw-print.png">Echo Interuption!</h2> 
@@ -91,6 +87,10 @@
   <script src="books.js"></script>
   <script src="posts.js"></script>
   <script src="script.js"></script>
-  <script>renderBookshelf("current-bookshelf", currentBooks);</script>
+  <script>
+  renderLatestPost("latest-post");
+  renderFeaturedPost("75-soft-plan", "favourite-post");
+  renderBookshelf("current-bookshelf", currentBooks);
+  </script>
 </body>
 </html>
