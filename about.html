@@ -14,6 +14,17 @@
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-563L2Z66XJ');
+</script>
+
 <body>
   <header>
     <h1>Soft Alchemy</h1>
@@ -41,6 +52,24 @@
   </div>
   
   <section class="card">
+    <h2>Choose your curiosity to reveal your path</h2>
+	<br>
+    <ul class="chaos-list interest-options">
+      <li><button type="button" data-room="kitchen">Tasty Recipes</button></li>
+      <li><button type="button" data-room="study">Outrageous Organisation</button></li>
+      <li><button type="button" data-room="echo">There's a dog?</button></li>
+      <li><button type="button" data-room="study">Systems & Self-Improvement</button></li>
+      <li><button type="button" data-room="garden">Green Fingers</button></li>
+      <li><button type="button" data-room="dungeon">Battling Monsters</button></li>
+      <li><button type="button" data-room="kitchen">Fermentation Experiments</button></li>
+      <li><button type="button" data-room="library">Books, Books & Books</button></li>
+      <li><button type="button" data-room="archive">Embrace The Chaos</button></li>
+      <li><button type="button" id="randomPostBtn">I can't decide!</button></li>
+    </ul>
+    <div id="interestResult"></div>
+  </section>
+  
+  <section class="card">
     <h2>Meanwhile behind the scenes...</h2>
 	<div class="card-image">
     <img src="images/echo-hello.jpg" alt="Echo says hello">
@@ -61,7 +90,7 @@
         </h3>
     
         <p>
-          "Your bio text goes here. This is where you describe Claire in a warm, human way..."<br>
+          "Your bio text goes here. This is where you describe Claire in a warm, human way"<br>
 		  Yeah I'll get round to that someday, lets focus on who's really in charge...
         </p>
       </div>
@@ -77,8 +106,8 @@
           </span>
         </h3>
         <p>
-          Soft Alchemy's small fluffy supervisor, he is always diligent to interrupt the writing process with the most important announcement that a pigeon has landed in the front garden. <br>
-		  Unsurprisingly this little papillon loves sniffing, long walks & treats so keep an eye out for the Dog Approved posts in the archive!
+          Soft Alchemy's small fluffy supervisor, always diligent in interrupting the writing process to announce that a pigeon has landed in the front garden.<br>
+		  Unsurprisingly this little papillon loves attention, long walks & treats, so keep an eye out for the <a href="blog.html?tag=dog-approved">Dog Approved posts</a>...<br>and unexpected Echo appearances.
         </p>
       </div>
     </div>
@@ -102,7 +131,7 @@
   </section>
 </div>
   
-  <script src="posts.js"></script>
-  <script src="script.js"></script>
+  <script src="posts.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

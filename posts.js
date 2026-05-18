@@ -4,7 +4,7 @@ const posts = [
     title: "🔢 A Bingo Life",
     category: "Life",
     tags: ["goals", "self-improvement"],
-    excerpt: "The time I gameified my goals and made bingo nerdy...",
+    excerpt: "The time I gamified my goals and made bingo nerdy...",
     content: `
 	<section class="summary-note">
 	    <div class="summary-note-label"></div>
@@ -13,34 +13,33 @@ const posts = [
 	  <p>
 	  Do you struggle with an endless to-do list or are you the type of person who doesn't know what they want? Interestingly this next framework helps for both! <br><br>
 	  I'm assuming at this point, the concept of gamification is not new (turn your life into a game and things become more fun!), but how do you actually manage to do that successfully? 
-	  The answer is by adapting an already existing game to make it suit your needs. in In the case of bingo, you take a grid & fill it with your desires (large or small, all are welcome!), then you give yourself a deadline & see if you can get bingo. Simple enough? Here are some guidelines to flesh it out properly.
+	  The answer is by adapting an already existing game to make it suit your needs. In the case of bingo, you take a grid & fill it with your desires (large or small, all are welcome!), then you give yourself a deadline & see if you can get bingo. Simple enough? Here are some guidelines to flesh it out properly.
 	  </p>
 	  <br>
 	  <h3>Choose your difficulty:</h3>
 	  <ul>
-	    <li>Easy Mode: Just aiming for a row, column or diagonal</li>
+	    <li>Easy Mode: Just aiming for a row, column or diagonal.</li>
 	    <li>Hard Mode: Complete the full grid.</li>
 	  </ul>
 	  <h3>Choose your commitment:</h3>
 	  <ul>
-	    <li>
-		  5x5: This is the traditional size so you'll have 25 boxes to fill out
-		  
-	  	  <ul class="picture-list picture-square">
-            <li><img src="images/bingo-jan.jpg"></li>
-            <li><img src="images/bingo-feb.jpg"></li>
-            <li><img src="images/bingo-march.jpg"></li>
-            <li><img src="images/bingo-april.jpg"></li>
-            <li><img src="images/bingo-may.jpg"></li>
-          </ul>
-		</li>
-	    <li>4x4: Easier to complete as it's only 16 boxes and might be a good way to try out "Hard Mode" without it getting too crazy</li>
+	    <li>5x5: This is the traditional size so you'll have 25 boxes to fill out.</li>
+	  </ul>	
+	  <ul class="picture-list picture-square">
+        <li><img src="images/bingo-jan.jpg"></li>
+        <li><img src="images/bingo-feb.jpg"></li>
+        <li><img src="images/bingo-march.jpg"></li>
+        <li><img src="images/bingo-april.jpg"></li>
+        <li><img src="images/bingo-may.jpg"></li>
+      </ul>
+	  <ul>
+	    <li>4x4: Easier to complete as it's only 16 boxes and might be a good way to try out "Hard Mode" without it getting too crazy.</li>
 	  </ul>
 	  <h3>Choose your duration:</h3>
 	  <ul>
 	    <li>Day: Don't recommend as it's not the quickest set up, but I can't stop you!</li>
-	    <li>Week: Yet to try but a good way to feel accomplished each week</li>
-	    <li>Month: Useful for specifying goals for the month, I keep mine in my bullet journal's monthly spreads</li>
+	    <li>Week: Yet to try but a good way to feel accomplished each week.</li>
+	    <li>Month: Useful for specifying goals for the month, I keep mine in my bullet journal's monthly spreads.</li>
 	    <li>Year: Think of it as new years resolutions but without the guilt!
 		<figure class="post-image">
 		  <img src="images/bingo-year.jpg">
@@ -50,8 +49,8 @@ const posts = [
 	  </ul>
 	  <h3>Choose your goals:</h3>
 	  <ul>
-	    <li>Difficulty: Aim for a variety of easier & harder tasks, this lets you stretch yourself while also getting some quick wins</li>
-	    <li>Area: Unless it's topic specific like a relationship bingo card, try to choose goals across different areas (exercise, creative, social, financial, fun, work, ...)
+	    <li>Difficulty: Aim for a variety of easier & harder tasks, this lets you stretch yourself while also getting some quick wins.</li>
+	    <li>Area: Unless it's topic specific like a relationship bingo card, try to choose goals across different areas (exercise, creative, social, financial, fun, work etc).
 		<figure class="small-post-image">
 		  <img src="images/bingo-relationship.jpg">
 		  <figcaption>Topic specific example: My partner & I made a relationship bingo card for dates/activities together</figcaption>

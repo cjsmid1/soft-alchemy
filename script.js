@@ -96,6 +96,65 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// -----------------------------
+// ABOUT EXPLORATION
+// -----------------------------
+const roomData = {
+  garden: {
+    title: "🌿 The Garden",
+    url: "garden.html",
+    description: "Container gardening, hopeful seedlings, and occasional slug negotiations."
+  },
+  kitchen: {
+    title: "🍯 The Kitchen",
+    url: "kitchen.html",
+    description: "Ferments bubbling, cozy recipes, and experiments that may or may not be edible."
+  },
+  study: {
+    title: "📝 The Study",
+    url: "study.html",
+    description: "Journal reflections, organisational systems, and attempts to turn chaos into something useful."
+  },
+  echo: {
+    title: "🐾 Echo's Corner",
+    url: "blog.html?tag=dog-approved",
+    description: "Dog-approved adventures, fluffy interruptions, and important announcements about birds outside."
+  },
+  library: {
+    title: "📚 The Library",
+    url: "post.html?id=the-library",
+    description: "Story recommendations and other book related joy."
+  },
+  archive: {
+    title: "📜 The Archive",
+    url: "blog.html",
+    description: "The unfiltered list of everything."
+  },
+  dungeon: {
+    title: "⚔️ The Dungeon",
+    url: "post.html?id=dnd",
+    description: "Here be dragons: deep dive into D&D --- Coming Soon!"
+  }
+};
+
+document.addEventListener("click", (e) => {
+  const button = e.target.closest("[data-room]");
+  if (!button) return;
+
+  const result = document.getElementById("interestResult");
+  if (!result) return;
+
+  const room = roomData[button.dataset.room];
+  if (!room) return;
+
+  result.innerHTML = `
+    <a class="interest-result" href="${room.url}">
+      <h3>${room.title}</h3>
+      <p>${room.description}</p>
+    </a>
+  `;
+});
+
 
 // -----------------------------
 // POPULATE CATEGORY FILTER

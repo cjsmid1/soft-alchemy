@@ -14,6 +14,17 @@
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-563L2Z66XJ');
+</script>
+
 <body>
   <header>
     <h1>The Kitchen</h1>
@@ -44,12 +55,15 @@
       </div>
   </section>
   
-  <script src="books.js"></script>
-  <script src="posts.js"></script>
-  <script src="script.js"></script>
+  <script src="books.js" defer></script>
+  <script src="posts.js" defer></script>
+  <script src="script.js" defer></script>
+  
   <script>
-  renderBookshelf("current-bubbling", currentBubbling);
-  renderLatestPost("latest-recipe-post", "Recipe");
+  window.addEventListener("DOMContentLoaded", () => {
+    renderLatestPost("latest-recipe-post", "Recipe");
+    renderBookshelf("current-bubbling", currentBubbling);
+  });
   </script>
 </body>
 </html>

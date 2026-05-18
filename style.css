@@ -3,7 +3,7 @@
    ============================= */
 html {
   min-height: 100%;
-  background-color: #f8f7f4;;
+  background-color: #f8f7f4;
 
   background:
     linear-gradient(
@@ -504,7 +504,7 @@ nav a:hover, nav button:hover {
 
 /* second card bigger */
 .two-column-layout.right-wide {
-  grid-template-columns: 1fr 1.65fr;
+  grid-template-columns: 1fr 1.3fr;
 }
 
 /* equal cards */
@@ -617,6 +617,11 @@ nav a:hover, nav button:hover {
   background: transparent;
 }
 
+
+
+/* -----------------------------
+   ABOUT PAGE STYLE
+   ----------------------------- */
 .bio {
   display: flex;
   gap: 1.5rem;
@@ -639,11 +644,11 @@ nav a:hover, nav button:hover {
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 .bio-image--left {
-  transform: rotate(-1deg);;
+  transform: rotate(-1deg);
 }
 
 .bio-image--right {
-  transform: rotate(1deg);;
+  transform: rotate(1deg);
 }
 
 .bio-text {
@@ -1115,14 +1120,47 @@ p, ul {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+.interest-options button {
+  font: inherit;
+  color: inherit;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.interest-result {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px 14px 20px 16px;
+  
+  transition:
+    transform 0.2s ease,
+    font-size 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.interest-result:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.08);
+}
+
 .picture-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   
   gap: 0;
-  padding: 1rem;
-  margin: 1rem 0 0;
+  padding: 0;
+  margin: 0;
 }
 
 .picture-list li {
@@ -1130,16 +1168,14 @@ p, ul {
   transition: transform 0.2s ease, z-index 0.2s ease;
 }
 .picture-list.picture-rectangle li {
-  margin: -0.4rem 0.15rem;
+  margin: 0.3rem 0.15rem 0rem ;
 }
 .picture-list.picture-square li {
-  margin: -0.4rem -0.3rem;
+  margin: 0.4rem -0.4rem;
 }
 
-.picture-list.picture-rectangle img {
+.picture-list img {
   display: block;
-
-  border-radius: 14px;
 
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 
@@ -1151,12 +1187,16 @@ p, ul {
 .picture-list.picture-rectangle img {
   width: 150px;
   height: 250px;
+  
+  border-radius: 14px;
 }
 
 
 .picture-list.picture-square img {
   width: 120px;
   height: auto;
+  
+  border-radius: 5px;
 }
 
 .picture-list li:nth-child(odd) {
@@ -1305,7 +1345,6 @@ p, ul {
     font-size: 0.85rem;
   }
 }
-
 
 
 .dog-review {
@@ -1757,11 +1796,6 @@ p, ul {
   object-fit: cover;
 }
 
-.book-card.is-echo .book-info h3 {
-  color: #7a5a35;
-  font-size: 1.1rem;
-}
-
 @media (max-width: 600px) {
   #post {
     width: calc(100% - 0.7rem);
@@ -1965,6 +1999,23 @@ html.dark .chaos-list li:hover {
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+html.dark .interest-result {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+html.dark .interest-result a {
+  color: #f2eee8;
+}
+
+html.dark .interest-result a:hover {
+  color: #fff3df;
+}
+
 
 html.dark .quote-content blockquote {
   color: #eee;
@@ -1977,7 +2028,6 @@ html.dark .quote-content cite {
 /* -----------------------------
    READING SHELF DARK MODE
    ----------------------------- */
-
 html.dark .reading-shelf {
   color: #e6e1d8;
 }
@@ -2163,6 +2213,14 @@ html.dark .small-post-image {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* -----------------------------
+   DOG REVIEW - DARK MODE
+   ----------------------------- */
+.dark .dog-review {
+  background: #1a1a1a;
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
 .dark .dog-title {
   background: #1a1a1a;
   border-color: rgba(255,255,255,0.4);
@@ -2177,8 +2235,15 @@ html.dark .small-post-image {
 
 html.dark .dog-columns li::before {
   opacity: 0.95;
-  filter: invert(2) brightness(1.5);
 }
+
+@media (max-width: 750px) {
+  html.dark .dog-review {
+    background: transparent;
+    border: none;
+  }
+}
+
 
 html.dark .photo-collage img {
   box-shadow: 0 5px 15px rgba(0,0,0,0.6);

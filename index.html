@@ -14,6 +14,17 @@
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-563L2Z66XJ');
+</script>
+
 <body>
   <header>
     <h1>Soft Alchemy</h1>
@@ -24,7 +35,7 @@
   <div class="two-column-layout right-wide">
     <section class="card">
       <h2>👋 Welcome!</h2>
-      <p>If you're new here, I recommend investigating the archive...<br>or letting Echo decide <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
+      <p>If you're new here, I recommend <a href="about.html">discovering what Soft Alchemy is all about</a>...<br>or letting Echo <a href="#" id="randomPostBtn">fetch something from the archive</a>  <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
     </section>
   
     <section class="card quote-content">
@@ -49,12 +60,12 @@
   
   <div class="two-column-layout equal">
     <section class="card">
-      <h3>Latest Adventure</h3>
+      <h3>New to the Archive</h3>
       <div id="latest-post"></div>
     </section>
   
     <section class="card">
-      <h3>Favourite Adventure</h3>
+      <h3>Claire's Favourite</h3>
       <div id="favourite-post"></div>
     </section>
   </div>
@@ -82,15 +93,19 @@
   <section class="card reading-shelf">
     <h2>Current Bookshelf</h2>
     <div id="current-bookshelf" class="shelf"></div>
+	<p>Want to see more? <a href="post.html?id=the-library">➜ Investigate the library!</a></p>
   </section>
   
-  <script src="books.js"></script>
-  <script src="posts.js"></script>
-  <script src="script.js"></script>
+  <script src="books.js" defer></script>
+  <script src="posts.js" defer></script>
+  <script src="script.js" defer></script>
+  
   <script>
-  renderLatestPost("latest-post");
-  renderFeaturedPost("75-soft-plan", "favourite-post");
-  renderBookshelf("current-bookshelf", currentBooks);
+  window.addEventListener("DOMContentLoaded", () => {
+    renderLatestPost("latest-post");
+    renderFeaturedPost("75-soft-plan", "favourite-post");
+    renderBookshelf("current-bookshelf", currentBooks);
+  });
   </script>
 </body>
 </html>
