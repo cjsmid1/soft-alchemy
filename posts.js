@@ -2,6 +2,10 @@ const posts = [
 {
     id: "quote-page",
     title: "💎 Verbal Treasures",
+	metaTitle: "Verbal Treasures | Favourite Quotes & Tiny Reflections",
+    metaDescription: "A playful collection of favourite quotes, thoughtful lines, and tiny reflections gathered in the Soft Alchemy quote aviary.",
+	image: "images/pinterest/quote-page-pin.jpg",
+    imageAlt: "A screenshot of floating quotes",
     category: "Life",
     tags: ["books"],
     excerpt: "The time other people said it better...",
@@ -26,6 +30,10 @@ const posts = [
 {
     id: "bingo-life",
     title: "🔢 A Bingo Life",
+	metaTitle: "A Bingo Life | Gamify Your Goals with Personal Bingo Cards",
+    metaDescription: "How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
+    image: "images/bingo-year.jpg",
+    imageAlt: "A handwritten yearly bingo goal card",
     category: "Life",
     tags: ["goals", "self-improvement"],
     excerpt: "The time I gamified my goals and made bingo nerdy...",
@@ -89,6 +97,10 @@ const posts = [
 {
     id: "the-library",
     title: "📚 The Library",
+	metaTitle: "The Soft Alchemy Library | Book Recommendations for Curious Minds",
+    metaDescription: "A growing collection of fantasy, thoughtful nonfiction, cosy reads, and quietly life-changing books from the Soft Alchemy library.",
+    image: "images/echo-book.jpg",
+	imageAlt: "Echo the papillon sitting beside a travel book",
     category: "Life",
     tags: ["books", "recommendation"],
     excerpt: "The time I tried to read in peace and was immediately supervised...",
@@ -142,11 +154,15 @@ const posts = [
 {
     id: "sourdough-starter",
     title: "🥣 Starting a Sourdough Starter",
+	metaTitle: "How to Start a Sourdough Starter | Beginner Guide",
+    metaDescription: "A beginner-friendly guide to making a sourdough starter from flour, water, and a willingness to adopt a needy yeast pet.",
+    image: "images/sourdough-starter.jpg",
+    imageAlt: "Homemade sourdough starter in a container",
     category: "Recipe",
     tags: ["sourdough", "vegan"],
     excerpt: "The time I made a stinky, needy yeast pet and never looked back...",
     content: `
-	  <img class="card-image" src="images/sourdough-starter.jpg" alt="Nice view">
+	  <img class="card-image" src="images/sourdough-starter.jpg">
 	  <section class="summary-note">
 	    <div class="summary-note-label"></div>
 		<p>All sourdough recipes call for a mysterious "starter", this is how you actually make your own: congrats on your new yeast baby! Yes it does take at least a week of daily feeding unless you can steal some from a friend or want to throw money at the problem.</p>
@@ -210,6 +226,10 @@ const posts = [
 {
     id: "75-soft-plan",
     title: "🏆 75 Soft Challenge",
+	metaTitle: "75 Soft Challenge Plan | Gentle Habits, Fitness & Self Improvement",
+    metaDescription: "My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
+    image: "images/75-soft-plan.jpg",
+    imageAlt: "Handwritten 75 Soft Challenge commitment notes",
     category: "Life",
     tags: ["self-improvement"],
     excerpt: "The time I joined the self-improvement internet hype three years late...",
@@ -267,6 +287,10 @@ const posts = [
 {
     id: "tuna-sweetcorn-dumplings",
     title: "🥟 Tuna Sweetcorn Dumplings",
+	metaTitle: "Tuna Sweetcorn Dumplings | Easy Pierogi-Inspired Recipe",
+    metaDescription: "A cosy pierogi-inspired tuna sweetcorn dumpling recipe with homemade dough, creamy filling, and freezer-friendly batch cooking potential.",
+    image: "images/tuna-sweetcorn-dumplings.jpg",
+    imageAlt: "Homemade tuna sweetcorn dumplings served with garnish",
     category: "Recipe",
     tags: ["dinner-party", "fish"],
     excerpt: "The time I discovered pierogi and immediately made them less traditional...",
@@ -329,6 +353,10 @@ const posts = [
 {
     id: "echo-first-birthday",
     title: "🎂 Do Dog Birthdays Count?",
+	metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
+    metaDescription: "Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
+    image: "images/echo-wisley.jpg",
+    imageAlt: "Echo the papillon visiting RHS Wisley gardens",
     category: "Life",
     tags: ["dog-approved", "recommendation", "dog recipe"],
     excerpt: "The time my puppy turned one and somehow acquired an itinerary...",
@@ -400,6 +428,10 @@ const posts = [
 {
     id: "growth-areas",
     title: "🌿 Growth Areas",
+	metaTitle: "Growth Areas | A Gentle System for Focused Self Improvement",
+    metaDescription: "A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
+    image: "images/grow-area-summary.jpg",
+    imageAlt: "A handwritten growth areas planning page",
     category: "Life",
     tags: ["self-improvement", "goals"],
     excerpt: "The time I learned how to not overcommit myself...",
@@ -481,6 +513,10 @@ const posts = [
 {
     id: "sourdough-bread",
     title: "🍞 Sourdough Bread",
+	metaTitle: "Simple Sourdough Bread Recipe | Beginner-Friendly Homemade Loaf",
+    metaDescription: "A beginner-friendly sourdough bread recipe using simple ingredients, stretch and folds, overnight fridge proofing, and no fancy equipment.",
+    image: "images/sourdough-bread-half.jpg",
+    imageAlt: "A homemade sourdough loaf cut in half",
     category: "Recipe",
     tags: ["sourdough", "vegan", "vegetarian"],
     excerpt: "The time I joined the 30 year old woman bandwagon and made sourdough bread...",
@@ -535,6 +571,10 @@ const posts = [
 {
     id: "mushroom-wellington",
     title: "🍄 Mushroom Wellington",
+	metaTitle: "Vegetarian Mushroom Wellington | Puff Pastry Dinner Party Centrepiece",
+    metaDescription: "A vegetarian mushroom wellington with hoisin-style filling, puff pastry, rice paper anti-sog layer, and dinner party centrepiece energy.",
+    image: "images/mushroom-wellington-puff.jpg",
+    imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
     category: "Recipe",
     tags: ["dinner-party", "vegetarian"],
     excerpt: "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",

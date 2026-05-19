@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Kitchen | Recipes, Fermentation & Kitchen Experiments</title>
+
+  <meta 
+    name="description" 
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures."
+  >
+
+  <link rel="canonical" href="https://softalchemy.uk/kitchen.html">
+
+  <!-- Open Graph / Pinterest / Facebook -->
+  <meta property="og:site_name" content="Soft Alchemy">
+  <meta property="og:title" content="The Kitchen | Recipes, Fermentation & Kitchen Experiments">
+  <meta 
+    property="og:description" 
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://softalchemy.uk/kitchen.html">
+  <meta property="og:image" content="https://softalchemy.uk/images/sourdough-bread-half.jpg">
+  <meta property="og:image:alt" content="A homemade sourdough loaf sliced in half">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Kitchen | Recipes, Fermentation & Kitchen Experiments">
+  <meta 
+    name="twitter:description" 
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures."
+  >
+  <meta name="twitter:image" content="https://softalchemy.uk/images/sourdough-bread-half.jpg">
+  <meta name="twitter:image:alt" content="A homemade sourdough loaf sliced in half">
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preload" as="image" href="/images/watercolour-background.jpg">
+  <link rel="preload" as="image" href="/images/watercolour-background-dark.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-563L2Z66XJ');
+  </script>
+  
+</head>
+
+<body>
+  <header>
+    <h1>The Kitchen</h1>
+  </header>
+  
+  <section class="card">
+    <h3>You're just in time for...</h3>
+    <div id="latest-recipe-post"></div>
+  </section>
+  
+  <section class="card reading-shelf">
+    <h2>Currently Bubbling</h2>
+    <div id="current-bubbling" class="shelf"></div>
+  </section>
+
+  <section class="card">
+    <h2>Raid the Pantry</h2>
+    <div class="photo-collage">
+	  <a href="/post.html?id=sourdough-starter"><img src="/images/sourdough-starter.jpg"></a>
+	  <a href="/post.html?id=tuna-sweetcorn-dumplings"><img src="/images/tuna-sweetcorn-dumplings.jpg"></a>
+	  <a href="/post.html?id=sourdough-bread"><img src="/images/sourdough-bread-half.jpg"></a>
+	  <a href="/post.html?id=mushroom-wellington"><img src="/images/mushroom-wellington-puff.jpg"></a>
+	  <a href="/post.html?id=echo-first-birthday#birthday-cake">
+        <img src="/images/cake-cutting.jpg" alt="Dog birthday cake">
+        <img class="paw-stamp" src="/images/paw-print-handwritten.png" alt="">
+      </a>
+      </div>
+  </section>
+  
+  <script src="/books.js" defer></script>
+  <script src="/posts.js" defer></script>
+  <script src="/script.js" defer></script>
+  
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    renderLatestPost("latest-recipe-post", "Recipe");
+    renderBookshelf("current-bubbling", currentBubbling);
+  });
+  </script>
+</body>
+</html>

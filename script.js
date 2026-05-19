@@ -53,28 +53,28 @@ function loadNavigation() {
     <nav class="nav">
       <div class="nav-box">
         <div class="nav-left">
-          <a href="about.html">About</a>
+          <a href="/about.html">About</a>
 		  <div class="nav-dropdown">
             <button class="nav-dropdown-toggle" type="button">
               Explore
             </button>
           
             <div class="nav-dropdown-menu">
-              <a href="kitchen.html">The Kitchen</a>
-              <a href="study.html">The Study</a>
-              <a href="post.html?id=the-library">The Library</a>
-              <a href="garden.html">The Garden</a>
+			  <a href="/kitchen/index.html">The Kitchen</a>
+              <a href="/study/index.html">The Study</a>
+              <a href="/post.html?id=the-library">The Library</a>
+              <a href="/garden/index.html">The Garden</a>
             </div>
           </div>
         </div>
 
-        <a class="nav-logo" href="index.html">
-          <img id="alchemyLogo" src="images/writing-soft-alchemy.gif" alt="Soft Alchemy">
+        <a class="nav-logo" href="/index.html">
+          <img id="alchemyLogo" src="/images/writing-soft-alchemy.gif" alt="Soft Alchemy">
         </a>
 
         <div class="nav-right">
-          <a href="blog.html">Archive</a>
-          <a href="about.html#contact">Contact</a>
+          <a href="/blog.html">Archive</a>
+          <a href="/about.html#contact">Contact</a>
         </div>
       </div>
     </nav>
@@ -102,17 +102,17 @@ document.addEventListener("click", (e) => {
 const roomData = {
   garden: {
     title: "🌿 The Garden",
-    url: "garden.html",
+    url: "garden/index.html",
     description: "Container gardening, hopeful seedlings, and occasional slug negotiations."
   },
   kitchen: {
     title: "🍯 The Kitchen",
-    url: "kitchen.html",
+    url: "kitchen/index.html",
     description: "Ferments bubbling, cozy recipes, and experiments that may or may not be edible."
   },
   study: {
     title: "📝 The Study",
-    url: "study.html",
+    url: "study/index.html",
     description: "Journal reflections, organisational systems, and attempts to turn chaos into something useful."
   },
   echo: {
@@ -187,7 +187,7 @@ function createPostPreviewHTML(post, options = {}) {
   return `
     <div class="title-row">
       <h2>
-        <a href="post.html?id=${post.id}">${post.title}</a>
+        <a href="/post.html?id=${post.id}">${post.title}</a>
       </h2>
 
       <div class="category-title ${post.category.toLowerCase()}">
@@ -265,6 +265,59 @@ function renderFeaturedPost(postId, containerId) {
 }
 
 // -----------------------------
+// METADATA
+// -----------------------------
+function updatePostMetadata(post) {
+  const title = post.metaTitle || `${post.title} | Soft Alchemy`;
+  const description = post.metaDescription || post.excerpt || "A Soft Alchemy post about gentle experiments in everyday life.";
+  const image = post.image 
+    ? `https://softalchemy.uk/${post.image.replace(/^\/+/, "")}`
+    : "https://softalchemy.uk/images/soft-alchemy-preview.jpg";
+  const url = `https://softalchemy.uk/post.html?id=${post.id}`;
+
+  document.title = title;
+
+  setMeta("description", description);
+
+  setMetaProperty("og:site_name", "Soft Alchemy");
+  setMetaProperty("og:title", title);
+  setMetaProperty("og:description", description);
+  setMetaProperty("og:type", "article");
+  setMetaProperty("og:url", url);
+  setMetaProperty("og:image", image);
+
+  setMeta("twitter:card", "summary_large_image");
+  setMeta("twitter:title", title);
+  setMeta("twitter:description", description);
+  setMeta("twitter:image", image);
+
+  if (post.imageAlt) {
+    setMetaProperty("og:image:alt", post.imageAlt);
+    setMeta("twitter:image:alt", post.imageAlt);
+  }
+}
+
+function setMeta(name, content) {
+  let tag = document.querySelector(`meta[name="${name}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute("name", name);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
+
+function setMetaProperty(property, content) {
+  let tag = document.querySelector(`meta[property="${property}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute("property", property);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
+
+// -----------------------------
 // FILTER POSTS
 // -----------------------------
 function filterPosts(updateURL = true) {
@@ -334,18 +387,19 @@ if (postContainer) {
   const post = posts.find(p => p.id === id);
 
   if (post) {
-      // Inject HTML
-      postContainer.innerHTML = `
-    <div class="title-row">
-      <h1>${post.title}</h1>
-      <div class="category-title ${post.category.toLowerCase()}">${post.category}</div>
-    </div>
-    <div class="tag-list">
-      ${post.tags.map(tag => `
-        <span class="tag" data-tag="${tag}">${formatTag(tag)}</span>
-      `).join("")}
-    </div>
-    <div class="content">${post.content}</div>
+	updatePostMetadata(post);
+    // Inject HTML
+    postContainer.innerHTML = `
+      <div class="title-row">
+        <h1>${post.title}</h1>
+        <div class="category-title ${post.category.toLowerCase()}">${post.category}</div>
+      </div>
+      <div class="tag-list">
+        ${post.tags.map(tag => `
+          <span class="tag" data-tag="${tag}">${formatTag(tag)}</span>
+        `).join("")}
+      </div>
+      <div class="content">${post.content}</div>
     `;
 
     // Force reflow + fade-in animation
@@ -439,7 +493,7 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
         data-original-image="${book.image}"
         data-original-alt="${book.title} cover"
   
-        data-echo-image="images/echo-book.jpg"
+        data-echo-image="/images/echo-book.jpg"
         data-echo-title="🐾 Echo Interruption!"
         data-echo-author="Every library needs a familiar"
       >
@@ -673,22 +727,22 @@ function loadFooter() {
           </span>
 
           <div class="paw-trail">
-            <img class="paw-print" style="--i:1" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:2" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:3" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:4" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:5" src="images/paw-print.png" alt="">
-			<img class="paw-print" style="--i:6" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:7" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:8" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:9" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:10" src="images/paw-print.png" alt="">
-			<img class="paw-print" style="--i:11" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:12" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:13" src="images/paw-print.png" alt="">
-			<img class="paw-print" style="--i:14" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:15" src="images/paw-print.png" alt="">
-            <img class="paw-print" style="--i:16" src="images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:1" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:2" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:3" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:4" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:5" src="/images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:6" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:7" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:8" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:9" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:10" src="/images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:11" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:12" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:13" src="/images/paw-print.png" alt="">
+			<img class="paw-print" style="--i:14" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:15" src="/images/paw-print.png" alt="">
+            <img class="paw-print" style="--i:16" src="/images/paw-print.png" alt="">
           </div>
         </div>
 
@@ -705,7 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.getElementById("alchemyLogo");
   if (logo) {
     setTimeout(() => {
-      logo.src = "images/soft_alchemy_final_frame.png";
+      logo.src = `/images/soft_alchemy_final_frame.png`;
     }, 5500);
   }
   
