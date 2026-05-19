@@ -10,7 +10,7 @@
       document.documentElement.classList.add("dark");
     }
   </script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
@@ -34,17 +34,19 @@
   </header>
   <div class="two-column-layout right-wide">
     <section class="card">
-      <h2>👋 Welcome!</h2>
-      <p>If you're new here, I recommend <a href="about.html">discovering what Soft Alchemy is all about</a>...<br>or letting Echo <a href="#" id="randomPostBtn">fetch something from the archive</a>  <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
+      <h2>✨ Start Here</h2>
+      <p>Welcome! If you're new, I recommend <a href="about.html">discovering what Soft Alchemy is all about</a>...<br>or letting Echo <a href="#" id="randomPostBtn">fetch something from the archive</a>  <img href="#" id="randomPostBtn" class="paw-button" src="images/paw-print-handwritten.png"></p>
     </section>
   
     <section class="card quote-content">
-      <blockquote>
-        “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
-      </blockquote>
-      <cite>
-        — Dorothy Parker
-      </cite>
+	  <a href="post.html?id=quote-page" class="quote-card-link">
+        <blockquote>
+          “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
+        </blockquote>
+        <cite>
+          — Dorothy Parker
+        </cite>
+	  </a>
     </section>
   </div>
   
@@ -60,12 +62,12 @@
   
   <div class="two-column-layout equal">
     <section class="card">
-      <h3>New to the Archive</h3>
+      <h3>Latest in the Archive</h3>
       <div id="latest-post"></div>
     </section>
   
     <section class="card">
-      <h3>Claire's Favourite</h3>
+      <h3>Claire's Choice</h3>
       <div id="favourite-post"></div>
     </section>
   </div>

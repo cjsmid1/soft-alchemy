@@ -1,0 +1,511 @@
+/* -----------------------------
+   THEME & DARK MODE
+   ----------------------------- */
+.theme-toggle {
+  position: relative;
+  flex-shrink: 0; 
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.theme-toggle .icon {
+  position: absolute;
+  font-size: 1.1rem;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* default state (light mode) */
+.theme-toggle .sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.theme-toggle .moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* -----------------------------
+   DARK MODE
+   ----------------------------- */
+html.dark {
+  background:
+    linear-gradient(
+      rgba(6, 10, 18, 0.45),
+      rgba(10, 14, 24, 0.62)
+    ),
+    url("../images/watercolour-background-dark.png");
+	
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  
+  background-color: #07090d;
+}
+
+html.dark header,
+html.dark section,
+html.dark footer {
+  color: #eee;
+}
+
+html.dark .theme-toggle {
+  background: #2a2a2a;
+}
+
+html.dark .theme-toggle .sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+html.dark .theme-toggle .moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+html.dark .handwriting img {
+  filter: invert(1) brightness(1.2);
+}
+
+html.dark nav {
+  box-shadow: none;
+}
+
+html.dark nav a,
+html.dark nav button {
+  color: #e6e6e6;
+  background: #2a2a2a;
+}
+
+html.dark nav a:hover,
+html.dark nav button:hover {
+  background: #3a3a3a;
+}
+
+html.dark .nav-box {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .nav-box a {
+  color: #f2f2f2;
+}
+
+html.dark .nav-logo {
+  mix-blend-mode: normal;
+}
+
+html.dark .nav-logo img {
+  filter: invert(1) brightness(1.2);
+}
+
+html.dark .nav-dropdown-menu {
+  background: rgba(20,20,20,0.92);
+  border-color: rgba(255,255,255,0.12);
+}
+
+html.dark .filters input,
+html.dark .filters select {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+html.dark .archive-paw-button {
+  background: #333;
+  border-color: #555;
+}
+
+html.dark .archive-paw-button img {
+  filter: brightness(1.2);
+}
+
+/* CARDS & SINGLE POST IN DARK MODE */
+html.dark .project,
+html.dark .card,
+html.dark #post {
+  background: rgba(30,30,30,0.72);
+  color: #eee;
+  box-shadow: none;
+}
+
+html.dark .project h2 a,
+html.dark .card h2 a,
+html.dark #post h1 {
+  color: #fff;
+}
+
+html.dark .project p,
+html.dark .card p,
+html.dark .card .meta,
+html.dark #post .meta,
+html.dark #post .content {
+  color: #ddd;
+}
+
+html.dark .title-row h2 a {
+  color: #f2eee8;
+  border-bottom: none;
+}
+
+html.dark .title-row h2 a:hover {
+  text-shadow: 0 0 12px rgba(235, 195, 115, 0.45);
+}
+
+html.dark .card img.emoji {
+  filter: invert(1) brightness(1.2);
+}
+
+html.dark .card img.paw-button {
+  filter: invert(0) brightness(1.2);
+}
+
+html.dark .chaos-list li {
+  background: #1e1e1e;
+  color: #eee;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+html.dark .chaos-list li:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  background: #2a2a2a;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+html.dark .interest-result {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+html.dark .interest-result a {
+  color: #f2eee8;
+}
+
+html.dark .interest-result a:hover {
+  color: #fff3df;
+}
+
+
+html.dark .quote-content blockquote {
+  color: #eee;
+}
+
+html.dark .quote-content cite {
+  color: #bbb;
+}
+
+/* -----------------------------
+   READING SHELF DARK MODE
+   ----------------------------- */
+html.dark .reading-shelf {
+  color: #e6e1d8;
+}
+
+html.dark .shelf {
+  box-shadow:
+    inset 0 -3px 0 rgba(255,255,255,0.04);
+  scrollbar-color: rgba(255,255,255,0.22) rgba(255,255,255,0.06);	
+}
+
+html.dark .reading-shelf .card {
+  background: rgba(24,24,24,0.78);
+}
+
+html.dark .shelf::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.06);
+}
+
+html.dark .shelf::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.22);
+  border: 3px solid rgba(30,30,30,0.9);
+}
+
+html.dark .book-card {
+  background: rgba(42, 42, 42, 0.96);
+
+  border-color: rgba(255,255,255,0.10);
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.42),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+html.dark .book-card:hover {
+  box-shadow:
+    0 16px 28px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+html.dark .book-card img {
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.45);
+
+  filter:
+    brightness(1.06)
+    contrast(1.08)
+    saturate(1.03);	
+}
+
+html.dark .book-info h3 {
+  color: #f2eee8;
+}
+
+html.dark .book-author {
+  color: rgba(235,235,235,0.82);
+  opacity: 1;
+}
+
+html.dark .book-status {
+  background: rgba(20,20,20,0.55);
+
+  color: rgba(235,235,235,0.8);
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+html.dark .book-genre-stamp {
+  border-color: rgba(255,255,255,0.22);
+
+  background: rgba(30,30,30,0.45);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* FLYING QUOTES IN DARK MODE */
+html.dark .flying-quotes {
+  background: rgba(30, 27, 24, 0.58);
+  border-color: rgba(255,255,255,0.12);
+}
+
+html.dark .flying-quotes::before,
+html.dark .flying-quotes::after {
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(235, 220, 195, 0.22) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(235, 220, 195, 0.14) 1px, transparent 1.5px);
+}
+
+html.dark .flying-quote,
+html.dark .quote-reveal,
+html.dark .quote-filter select {
+  background: #2b2621;
+  color: #f3eadc;
+  border-color: rgba(255,255,255,0.14);
+}
+
+html.dark .flying-quote {
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+html.dark .flying-quote:hover,
+html.dark .flying-quote:focus-visible {
+  box-shadow: 0 16px 28px rgba(0,0,0,0.5);
+}
+
+html.dark .quote-reveal {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.045), transparent 12%),
+    #2b2621;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.55),
+    inset 10px 0 18px rgba(255,255,255,0.03);
+}
+
+html.dark .page-label {
+  background: #3a3028;
+  color: #f3eadc;
+  border-color: rgba(255,255,255,0.12);
+}
+
+html.dark .quote-author,
+html.dark .quote-filter label,
+html.dark .swipe-hint {
+  color: #d8cabb;
+  opacity: 0.85;
+}
+
+html.dark .quote-commentary {
+  background: rgba(255,255,255,0.06);
+  border-left-color: rgba(235,220,195,0.28);
+  color: #eadfce;
+}
+
+html.dark .close-quote {
+  color: #f3eadc;
+}
+
+html.dark .quote-filter select {
+  color-scheme: dark;
+}
+
+/* TAGS IN DARK MODE */
+html.dark .card .tag,
+html.dark #post .tag {
+  background: #333;
+  color: #fff;
+}
+
+html.dark .card .tag.active,
+html.dark #post .tag.active {
+  background: #555;
+}
+
+html.dark .card .tag:hover,
+html.dark #post .tag:hover {
+  background: #666;
+}
+
+/* LINKS*/
+html.dark a {
+  color: #e6ded0;
+  border-bottom: 1px solid transparent;
+}
+
+html.dark .card .content a:hover,
+html.dark #post .content a:hover{
+  color: #fff3df;
+  border-bottom-color: rgba(235, 195, 115, 0.95);
+}
+
+
+/* DARK MODE COLORS */
+html.dark .category-title { color: #fff; }
+html.dark .category-title.life { background: #ff7f5055; }
+html.dark .category-title.recipe    { background: #1e90ff55; }
+html.dark .category-title.garden    { background: #28a74555; }
+
+html.dark .summary-note {
+  background: rgba(34, 34, 34, 0.72);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  color: rgba(255,255,255,0.86);
+}
+
+html.dark .summary-note-label {
+  filter: invert(1) brightness(1.15);
+}
+html.dark .summary-note::after {
+  filter: invert(2) brightness(1.5);
+}
+
+html.dark p.ingredient-section {
+  opacity: 1;
+  color: #fff;
+}
+
+html.dark .instructions li:not(.section-title)::before {
+  background: #333;
+  color: #fff;
+}
+
+html.dark .section-title {
+  opacity: 1;
+  color: #fff;
+}
+
+html.dark figcaption {
+  color: #ccc;
+  opacity: 0.8;
+}
+
+html.dark .small-post-image {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+
+.dark .qa-card {
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c,
+    #181818
+  );
+
+  border: 1.2px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 18px 16px 20px 17px;
+
+  box-shadow:
+    0.5px 0.5px 0 rgba(255,255,255,0.08),
+    0 8px 22px rgba(0,0,0,0.6);
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .qa-label {
+  background: #1c1c1c;
+
+  border: 1.2px solid rgba(255, 255, 255, 0.25);
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dark .answer {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* -----------------------------
+   DOG REVIEW - DARK MODE
+   ----------------------------- */
+.dark .dog-review {
+  background: #1a1a1a;
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
+.dark .dog-title {
+  background: #1a1a1a;
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+
+.dark .dog-good,
+.dark .dog-bad {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+html.dark .dog-columns li::before {
+  opacity: 0.95;
+}
+
+html.dark .photo-collage img {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+html.dark .book-card.is-echo .book-info h3 {
+  color: #f3d7a4;
+}
+
+
+/* footer */
+html.dark footer {
+  color: #aaa;
+}
+
+html.dark .paw-print {
+  filter: invert(1);
+}

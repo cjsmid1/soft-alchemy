@@ -1,0 +1,187 @@
+/* =============================
+   MEDIA
+   ============================= */
+   
+/* Navigation */
+@media (max-width: 600px) {
+  .nav {
+    top: env(safe-area-inset-top); /* 👈 iOS safe area */
+  }
+
+  .nav-box {
+    padding: 0 0.3rem; /* reduce side padding */
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 0.5rem; /* tighter spacing */
+  }
+
+  nav a, nav button {
+    padding: 0.3rem 0.5rem; /* smaller buttons */
+    font-size: 0.8rem;
+  }
+
+  /* Shrink the logo */
+  .nav-logo img {
+    height: 80px;
+  }
+
+}
+
+/* Filters */
+@media (max-width: 600px) {
+  .filters input {
+    flex: 0 1 200px; /* grow a bit, but capped */
+  }
+
+  .filters select {
+    flex: 0 1 150px;
+  }
+} 
+
+/* Multi Column Layout */
+@media (max-width: 700px) {
+  .two-column-layout,
+  .two-column-layout.left-wide,
+  .two-column-layout.right-wide,
+  .two-column-layout.equal {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bio Layout */
+@media (max-width: 600px) {
+  .bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* -----------------------------
+   DOG REVIEW – MOBILE LAYOUT
+   ----------------------------- */
+@media (max-width: 750px) {
+  .dog-review {
+    padding: 1rem 1rem 1rem 215px;
+    display: flex;
+    flex-direction: row;   /* 🔑 force horizontal layout */
+    flex-wrap: nowrap;     /* 🔑 prevent stacking */
+    gap: 0.8rem;
+    align-items: stretch;
+	background: transparent;
+    border: none;
+	overflow: visible;
+  }
+
+  .dog-image {
+    position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  }
+
+  .dog-image img {
+    max-width: 200px;
+	min-width: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .dog-columns {
+    flex: 1;
+    display: flex;              /* 🔑 ensure it behaves as flex */
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0;
+    min-width: 0;               /* 🔑 prevents weird overflow pushing */
+  }
+
+  .dog-good,
+  .dog-bad {
+    width: 100%;
+    flex: none;
+  }
+}
+
+/* Collage Layout */
+@media (max-width: 600px) {
+  .photo-collage {
+    column-count: 2;
+  }
+}
+
+/* Bookshelf Layout */
+@media (max-width: 600px) {
+  #post {
+    width: calc(100% - 0.7rem);
+    max-width: none;
+
+    margin-left: 0.35rem;
+    margin-right: 0.35rem;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #post .reading-shelf {
+    margin-left: 0.15rem;
+    margin-right: 0.15rem;
+  
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+  
+  #post .shelf {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .book-card {
+    flex-basis: 98px;
+    padding: 0.42rem;
+  }
+
+  .book-info h3 {
+    font-size: 0.82rem;
+  }
+
+  .book-author {
+    font-size: 0.72rem;
+  }
+
+  .book-status {
+    font-size: 0.52rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .book-genre-stamp {
+    width: 21px;
+    height: 21px;
+    font-size: 0.68rem;
+  }
+}
+
+
+
+@media (max-width: 750px) {
+  html.dark .dog-review {
+    background: transparent;
+    border: none;
+  }
+}

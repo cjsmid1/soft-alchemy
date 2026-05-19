@@ -165,6 +165,73 @@ const otherMedia = [
     url: "https://www.youtube.com/playlist?list=PLj4N-R1RQxAuAQ4qBpaUbGLb1ZWpWySAz"
   },
 ];
+const boardGames = [
+{
+    title: "Hero Realms",
+    author: "Deck Builder",
+	status: "2-4 players",
+    genre: "30m",
+    image: "images/boardGames/heroRealms.webp",
+    url: "https://boardgamegeek.com/boardgame/198994/hero-realms"
+  },
+  {
+    title: "Azul",
+    author: "Pretty Tiles",
+	status: "2-4 players",
+    genre: "45m",
+    image: "images/boardGames/azul.webp",
+    url: "https://boardgamegeek.com/boardgame/230802/azul"
+  },
+  {
+    title: "Catan",
+    author: "Resource Management",
+	status: "2-4 players",
+    genre: "1h",
+    image: "images/boardGames/catan.webp",
+    url: "https://boardgamegeek.com/boardgame/13/catan"
+  },
+  {
+    title: "Carcassonne",
+    author: "Expansion Overload",
+	status: "2-5 players",
+    genre: "45m",
+    image: "images/boardGames/carcassonne.webp",
+    url: "https://boardgamegeek.com/boardgame/822/carcassonne"
+  },
+  {
+    title: "Cheating Moth",
+    author: "Card Chaos!",
+	status: "3-5 players",
+    genre: "30m",
+    image: "images/boardGames/cheatingMoth.webp",
+    url: "https://boardgamegeek.com/boardgame/105593/cheating-moth"
+  },
+  {
+    title: "Game of Thrones",
+    author: "Risk on Crack",
+	status: "3-6 players",
+    genre: "4h",
+    image: "images/boardGames/gameOfThrones.webp",
+    url: "https://boardgamegeek.com/boardgame/103343/a-game-of-thrones-the-board-game-second-edition"
+  },
+  {
+    title: "Cash'n'Guns",
+    author: "Shoot Your Friends!",
+	status: "4-8 players",
+    genre: "45m",
+    image: "images/boardGames/cashNGuns.webp",
+    url: "https://boardgamegeek.com/boardgame/155362/ca-dollar-h-n-guns-second-edition"
+  },
+  {
+    title: "Blood on the Clocktower",
+    author: "Social Bluffing",
+	status: "6-21 players",
+    genre: "1h30",
+    image: "images/boardGames/bloodOnClocktower.webp",
+    url: "https://boardgamegeek.com/boardgame/240980/blood-on-the-clocktower"
+  },
+  
+];
 const currentBubbling = [
   {
     title: "Preserved Satsumas",
@@ -217,5 +284,123 @@ const bookshelfConfigs = [
   {
     id: "other-media-bookshelf",
     books: otherMedia
+  },
+  {
+    id: "board-game-bookshelf",
+    books: boardGames
+  }
+];
+
+const quotes = [
+  {
+    category: "Rules For Life",
+    preview: "Work hard, laugh",
+    text: "Work hard, laugh often and keep your word.",
+    author: "Michelle Obama"
+  },
+  {
+    category: "Rules For Life",
+    preview: "In life control",
+    text: "In life control what you can.",
+    author: "Michelle Obama"
+  },
+  {
+    category: "Charisma",
+    preview: "When they go low",
+    text: "When they go low, we go high.",
+    author: "Michelle Obama"
+  },
+  {
+    category: "Rules For Life",
+    preview: "You can do anything",
+    text: "You can do anything, but not everything.",
+    author: "David Allen"
+  },
+  {
+    category: "Charisma",
+    preview: "Charm is the ability",
+    text: "Charm is the ability to make someone else think that both of you are pretty wonderful.",
+    author: "Kathleen Winsor"
+  },
+  {
+    category: "Doing the Thing",
+    preview: "If you sit and plan",
+    text: "If you sit and plan, you get stuck in the planning, then you plan your life away.",
+    author: "Terry Pratchett",
+	commentary: "In short: Act first, plan second.<br>Though granted I rarely follow this advice!"
+  },
+  {
+    category: "Rules For Life",
+    preview: "A trap is only",
+    text: "A trap is only a trap if you don't know about it. If you know about it, it's a challenge.",
+    author: "King Rat, China Miéville"
+  },
+  {
+    category: "Charisma",
+    preview: "If you treat an individual",
+    text: "If you treat an individual as he is, he will remain how he is. But if you treat him as if he were what he ought to be and could be, he will become what he ought to be and could be.",
+    author: "Johann Wolfgang von Goethe",
+    commentary: "Argh, the temptation to change all the he/hims to at least they/thems, but for the sake of legitimacy I shall refrain!"
+  },
+  {
+    category: "Rules For Life",
+    preview: "The thing that makes",
+    text: "The thing that makes you exceptional, if you are at all, is inevitably that which must also make you lonely.",
+    author: "Lorraine Hansberry"
+  },
+  {
+    category: "Rules For Life",
+    preview: "Life is what you share",
+    text: "Life is what you share with others. Hoard it and you will die all the poorer for it.",
+    author: "Practical Guide to Evil, ErraticErrata"
+  },
+  {
+    category: "Rules For Life",
+    preview: "You can be someone who",
+    text: "You can be someone who makes things happen, or someone things happen to. Let’s find out which you are, shall we?",
+    author: "Practical Guide to Evil, ErraticErrata"
+  },
+  {
+    category: "Rules For Life",
+    preview: "They fight with their",
+    text: "They fight with their arms, Lady Squire, We fight with our minds. Clever beats strong every time.",
+    author: "Practical Guide to Evil, ErraticErrata"
+  },
+  {
+    category: "Doing the Thing",
+    preview: "What if I fall",
+    text: "What if I fall? Oh but my darling, what if you fly?",
+    author: "Erin Hanson"
+  },
+  {
+    category: "Doing the Thing",
+    preview: "Anything worth doing",
+    text: "Anything worth doing, is worth doing badly.",
+    author: "G.K. Chesterton",
+	commentary: "In short: half-arsed is better than nothing!"
+  },
+  {
+    category: "Doing the Thing",
+    preview: "Ambition without action",
+    text: "Ambition without action becomes anxiety.",
+    author: "The Internet"
+  },
+  {
+    category: "Whimsey",
+    preview: "It’s still magic",
+    text: "It’s still magic even if you know how it’s done.",
+    author: "A Hat Full of Sky, Terry Pratchett"
+  },
+  {
+    category: "Whimsey",
+    preview: "The cure for boredom",
+    text: "The cure for boredom is curiosity. There is no cure for curiosity.",
+    author: "Dorothy Parker"
+  },
+  {
+    category: "Charisma",
+    preview: "The single biggest problem",
+    text: "The single biggest problem in communication is the illusion that it has taken place.",
+    author: "George Bernard Shaw"
   }
 ];

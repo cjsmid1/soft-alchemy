@@ -1,0 +1,86 @@
+/* =============================
+   BASE LAYOUT
+   ============================= */
+html {
+  min-height: 100%;
+  background-color: #f8f7f4;
+
+  background:
+    linear-gradient(
+      rgba(250, 251, 252, 0.40),
+      rgba(244, 243, 240, 0.50)
+    ),
+    url("../images/watercolour-background.jpg");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: transparent;
+  color: #222;
+  min-height: 100%;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+
+/* -----------------------------
+   FILTERS & SEARCH
+   ----------------------------- */
+.filters {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters input,
+.filters select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 0;
+}
+
+.filters input {
+  flex: 2;
+  max-width: 300px;
+}
+
+.filters select {
+  flex: 1;
+  max-width: 150px;
+}
+
+
+/* -----------------------------
+   LINKS
+   ----------------------------- */
+a {
+  color: #6b5847;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: #6b5847;
+  border-bottom-color: rgba(235, 195, 115, 0.95);
+}
+
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}

@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
       document.documentElement.classList.add("dark");
     }
   </script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
 </head>
@@ -35,13 +34,15 @@
   
   <div class="two-column-layout right-wide">
     <section class="card quote-content">
-      <blockquote>
-        “It’s still magic even if you know how it’s done.”
-      </blockquote>
-    
-      <cite>
-        — Terry Pratchett
-      </cite>
+      <a href="post.html?id=quote-page" class="quote-card-link">
+        <blockquote>
+          “It’s still magic even if you know how it’s done.”
+        </blockquote>
+  
+        <cite>
+          — Terry Pratchett
+        </cite>
+      </a>
     </section>
     
     <section class="card">
@@ -59,6 +60,7 @@
       <li><button type="button" data-room="study">Outrageous Organisation</button></li>
       <li><button type="button" data-room="echo">There's a dog?</button></li>
       <li><button type="button" data-room="study">Systems & Self-Improvement</button></li>
+      <li><button type="button" data-room="library">Good Quotes</button></li>
       <li><button type="button" data-room="garden">Green Fingers</button></li>
       <li><button type="button" data-room="dungeon">Battling Monsters</button></li>
       <li><button type="button" data-room="kitchen">Fermentation Experiments</button></li>
@@ -111,6 +113,22 @@
         </p>
       </div>
     </div>
+	<div class="bio">
+      <img class="bio-image bio-image--right" src="images/james.jpg" alt="James">
+    
+      <div class="bio-text">
+        <h3 class="intro-heading">
+          Introducing 
+          <span class="handwriting">
+            <img src="images/text-james.png" alt="James">
+          </span>
+        </h3>
+        <p>
+          Chief cheerleader & accidental proof-reader. Main responsibilities include complaining he’s not in enough photos and causing Claire to stay up coding past 3am, usually following the words, “Oh! Wouldn’t it be cool if...”<br>
+          Best among his ideas so far are the self-writing logo, <a href="post.html?id=quote-page">the flying quotes</a>, and a certain fluffy trespasser hiding in <a href="post.html?id=the-library">the library</a>.
+        </p>
+      </div>
+    </div>
   </section>
   
   <div class="two-column-layout equal">
@@ -122,12 +140,14 @@
   </section>
 
   <section class="card quote-content">
-    <blockquote>
-      “The single biggest problem in communication is the illusion that it has taken place.”
-    </blockquote>
-    <cite>
-      — George Bernard Shaw
-    </cite>
+    <a href="post.html?id=quote-page" class="quote-card-link">
+      <blockquote>
+        “The single biggest problem in communication is the illusion that it has taken place.”
+      </blockquote>
+      <cite>
+        — George Bernard Shaw
+      </cite>
+	</a>
   </section>
 </div>
   

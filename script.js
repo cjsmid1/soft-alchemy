@@ -123,7 +123,7 @@ const roomData = {
   library: {
     title: "📚 The Library",
     url: "post.html?id=the-library",
-    description: "Story recommendations and other book related joy."
+    description: "Story recommendations, board games, and book related joy."
   },
   archive: {
     title: "📜 The Archive",
@@ -334,19 +334,19 @@ if (postContainer) {
   const post = posts.find(p => p.id === id);
 
   if (post) {
-    // Inject HTML
-    postContainer.innerHTML = `
-  <div class="title-row">
-    <h1>${post.title}</h1>
-    <div class="category-title ${post.category.toLowerCase()}">${post.category}</div>
-  </div>
-  <div class="tag-list">
-    ${post.tags.map(tag => `
-      <span class="tag" data-tag="${tag}">${formatTag(tag)}</span>
-    `).join("")}
-  </div>
-  <div class="content">${post.content}</div>
-`;
+      // Inject HTML
+      postContainer.innerHTML = `
+    <div class="title-row">
+      <h1>${post.title}</h1>
+      <div class="category-title ${post.category.toLowerCase()}">${post.category}</div>
+    </div>
+    <div class="tag-list">
+      ${post.tags.map(tag => `
+        <span class="tag" data-tag="${tag}">${formatTag(tag)}</span>
+      `).join("")}
+    </div>
+    <div class="content">${post.content}</div>
+    `;
 
     // Force reflow + fade-in animation
     requestAnimationFrame(() => {
@@ -363,6 +363,7 @@ if (postContainer) {
     });
 	
 	renderBookshelvesForPage(bookshelfConfigs);
+	if (id === "quote-page") {initFlyingQuotes();}
   }
 }
 
@@ -506,6 +507,153 @@ function addEchoInterruption(shelf) {
   });
 }
 
+
+// -----------------------------
+// FLYING QUOTES
+// -----------------------------
+function initFlyingQuotes() {
+  const flyingQuotes = document.getElementById("flyingQuotes");
+  const quoteReveal = document.getElementById("quoteReveal");
+  const quoteCategoryFilter = document.getElementById("quoteCategoryFilter");
+
+  if (!flyingQuotes || !quoteReveal || !quoteCategoryFilter || typeof quotes === "undefined") {
+    return;
+  }
+
+  
+  const revealText = document.getElementById("revealText");
+  const revealAuthor = document.getElementById("revealAuthor");
+  const revealCommentary = document.getElementById("revealCommentary");
+  const closeQuote = document.querySelector(".close-quote");
+
+  let activeCategory = "All";
+  let animationStarted = false;
+  const floatingObjects = [];
+
+  function createFlyingQuotes() {
+    flyingQuotes.innerHTML = "";
+    floatingObjects.length = 0;
+
+    const filteredQuotes = activeCategory === "All"
+      ? quotes
+      : quotes.filter(quote => quote.category === activeCategory);
+
+    filteredQuotes.forEach((quote) => {
+      const el = document.createElement("button");
+
+      el.className = "flying-quote";
+      el.type = "button";
+      el.textContent = `“${quote.preview}...”`;
+
+      const speed = 0.25 + Math.random() * 0.85;
+
+      const obj = {
+        el,
+        quote,
+        x: Math.random() * Math.max(1, flyingQuotes.clientWidth - 180),
+        y: Math.random() * Math.max(1, flyingQuotes.clientHeight - 80),
+        vx: (Math.random() - 0.5) * speed,
+        vy: (Math.random() - 0.5) * speed,
+        rotation: Math.random() * 20 - 10,
+        rotationSpeed: (Math.random() - 0.5) * 0.08,
+        paused: false
+      };
+
+      el.addEventListener("mouseenter", () => obj.paused = true);
+      el.addEventListener("mouseleave", () => obj.paused = false);
+      el.addEventListener("focus", () => obj.paused = true);
+      el.addEventListener("blur", () => obj.paused = false);
+      el.addEventListener("click", () => showQuoteByObject(quote));
+
+      flyingQuotes.appendChild(el);
+      floatingObjects.push(obj);
+    });
+
+    if (!animationStarted) {
+      animationStarted = true;
+      animateQuotes();
+    }
+  }
+
+  function showQuoteByObject(quote) {
+    revealText.textContent = `“${quote.text}”`;
+    revealAuthor.textContent = `— ${quote.author}`;
+  
+    if (quote.commentary) {
+      revealCommentary.innerHTML = quote.commentary;
+      revealCommentary.style.display = "block";
+    } else {
+      revealCommentary.innerHTML = "";
+      revealCommentary.style.display = "none";
+    }
+  
+    quoteReveal.classList.add("is-visible");
+  }
+
+  function animateQuotes() {
+    const containerWidth = flyingQuotes.clientWidth;
+    const containerHeight = flyingQuotes.clientHeight;
+
+    floatingObjects.forEach(obj => {
+      if (!obj.paused) {
+        obj.x += obj.vx;
+        obj.y += obj.vy;
+        obj.rotation += obj.rotationSpeed;
+
+        if (obj.rotation > 30 || obj.rotation < -30) {
+          obj.rotationSpeed *= -1;
+        }
+      }
+
+      const width = obj.el.offsetWidth;
+      const height = obj.el.offsetHeight;
+
+      if (obj.x <= 0 || obj.x + width >= containerWidth) obj.vx *= -1;
+      if (obj.y <= 0 || obj.y + height >= containerHeight) obj.vy *= -1;
+
+      obj.x = Math.max(0, Math.min(obj.x, containerWidth - width));
+      obj.y = Math.max(0, Math.min(obj.y, containerHeight - height));
+
+      obj.el.style.left = `${obj.x}px`;
+      obj.el.style.top = `${obj.y}px`;
+      obj.el.style.transform = `rotate(${obj.rotation}deg)`;
+    });
+
+    requestAnimationFrame(animateQuotes);
+  }
+
+  function createCategoryFilters() {
+    const categories = [
+      "All",
+      ...new Set(quotes.map(quote => quote.category))
+    ];
+
+    quoteCategoryFilter.innerHTML = "";
+
+    categories.forEach(category => {
+      const option = document.createElement("option");
+      option.value = category;
+      option.textContent = category === "All" ? "All Categories" : category;
+      quoteCategoryFilter.appendChild(option);
+    });
+
+    quoteCategoryFilter.value = activeCategory;
+  }
+
+  closeQuote?.addEventListener("click", () => {
+    quoteReveal.classList.remove("is-visible");
+  });
+
+  quoteCategoryFilter.addEventListener("change", () => {
+    activeCategory = quoteCategoryFilter.value;
+    quoteReveal.classList.remove("is-visible");
+    createFlyingQuotes();
+  });
+
+  createCategoryFilters();
+  createFlyingQuotes();
+}
+
 // -----------------------------
 // FOOTER
 // -----------------------------
@@ -563,4 +711,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
   loadFooter();
   applyTheme();
+  initFlyingQuotes();
 });

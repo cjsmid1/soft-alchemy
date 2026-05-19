@@ -1,5 +1,29 @@
 const posts = [
 {
+    id: "quote-page",
+    title: "💎 Verbal Treasures",
+    category: "Life",
+    tags: ["books"],
+    excerpt: "The time other people said it better...",
+    content: `
+	    <section class="summary-note">
+	      <div class="summary-note-label"></div>
+	 	  <p>I have a habit of hoarding good quotations whenever I come across them.<br> These have escaped! Catch one to reveal the full quote below.</p>
+        </section>
+	  
+	    <div class="quote-filter">
+          <select id="quoteCategoryFilter"></select>
+        </div>
+        <div class="flying-quotes" id="flyingQuotes"></div>
+      
+        <article class="quote-reveal" id="quoteReveal">
+          <button class="close-quote" type="button">×</button>
+          <p id="revealText" class="quote-text"></p>
+          <p id="revealAuthor" class="quote-author"></p>
+          <p id="revealCommentary" class="quote-commentary handwritten"></p>
+        </article>
+    `},
+{
     id: "bingo-life",
     title: "🔢 A Bingo Life",
     category: "Life",
@@ -62,32 +86,56 @@ const posts = [
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	`
   },
-  {
+{
     id: "the-library",
     title: "📚 The Library",
     category: "Life",
-    tags: ["recommendation"],
+    tags: ["books", "recommendation"],
     excerpt: "The time I tried to read in peace and was immediately supervised...",
     content: `
+	<ul class="chaos-list">
+      <li><a href="post.html?id=the-library#fantasy">Fantasy</a></li>
+      <li><a href="post.html?id=the-library#nonfic">Non-Fiction</a></li>
+      <li><a href="post.html?id=the-library#child">Young Adult</a></li>
+      <li><a href="post.html?id=the-library#games">Board Games</a></li>
+      <li><a href="post.html?id=quote-page">Quotes</a></li>
+      <li><a href="post.html?id=the-library#media">Youtube</a></li>
+	</ul>  
 	<section class="card reading-shelf">
       <h3>⏳ Current Bookshelf</h3>
       <div id="current-bookshelf" class="shelf"></div>
     </section>
-	<section class="card reading-shelf">
-	  <h3>✨ Fantasy Favourites </h3>
+	<section id="fantasy" class="card reading-shelf">
+	  <h3>✨ Fantasy Favourites</h3>
       <div id="fantasy-bookshelf" class="shelf"></div>
     </section> 
-	<section class="card reading-shelf">
+	<section id="nonfic" class="card reading-shelf">
 	  <h3>🔍 Non-Fiction to Understand the World</h3>
       <div id="nonfiction-bookshelf" class="shelf"></div>
     </section>
-	<section class="card reading-shelf">
+	<section id="child" class="card reading-shelf">
 	  <h3>💖 Charm your Inner Child</h3>
       <div id="nostalgia-bookshelf" class="shelf"></div>
     </section>
-	<section class="card reading-shelf">
+	<section id="media" class="card reading-shelf">
 	  <h3>🎥 Alternative Media Appreciation</h3>
       <div id="other-media-bookshelf" class="shelf"></div>
+    </section>
+	<section id="games" class="card reading-shelf">
+	  <h3>🎲 Bring On the Board Games!</h3>
+      <div id="board-game-bookshelf" class="shelf"></div>
+    </section>
+	
+	<section class="card quote-content">
+	  <a href="post.html?id=quote-page">
+	    <blockquote>
+          “You want weapons? We're in a library. Books are the best weapon in the world. This room's the greatest arsenal we could have. Arm yourself!”
+        </blockquote>
+        
+        <cite>
+          — Doctor Who, Russell T. Davies
+        </cite>
+	  </a>
     </section>
 	`
   },
@@ -548,7 +596,7 @@ const posts = [
     id: "sabbatical-plans",
     title: "🌿 Sabbatical Plans",
     category: "Life",
-    tags: ["reflection", "goals"],
+    tags: ["goals", "reflection"],
     excerpt: "What I want to explore during my time off...",
     content: `<p>The plan is a lie, as is this post.
 	<br>
