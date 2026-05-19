@@ -53,7 +53,7 @@ function loadNavigation() {
     <nav class="nav">
       <div class="nav-box">
         <div class="nav-left">
-          <a href="/about.html">About</a>
+          <a href="/about/index.html">About</a>
 		  <div class="nav-dropdown">
             <button class="nav-dropdown-toggle" type="button">
               Explore
@@ -74,7 +74,7 @@ function loadNavigation() {
 
         <div class="nav-right">
           <a href="/blog.html">Archive</a>
-          <a href="/about.html#contact">Contact</a>
+          <a href="/about/index.html#contact">Contact</a>
         </div>
       </div>
     </nav>
@@ -102,37 +102,37 @@ document.addEventListener("click", (e) => {
 const roomData = {
   garden: {
     title: "🌿 The Garden",
-    url: "garden/index.html",
+    url: "/garden/index.html",
     description: "Container gardening, hopeful seedlings, and occasional slug negotiations."
   },
   kitchen: {
     title: "🍯 The Kitchen",
-    url: "kitchen/index.html",
+    url: "/kitchen/index.html",
     description: "Ferments bubbling, cozy recipes, and experiments that may or may not be edible."
   },
   study: {
     title: "📝 The Study",
-    url: "study/index.html",
+    url: "/study/index.html",
     description: "Journal reflections, organisational systems, and attempts to turn chaos into something useful."
   },
   echo: {
     title: "🐾 Echo's Corner",
-    url: "blog.html?tag=dog-approved",
+    url: "/blog.html?tag=dog-approved",
     description: "Dog-approved adventures, fluffy interruptions, and important announcements about birds outside."
   },
   library: {
     title: "📚 The Library",
-    url: "post.html?id=the-library",
+    url: "/post.html?id=the-library",
     description: "Story recommendations, board games, and book related joy."
   },
   archive: {
     title: "📜 The Archive",
-    url: "blog.html",
+    url: "/blog.html",
     description: "The unfiltered list of everything."
   },
   dungeon: {
     title: "⚔️ The Dungeon",
-    url: "post.html?id=dnd",
+    url: "/post.html?id=dnd",
     description: "Here be dragons: deep dive into D&D --- Coming Soon!"
   }
 };
@@ -453,7 +453,7 @@ function goToRandomPost() {
   const randomIndex = Math.floor(Math.random() * posts.length);
   const randomPost = posts[randomIndex];
 
-  window.location.href = `post.html?id=${randomPost.id}`;
+  window.location.href = `/post.html?id=${randomPost.id}`;
 }
 
 document.addEventListener("click", (e) => {

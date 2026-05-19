@@ -106,12 +106,12 @@ const posts = [
     excerpt: "The time I tried to read in peace and was immediately supervised...",
     content: `
 	<ul class="chaos-list">
-      <li><a href="post.html?id=the-library#fantasy">Fantasy</a></li>
-      <li><a href="post.html?id=the-library#nonfic">Non-Fiction</a></li>
-      <li><a href="post.html?id=the-library#child">Young Adult</a></li>
-      <li><a href="post.html?id=the-library#games">Board Games</a></li>
-      <li><a href="post.html?id=quote-page">Quotes</a></li>
-      <li><a href="post.html?id=the-library#media">Youtube</a></li>
+      <li><a href="/post.html?id=the-library#fantasy">Fantasy</a></li>
+      <li><a href="/post.html?id=the-library#nonfic">Non-Fiction</a></li>
+      <li><a href="/post.html?id=the-library#child">Young Adult</a></li>
+      <li><a href="/post.html?id=the-library#games">Board Games</a></li>
+      <li><a href="/post.html?id=quote-page">Quotes</a></li>
+      <li><a href="/post.html?id=the-library#media">Youtube</a></li>
 	</ul>  
 	<section class="card reading-shelf">
       <h3>⏳ Current Bookshelf</h3>
@@ -139,7 +139,7 @@ const posts = [
     </section>
 	
 	<section class="card quote-content">
-	  <a href="post.html?id=quote-page">
+	  <a href="/post.html?id=quote-page">
 	    <blockquote>
           “You want weapons? We're in a library. Books are the best weapon in the world. This room's the greatest arsenal we could have. Arm yourself!”
         </blockquote>
