@@ -219,7 +219,7 @@ p, ul {
   width: 170px;
   height: 46px;
 
-  background: url("../images/summary-note.png") left center / contain no-repeat;
+  background: url("../images/handwriting/summary-note.png") left center / contain no-repeat;
 
   transform: rotate(-3deg);
   z-index: 2;

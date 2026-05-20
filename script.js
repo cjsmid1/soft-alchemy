@@ -69,7 +69,7 @@ function loadNavigation() {
         </div>
 
         <a class="nav-logo" href="/index.html">
-          <img id="alchemyLogo" src="/images/writing-soft-alchemy.gif" alt="Soft Alchemy">
+          <img id="alchemyLogo" src="/images/handwriting/writing-soft-alchemy.gif" alt="Soft Alchemy">
         </a>
 
         <div class="nav-right">
@@ -759,7 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.getElementById("alchemyLogo");
   if (logo) {
     setTimeout(() => {
-      logo.src = `/images/soft_alchemy_final_frame.png`;
+      logo.src = `/images/handwriting/soft-alchemy-handwritten.png`;
     }, 5500);
   }
   

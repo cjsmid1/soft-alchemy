@@ -7,10 +7,11 @@ html {
 
   background:
     linear-gradient(
-      rgba(250, 251, 252, 0.40),
-      rgba(244, 243, 240, 0.50)
+      rgba(250, 251, 252, 0.62),
+      rgba(244, 243, 240, 0.68)
     ),
     url("../images/watercolour-background.jpg");
+
 
   background-size: cover;
   background-position: center top;

@@ -50,6 +50,14 @@
   }
 }
 
+/* Paw Print Path Location */
+@media (max-width: 600px) {
+  .start-paw-trail {
+    right: 1rem;
+  }
+}
+
+
 /* Bio Layout */
 @media (max-width: 600px) {
   .bio {

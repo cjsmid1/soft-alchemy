@@ -105,14 +105,50 @@ const posts = [
     tags: ["books", "recommendation"],
     excerpt: "The time I tried to read in peace and was immediately supervised...",
     content: `
-	<ul class="chaos-list">
-      <li><a href="/post.html?id=the-library#fantasy">Fantasy</a></li>
-      <li><a href="/post.html?id=the-library#nonfic">Non-Fiction</a></li>
-      <li><a href="/post.html?id=the-library#child">Young Adult</a></li>
-      <li><a href="/post.html?id=the-library#games">Board Games</a></li>
-      <li><a href="/post.html?id=quote-page">Quotes</a></li>
-      <li><a href="/post.html?id=the-library#media">Youtube</a></li>
-	</ul>  
+	<div class="two-column-layout left-wide">
+
+      <section class="card start-here-card">
+    
+        <div class="start-here-content">
+          <h3 class="start-here-title">
+            Follow the Paw Prints
+          </h3>
+    
+          <p>
+            Wander through the shelves...
+          </p>
+	  	<ul class="chaos-list">
+          <li><a href="/post.html?id=the-library#fantasy">Fantasy</a></li>
+          <li><a href="/post.html?id=the-library#nonfic">Non-Fiction</a></li>
+          <li><a href="/post.html?id=the-library#child">Young Adult</a></li>
+          <li><a href="/post.html?id=the-library#games">Board Games</a></li>
+          <li><a href="/post.html?id=quote-page">Quotes</a></li>
+          <li><a href="/post.html?id=the-library#media">Youtube</a></li>
+	    </ul> 
+        
+        </div>
+        <div class="start-paw-trail">
+          <img class="paw-print" style="--i:1" src="/images/paw-print.png" alt="">
+          <img class="paw-print" style="--i:2" src="/images/paw-print.png" alt="">
+          <img class="paw-print" style="--i:3" src="/images/paw-print.png" alt="">
+          <img class="paw-print" style="--i:4" src="/images/paw-print.png" alt="">
+          <img class="paw-print" style="--i:5" src="/images/paw-print.png" alt="">
+        </div>
+      </section>
+  
+    <section class="card quote-content">
+	  <a href="/post.html?id=quote-page" class="quote-card-link">
+        <blockquote>
+          “Books are a uniquely portable magic.”
+        </blockquote>
+        <cite>
+          — On Writing, Stephen King
+        </cite>
+	  </a>
+    </section>
+  </div>
+
+	 
 	<section class="card reading-shelf">
       <h3>⏳ Current Bookshelf</h3>
       <div id="current-bookshelf" class="shelf"></div>

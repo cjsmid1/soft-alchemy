@@ -106,7 +106,7 @@
 
 /* second card bigger */
 .two-column-layout.right-wide {
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.25fr;
 }
 
 /* equal cards */
@@ -203,6 +203,100 @@
 }
 
 
+/* -----------------------------
+   START HERE CARD
+   ----------------------------- */
+.start-here-card {
+  position: relative;
+  overflow: visible;
+}
+.start-here-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -6px;
+
+  background-image: url("/images/handwriting/textbox-thin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 97% 97%;
+  opacity: 0.8;
+  transform: translateX(-3px) translateY(-3px) rotate(1deg);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.start-here-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.start-here-content p {
+  line-height: 1.45;
+  padding: 0.5rem 2rem 0 0;
+}
+
+.start-paw-trail {
+  position: absolute;
+
+  top: 2.5rem;
+  right: 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  pointer-events: none;
+}
+
+.start-paw-trail .paw-print {
+  width: 20px !important;
+  height: 20px !important;
+
+  animation: startPawAppear 1.5s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.45s);
+}
+
+.start-paw-trail .paw-print:nth-child(odd) {
+  margin-top: -4px;
+  margin-left: 10px;
+  --rot: 170deg;
+}
+
+.start-paw-trail .paw-print:nth-child(even) {
+  margin-left: -6px;
+  --rot: 190deg;
+}
+
+@keyframes startPawAppear {
+  0% {
+    transform: rotate(var(--rot)) scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(var(--rot)) scale(1);
+    opacity: 0.65;
+  }
+}
+
+.start-here-card--reverse::before {
+  transform: scaleX(-1);
+}
+
+.start-here-card--reverse .start-paw-trail {
+  left: 1.5rem;
+  right: auto;
+}
+
+.start-here-card--reverse .start-here-content p {
+  padding: 0.5rem 1rem 0 4rem;
+}
+
 
 /* -----------------------------
    ABOUT PAGE STYLE
@@ -270,6 +364,7 @@
 
   text-align: center;
   cursor: pointer;
+  transform: rotate(0.15deg);
 }
 
 .quote-content blockquote {
