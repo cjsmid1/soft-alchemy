@@ -393,10 +393,10 @@ html.dark #post .content a:hover{
 
 
 /* DARK MODE COLORS */
-html.dark .category-title { color: #fff; }
-html.dark .category-title.life { background: #ff7f5055; }
-html.dark .category-title.recipe    { background: #1e90ff55; }
-html.dark .category-title.garden    { background: #28a74555; }
+html.dark .category-title.life {background: #6f352855; color: #f6d8cf;}
+html.dark .category-title.recipe {background: #7a571b55; color: #f4dfad;}
+html.dark .category-title.garden {background: #315f3555; color: #d8edcf;}
+html.dark .category-title.study {background: #2c394855; color: #d7e3f0;}
 
 html.dark .summary-note {
   background: rgba(34, 34, 34, 0.72);

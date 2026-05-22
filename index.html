@@ -8,7 +8,7 @@
 
   <meta 
     name="description" 
-    content="Soft Alchemy is a cosy personal blog about gentle productivity, books, gardening, recipes, dog-approved chaos, and small experiments in everyday life."
+    content="Soft Alchemy is a cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
   >
 
   <link rel="canonical" href="https://softalchemy.uk/">
@@ -17,7 +17,7 @@
   <meta property="og:title" content="Soft Alchemy | Gentle experiments in everyday life">
   <meta 
     property="og:description" 
-    content="A cosy personal blog about gentle productivity, books, gardening, recipes, dog-approved chaos, and small experiments in everyday life."
+    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://softalchemy.uk/">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Soft Alchemy | Gentle experiments in everyday life">
   <meta 
     name="twitter:description" 
-    content="A cosy personal blog about gentle productivity, books, gardening, recipes, dog-approved chaos, and small experiments in everyday life."
+    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
   >
   <meta name="twitter:image" content="https://softalchemy.uk/images/vietnam-sunset.jpg">
   <meta name="twitter:image:alt" content="A warm sunset scene representing Soft Alchemy">
@@ -59,11 +59,22 @@
     <h1>Soft Alchemy</h1>
     <h3>by Claire</h3>
 	<br>
-    <p>Transforming domestic life with gentle productivity, small experiments, and organised chaos.</p>
+    <p>Transforming domestic life with gentle productivity, small experiments and organised chaos.</p>
   </header>
   <div class="two-column-layout equal">
 
-    <section class="card start-here-card">
+    <section class="card quote-content">
+	  <a href="/post.html?id=quote-page" class="quote-card-link">
+        <blockquote>
+          “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
+        </blockquote>
+        <cite>
+          — Dorothy Parker
+        </cite>
+	  </a>
+    </section>
+
+    <section class="card start-here-card start-here-card--reverse">
   
       <div class="start-here-content">
         <h3 class="start-here-title">
@@ -71,10 +82,9 @@
         </h3>
   
         <p>
-          Not sure where to start? I recommend 
-          <a href="/about/index.html">discovering what Soft Alchemy is all about</a>...
-          <br>
-          Or let Echo 
+          Not sure where to start?<br>
+          Try the  
+          <a href="/about/index.html">About</a> page or let Echo 
           <a href="#" id="randomPostBtn">fetch something from the archive</a>
           <img 
             class="paw-button"
@@ -93,25 +103,15 @@
       </div>
     </section>
   
-    <section class="card quote-content">
-	  <a href="/post.html?id=quote-page" class="quote-card-link">
-        <blockquote>
-          “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
-        </blockquote>
-        <cite>
-          — Dorothy Parker
-        </cite>
-	  </a>
-    </section>
   </div>
   
   <section class="card">
-    <h2>Open a door</h2>
+    <h2>Choose a Room</h2>
     <ul class="picture-list picture-rectangle">
-      <li><a href="/post.html?id=the-library"><img src="/images/echo-book-pretty.jpg">The Library</a></li>
-      <li><a href="/kitchen/index.html"><img src="/images/james-kitchen.jpg">The Kitchen</a></li>
-      <li><a href="/study/index.html"><img src="/images/echo-destruction.jpg">The Study</a></li>
-      <li><a href="/garden/index.html"><img src="/images/echo-snow-garden.jpg">The Garden</a></li>
+      <li><a href="/post.html?id=the-library"><img src="/images/echo-book-pretty.jpg" alt="Echo beside book">The Library</a></li>
+      <li><a href="/kitchen/index.html"><img src="/images/james-kitchen.jpg" alt="James in kitchen">The Kitchen</a></li>
+      <li><a href="/study/index.html"><img src="/images/echo-destruction.jpg" alt="Echo paper destruction next to desk">The Study</a></li>
+      <li><a href="/garden/index.html"><img src="/images/echo-snow-garden.jpg" alt="Echo in snow in garden">The Garden</a></li>
     </ul>
   </section>
   
@@ -127,33 +127,13 @@
     </section>
   </div>
   
-  <section class="card">
-    <h2><img class="emoji" src="images/paw-print.png">Echo Interuption!</h2> 
-	<p>In case you need a little extra positivity today</p>
-    <figure class="card-figure">
-      <div class="card-image">
-        <img src="images/echo-cute.jpg" alt="Echo looking cute">
-    
-        <div class="image-text">
-          <img 
-            class="overlay-note overlay-note--top-right" 
-            src="images/handwriting/I-think-youre-awesome.png"
-          >
-        </div>
-      </div>
-      <figcaption>
-        I refuse to use the paw pun - you can't make me!
-      </figcaption>
-    </figure>
-  </section>
-  
   <script src="/posts.js" defer></script>
   <script src="/script.js" defer></script>
   
   <script>
   window.addEventListener("DOMContentLoaded", () => {
     renderLatestPost("latest-post");
-    renderFeaturedPost("75-soft-plan", "favourite-post");
+    renderFeaturedPost("growth-areas", "favourite-post");
   });
   </script>
 </body>

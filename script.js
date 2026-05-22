@@ -118,7 +118,7 @@ const roomData = {
   echo: {
     title: "🐾 Echo's Corner",
     url: "/blog.html?tag=dog-approved",
-    description: "Dog-approved adventures, fluffy interruptions, and important announcements about birds outside."
+    description: "Dog-approved adventures, a very strange birthday cake, and important announcements about birds outside."
   },
   library: {
     title: "📚 The Library",
@@ -144,6 +144,39 @@ document.addEventListener("click", (e) => {
   const result = document.getElementById("interestResult");
   if (!result) return;
 
+  // Special Echo interruption first
+  if (button.dataset.room === "interruption") {
+    result.innerHTML = `
+      <a class="interest-result echo-interruption" href="/blog.html?tag=dog-approved">
+        <h2>
+          <img class="emoji" src="/images/paw-print.png" alt="">
+          Echo Interruption!
+        </h2>
+        <p>He insisted this was important.</p>
+
+        <figure class="card-figure">
+          <div class="card-image">
+            <img src="/images/echo-cute.jpg" alt="Echo looking cute">
+
+            <div class="image-text">
+              <img 
+                class="overlay-note overlay-note--top-right" 
+                src="/images/handwriting/I-think-youre-awesome.png"
+                alt=""
+              >
+            </div>
+          </div>
+
+          <figcaption>
+            I refuse to use the paw pun - you can't make me!
+          </figcaption>
+        </figure>
+      </a>
+    `;
+    return;
+  }
+
+  // Normal room cards
   const room = roomData[button.dataset.room];
   if (!room) return;
 

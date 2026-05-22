@@ -85,14 +85,19 @@
     </section>
   
     <section class="card">
-      <h2>Open the journal...</h2>
+      <h3>Currently testing...</h3>
+      <div id="latest-journal-post"></div>
+    </section>
+  </div>
+
+  <section class="card">
+      <h2>Experiments in Being Slightly Better</h2>
 	    <ul class="chaos-list">
         <li><a href="/post.html?id=75-soft-plan">75 Soft Challenge</a></li>
         <li><a href="/post.html?id=growth-areas">Growth Areas</a></li>
         <li><a href="/post.html?id=bingo-life">A Bingo Life</a></li>
       </ul>
     </section>
-  </div>
 
   
   <section class="card">
@@ -122,18 +127,24 @@
   <section class="card">
     <h2>Goal Overview</h2>
 	<div id="visionBoard"class="card-image">
-      <img src="/images/vision-board.png">
+      <img src="/images/vision-board.png" alt="Vision Board">
       <div class="image-text">
         <h2>2026 Vision</h2>
       </div>
     </div>
 	<br>
 	<div class="card-image">
-	  <a href="/post.html?id=bingo-life"><img src="/images/bingo-year.jpg"></a>
+	  <a href="/post.html?id=bingo-life"><img src="/images/bingo-year.jpg" alt="Bingo Year"></a>
     </div>
   </section>
   
   <script src="/posts.js" defer></script>
   <script src="/script.js" defer></script>
+
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+      renderLatestPost("latest-journal-post", "Study");
+    });
+  </script>
 </body>
 </html>

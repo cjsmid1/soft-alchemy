@@ -184,8 +184,9 @@
 }
 
 .overlay-note--top-right {
-  top: 1.5rem;
+  top: 2rem;
   right: 1.5rem;
+  max-width: clamp(150px, 35%, 460px);
 }
 
 .handwriting img {
@@ -407,10 +408,15 @@
 #posts .card.fade-in {
   opacity: 0;
   transform: translateY(10px);
-  animation: fadeInUp 0.3s forwards;
+  animation: fadeUp 0.3s forwards;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
   to {
     opacity: 1;
     transform: translateY(0);

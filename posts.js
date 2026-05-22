@@ -1,5 +1,75 @@
 const posts = [
 	{
+		id: "affirmations",
+		title: "💭 Tiny Stories We Tell Ourselves",
+		metaTitle: "Tiny Stories We Tell Ourselves | Soft Alchemy",
+		metaDescription: "A reflective exploration of affirmations, attention, identity and the quiet ways repeated words may shape the person we become.",
+		category: "Life",
+		tags: ["self-improvement", "reflection"],
+		excerpt: "The time I investigated the value of affirmations...",
+		content: `
+		<p>
+		I must admit that the quote "if you open your mind too much, your brain will fall out" never fails to make me chuckle. Having said that, I prefer to lead with empathetic curiosity and so when I encountered the world of affirmations, especially given the cynicism it brings out in many, further exploration was required.
+		</p>
+		<p>
+		Anyone who has ever wanted a specific dog breed and suddenly started seeing them everywhere already knows this feeling. The same thing happens with cars, hobbies, and (apparently) even baby names. What we objectively see with our eyes and what our brain chooses to pay attention to are very different things.<br>
+		Filtering information is simply more efficient than trying to process everything at once. Otherwise we'd all end up admiring soap bubbles while the saucepan boils over. Where things become especially interesting is whether we can change what our brain views as important & therefore worthy of your attention. 
+		</p>
+		<br>
+		<h3>Priming the brain</h3>
+		<p>
+		My philosopher friend may find a way to disagree, but I'm going to start with the assumption that our world view influences what we think, say & do. I would also argue that what we think, say & do, influence our world view (especially when it has immediate physical or social feedback!).
+		</p>
+		<p>
+		Note from a half forgotten statistics lesson: you can think of your current world view as your brain's null hypothesis, and it's running constant tests to check if it needs adjusting. This means, you need some statistically significant evidence to make it reject that current world view otherwise it will continue to default to that null hypothesis (i.e. your current world view) rather than the new alternative.<br>
+		Whether or not repeating affirmations or mantras to yourself daily is statistically significant enough, is for you to decide.
+		</p>
+		<p>
+		The old adage "sticks and stones may break my bones, but words will never hurt me" makes sense up until the point you remember we're fundamentally social creatures, or until someone says "It's probably better if I do it myself".<br>
+		In short, words have Power. This begs the question: would a phrase I repeat daily have power and, more specifically, would it have enough power to change my world view & hence, my future thoughts, words & actions?
+		</p>
+		<p>
+		Personally my curiosity is piqued enough to warrant experimentation...
+		</p>
+		<br>
+		<h3>Using affirmations</h3>
+		<p>A reminder at this point: I am absolutely not an expert, but the following makes sense to me. Even if you come up with the world's best affirmation, it's going to be more effective if you think about or say it regularly rather than once. Think of it like teaching your brain something new (note to self: would spaced repetition work on affirmations?). This regular mental prompting can include:</p>
+		<ul>
+		<li>Visual prompting: leaving sticky notes around where you see them daily like the bathroom mirror or your phone background (just remember it'll lose novelty over time so changing up the location can help here).<br>
+		I just realised my vision board as my laptop background could actually be considered a kind of "visual affirmation"!</li>
+		<li>Meditative prompting: if you already have a meditition habit you can use your affirmation as an anchor in the same way you would your breath or sound.</li>
+		<li>Written prompting: start each journal/diary entry with your affirmation (this worked especially well for me as it would then naturally encourage me to reflect on said affirmation).</li>
+		<li>Verbal prompting: yes this is the traditional speaking to yourself in the mirror idea, and yes it makes me feel very silly so I'll stick to the other options!</li>
+		</ul>
+		<p>There are two types of thinking: active and passive. Active thinking is what you're doing when you're journaling, solving a math problem without a calculator, or desperately trying to come up with a compliment on a first date (basically your conscious brain). Passive thinking is what happens when your brain wanders/daydreams (you can liken it to slow cooker mode), for example it's the source of that eureka moment in the shower, mid dog walk or while doing the dishes (basically your subconscious brain).
+		</p>
+		<p>
+		Why this is relevant is that affirmations tap into both ways of thinking, by actively thinking about the affirmation during the regular prompting, you then encourage the brain to also think about it passively. This helps you come up with new ways to follow through on the affirmation, and new ways to interpret the world according to the affirmation - or at least that's my theory.</p>
+		<br>
+		<h3>Creating Affirmations</h3>
+		<p>While I lived in London, I attended monthly GPS sessions hosted by Ingeniusly. These sessions were essentially group coaching to help create personal compass direction for the upcoming month. In hindsight, I've realised they were a form of monthly affirmation, and so I suddenly feel slightly more justified in giving the following guidance!</p>
+		<ul>
+		<li>Positive: focus on what you want to be true, not what you want to eliminate (after all if I tell you to not think about a purple elephant, what did you just think about?)</li>
+		<li>Personal: starting with "I ..." is a safe bet, it keeps it relevant to you and your identity.</li>
+		<li>Present: use the present tense! The future leaves far too much wiggle room.</li>
+		<li>Concise: the simpler it is, the easier to remember (and yes I ran out of P words)</li>
+		</ul>
+		<p>You're looking for that gut response of "yes that's the one", and honestly crafting your own affirmation is a useful reflection exercise in itself. I'll give you some personal examples to get you started, but the real value comes from crafting one that genuinely resonates with you.<br>
+		The promised examples:</p>
+		<ul>
+		<li>I give and receive kindness</li>
+		<li>I build up from my foundations</li>
+		<li>I'm excited to wait</li>
+		<li>I live my life with intention</li>
+		<li>I make time to express myself</li>
+		<li>I nurture new possibilities</li>
+		<li>I contribute value</li>
+		</ul>
+
+		<p>Regardless of any further debate around affirmations and their effectiveness; even if they're just tiny course corrections repeated often enough to matter. I suspect the stories we tell ourselves quietly shape the people we become, and that alone makes them worth experimenting with.</p>
+		`
+	},
+	{
 		id: "roasted-aubergine",
 		title: "🍆 Roasted Aubergine",
 		metaTitle: "🍆 Roasted Aubergine | Soft Alchemy",
@@ -86,7 +156,7 @@ const posts = [
 		metaDescription: "How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
 		image: "images/bingo-year.jpg",
 		imageAlt: "A handwritten yearly bingo goal card",
-		category: "Life",
+		category: "Study",
 		tags: ["goals", "self-improvement"],
 		excerpt: "The time I gamified my goals and made bingo nerdy...",
 		content: `
@@ -318,7 +388,7 @@ const posts = [
 		metaDescription: "My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
 		image: "images/75-soft-plan.jpg",
 		imageAlt: "Handwritten 75 Soft Challenge commitment notes",
-		category: "Life",
+		category: "Study",
 		tags: ["self-improvement"],
 		excerpt: "The time I joined the self-improvement internet hype three years late...",
 		content: `
@@ -520,7 +590,7 @@ const posts = [
 		metaDescription: "A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
 		image: "images/grow-area-summary.jpg",
 		imageAlt: "A handwritten growth areas planning page",
-		category: "Life",
+		category: "Study",
 		tags: ["self-improvement", "goals"],
 		excerpt: "The time I learned how to not overcommit myself...",
 		content: `
