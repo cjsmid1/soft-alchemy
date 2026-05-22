@@ -132,6 +132,10 @@
   .photo-collage {
     column-count: 2;
   }
+
+  .photo-collage.photo-circle {
+    grid-template-columns: repeat(4, auto);
+  }
 }
 
 /* Bookshelf Layout */

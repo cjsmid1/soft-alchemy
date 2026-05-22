@@ -1,15 +1,65 @@
 const posts = [
-{
-    id: "quote-page",
-    title: "💎 Verbal Treasures",
-	metaTitle: "Verbal Treasures | Favourite Quotes & Tiny Reflections",
-    metaDescription: "A playful collection of favourite quotes, thoughtful lines, and tiny reflections gathered in the Soft Alchemy quote aviary.",
-	image: "images/pinterest/quote-page-pin.jpg",
-    imageAlt: "A screenshot of floating quotes",
-    category: "Life",
-    tags: ["books"],
-    excerpt: "The time other people said it better...",
-    content: `
+	{
+		id: "roasted-aubergine",
+		title: "🍆 Roasted Aubergine",
+		metaTitle: "🍆 Roasted Aubergine | Soft Alchemy",
+		metaDescription: "Sticky roasted aubergine with bulgogi glaze, crispy pak choi, noodles & vegetables. An easy vegetarian comfort recipe packed with savoury umami flavour.",
+		image: "images/roasted-aubergine.jpg",
+		imageAlt: "Roasted glazed aubergine served with noodles, pak choi and vegetables",
+		category: "Recipe",
+		tags: ["asian", "vegetarian"],
+		excerpt: "The time I got hold of the Korean answer to barbecue sauce...",
+		content: `
+      <img class="card-image" src="images/roasted-aubergine.jpg">
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Easily my favourite way to cook aubergine, and it works beautifully with a variety of different flavours, so feel free to get creative. This latest iteration used bulgogi sauce, which made it sticky and sweeter than the umami punch miso provides. Bulgogi sauce, if you've never come across it before, is a sweet, savoury, and garlicky Korean barbecue marinade.<br>As written, this recipe happily feeds 2 people.</p>
+	  </section>
+	  <h2>Ingredients</h2>
+    <ul>
+		  <li>1 Large Aubergine</li>
+		  <li>Flavouring (Miso Paste, Hoisin Sauce, Bulgogi Sauce, etc.)</li>
+		  <li>2 Pak Choi</li>
+		  <li>Assorted Vegetables (We used green beans, sweetcorn & peas)</li>
+		  <li>Noodles (Rice would also work)</li>
+		  <li>(Opt) Sesame Seeds</li>
+	  </ul>
+		<p class="ingredient-section">Sauce:</p>
+	  <ul>	
+		  <li> 1 tbsp Sesame Oil</li>
+		  <li> 6 tbsp Soy Sauce (Ketjap Manis also works well if you have it)</li>
+		  <li> 1 garlic clove, finely minced or grated</li>
+		  <li> Sprinkle of chilli flakes (depending on your spice tolerance)</li>
+		</ul>
+		
+    <h2>Instructions</h2>
+    <ol class="instructions">
+		    <li>Preheat oven to 180°C.</li>
+		    <li>Cut the aubergine lengthwise in half, and score into the flesh in a grid pattern (try not to break the skin).</li>
+		    <li>Cut the pak choi lengthwise in half, brush both the pak choi and aubergine halves with oil, and season with salt and pepper.</li>
+		    <li>Brush the aubergine with your flavouring of choice (try to get an even coat right up to the edges)</li>
+		    <li>Place everything cut-side up on a baking tray and bake for 20 to 25 minutes.</li>
+				<br>
+		    <li>While it's baking, mix together the sesame oil, soy sauce, minced garlic & chilli flakes to make the sauce (this was inspired by the <a href="https://hungryhealthyhappy.com/roasted-pak-choi/"> Roasted Pak Choi</a> recipe, though we found it too enthusiastic with the sesame oil).</li>
+		    <li>(Opt) Brush half the sauce over the pak choi halfway through cooking.</li>
+		    <li>Fill a pan with boiling water, and boil the noodles & assorted vegetables (you may need to add some vegetables earlier depending on how quickly they cook).</li>
+		    <li>Mix the sauce in with the noodles and vegetables, and plate up with some optional sesame seeds as garnish.</li>
+      </ol>
+	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
+	  <p>Enjoy! While writing this post I learned that bulgogi sauce is actually reasonably easy to make yourself according to <a href="https://www.chilipeppermadness.com/recipes/bulgogi-sauce/#wprm-recipe-container-26186">Chili Pepper Madness</a>. However with a name like that, and my personal spice tolerance hovering only just above "startled by black pepper", I'll definitely be making James taste any future attempts first. Bulgogi is apparently most commonly used with meat, but as a pescatarian all I heard was: "this would probably be incredible with mushrooms."</p>
+    `
+	},
+	{
+		id: "quote-page",
+		title: "💎 Verbal Treasures",
+		metaTitle: "Verbal Treasures | Favourite Quotes & Tiny Reflections",
+		metaDescription: "A playful collection of favourite quotes, thoughtful lines, and tiny reflections gathered in the Soft Alchemy quote aviary.",
+		image: "images/pinterest/quote-page-pin.jpg",
+		imageAlt: "A screenshot of floating quotes",
+		category: "Life",
+		tags: ["books"],
+		excerpt: "The time other people said it better...",
+		content: `
 	    <section class="summary-note">
 	      <div class="summary-note-label"></div>
 	 	  <p>I have a habit of hoarding good quotations whenever I come across them.<br> These have escaped! Catch one to reveal the full quote below.</p>
@@ -27,17 +77,17 @@ const posts = [
           <p id="revealCommentary" class="quote-commentary handwritten"></p>
         </article>
     `},
-{
-    id: "bingo-life",
-    title: "🔢 A Bingo Life",
-	metaTitle: "A Bingo Life | Gamify Your Goals with Personal Bingo Cards",
-    metaDescription: "How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
-    image: "images/bingo-year.jpg",
-    imageAlt: "A handwritten yearly bingo goal card",
-    category: "Life",
-    tags: ["goals", "self-improvement"],
-    excerpt: "The time I gamified my goals and made bingo nerdy...",
-    content: `
+	{
+		id: "bingo-life",
+		title: "🔢 A Bingo Life",
+		metaTitle: "A Bingo Life | Gamify Your Goals with Personal Bingo Cards",
+		metaDescription: "How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
+		image: "images/bingo-year.jpg",
+		imageAlt: "A handwritten yearly bingo goal card",
+		category: "Life",
+		tags: ["goals", "self-improvement"],
+		excerpt: "The time I gamified my goals and made bingo nerdy...",
+		content: `
 	<section class="summary-note">
 	    <div class="summary-note-label"></div>
 		<p>Create your own personalised bingo cards to make goals fun & set yourself a challenge. Make a grid to complete this week/month/year - you choose!</p>
@@ -93,18 +143,18 @@ const posts = [
 	  </ul>
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	`
-  },
-{
-    id: "the-library",
-    title: "📚 The Library",
-	metaTitle: "The Soft Alchemy Library | Book Recommendations for Curious Minds",
-    metaDescription: "A growing collection of fantasy, thoughtful nonfiction, cosy reads, and quietly life-changing books from the Soft Alchemy library.",
-    image: "images/echo-book.jpg",
-	imageAlt: "Echo the papillon sitting beside a travel book",
-    category: "Life",
-    tags: ["books", "recommendation"],
-    excerpt: "The time I tried to read in peace and was immediately supervised...",
-    content: `
+	},
+	{
+		id: "the-library",
+		title: "📚 The Library",
+		metaTitle: "The Soft Alchemy Library | Book Recommendations for Curious Minds",
+		metaDescription: "A growing collection of fantasy, thoughtful nonfiction, cosy reads, and quietly life-changing books from the Soft Alchemy library.",
+		image: "images/echo-book.jpg",
+		imageAlt: "Echo the papillon sitting beside a travel book",
+		category: "Life",
+		tags: ["books", "recommendation"],
+		excerpt: "The time I tried to read in peace and was immediately supervised...",
+		content: `
 	<div class="two-column-layout left-wide">
 
       <section class="card start-here-card">
@@ -186,18 +236,18 @@ const posts = [
 	  </a>
     </section>
 	`
-  },
-{
-    id: "sourdough-starter",
-    title: "🥣 Starting a Sourdough Starter",
-	metaTitle: "How to Start a Sourdough Starter | Beginner Guide",
-    metaDescription: "A beginner-friendly guide to making a sourdough starter from flour, water, and a willingness to adopt a needy yeast pet.",
-    image: "images/sourdough-starter.jpg",
-    imageAlt: "Homemade sourdough starter in a container",
-    category: "Recipe",
-    tags: ["sourdough", "vegan"],
-    excerpt: "The time I made a stinky, needy yeast pet and never looked back...",
-    content: `
+	},
+	{
+		id: "sourdough-starter",
+		title: "🥣 Starting a Sourdough Starter",
+		metaTitle: "How to Start a Sourdough Starter | Beginner Guide",
+		metaDescription: "A beginner-friendly guide to making a sourdough starter from flour, water, and a willingness to adopt a needy yeast pet.",
+		image: "images/sourdough-starter.jpg",
+		imageAlt: "Homemade sourdough starter in a container",
+		category: "Recipe",
+		tags: ["sourdough", "vegan"],
+		excerpt: "The time I made a stinky, needy yeast pet and never looked back...",
+		content: `
 	  <img class="card-image" src="images/sourdough-starter.jpg">
 	  <section class="summary-note">
 	    <div class="summary-note-label"></div>
@@ -258,18 +308,18 @@ const posts = [
       </details>
     </div>
     `
-  },
-{
-    id: "75-soft-plan",
-    title: "🏆 75 Soft Challenge",
-	metaTitle: "75 Soft Challenge Plan | Gentle Habits, Fitness & Self Improvement",
-    metaDescription: "My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
-    image: "images/75-soft-plan.jpg",
-    imageAlt: "Handwritten 75 Soft Challenge commitment notes",
-    category: "Life",
-    tags: ["self-improvement"],
-    excerpt: "The time I joined the self-improvement internet hype three years late...",
-    content: `
+	},
+	{
+		id: "75-soft-plan",
+		title: "🏆 75 Soft Challenge",
+		metaTitle: "75 Soft Challenge Plan | Gentle Habits, Fitness & Self Improvement",
+		metaDescription: "My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
+		image: "images/75-soft-plan.jpg",
+		imageAlt: "Handwritten 75 Soft Challenge commitment notes",
+		category: "Life",
+		tags: ["self-improvement"],
+		excerpt: "The time I joined the self-improvement internet hype three years late...",
+		content: `
 	<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses of water & 45 minutes of exercise. The plan is set in theory, time will tell how it works out in practice.</p>
@@ -319,18 +369,18 @@ const posts = [
 	<p>Did you notice how the tracker in my 75 Soft journal plan started with 1st May? That was meant to be my test day before I start properly on Wednesday 6th May after getting back from my Devon trip (yes James & I went to Devon to celebrate our 2 year anniversary - more on that in a later post!). Did you also notice how that test day doesn't have a complete row of ticks, and just a normal walk as my exercise? Turns out I might have been wrong to be so confident in all my commitment areas... 😅<br>
 	Now that I've been suitably humbled, it's Wednesday 6th May 2026 and just turned 3pm on my first proper day of 75 Soft, and I think it's time to actually have lunch & do some exercise before I have to go back and pretend I meant to start tomorrow all along!</p>
 	`
-  },
-{
-    id: "tuna-sweetcorn-dumplings",
-    title: "🥟 Tuna Sweetcorn Dumplings",
-	metaTitle: "Tuna Sweetcorn Dumplings | Easy Pierogi-Inspired Recipe",
-    metaDescription: "A cosy pierogi-inspired tuna sweetcorn dumpling recipe with homemade dough, creamy filling, and freezer-friendly batch cooking potential.",
-    image: "images/tuna-sweetcorn-dumplings.jpg",
-    imageAlt: "Homemade tuna sweetcorn dumplings served with garnish",
-    category: "Recipe",
-    tags: ["dinner-party", "fish"],
-    excerpt: "The time I discovered pierogi and immediately made them less traditional...",
-    content: `
+	},
+	{
+		id: "tuna-sweetcorn-dumplings",
+		title: "🥟 Tuna Sweetcorn Dumplings",
+		metaTitle: "Tuna Sweetcorn Dumplings | Easy Pierogi-Inspired Recipe",
+		metaDescription: "A cosy pierogi-inspired tuna sweetcorn dumpling recipe with homemade dough, creamy filling, and freezer-friendly batch cooking potential.",
+		image: "images/tuna-sweetcorn-dumplings.jpg",
+		imageAlt: "Homemade tuna sweetcorn dumplings served with garnish",
+		category: "Recipe",
+		tags: ["dinner-party", "fish"],
+		excerpt: "The time I discovered pierogi and immediately made them less traditional...",
+		content: `
       <img class="card-image" src="images/tuna-sweetcorn-dumplings.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -385,18 +435,18 @@ const posts = [
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	  <p>Enjoy! My partner & I made a mix of these and the traditional cheesy potato Pierogi filling, needless to say we lost track of which was which and had mystery dumplings for dinner 😂 We served them with butter, crispy onions & parsley; eating half and froze the rest for a dumpling soup.</p>
     `
-  },
-{
-    id: "echo-first-birthday",
-    title: "🎂 Do Dog Birthdays Count?",
-	metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
-    metaDescription: "Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
-    image: "images/echo-wisley.jpg",
-    imageAlt: "Echo the papillon visiting RHS Wisley gardens",
-    category: "Life",
-    tags: ["dog-approved", "recommendation", "dog recipe"],
-    excerpt: "The time my puppy turned one and somehow acquired an itinerary...",
-    content: `
+	},
+	{
+		id: "echo-first-birthday",
+		title: "🎂 Do Dog Birthdays Count?",
+		metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
+		metaDescription: "Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
+		image: "images/echo-wisley.jpg",
+		imageAlt: "Echo the papillon visiting RHS Wisley gardens",
+		category: "Life",
+		tags: ["dog-approved", "recommendation", "dog recipe"],
+		excerpt: "The time my puppy turned one and somehow acquired an itinerary...",
+		content: `
 	<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>Echo had his first birthday, <a href="#wisley">RHS Wisley gardens</a> do a dog event, he also got <a href="#ice-cream">dog ice cream</a> and his own <a href="#birthday-cake">birthday cake</a>!</p>
@@ -460,18 +510,18 @@ const posts = [
     </div>
 
 	`
-  },
-{
-    id: "growth-areas",
-    title: "🌿 Growth Areas",
-	metaTitle: "Growth Areas | A Gentle System for Focused Self Improvement",
-    metaDescription: "A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
-    image: "images/grow-area-summary.jpg",
-    imageAlt: "A handwritten growth areas planning page",
-    category: "Life",
-    tags: ["self-improvement", "goals"],
-    excerpt: "The time I learned how to not overcommit myself...",
-    content: `
+	},
+	{
+		id: "growth-areas",
+		title: "🌿 Growth Areas",
+		metaTitle: "Growth Areas | A Gentle System for Focused Self Improvement",
+		metaDescription: "A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
+		image: "images/grow-area-summary.jpg",
+		imageAlt: "A handwritten growth areas planning page",
+		category: "Life",
+		tags: ["self-improvement", "goals"],
+		excerpt: "The time I learned how to not overcommit myself...",
+		content: `
 	<p>
 	Have you ever felt overwhelmed & like you should be doing a thousand things, while each day ends with the disappointment of having done what feels like nothing? If so, then I empathise and have been there with you most of my adult life! Each day dawns with the potential of 24 glorious hours to be filled with...
 	</p>
@@ -545,18 +595,18 @@ const posts = [
       </details>
     </div>
 	`
-  },
-{
-    id: "sourdough-bread",
-    title: "🍞 Sourdough Bread",
-	metaTitle: "Simple Sourdough Bread Recipe | Beginner-Friendly Homemade Loaf",
-    metaDescription: "A beginner-friendly sourdough bread recipe using simple ingredients, stretch and folds, overnight fridge proofing, and no fancy equipment.",
-    image: "images/sourdough-bread-half.jpg",
-    imageAlt: "A homemade sourdough loaf cut in half",
-    category: "Recipe",
-    tags: ["sourdough", "vegan", "vegetarian"],
-    excerpt: "The time I joined the 30 year old woman bandwagon and made sourdough bread...",
-    content: `
+	},
+	{
+		id: "sourdough-bread",
+		title: "🍞 Sourdough Bread",
+		metaTitle: "Simple Sourdough Bread Recipe | Beginner-Friendly Homemade Loaf",
+		metaDescription: "A beginner-friendly sourdough bread recipe using simple ingredients, stretch and folds, overnight fridge proofing, and no fancy equipment.",
+		image: "images/sourdough-bread-half.jpg",
+		imageAlt: "A homemade sourdough loaf cut in half",
+		category: "Recipe",
+		tags: ["sourdough", "vegan", "vegetarian"],
+		excerpt: "The time I joined the 30 year old woman bandwagon and made sourdough bread...",
+		content: `
 	  <img class="card-image" src="images/sourdough-bread-half.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -603,18 +653,18 @@ const posts = [
 	  If you do get as obsessed with making sourdough as I have I highly recommend an electric bread knife!</p>
 	  <img class="card-image" src="images/sourdough-slices.jpg" alt="Nice view">
     `
-  },
-{
-    id: "mushroom-wellington",
-    title: "🍄 Mushroom Wellington",
-	metaTitle: "Vegetarian Mushroom Wellington | Puff Pastry Dinner Party Centrepiece",
-    metaDescription: "A vegetarian mushroom wellington with hoisin-style filling, puff pastry, rice paper anti-sog layer, and dinner party centrepiece energy.",
-    image: "images/mushroom-wellington-puff.jpg",
-    imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
-    category: "Recipe",
-    tags: ["dinner-party", "vegetarian"],
-    excerpt: "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
-    content: `
+	},
+	{
+		id: "mushroom-wellington",
+		title: "🍄 Mushroom Wellington",
+		metaTitle: "Vegetarian Mushroom Wellington | Puff Pastry Dinner Party Centrepiece",
+		metaDescription: "A vegetarian mushroom wellington with hoisin-style filling, puff pastry, rice paper anti-sog layer, and dinner party centrepiece energy.",
+		image: "images/mushroom-wellington-puff.jpg",
+		imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
+		category: "Recipe",
+		tags: ["dinner-party", "vegetarian"],
+		excerpt: "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
+		content: `
       <img class="card-image" src="images/mushroom-wellington-puff.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -667,15 +717,15 @@ const posts = [
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
 	  <p>Enjoy! I served mine with a honey onion gravy, though if you want to fully embrace the Asian influence you can also use a soy & rice vinegar dip, or just more hoisin sauce!</p>
     `
-  },
-  {
-    id: "sabbatical-plans",
-    title: "🌿 Sabbatical Plans",
-    category: "Life",
-    tags: ["goals", "reflection"],
-    excerpt: "What I want to explore during my time off...",
-    content: `<p>The plan is a lie, as is this post.
+	},
+	{
+		id: "sabbatical-plans",
+		title: "🌿 Sabbatical Plans",
+		category: "Life",
+		tags: ["goals", "reflection"],
+		excerpt: "What I want to explore during my time off...",
+		content: `<p>The plan is a lie, as is this post.
 	<br>
 	I use it as a shameless template, who knows maybe one day I'll actually fill in the details 😅</p>`
-  }
+	}
 ];

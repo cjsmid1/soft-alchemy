@@ -504,6 +504,10 @@ html.dark .book-card.is-echo .book-info h3 {
   color: #f3d7a4;
 }
 
+html.dark .photo-collage.photo-circle img{
+  filter: invert(1);
+}
+
 
 /* footer */
 html.dark footer {
