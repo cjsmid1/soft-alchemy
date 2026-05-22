@@ -13,7 +13,7 @@ const posts = [
       <img class="card-image" src="images/roasted-aubergine.jpg">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
-	  <p>Easily my favourite way to cook aubergine, and it works beautifully with a variety of different flavours, so feel free to get creative. This latest iteration used bulgogi sauce, which made it sticky and sweeter than the umami punch miso provides. Bulgogi sauce, if you've never come across it before, is a sweet, savoury, and garlicky Korean barbecue marinade.<br>As written, this recipe happily feeds 2 people.</p>
+	  <p>Easily my favourite way to cook aubergine, and it works beautifully with a variety of different flavours, so feel free to get creative. This latest iteration used bulgogi sauce, which made it sticky and sweeter than the umami punch miso provides. Bulgogi sauce, if you've never come across it before, is a sweet, savoury and garlicky Korean barbecue marinade.<br>As written, this recipe happily feeds 2 people.</p>
 	  </section>
 	  <h2>Ingredients</h2>
     <ul>
@@ -62,7 +62,8 @@ const posts = [
 		content: `
 	    <section class="summary-note">
 	      <div class="summary-note-label"></div>
-	 	  <p>I have a habit of hoarding good quotations whenever I come across them.<br> These have escaped! Catch one to reveal the full quote below.</p>
+	 	  <p>I have a habit of hoarding good quotations whenever I come across them.<br>
+			These have escaped! Catch one to reveal the full quote below.</p>
         </section>
 	  
 	    <div class="quote-filter">
@@ -76,7 +77,8 @@ const posts = [
           <p id="revealAuthor" class="quote-author"></p>
           <p id="revealCommentary" class="quote-commentary handwritten"></p>
         </article>
-    `},
+    `
+	},
 	{
 		id: "bingo-life",
 		title: "🔢 A Bingo Life",
@@ -93,7 +95,7 @@ const posts = [
 		<p>Create your own personalised bingo cards to make goals fun & set yourself a challenge. Make a grid to complete this week/month/year - you choose!</p>
       </section>
 	  <p>
-	  Do you struggle with an endless to-do list or are you the type of person who doesn't know what they want? Interestingly this next framework helps for both! <br><br>
+	  Do you struggle with an endless to-do list, or are you the type of person who doesn't know what they want? Interestingly this next framework helps for both! <br><br>
 	  I'm assuming at this point, the concept of gamification is not new (turn your life into a game and things become more fun!), but how do you actually manage to do that successfully? 
 	  The answer is by adapting an already existing game to make it suit your needs. In the case of bingo, you take a grid & fill it with your desires (large or small, all are welcome!), then you give yourself a deadline & see if you can get bingo. Simple enough? Here are some guidelines to flesh it out properly.
 	  </p>
@@ -119,13 +121,13 @@ const posts = [
 	  </ul>
 	  <h3>Choose your duration:</h3>
 	  <ul>
-	    <li>Day: Don't recommend as it's not the quickest set up, but I can't stop you!</li>
+	    <li>Day: Wouldn't recommend as it's not the quickest setup, but I can't stop you!</li>
 	    <li>Week: Yet to try but a good way to feel accomplished each week.</li>
 	    <li>Month: Useful for specifying goals for the month, I keep mine in my bullet journal's monthly spreads.</li>
 	    <li>Year: Think of it as new years resolutions but without the guilt!
 		<figure class="post-image">
 		  <img src="images/bingo-year.jpg">
-		  <figcaption>I got creative with some friends & we each make one for the chinese new year - yes technically "Create a Blog" should be ticked off by now</figcaption>
+		  <figcaption>I got creative with some friends & we each make one for the Chinese New Year - yes technically "Create a Blog" should be ticked off by now</figcaption>
         </figure>
 		</li>
 	  </ul>
@@ -264,7 +266,7 @@ const posts = [
         <li><b>Conception:</b> To start your starter mix together 50g of flour with 50ml water. Then abandon it with a loose lid for ~24 hours.</li>
         <li><b>Nurturing:</b> To grow your doughy lump into a strong bubbly starter you need to feed it daily. It wants equal parts starter, flour and water (e.g. 50g starter mixed with 50g flour & 50ml water).<br> 
 		When it inevitably gets too big you'll want to remove some starter before adding the flour and water, this is called sourdough discard & can be used for multiple recipes (pancakes, crumpets, wraps, etc - just don't expect your discard to act as a raising agent the way an active starter will!)</li>
-        <li><b>Maturity:</b> After about a week of daily feeding, your sourdough starter is ready to explore the wide world of making bread! You should be seeing the starter increase in size after it's daily feeding and then partially collapse back down again. Timing your baking to use the starter at peak growth (~4 hours after it's last feeding) will set you up for maximum success.</li>
+        <li><b>Maturity:</b> After about a week of daily feeding, your sourdough starter is ready to explore the wide world of making bread! You should be seeing the starter increase in size after its daily feeding and then partially collapse back down again. Timing your baking to use the starter at peak growth (~4 hours after it's last feeding) will set you up for maximum success.</li>
 	  </ol>
 	  <div class="qa-board" id="qa">
 	  <details class="qa-card">
@@ -278,8 +280,8 @@ const posts = [
         <span class="qa-label">What type of flour should I use?</span>
 		</summary>
         <p>The easiest (& usually cheapest) flour to start with is white bread flour, it keeps things civil & there are plenty of resources online to ask for help if things get sticky. You can also try using brown bread flour or rye flour. I would recommend sticking with one type while you're setting up your initial yeast colony & once it's mature you can change up what type you feed it based on what's available in the cupboard.<br>
-		My first sourdough starter is now a combination of mostly white bread flour and occassionally brown bread flour. My second sourdough starter is pure rye flour (I also added some apple peel & left it outside for 24 hours as an experiment to see if that changes up the yeast & hence the bread flavour)</p>
-      </details >
+		My first sourdough starter is now a combination of mostly white bread flour and occasionally brown bread flour. My second sourdough starter is pure rye flour (I also added some apple peel & left it outside for 24 hours as an experiment to see if that changes up the yeast & hence the bread flavour)</p>
+      </details>
 	  <details class="qa-card qa-card--long">
         <summary class="qa-click-area">
 		<span class="qa-label">I have a life so can't feed daily - are my sourdough dreams ruined?</span>
@@ -291,13 +293,13 @@ const posts = [
 	    <summary class="qa-click-area">
         <span class="qa-label">Why does it smell like nail varnish remover...?</span>
 		</summary>
-        <p>Don't worry - so do mine! 😅 It just means that your starter is hungry, and is still perfectly safe to bake with. Supposedly occassionally underfeeding a mature starter can improve the bread flavour but I may have just wanted to believe that as I naturally end up feeding inconsistently regardless!</p>
+        <p>Don't worry - so do mine! 😅 It just means that your starter is hungry, and is still perfectly safe to bake with. Supposedly occasionally underfeeding a mature starter can improve the bread flavour but I may have just wanted to believe that as I naturally end up feeding inconsistently regardless!</p>
       </details>
       <details class="qa-card">
 	    <summary class="qa-click-area">
         <span class="qa-label">My bread is dense - help!</span>
 		</summary>
-        <p>If your first loaf is a little dense fear not, your starter will continue to mature & improve over time (both of my starters first loaves were a bit dense). You can also add more starter to your recipe to help it along, just bare in mind you'll be changing the hydration proportion so your dough will likely be stickier unless you adjust the water/liquid to accommodate.<br>
+        <p>If your first loaf is a little dense fear not, your starter will continue to mature & improve over time (both of my starters first loaves were a bit dense). You can also add more starter to your recipe to help it along, just bear in mind you'll be changing the hydration proportion so your dough will likely be stickier unless you adjust the water/liquid to accommodate.<br>
 		I also got a pretty dense loaf when I tried adding in a mix of whey & buttermilk instead of water, most likely I should have given it longer to rise to accommodate, another failed experiment to learn from!</p>
       </details>
 	  <details class="qa-card qa-card--long">
@@ -340,17 +342,17 @@ const posts = [
 	  <li>🍽️ <b>Diet:</b> Originally the plan was to reduce my snack addiction but after realising just how many snacks we have in the house after Easter & the latest bulk food shop I decided to leave that for a later challenge and switch gears.<br>
 	  Generally I don't eat breakfast, and am powered by a combination of tea & sunshine. Having said that, I learned that unlike for men where intermittent fasting & a reduced eating window is very healthy; women's bodies are different to men's(!) and as a fairly skinny woman in her 30's I would majorly benefit from telling my body it doesn't need to panic and go into starvation mode each morning.<br>
 	  ➜ Interested? Look up Dr. Stacy Sims <a href="https://www.youtube.com/watch?v=gZF-Ehfb3_o">Why Women Shouldn't Skip Breakfast</a></li><br>
-	  <li>🫖 <b>Hydration:</b> I really don't want to spend all my time on the porcelain altar so rather than buying a mega water bottle & chugging 3L of water a day, I'm going to keep it simple. The NHS guideline for an adult woman recommends 2 litres of fluid per day; my mugs & glasses contain roughly ~300-350ml, so I'm good as long as I have 6 drinks per day. Also notice how I said fluid rather than water? That means TEA COUNTS! 🎉🎉🎉 <br>
-	  In short my goal is: glass of water as I wake up (~9am), morning english breakfast tea (~10am), water/drink with my lunch (~2pm), afternoon mint tea (~4pm), water/drink with dinner (~7.30pm), evening mint tea or even a celebratory chai/hot chocolate! (~9pm)
+	  <li>🫖 <b>Hydration:</b> I really don't want to spend all my time on the porcelain altar so rather than buying a mega water bottle & chugging 3L of water a day, I'm going to keep it simple. The NHS guidelines for adult women recommend 2 litres of fluid per day; my mugs & glasses contain roughly ~300-350ml, so I'm good as long as I have 6 drinks per day. Also notice how I said fluid rather than water? That means TEA COUNTS! 🎉🎉🎉 <br>
+	  In short my goal is: glass of water as I wake up (~9am), morning English breakfast tea (~10am), water/drink with my lunch (~2pm), afternoon mint tea (~4pm), water/drink with dinner (~7.30pm), evening mint tea or even a celebratory chai/hot chocolate! (~9pm)
 	  </li>
 	  <br>
 	  <li>🎧 <b>Reading:</b> I love reading, especially fantasy. Needless to say I'm not overly worried about this part. Having said that, I seem to have an existing to-do item in my backlog to actually read the many physical books gathering dust on the bookshelves, what's more I've had this to-do item for at least 6 years... 😅<br>
 	  While I will happily add the daily commitment to either listen to 10 mins of audiobook or read 10 physical pages, I'm secretly hoping I won't always default to the audiobook and may actually finish a physical book or two!</li>
 	  <br>
-	  <li><img class="emoji" src="images/medito-logo.png"><b>Meditation:</b> This is where I'm ahead of the game because one of last months growth areas was learning how to meditate! (Yes I might have been paranoid about committing to so many things in the 75 soft challenge and figured I would set myself up for success as much as possible without cheating the system.)<br>
+	  <li><img class="emoji" src="images/medito-logo.png"><b>Meditation:</b> This is where I'm ahead of the game because one of last month's growth areas was learning how to meditate! (Yes I might have been paranoid about committing to so many things in the 75 soft challenge and figured I would set myself up for success as much as possible without cheating the system.)<br>
 	  I currently am using the Medito app to follow daily guided meditations in the morning before my first tea (don't underestimate that specific caveat, it's a very powerful motivator for me!). The plan is to aim for 10 minutes with the option to increase or decrease the time as required by the day's commitments.</li>
 	  <br>
-	  <li>🏃🏻‍♀️ <b>Exercise:</b> Ah yes the final boss. Granted I would consider myself reasonably fit, and having a certain fluffball who insists on being walked certainly doesn't hurt when it comes to forcing myself to exercise. However I want to actually challenge myself rather than just coasting through this on a 45 minute dog walk a day. I've also been wanting to improve my strength based exercise so that I might have visible abs sometime this year, and given bikinis are much better at showing off abs than christmas jumpers, there's no time like the present to get started! Hence each day I get to take my pick of 45 minutes of the following exercise options:
+	  <li>🏃🏻‍♀️ <b>Exercise:</b> Ah yes the final boss. Granted I would consider myself reasonably fit, and having a certain fluffball who insists on being walked certainly doesn't hurt when it comes to forcing myself to exercise. However, I want to actually challenge myself rather than just coasting through this on a 45 minute dog walk a day. I've also been wanting to improve my strength based exercise so that I might have visible abs sometime this year, and given bikinis are much better at showing off abs than Christmas jumpers, there's no time like the present to get started! Hence each day I get to take my pick of 45 minutes of the following exercise options:
 	  <ul>
 	    <li>Rucking while on a dog walk (fancy term for wearing a heavy backpack/weighted vest)</li>
 	    <li>Jogging (with or without Echo)</li>
@@ -390,7 +392,7 @@ const posts = [
 	  <p class="ingredient-section">Dough:</p>
       <ul>
 		<li>300g Plain Flour</li>
-		<li>50g Butter</li>
+		<li>50g Butter, melted</li>
 		<li>125ml Water</li>
 		<li>1 Egg</li>
 	  </ul>
@@ -413,7 +415,7 @@ const posts = [
       <h2>Instructions</h2>
       <ol class="instructions">
         <li class="section-title">Make the Dough:</li>
-		<li>Melt butter & whisk in the flour and a pinch of salt</li>
+		<li>Mix the flour with the melted butter and a pinch of salt</li>
 		<li>Add the water and egg, and mix till combined</li>
 		<li>Knead the dough on a floured surface until smooth (~5 minutes depending on enthusiasm)</li>
         <li>Leave it to rest for 30 minutes while you make the filling.</li>
@@ -421,7 +423,7 @@ const posts = [
 		<li>Drain the tuna and mix with the sweetcorn & mayonnaise/cream cheese</li>
 		<li>Season and optionally add any additional desired flavourings such as the soy sauce</li>
 		<li class="section-title">Assembly and Cook:</li>
-		<li>Roll out the dough on floured surface & cut out circles (can use a mug or any circular object - I used roughly 3 inch diameter)</li>
+		<li>Roll out the dough on a floured surface & cut out circles (can use a mug or any circular object - I used roughly 3 inch diameter)</li>
 		<li>Repeat with the scraps until you have as many identical circles as possible</li>
 		<li>
           Place 1–2 tsp filling in the centre of the circle, brush the edge with water & fold in half using your fingers as indents to seal.
@@ -433,7 +435,7 @@ const posts = [
 		<li>Serve with your pick of melted butter over the top, parsley/chives, crispy onions (always a favourite) or some chopped spring onions, alongside a dip of your choice</li>
       </ol>
 	  <p style="text-align: center;">✦ ────  ^_^  ──── ✦</p>
-	  <p>Enjoy! My partner & I made a mix of these and the traditional cheesy potato Pierogi filling, needless to say we lost track of which was which and had mystery dumplings for dinner 😂 We served them with butter, crispy onions & parsley; eating half and froze the rest for a dumpling soup.</p>
+	  <p>Enjoy! My partner & I made a mix of these and the traditional cheesy potato Pierogi filling, needless to say we lost track of which was which and had mystery dumplings for dinner 😂 We served them with butter, crispy onions & parsley; ate half and froze the rest for a dumpling soup.</p>
     `
 	},
 	{
@@ -467,7 +469,7 @@ const posts = [
 	<ul>
 	<li>There are only limited Walkies at Wisley events so make sure to plan ahead, this isn't something you can do on impulse but that also makes it more special</li>
 	<li>The event only lasted 2 hours (6-8pm) which is a good chunk of time to see most of the gardens, but if your dog wants to sniff at every flower pot you'll want to look ahead at what parts of the garden you're specifically interested in seeing! (For me it was the wisteria walk and cherry blossoms - though I was sadly unsuccessful in finding the latter)</li>
-	<li>Unlike your usual dog walks there is a price for entry, though I would argue the effort put into the gardens fully justify it & there is a membership option if you plan to go multiple times</li>
+	<li>Unlike your usual dog walks, there is a price for entry, though I would argue the effort put into the gardens fully justifies it & there is a membership option if you plan to go multiple times</li>
 	</ul>
 	<h3 id="ice-cream">Time to cool down</h3>
 	<p>Another special event linked to Echo's birthday was his first introduction to dog ice cream! </p>
@@ -556,7 +558,7 @@ const posts = [
     </ul>
 	<p>Before you get overwhelmed, I present the answer: Growth Areas!</p>
 	<h3>What are Growth Areas?</h3>
-	<p>A growth area, is an area/topic you want to actively improve in. It's something where you want to focus intentional effort for a set period of time, in order to gain meaningful improvement. Most importantly I'm only allowed to have 3 growth areas per month (your own limit and time period you can of course choose for yourself!). The secret power in only having 3 is that every other potential growth area goes into a backlog list in my journal where it can no longer make me feel guilty for not giving it attention. The daily onslaught of "shoulds" go <b>way</b> down to only the activities linked to the growth areas I've actively committed myself to (for example this month I'm focusing on daily meditation, this blog and my garden).</p>
+	<p>A growth area, is an area/topic you want to actively improve in. It's something where you want to focus intentional effort for a set period of time, in order to gain meaningful improvement. Most importantly I'm only allowed to have 3 growth areas per month (your own limit and time period you can of course choose for yourself!). The secret power in only having 3 is that every other potential growth area goes into a backlog list in my journal where it can no longer make me feel guilty for not giving it attention. The daily onslaught of "shoulds" goes <b>way</b> down to only the activities linked to the growth areas I've actively committed myself to (for example this month I'm focusing on daily meditation, this blog and my garden).</p>
 	<p> As a bonus if you enjoy planning, because you've actively committed to these specific growth areas you can also make a specific plan for what tasks you want to complete relating to that area, which reduces the overwhelm down even more to just the next action for each area.<br>
 	<h3>Planning a Growth Area</h3>
 	Some areas will be fairly simple:</p>
@@ -575,7 +577,7 @@ const posts = [
 	  <figcaption>I tried combining cooking, interior design, and more into a home making monster growth area.<br> As you can see I overcommitted 😅 </figcaption>
     </figure>
 	<p>
-	If you've already heard of the concept of a personal cirriculum where you build your own learning pathway outside of the structure of school/university, growth areas fit in perfectly as they essentially represent one module/subject each which can be combined together to create the ultimate personal learning semester! Assuming you're onboard and ready to give it a go (given you're read this far) this is what a summary page of your grow areas can look like along with the tasks for my May Gardening Growth Area (a list on your phone also works fine, I'm just addicted to my journal):
+	If you've already heard of the concept of a personal curriculum where you build your own learning pathway outside of the structure of school/university, growth areas fit in perfectly as they essentially represent one module/subject each which can be combined together to create the ultimate personal learning semester! Assuming you're onboard and ready to give it a go (given you've read this far) this is what a summary page of your grow areas can look like along with the tasks for my May Gardening Growth Area (a list on your phone also works fine, I'm just addicted to my journal):
 	</p>
 	<figure class="small-post-image">
 	  <img src="images/grow-area-summary.jpg" alt="Grow Area Overview">
@@ -610,7 +612,7 @@ const posts = [
 	  <img class="card-image" src="images/sourdough-bread-half.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
-	  <p>Sourdough is epic and surprisingly less effort than traditional bread as it requires minimal kneading! I make mine over a 2 day period so heads up, it does take patience and some preplanning. Also note you don't need special equipment to make good bread: I use my hands, a bowl, weighing scales & my glass caserole dish - that's it!</p>
+	  <p>Sourdough is epic and surprisingly less effort than traditional bread as it requires minimal kneading! I make mine over a 2 day period so heads up, it does take patience and some preplanning. Also note you don't need special equipment to make good bread: I use my hands, a bowl, weighing scales & my glass casserole dish - that's it!</p>
 	  </section>
       <h2>Ingredients</h2>
 	  <ul>
@@ -625,7 +627,7 @@ const posts = [
         <li class="section-title">Making the Dough (Day 1):</li>
 		<li>First off feed your sourdough starter with an equal mix of flour and water, if you haven't already! You're aiming for your starter to be bubbly & have ideally doubled in volume (usually around 4 hours after feeding is best).</li>
 		<li>Mix the flour and water together in a bowl</li>
-		<li>Abandon it for a while to do something else, you're allowing for the autolyze process to happen which makes life easier for you. An hour is great, 20/30 mins if you are short on time will also work.</li>
+		<li>Abandon it for a while to do something else, you're allowing for the autolyse process to happen which makes life easier for you. An hour is great, 20/30 mins if you are short on time will also work.</li>
         <li>Mix in sourdough starter and salt, and ideally leave for another 30 minutes</li>
         <li class="section-title">Stretch & Fold time (Still Day 1):</li>
 		<li>
@@ -633,7 +635,7 @@ const posts = [
 		If that didn't make sense here is the video I used: <a href="https://www.youtube.com/shorts/_xdrLqeO9Bc">Stretch and Fold 101</a>
 		</li>
 		<li>Repeat this 4 times (though honestly I've done a couple more when I lost count)</li>
-		<li>Leave for 30 minutes (Timer = highly recommended!)</li>
+		<li>Leave for 30 minutes (a timer is highly recommended!)</li>
 		<li>Repeat this process at least twice more (you're aiming for a minimum of 3 stretch and fold sessions, though more doesn't hurt especially if you've found a partner/minion to do it for you!)</li>
 		<li>
 		(Opt) Shape the dough (yes this is entirely optional!) but it helps the rise and makes it look prettier. You're essentially aiming to create tension within the dough surface without beating all the air out of it.<br>
@@ -644,7 +646,7 @@ const posts = [
 		<li class="section-title">Bake (Day 2):</li>
 		<li>Preheat oven to 220°C fan</li>
 		<li>Transfer to desired baking vessel if not already done so & (opt) score the top with a knife</li>
-		<li>Bake for 20 minutes with a lid (dutch oven or caserole lid if you have it, otherwise tin foil will work too)</li>
+		<li>Bake for 20 minutes with a lid (Dutch oven or casserole lid if you have it, otherwise tin foil will work too)</li>
 		<li>Remove lid & bake for 20-25 more minutes</li>
 		<li>Remove from oven and leave for 1 hour before slicing and eating (yes this is the hardest part)</li>
       </ol>
@@ -668,7 +670,7 @@ const posts = [
       <img class="card-image" src="images/mushroom-wellington-puff.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
-	  <p>Great pastry centre piece for a roast, I fed 7 people and had left over filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!</p>
+	  <p>Great pastry centre piece for a roast, I fed 7 people and had leftover filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!</p>
 	  </section>
 	  <h2>Ingredients</h2>
 	  <p class="ingredient-section">Filling:</p>
@@ -695,9 +697,9 @@ const posts = [
       <h2>Instructions</h2>
       <ol class="instructions">
         <li class="section-title">Make the Filling:</li>
-		<li>Pan fry mushrooms in the sesame oil with pinch of salt. Stir occassionally and cook till water completely cooked off and browned (expect 15-20 mins)</li>
+		<li>Pan fry mushrooms in the sesame oil with a pinch of salt. Stir occasionally and cook till water completely cooked off and browned (expect 15-20 mins)</li>
 		<li>Add garlic, ginger & spring onions, mix & cook for couple minutes</li>
-		<li>Add vegetarian duck, water chestnuts, soy sause & hoisin. Cook until hot & liquid all gone (we want the filling as dry as possible!)</li>
+		<li>Add vegetarian duck, water chestnuts, soy sauce & hoisin. Cook until hot & the liquid is all gone (we want the filling as dry as possible!)</li>
         <li>Mix in sesame seeds, taste & adjust as desired, then leave to cool</li>
         <li class="section-title">Make the Rice Paper Barrier (the anti-sog protection):</li>
 		<li>Briefly dip each piece of rice paper in water and lay flat to let soften for ~30 seconds</li>
@@ -710,7 +712,7 @@ const posts = [
         </figure>
 		<li class="section-title">Final Assembly and Bake:</li>
 		<li>Roll out the puff pastry, sealing the 2 sheets together with your fingers or a rolling pin</li>
-		<li>Place the cooled log in the centre and wrap the pastry around it (decorate the top with any remaining pastry however you like, or place seam down for minimalist look)</li>
+		<li>Place the cooled log in the centre and wrap the pastry around it (decorate the top with any remaining pastry however you like, or place it seam down for minimalist look)</li>
 		<li>Chill in fridge for 20 minutes</li>
 		<li>Brush with egg wash or milk & bake 35 minutes at 180°C fan till deep golden</li>
       </ol>
