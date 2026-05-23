@@ -1,37 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soft Alchemy Post</title>
-  <script>
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
-    }
-  </script>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="preload" as="image" href="images/watercolour-background.jpg">
-  <link rel="preload" as="image" href="images/watercolour-background-dark.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soft Alchemy Post</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preload" as="image" href="images/watercolour-background.jpg" />
+    <link
+      rel="preload"
+      as="image"
+      href="images/watercolour-background-dark.png"
+    />
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-563L2Z66XJ');
-</script>
-</head>
+      gtag("config", "G-563L2Z66XJ", {
+        send_page_view: false,
+      });
+    </script>
+  </head>
 
-<body>
-  <!-- SINGLE POST CONTAINER -->
-  <section id="post" class="card">
-    <!-- Content injected by script.js -->
-  </section>
+  <body>
+    <!-- SINGLE POST CONTAINER -->
+    <section id="post" class="card">
+      <!-- Content injected by script.js -->
+    </section>
 
-  <script src="/books.js" defer></script>
-  <script src="/posts.js" defer></script>
-  <script src="/script.js" defer></script>
-</body>
+    <script src="/books.js" defer></script>
+    <script src="/posts.js" defer></script>
+    <script src="/script.js" defer></script>
+  </body>
 </html>

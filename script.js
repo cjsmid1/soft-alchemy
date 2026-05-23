@@ -303,7 +303,7 @@ function renderFeaturedPost(postId, containerId) {
 function updatePostMetadata(post) {
   const title = post.metaTitle || `${post.title} | Soft Alchemy`;
   const description = post.metaDescription || post.excerpt || "A Soft Alchemy post about gentle experiments in everyday life.";
-  const image = post.image 
+  const image = post.image
     ? `https://softalchemy.uk/${post.image.replace(/^\/+/, "")}`
     : "https://softalchemy.uk/images/soft-alchemy-preview.jpg";
   const url = `https://softalchemy.uk/post.html?id=${post.id}`;
@@ -362,7 +362,7 @@ function filterPosts(updateURL = true) {
   if (search) {
     filtered = filtered.filter(
       p => p.title.toLowerCase().includes(search) ||
-           p.tags.some(t => t.includes(search))
+        p.tags.some(t => t.includes(search))
     );
   }
 
@@ -420,7 +420,7 @@ if (postContainer) {
   const post = posts.find(p => p.id === id);
 
   if (post) {
-	updatePostMetadata(post);
+    updatePostMetadata(post);
     // Inject HTML
     postContainer.innerHTML = `
       <div class="title-row">
@@ -435,6 +435,18 @@ if (postContainer) {
       <div class="content">${post.content}</div>
     `;
 
+    const pageTitle = post.metaTitle || `${post.title} | Soft Alchemy`;
+
+    document.title = pageTitle;
+
+    if (typeof gtag === "function") {
+      gtag("event", "page_view", {
+        page_title: pageTitle,
+        page_location: window.location.href,
+        page_path: `/post/${post.id}`
+      });
+    }
+
     // Force reflow + fade-in animation
     requestAnimationFrame(() => {
       void postContainer.offsetWidth; // ensures reflow
@@ -448,9 +460,9 @@ if (postContainer) {
         window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
       });
     });
-	
-	renderBookshelvesForPage(bookshelfConfigs);
-	if (id === "quote-page") {initFlyingQuotes();}
+
+    renderBookshelvesForPage(bookshelfConfigs);
+    if (id === "quote-page") { initFlyingQuotes(); }
   }
 }
 
@@ -510,7 +522,7 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
 
   shelf.innerHTML = books.map((book, index) => {
     const tag = book.url ? "a" : "div";
-  
+
     return `
       <${tag}
         class="book-card ${index === echoIndex ? "echo-interruption-card" : ""}"
@@ -540,12 +552,12 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
           </p>
   
           ${book.status
-            ? `<span class="book-status">${book.status}</span>`
-            : ""}
+        ? `<span class="book-status">${book.status}</span>`
+        : ""}
   
           ${book.genre
-            ? `<span class="book-genre-stamp">${book.genre}</span>`
-            : ""}
+        ? `<span class="book-genre-stamp">${book.genre}</span>`
+        : ""}
         </div>
       </${tag}>
     `;
@@ -607,7 +619,7 @@ function initFlyingQuotes() {
     return;
   }
 
-  
+
   const revealText = document.getElementById("revealText");
   const revealAuthor = document.getElementById("revealAuthor");
   const revealCommentary = document.getElementById("revealCommentary");
@@ -665,7 +677,7 @@ function initFlyingQuotes() {
   function showQuoteByObject(quote) {
     revealText.textContent = `“${quote.text}”`;
     revealAuthor.textContent = `— ${quote.author}`;
-  
+
     if (quote.commentary) {
       revealCommentary.innerHTML = quote.commentary;
       revealCommentary.style.display = "block";
@@ -673,7 +685,7 @@ function initFlyingQuotes() {
       revealCommentary.innerHTML = "";
       revealCommentary.style.display = "none";
     }
-  
+
     quoteReveal.classList.add("is-visible");
   }
 
@@ -788,14 +800,14 @@ function loadFooter() {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadNavigation();
-  
+
   const logo = document.getElementById("alchemyLogo");
   if (logo) {
     setTimeout(() => {
       logo.src = `/images/handwriting/soft-alchemy-handwritten.png`;
     }, 5500);
   }
-  
+
   loadFooter();
   applyTheme();
   initFlyingQuotes();
