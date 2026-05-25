@@ -108,7 +108,7 @@ const roomData = {
   kitchen: {
     title: "🍯 The Kitchen",
     url: "/kitchen/index.html",
-    description: "Ferments bubbling, cozy recipes, and experiments that may or may not be edible."
+    description: "Ferments bubbling, cosy recipes, and experiments that may or may not be edible."
   },
   study: {
     title: "📝 The Study",
@@ -123,7 +123,7 @@ const roomData = {
   library: {
     title: "📚 The Library",
     url: "/post.html?id=the-library",
-    description: "Story recommendations, board games, and book related joy."
+    description: "Story recommendations, board games, and book-related joy."
   },
   archive: {
     title: "📜 The Archive",
@@ -132,8 +132,8 @@ const roomData = {
   },
   dungeon: {
     title: "⚔️ The Dungeon",
-    url: "/post.html?id=dnd",
-    description: "Here be dragons: deep dive into D&D --- Coming Soon!"
+    url: "#",
+    description: "Here be dragons: a deep dive into D&D is still being summoned."
   }
 };
 
@@ -616,7 +616,7 @@ const studyContainer = document.getElementById("study-posts");
 if (studyContainer) {
   const studyPosts = posts.filter(
     post => post.category === "Study"
-  ).sort(() => Math.random() - 0.5);
+  );
 
   studyPosts.forEach(post => {
     const li = document.createElement("li");
