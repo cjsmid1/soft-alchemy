@@ -73,7 +73,7 @@ function loadNavigation() {
         </a>
 
         <div class="nav-right">
-          <a href="/blog.html">Archive</a>
+          <a href="/blog/index.html">Archive</a>
           <a href="/about/index.html#contact">Contact</a>
         </div>
       </div>
@@ -117,7 +117,7 @@ const roomData = {
   },
   echo: {
     title: "🐾 Echo's Corner",
-    url: "/blog.html?tag=dog-approved",
+    url: "/blog/index.html?tag=dog-approved",
     description: "Dog-approved adventures, a very strange birthday cake, and important announcements about birds outside."
   },
   library: {
@@ -127,7 +127,7 @@ const roomData = {
   },
   archive: {
     title: "📜 The Archive",
-    url: "/blog.html",
+    url: "/blog/index.html",
     description: "The unfiltered list of everything."
   },
   dungeon: {
@@ -137,6 +137,8 @@ const roomData = {
   }
 };
 
+let activeRoom = null;
+
 document.addEventListener("click", (e) => {
   const button = e.target.closest("[data-room]");
   if (!button) return;
@@ -144,14 +146,40 @@ document.addEventListener("click", (e) => {
   const result = document.getElementById("interestResult");
   if (!result) return;
 
-  // Special Echo interruption first
-  if (button.dataset.room === "interruption") {
+  const roomKey = button.dataset.room;
+
+  document.querySelectorAll(".interest-options button")
+    .forEach(btn => btn.classList.remove("active-room"));
+
+  button.classList.add("active-room");
+
+  // SECOND CLICK = GO THERE
+  if (activeRoom === roomKey) {
+
+    if (roomKey === "interruption") {
+      window.location.href = "/blog/index.html?tag=dog-approved";
+      return;
+    }
+
+    const room = roomData[roomKey];
+    if (!room) return;
+
+    window.location.href = room.url;
+    return;
+  }
+
+  // FIRST CLICK = REVEAL
+  activeRoom = roomKey;
+
+  // Echo interruption
+  if (roomKey === "interruption") {
     result.innerHTML = `
-      <a class="interest-result echo-interruption" href="/blog.html?tag=dog-approved">
+      <a class="interest-result echo-interruption" href="/blog/index.html?tag=dog-approved">
         <h2>
           <img class="emoji" src="/images/paw-print.png" alt="">
           Echo Interruption!
         </h2>
+
         <p>He insisted this was important.</p>
 
         <figure class="card-figure">
@@ -177,7 +205,7 @@ document.addEventListener("click", (e) => {
   }
 
   // Normal room cards
-  const room = roomData[button.dataset.room];
+  const room = roomData[roomKey];
   if (!room) return;
 
   result.innerHTML = `
@@ -279,7 +307,7 @@ function renderLatestPost(containerId, category = null) {
   container.innerHTML = createPostPreviewHTML(latestPost);
 
   addTagClickHandlers(container, tag => {
-    window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -293,7 +321,7 @@ function renderFeaturedPost(postId, containerId) {
   container.innerHTML = createPostPreviewHTML(post);
 
   addTagClickHandlers(container, tag => {
-    window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -457,7 +485,7 @@ if (postContainer) {
     postContainer.querySelectorAll(".tag").forEach(el => {
       el.addEventListener("click", () => {
         const tag = el.dataset.tag;
-        window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
+        window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
       });
     });
 
@@ -486,7 +514,7 @@ document.querySelectorAll(".chaos-list li").forEach(el => {
 // FUNCTION TO GO TO TAG (USED IN SINGLE POST)
 // -----------------------------
 function goToTag(tag) {
-  window.location.href = `blog.html?tag=${encodeURIComponent(tag)}`;
+  window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
 }
 
 // -----------------------------
@@ -509,6 +537,100 @@ document.addEventListener("click", (e) => {
   goToRandomPost();
 });
 
+
+// -----------------------------
+// AUTO-GENERATE KITCHEN PANTRY
+// -----------------------------
+function shuffleArray(array) {
+  return array
+    .map(item => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+}
+
+function createCollageItem(item) {
+  const link = document.createElement("a");
+  link.href = item.href;
+
+  const img = document.createElement("img");
+  img.src = item.image;
+  img.alt = item.alt || item.title || "";
+
+  link.appendChild(img);
+
+  link.dataset.title = item.title;
+
+  if (item.pawStamp) {
+    const paw = document.createElement("img");
+    paw.className = "paw-stamp";
+    paw.src = item.pawStamp;
+    paw.alt = "";
+    link.appendChild(paw);
+  }
+
+  return link;
+}
+
+function renderRecipeCollage() {
+  const collage = document.getElementById("recipe-collage");
+  if (!collage) return;
+
+  const recipePosts = posts
+    .filter(post => post.category === "Recipe")
+    .map(post => ({
+      title: post.title,
+      href: `/post.html?id=${post.id}`,
+      image: post.image,
+      alt: post.imageAlt || post.title
+    }))
+    .filter(item => item.image);
+
+  const manualAdditions = [
+    {
+      title: "Dog birthday cake",
+      href: "/post.html?id=echo-first-birthday#birthday-cake",
+      image: "/images/cake-cutting.jpg",
+      alt: "Dog birthday cake",
+      pawStamp: "/images/handwriting/paw-print-handwritten.png"
+    }
+  ];
+
+  const collageItems = shuffleArray([
+    ...recipePosts,
+    ...manualAdditions
+  ]);
+
+  collage.innerHTML = "";
+  collageItems.forEach(item => {
+    collage.appendChild(createCollageItem(item));
+  });
+}
+
+renderRecipeCollage();
+
+// -----------------------------
+// AUTO-GENERATE STUDY POSTS CHAOS LIST
+// -----------------------------
+const studyContainer = document.getElementById("study-posts");
+
+if (studyContainer) {
+  const studyPosts = posts.filter(
+    post => post.category === "Study"
+  ).sort(() => Math.random() - 0.5);
+
+  studyPosts.forEach(post => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <a href="/post.html?id=${post.id}">
+        ${post.title.replace(/^[^\w]+/, "")}
+      </a>
+    `;
+
+    studyContainer.appendChild(li);
+  });
+}
+
 // -----------------------------
 // BOOKSHELF
 // -----------------------------
@@ -516,49 +638,64 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
   const shelf = document.getElementById(shelfId);
   if (!shelf) return;
 
-  const echoIndex = allowEcho && books.length > 0
-    ? Math.floor(Math.random() * books.length)
+  const eligibleBooks = books
+    .map((book, index) => ({ book, index }))
+    .filter(({ book }) => !book.note && !book.featured);
+
+  const echoIndex = allowEcho && eligibleBooks.length > 0
+    ? eligibleBooks[Math.floor(Math.random() * eligibleBooks.length)].index
     : -1;
 
   shelf.innerHTML = books.map((book, index) => {
     const tag = book.url ? "a" : "div";
+    const hasNote = Boolean(book.note);
+    const hasGenre = Boolean(book.genre);
 
     return `
       <${tag}
-        class="book-card ${index === echoIndex ? "echo-interruption-card" : ""}"
-  
+        class="book-card
+        ${index === echoIndex ? "echo-interruption-card" : ""}
+        ${hasNote ? "has-note" : ""}
+        ${hasGenre ? "has-genre" : ""}
+        ${book.featured ? "is-featured" : ""}
+        "
+
         ${book.url ? `
           href="${book.url}"
           target="_blank"
           rel="noopener noreferrer"
         ` : ""}
-  
+
         data-original-title="${book.title}"
         data-original-author="${book.author || ""}"
         data-original-image="${book.image}"
         data-original-alt="${book.title} cover"
-  
+
         data-echo-image="/images/echo-book.jpg"
         data-echo-title="🐾 Echo Interruption!"
         data-echo-author="Every library needs a familiar"
       >
         <img src="${book.image}" alt="${book.title} cover">
-  
+
         <div class="book-info">
           <h3>${book.title}</h3>
-  
+
           <p class="book-author">
             ${book.author || ""}
           </p>
-  
+
           ${book.status
         ? `<span class="book-status">${book.status}</span>`
         : ""}
-  
+
           ${book.genre
         ? `<span class="book-genre-stamp">${book.genre}</span>`
         : ""}
         </div>
+
+        ${book.note
+        ? `<p class="book-note">${book.note}</p>`
+        : ""}
       </${tag}>
     `;
   }).join("");
@@ -589,21 +726,29 @@ function addEchoInterruption(shelf) {
   const title = echoCard.querySelector("h3");
   const author = echoCard.querySelector(".book-author");
 
-  echoCard.addEventListener("mouseenter", () => {
+  function showEcho() {
     img.src = echoCard.dataset.echoImage;
     img.alt = "Echo interrupting the bookshelf";
     title.innerHTML = echoCard.dataset.echoTitle;
     author.textContent = echoCard.dataset.echoAuthor;
     echoCard.classList.add("is-echo");
-  });
+  }
 
-  echoCard.addEventListener("mouseleave", () => {
+  function hideEcho() {
     img.src = echoCard.dataset.originalImage;
     img.alt = echoCard.dataset.originalAlt;
     title.innerHTML = echoCard.dataset.originalTitle;
     author.textContent = echoCard.dataset.originalAuthor;
     echoCard.classList.remove("is-echo");
-  });
+  }
+
+  echoCard.addEventListener("mouseenter", showEcho);
+  echoCard.addEventListener("mouseleave", hideEcho);
+
+  echoCard.addEventListener("focus", showEcho);
+  echoCard.addEventListener("blur", hideEcho);
+
+  echoCard.addEventListener("touchstart", showEcho, { passive: true });
 }
 
 

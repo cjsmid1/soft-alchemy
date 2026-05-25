@@ -22,8 +22,12 @@
     <loc>https://softalchemy.uk/garden/</loc>
   </url>
 
+   <url>
+    <loc>https://softalchemy.uk/library/</loc>
+  </url>
+
   <url>
-    <loc>https://softalchemy.uk/blog.html</loc>
+    <loc>https://softalchemy.uk/blog/index.html</loc>
   </url>
 
   <!-- Posts -->

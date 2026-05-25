@@ -464,6 +464,13 @@ p, ul {
   cursor: pointer;
 }
 
+.interest-options button.active-room {
+  color: #c89b3c;
+
+  text-shadow:
+    0 0 6px rgba(200, 155, 60, 0.35);
+}
+
 .interest-result {
   display: block;
   margin-top: 1.5rem;
@@ -880,6 +887,7 @@ p, ul {
 .photo-collage a {
   position: relative;
   display: block;
+  overflow: hidden;
   margin-bottom: 1rem;
 
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -896,6 +904,30 @@ p, ul {
   display: block;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.photo-collage a::after {
+  content: attr(data-title);
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0.7rem;
+
+  background: linear-gradient(transparent,
+      rgba(0, 0, 0, 0.7));
+
+  color: white;
+  font-size: 0.9rem;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.photo-collage a:hover::after {
+  opacity: 1;
 }
 
 .photo-collage img.paw-stamp {
@@ -927,5 +959,9 @@ p, ul {
 
   border-radius: 50%;
   overflow: hidden;
+}
+
+.photo-collage.photo-circle a::after {
+  background: transparent;
 }
 

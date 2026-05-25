@@ -1,11 +1,16 @@
+const bookclubBook = [
+  
+]
 const currentBooks = [
   {
     title: "The Fifth Season",
     author: "N.K. Jemisin",
-    status: "Finished",
+    status: "Shared Read",
+    featured: true,
     genre: "✨",
     image: "/images/books/the-fifth-season.jpg",
-    url: "https://www.goodreads.com/book/show/19161852-the-fifth-season"
+    url: "https://www.goodreads.com/book/show/19161852-the-fifth-season",
+    note: "A rare book club miracle: unanimous approval...?"
   },
   {
     title: "The Obelisk Gate",
@@ -21,7 +26,8 @@ const currentBooks = [
     status: "Reading",
     genre: "🔍",
     image: "/images/books/bad-astronomy.jpg",
-    url: "https://www.goodreads.com/book/show/23518.Bad_Astronomy"
+    url: "https://www.goodreads.com/book/show/23518.Bad_Astronomy",
+    note: "Fun silly humour but a bit dated, and I may have fallen asleep a couple times while listening"
   },
   {
     title: "Wyrd Sisters",
@@ -101,7 +107,8 @@ const nonFictionBooks = [
     title: "I Will Teach You to Be Rich",
     author: "Ramit Sethi",
     image: "/images/books/teach-you-to-be-rich.jpg",
-    url: "https://www.goodreads.com/book/show/40591670-i-will-teach-you-to-be-rich"
+    url: "https://www.goodreads.com/book/show/40591670-i-will-teach-you-to-be-rich",
+    note: "Ignore the gimmicky title, the advice is genuinely solid."
   },
 ];
 const nostalgiaBooks = [
@@ -157,12 +164,14 @@ const otherMedia = [
     title: "Princess Bride Analysis",
     author: "Cinema Therapy",
     image: "/images/books/cinema-therapy.jpg",
-    url: "https://www.youtube.com/watch?v=Llyf83OLcAk"
+    url: "https://www.youtube.com/watch?v=Llyf83OLcAk",
+    note: "Technically more film related, but too good not to include."
   },{
     title: "Just Stab Me Now",
     author: "Jill Bearup",
     image: "/images/books/just-stab-me-now.jpg",
-    url: "https://www.youtube.com/playlist?list=PLj4N-R1RQxAuAQ4qBpaUbGLb1ZWpWySAz"
+    url: "https://www.youtube.com/playlist?list=PLj4N-R1RQxAuAQ4qBpaUbGLb1ZWpWySAz",
+    note: "Fun premise & youtube playlist(s), the actual book felt a bit flat."
   },
 ];
 const boardGames = [
@@ -209,10 +218,11 @@ const boardGames = [
   {
     title: "Game of Thrones",
     author: "Risk on Crack",
-	status: "3-6 players",
+	  status: "3-6 players",
     genre: "4h",
     image: "/images/boardGames/gameOfThrones.webp",
-    url: "https://boardgamegeek.com/boardgame/103343/a-game-of-thrones-the-board-game-second-edition"
+    url: "https://boardgamegeek.com/boardgame/103343/a-game-of-thrones-the-board-game-second-edition",
+    note: "My favourite strategy game: a masterclass in temporary alliances and inevitable betrayal."
   },
   {
     title: "Cash'n'Guns",
@@ -242,13 +252,14 @@ const currentBubbling = [
   {
     title: "Kombucha Scoby",
     author: "Started 16/4/26",
-	status: "In Progress",
-    image: "/images/kombucha-scoby.jpg"
+	status: "In Progress?",
+    image: "/images/kombucha-scoby.jpg",
+    note: "Currently being rescued by the purchase of a heat mat - I hope..."
   },
   {
     title: "Garlic Honey",
     author: "Started 31/3/26",
-	status: "Ready",
+	status: "Aging Gracefully",
     image: "/images/honey-garlic.jpg",
   },
   {
@@ -256,15 +267,21 @@ const currentBubbling = [
     author: "Started 5/3/26",
 	status: "Deceased",
     image: "/images/fake-soy-sauce.jpg",
+    note: "Possibly too much air space above the mixture & left it too long."
   },
   {
     title: "Satsuma Vinegar",
 	author: "Started 3/3/26",
 	status: "Almost Ready?",
-    image: "/images/satsuma-vinegar.jpg"
+    image: "/images/satsuma-vinegar.jpg",
+    note: "Taking much longer than normal vinegars, may need to try again."
   },
 ];
 const bookshelfConfigs = [
+  {
+    id: "bookclub-bookshelf",
+    books: bookclubBook
+  },
   {
     id: "current-bookshelf",
     books: currentBooks
