@@ -6,6 +6,22 @@ const divider = `
 
 const posts = [
 	{
+		id: "echo-collage",
+		title: "📸 A Completely Normal Amount of Dog Photos",
+		metaDescription:
+			"A totally reasonable collection of Echo photos featuring dramatic ear floofs, suspicious levels of cuteness, and ongoing small supervisor energy.",
+		category: "Life",
+		tags: ["dog-approved"],
+		excerpt: "The time I used blogging as an excuse to create an entirely necessary archive of puppy photos...",
+		content: `<section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>A joyful and perfectly reasonable collection of Echo photos.
+		    Frankly, it would have been selfish not to share them.</p>
+	  </section>
+		<div class="photo-collage photo-collage--3-column" id="echo-gallery"></div>
+	`,
+	},
+	{
     id: "chocolate-milkshake",
 		title: "🥤 Mint Chocolate Milkshake",
 		metaTitle: "🥤 Mint Chocolate Milkshake | Soft Alchemy",
@@ -112,7 +128,7 @@ const posts = [
 		Filtering information is simply more efficient than trying to process everything at once. Otherwise we'd all end up admiring soap bubbles while the saucepan boils over. Where things become especially interesting is whether we can change what our brain views as important & therefore worthy of your attention. 
 		</p>
 		<br>
-		<h3>Priming the brain</h3>
+		<h3>Priming the Brain</h3>
 		<p>
 		My philosopher friend may find a way to disagree, but I'm going to start with the assumption that our world view influences what we think, say & do. I would also argue that what we think, say & do, influence our world view (especially when it has immediate physical or social feedback!).
 		</p>
@@ -128,7 +144,7 @@ const posts = [
 		Personally my curiosity is piqued enough to warrant experimentation...
 		</p>
 		<br>
-		<h3>Using affirmations</h3>
+		<h3>Using Affirmations</h3>
 		<p>A reminder at this point: I am absolutely not an expert, but the following makes sense to me. Even if you come up with the world's best affirmation, it's going to be more effective if you think about or say it regularly rather than once. Think of it like teaching your brain something new (note to self: would spaced repetition work on affirmations?). This regular mental prompting can include:</p>
 		<ul>
 		<li>Visual prompting: leaving sticky notes around where you see them daily like the bathroom mirror or your phone background (just remember it'll lose novelty over time so changing up the location can help here).<br>
@@ -323,7 +339,7 @@ const posts = [
       "The Soft Alchemy Library | Book Recommendations for Curious Minds",
     metaDescription:
       "A growing collection of fantasy, thoughtful nonfiction, cosy reads, and quietly life-changing books from the Soft Alchemy library.",
-    image: "/images/echo-book.jpg",
+    image: "/images/echo/echo-book.jpg",
     imageAlt: "Echo the papillon sitting beside a travel book",
     category: "Life",
     tags: ["books", "recommendation"],
@@ -624,7 +640,7 @@ const posts = [
     metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
     metaDescription:
       "Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
-    image: "/images/echo-wisley.jpg",
+    image: "/images/echo/echo-wisley.jpg",
     imageAlt: "Echo the papillon visiting RHS Wisley gardens",
     category: "Life",
     tags: ["dog-approved", "dog recipe", "recommendation"],
@@ -638,7 +654,7 @@ const posts = [
 	<p>
 	It turns out for me dog birthdays definitely count. While I won't go as far as to organise a full on birthday party, it is a wonderful excuse to crack out the dog cookbook I got for christmas and give the dog approved birthday cake recipe a go. It is also the perfect excuse to upgrade the usual walk... 
 	<h3 id="wisley">Exploring Wisley Gardens</h3>
-	<img class="card-image" src="/images/echo-wisley.jpg" alt="Nice view">
+	<img class="card-image" src="/images/echo/echo-wisley.jpg" alt="Nice view">
 	<p>For those of you who live close enough to be interested: yes there is a special event <a href="https://www.rhs.org.uk/gardens/wisley/whats-on/walkies-at-wisley">Walkies at Wisley</a> where you can bring your favourite furry friends along to enjoy the beautiful scenery.
 	</p>
 	<p> Wisley Mini Review - the good: </p>
@@ -658,7 +674,7 @@ const posts = [
 	<section class="dog-review">
       <div class="dog-title">Echo's Review - Ice Cream</div>
       <div class="dog-image">
- 	   <img src="/images/echo-ice-cream.jpg" alt="Dog Ice Cream">
+ 	   <img src="/images/echo/echo-ice-cream.jpg" alt="Dog Ice Cream">
  	   </div>
       <div class="dog-columns">
         <div class="dog-good">
@@ -915,8 +931,13 @@ const posts = [
     category: "Life",
     tags: ["goals", "reflection"],
     excerpt: "What I want to explore during my time off...",
-    content: `<p>The plan is a lie, as is this post.
-	<br>
-	I use it as a shameless template, who knows maybe one day I'll actually fill in the details 😅</p>`,
+    content: `
+		<section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>
+		The plan is a lie, as is this post.<br>
+	  I use it as a shameless template, who knows maybe one day I'll actually fill in the details 😅</p>
+	  </section>
+		`,
   },
 ];

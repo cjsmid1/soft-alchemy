@@ -30,12 +30,12 @@ const currentBooks = [
     note: "Fun silly humour but a bit dated, and I may have fallen asleep a couple times while listening"
   },
   {
-    title: "Wyrd Sisters",
+    title: "Equal Rites",
     author: "Terry Pratchett",
-    status: "Rereading",
+    status: "Reading",
     genre: "✨",
-    image: "/images/books/wyrd-sisters.jpg",
-    url: "https://www.goodreads.com/book/show/34504.Wyrd_Sisters"
+    image: "/images/books/equal-rites.jpg",
+    url: "https://www.goodreads.com/book/show/15818414-equal-rites"
   },
   {
     title: "The Power of Geography",
@@ -197,7 +197,8 @@ const boardGames = [
 	status: "2-4 players",
     genre: "1h",
     image: "/images/boardGames/catan.webp",
-    url: "https://boardgamegeek.com/boardgame/13/catan"
+    url: "https://boardgamegeek.com/boardgame/13/catan",
+    note: "James's favourite, though he is yet to beat me!"
   },
   {
     title: "Carcassonne",

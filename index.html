@@ -1,40 +1,35 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soft Alchemy | Gentle experiments in everyday life</title>
 
-  <meta 
-    name="description" 
-    content="Soft Alchemy is a cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
-  >
+  <meta name="description"
+    content="Soft Alchemy is a cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life.">
 
   <link rel="canonical" href="https://softalchemy.uk/">
 
   <!-- Open Graph / Pinterest / Facebook -->
   <meta property="og:title" content="Soft Alchemy | Gentle experiments in everyday life">
-  <meta 
-    property="og:description" 
-    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
-  >
+  <meta property="og:description"
+    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://softalchemy.uk/">
   <meta property="og:site_name" content="Soft Alchemy">
   <meta property="og:image" content="https://softalchemy.uk/images/vietnam-sunset.jpg">
   <meta property="og:image:alt" content="A warm sunset scene representing Soft Alchemy">
-  
+
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Soft Alchemy | Gentle experiments in everyday life">
-  <meta 
-    name="twitter:description" 
-    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life."
-  >
+  <meta name="twitter:description"
+    content="A cosy personal blog about gentle productivity, books, recipes, dog-approved interruptions, and small experiments in everyday life.">
   <meta name="twitter:image" content="https://softalchemy.uk/images/vietnam-sunset.jpg">
   <meta name="twitter:image:alt" content="A warm sunset scene representing Soft Alchemy">
-  
+
   <script>
     if (localStorage.getItem("theme") === "dark") {
       document.documentElement.classList.add("dark");
@@ -43,12 +38,12 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="preload" as="image" href="images/watercolour-background.jpg">
   <link rel="preload" as="image" href="images/watercolour-background-dark.png">
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-563L2Z66XJ');
   </script>
@@ -58,41 +53,39 @@
   <header>
     <h1>Soft Alchemy</h1>
     <h3>by Claire</h3>
-	<br>
+    <br>
     <p>Transforming domestic life with gentle productivity, small experiments & organised chaos.</p>
   </header>
   <div class="two-column-layout equal">
 
     <section class="card quote-content">
-	  <a href="/post.html?id=quote-page" class="quote-card-link">
+      <a href="/post.html?id=quote-page" class="quote-card-link">
         <blockquote>
           “The cure for boredom is curiosity.<br> There is no cure for curiosity.”
         </blockquote>
         <cite>
           — Dorothy Parker
         </cite>
-	  </a>
+      </a>
     </section>
 
     <section class="card start-here-card start-here-card--reverse">
-  
+
       <div class="start-here-content">
         <h3 class="start-here-title">
           Follow the Paw Prints
         </h3>
-  
+
         <p>
           Not sure where to start?<br>
-          Try the  
-          <a href="/about/index.html">About</a> page or let Echo 
-          <a href="#" id="randomPostBtn">fetch something from the archive</a>
-          <img 
-            class="paw-button"
-            src="images/handwriting/paw-print-handwritten.png"
-            alt=""
-          >
+          Try the
+          <a href="/about/index.html">About</a> page or let Echo
+          <a href="#" random-post>
+            fetch something from the archive
+            <img class="paw-button" src="/images/handwriting/paw-print-handwritten.png" alt="">
+          </a>
         </p>
-        
+
       </div>
       <div class="start-paw-trail">
         <img class="paw-print" style="--i:1" src="/images/paw-print.png" alt="">
@@ -102,39 +95,43 @@
         <img class="paw-print" style="--i:5" src="/images/paw-print.png" alt="">
       </div>
     </section>
-  
+
   </div>
-  
+
   <section class="card">
     <h2>Choose a Room</h2>
     <ul class="picture-list picture-rectangle">
-      <li><a href="/post.html?id=the-library"><img src="/images/echo-book-pretty.jpg" alt="Echo beside book">The Library</a></li>
+      <li><a href="/post.html?id=the-library"><img src="/images/echo/echo-book-pretty.jpg" alt="Echo beside book">The
+          Library</a></li>
       <li><a href="/kitchen/index.html"><img src="/images/james-kitchen.jpg" alt="James in kitchen">The Kitchen</a></li>
-      <li><a href="/study/index.html"><img src="/images/echo-destruction.jpg" alt="Echo paper destruction next to desk">The Study</a></li>
-      <li><a href="/garden/index.html"><img src="/images/echo-snow-garden.jpg" alt="Echo in snow in garden">The Garden</a></li>
+      <li><a href="/study/index.html"><img src="/images/echo/echo-destruction.jpg"
+            alt="Echo paper destruction next to desk">The Study</a></li>
+      <li><a href="/garden/index.html"><img src="/images/echo/echo-snow-garden.jpg" alt="Echo in snow in garden">The
+          Garden</a></li>
     </ul>
   </section>
-  
+
   <div class="two-column-layout equal">
     <section class="card">
       <h3>Latest in the Archive</h3>
       <div id="latest-post"></div>
     </section>
-  
+
     <section class="card">
       <h3>Claire's Choice</h3>
       <div id="favourite-post"></div>
     </section>
   </div>
-  
+
   <script src="/posts.js" defer></script>
   <script src="/script.js" defer></script>
-  
+
   <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    renderLatestPost("latest-post");
-    renderFeaturedPost("growth-areas", "favourite-post");
-  });
+    window.addEventListener("DOMContentLoaded", () => {
+      renderLatestPost("latest-post");
+      renderFeaturedPost("growth-areas", "favourite-post");
+    });
   </script>
 </body>
+
 </html>

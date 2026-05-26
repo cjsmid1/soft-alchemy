@@ -184,7 +184,7 @@ document.addEventListener("click", (e) => {
 
         <figure class="card-figure">
           <div class="card-image">
-            <img src="/images/echo-cute.jpg" alt="Echo looking cute">
+            <img src="/images/echo/echo-cute.jpg" alt="Echo looking cute">
 
             <div class="image-text">
               <img 
@@ -325,6 +325,64 @@ function renderFeaturedPost(postId, containerId) {
   });
 }
 
+function getRelatedPost(currentPost) {
+  const currentTags = new Set(currentPost.tags || []);
+
+  const scoredPosts = posts
+    .filter(post => post.id !== currentPost.id)
+    .map(post => {
+      const matchingTags = (post.tags || []).filter(tag => currentTags.has(tag));
+      const sameCategory =
+        post.category?.toLowerCase() === currentPost.category?.toLowerCase();
+
+      return {
+        post,
+        tagScore: matchingTags.length,
+        categoryScore: sameCategory ? 1 : 0,
+        totalScore: matchingTags.length * 10 + (sameCategory ? 1 : 0)
+      };
+    })
+    .filter(item => item.tagScore > 0 || item.categoryScore > 0);
+
+  if (!scoredPosts.length) return null;
+
+  const highestScore = Math.max(...scoredPosts.map(item => item.totalScore));
+
+  const bestMatches = scoredPosts
+    .filter(item => item.totalScore === highestScore)
+    .map(item => item.post);
+
+  return bestMatches[Math.floor(Math.random() * bestMatches.length)];
+}
+
+// -----------------------------
+// RANDOM POST
+// -----------------------------
+function getRandomPost(excludeId = null) {
+  const candidates = posts.filter(post => post.id !== excludeId);
+  if (!candidates.length) return null;
+
+  return candidates[Math.floor(Math.random() * candidates.length)];
+}
+
+function goToRandomPost(excludeId = null) {
+  const randomPost = getRandomPost(excludeId);
+  if (!randomPost) return;
+
+  window.location.href = `/post.html?id=${randomPost.id}`;
+}
+
+document.addEventListener("click", (e) => {
+  const randomBtn = e.target.closest("#randomPostBtn, [random-post]");
+  if (!randomBtn) return;
+
+  e.preventDefault();
+
+  const excludeId = randomBtn.dataset.excludeId || null;
+  goToRandomPost(excludeId);
+});
+
+
 // -----------------------------
 // METADATA
 // -----------------------------
@@ -414,6 +472,55 @@ function filterPosts(updateURL = true) {
 }
 
 // -----------------------------
+// RECOMMENDED NEXT POST
+// -----------------------------
+function renderRelatedPost(currentPost) {
+  const relatedPost = getRelatedPost(currentPost);
+  const randomPost = getRandomPost(currentPost.id);
+
+  if (!relatedPost && !randomPost) return;
+
+  const relatedSection = document.createElement("section");
+  relatedSection.className = "card related-post fade-in";
+
+  relatedSection.innerHTML = `
+    <div class="related-header">
+      <h3>The archive suggests...</h3>
+    </div>
+
+    ${relatedPost
+      ? createPostPreviewHTML(relatedPost)
+      : `<p>No logical match today. Guess your only option is...</p>`
+    }
+
+    ${randomPost
+      ? `
+    <div class="related-footer">
+      <h3>or follow Echo</h3>
+
+      <button
+        class="archive-paw-button"
+        type="button"
+        data-random-post
+        data-exclude-id="${currentPost.id}"
+        aria-label="Open a random post"
+      >
+        <img src="/images/handwriting/paw-print-handwritten.png" alt="">
+      </button>
+    </div>
+  `
+      : ""
+    }
+  `;
+
+  postContainer.insertAdjacentElement("afterend", relatedSection);
+
+  addTagClickHandlers(relatedSection, tag => {
+    window.location.href = `/blog/index.html?tag=${encodeURIComponent(tag)}`;
+  });
+}
+
+// -----------------------------
 // TAG CLICK HANDLER
 // -----------------------------
 function setTagFilter(tag) {
@@ -489,8 +596,10 @@ if (postContainer) {
       });
     });
 
+    renderRelatedPost(post);
     renderBookshelvesForPage(bookshelfConfigs);
     if (id === "quote-page") { initFlyingQuotes(); }
+    if (id === "echo-collage") { renderEchoGallery(); }
   }
 }
 
@@ -517,29 +626,9 @@ function goToTag(tag) {
   window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
 }
 
-// -----------------------------
-// RANDOM POST
-// -----------------------------
-function goToRandomPost() {
-  if (!posts || posts.length === 0) return;
-
-  const randomIndex = Math.floor(Math.random() * posts.length);
-  const randomPost = posts[randomIndex];
-
-  window.location.href = `/post.html?id=${randomPost.id}`;
-}
-
-document.addEventListener("click", (e) => {
-  const randomBtn = e.target.closest("#randomPostBtn");
-  if (!randomBtn) return;
-
-  e.preventDefault();
-  goToRandomPost();
-});
-
 
 // -----------------------------
-// AUTO-GENERATE KITCHEN PANTRY
+// GALLERIES
 // -----------------------------
 function shuffleArray(array) {
   return array
@@ -548,17 +637,16 @@ function shuffleArray(array) {
     .map(({ item }) => item);
 }
 
-function createCollageItem(item) {
+function createLinkedCollageItem(item) {
   const link = document.createElement("a");
   link.href = item.href;
+  link.dataset.title = item.title || "";
 
   const img = document.createElement("img");
   img.src = item.image;
   img.alt = item.alt || item.title || "";
 
   link.appendChild(img);
-
-  link.dataset.title = item.title;
 
   if (item.pawStamp) {
     const paw = document.createElement("img");
@@ -569,6 +657,104 @@ function createCollageItem(item) {
   }
 
   return link;
+}
+
+function createPlainCollageImage(item) {
+  const button = document.createElement("button");
+  button.className = `collage-item ${item.className || ""}`.trim();
+  button.type = "button";
+  button.dataset.title = item.note || "";
+
+  const isVideo = /\.(mp4|webm|mov)$/i.test(item.image);
+
+  let media;
+
+  function setHoverScale(width, height) {
+    const ratio = width / height;
+
+    if (ratio > 1.5) {
+      button.style.setProperty("--hover-scale", "2.2");
+    } else if (ratio < 0.85) {
+      button.style.setProperty("--hover-scale", "1.2");
+    } else {
+      button.style.setProperty("--hover-scale", "1.6");
+    }
+  }
+
+  if (isVideo) {
+    media = document.createElement("video");
+
+    media.src = item.image;
+    media.autoplay = true;
+    media.muted = true;
+    media.loop = false;
+    media.playsInline = true;
+    media.preload = "auto";
+
+    media.setAttribute("muted", "");
+    media.setAttribute("playsinline", "");
+
+    media.addEventListener("loadedmetadata", () => {
+      setHoverScale(media.videoWidth, media.videoHeight);
+    });
+  } else {
+    media = document.createElement("img");
+
+    media.src = item.image;
+    media.alt = item.alt || item.note || "Echo photo";
+
+    media.addEventListener("load", () => {
+      setHoverScale(media.naturalWidth, media.naturalHeight);
+    });
+  }
+
+  button.appendChild(media);
+  
+  button.addEventListener("mouseenter", () => {
+    if (isVideo) {
+      media.loop = true;
+      media.play();
+    }
+  });
+
+  button.addEventListener("mouseleave", () => {
+    if (isVideo) {
+      media.loop = false;
+    }
+  });
+
+  button.addEventListener("click", () => {
+    button.classList.toggle("show-note");
+
+    if (isVideo) {
+      media.currentTime = 0;
+      media.play();
+    }
+  });
+
+  return button;
+}
+
+function renderEchoGallery() {
+  const collage = document.getElementById("echo-gallery");
+  if (!collage) return;
+
+  if (typeof echoGalleryImages === "undefined") {
+    console.warn("echoGalleryImages is not loaded. Check echo.js is loaded before script.js.");
+    return;
+  }
+
+  const galleryItems = shuffleArray(echoGalleryImages);
+
+  collage.innerHTML = "";
+  galleryItems.forEach(item => {
+    collage.appendChild(createPlainCollageImage({
+      image: `/images/echo/${item.file}`,
+      alt: item.alt || item.note || "Echo photo",
+      note: item.note,
+      className: item.className || ""
+    }));
+  });
 }
 
 function renderRecipeCollage() {
@@ -602,7 +788,7 @@ function renderRecipeCollage() {
 
   collage.innerHTML = "";
   collageItems.forEach(item => {
-    collage.appendChild(createCollageItem(item));
+    collage.appendChild(createLinkedCollageItem(item));
   });
 }
 
@@ -671,7 +857,7 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
         data-original-image="${book.image}"
         data-original-alt="${book.title} cover"
 
-        data-echo-image="/images/echo-book.jpg"
+        data-echo-image="/images/echo/echo-book.jpg"
         data-echo-title="🐾 Echo Interruption!"
         data-echo-author="Every library needs a familiar"
       >

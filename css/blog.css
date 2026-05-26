@@ -179,6 +179,22 @@ p, ul {
   margin-top: 0.1rem;
 }
 
+/* Related post footer */
+.related-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0rem;
+
+  transform: rotate(1deg);
+}
+
+.related-footer h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* =============================
    SUMMARY NOTES
    ============================= */
@@ -398,6 +414,7 @@ p, ul {
 
 .card img.paw-button:hover {
   transform: rotate(-16deg) scale(1.2);
+  cursor: pointer;
 }
 
 
@@ -849,7 +866,7 @@ p, ul {
   right: 10%;
 }
 
-
+/* Collages */
 .photo-collage {
   column-count: 2;
   column-gap: 1rem;
@@ -883,30 +900,69 @@ p, ul {
   z-index: 20;
 }
 
-/* linked collage images */
-.photo-collage a {
+/* wrapped collage images and links */
+.photo-collage a,
+.photo-collage .collage-item {
   position: relative;
   display: block;
   overflow: hidden;
   margin-bottom: 1rem;
-
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.photo-collage a {
   cursor: pointer;
 }
 
-.photo-collage a:hover {
-  transform: scale(1.2);
-  z-index: 20;
+
+@media (hover: hover) and (pointer: fine) {
+  .photo-collage a:hover,
+  .photo-collage .collage-item:hover {
+    transform:
+        scale(var(--hover-scale, 1.2)) translateY(-8px);
+    z-index: 100;
+  }
 }
 
-.photo-collage a > img:not(.paw-stamp) {
+.photo-collage a>img:not(.paw-stamp),
+.photo-collage .collage-item>img,
+.photo-collage .collage-item>video {
   width: 100%;
   display: block;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.photo-collage a::after {
+.photo-collage .collage-item>video::before {
+  content: "▶";
+
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 0.8rem;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.photo-collage a[data-title]:not([data-title=""])::after,
+.photo-collage .collage-item[data-title]:not([data-title=""])::after {
   content: attr(data-title);
 
   position: absolute;
@@ -914,19 +970,24 @@ p, ul {
   right: 0;
   bottom: 0;
 
-  padding: 0.7rem;
+  padding: 1.8rem 0.75rem 0.75rem;
 
   background: linear-gradient(transparent,
-      rgba(0, 0, 0, 0.7));
+      rgba(0, 0, 0, 0.35) 35%,
+      rgba(0, 0, 0, 0.78));
 
   color: white;
   font-size: 0.9rem;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
-.photo-collage a:hover::after {
+.photo-collage a[data-title]:not([data-title=""]):hover::after,
+.photo-collage .collage-item[data-title]:not([data-title=""]):hover::after,
+.photo-collage .collage-item.show-note[data-title]:not([data-title=""])::after {
   opacity: 1;
 }
 
@@ -963,5 +1024,11 @@ p, ul {
 
 .photo-collage.photo-circle a::after {
   background: transparent;
+}
+
+@media (min-width: 700px) {
+  .photo-collage--3-column {
+      column-count: 3;
+    }
 }
 
