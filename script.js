@@ -682,6 +682,7 @@ function createPlainCollageImage(item) {
   }
 
   if (isVideo) {
+    button.classList.add("is-video");
     media = document.createElement("video");
 
     media.src = item.image;
