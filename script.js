@@ -690,7 +690,8 @@ function createPlainCollageImage(item) {
     media.muted = true;
     media.loop = false;
     media.playsInline = true;
-    media.preload = "auto";
+    media.preload = "metadata";
+    media.loading = "lazy";
 
     media.setAttribute("muted", "");
     media.setAttribute("playsinline", "");
@@ -703,6 +704,8 @@ function createPlainCollageImage(item) {
 
     media.src = item.image;
     media.alt = item.alt || item.note || "Echo photo";
+    media.loading = "lazy";
+    media.decoding = "async";
 
     media.addEventListener("load", () => {
       setHoverScale(media.naturalWidth, media.naturalHeight);
