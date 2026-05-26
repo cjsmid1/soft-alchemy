@@ -501,7 +501,7 @@ function renderRelatedPost(currentPost) {
       <button
         class="archive-paw-button"
         type="button"
-        data-random-post
+        random-post
         data-exclude-id="${currentPost.id}"
         aria-label="Open a random post"
       >
