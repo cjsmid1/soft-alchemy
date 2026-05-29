@@ -56,13 +56,20 @@
     <h1>The Garden</h1>
   </header>
 
-  <section class="card">
-    <h2>Work in progress...</h2>
-    <img class="card-image" src="/images/echo/echo-window.jpg" alt="Echo looking out into the garden">
+  <section class="card garden-timeline-card">
+    <h2>The 2026 Season</h2>
+    <ul id="timelineMonthJump" class="chaos-list"></ul>
+    <div id="gardenTimeline" class="garden-timeline"></div>
   </section>
 
+  <script src="/garden/garden-timeline.js" defer></script>
   <script src="/posts.js" defer></script>
   <script src="/script.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      renderGardenTimeline("gardenTimeline");
+    });
+  </script>
 </body>
 
 </html>

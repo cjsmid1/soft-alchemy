@@ -1,0 +1,289 @@
+.garden-timeline-card {
+  overflow: visible;
+}
+
+.garden-timeline {
+  position: relative;
+}
+
+.timeline-month-section {
+  position: relative;
+  padding: 0 0 0;
+}
+
+.timeline-month-marker {
+  position: sticky;
+  top: 5rem;
+  z-index: 50;
+
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  padding: 0.35rem 0.65rem;
+
+  border-radius: 999px;
+  background: var(--card-bg, #f8f4ec);
+  border: 1px solid rgba(120, 95, 65, 0.3);
+
+  font-weight: 700;
+}
+
+.timeline-month-items {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.timeline-month-items::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 3px dashed rgba(120, 95, 65, 0.45);
+}
+
+.timeline-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-column-left {
+  grid-column: 1;
+}
+
+.timeline-column-right {
+  grid-column: 3;
+}
+
+.timeline-entry {
+  width: 100%;
+  padding: 0.9rem;
+
+  border-radius: 1rem;
+  background: rgba(255, 252, 245, 0.75);
+  border: 1px solid rgba(120, 95, 65, 0.18);
+  box-shadow: 0 6px 18px rgba(60, 45, 30, 0.08);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  transform: rotate(var(--timeline-tilt, 0deg));
+    transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .timeline-entry:hover,
+  .timeline-entry.timeline-highlight {
+    transform: rotate(0deg) scale(1.07);
+    z-index: 20;
+  }
+
+}
+
+.timeline-highlight {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow:
+    0 0 0 2px rgba(212, 175, 55, 0.15),
+    0 8px 24px rgba(212, 175, 55, 0.18);
+
+  transform: translateY(-2px);
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-entry h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.timeline-entry p {
+  margin-bottom: 0;
+}
+
+.timeline-image {
+  width: 100%;
+  display: block;
+  border-radius: 0.8rem;
+  margin: 0.5rem 0;
+  cursor: zoom-in;
+}
+
+.timeline-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: rgba(20, 18, 16, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.timeline-lightbox-image {
+  max-width: min(96vw, 1200px);
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 252, 245, 0.95);
+}
+
+.timeline-lightbox-content {
+  position: relative;
+  width: fit-content;
+  max-width: min(96vw, 1200px);
+  max-height: 90vh;
+}
+
+.timeline-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: rgba(255, 252, 245, 0.92);
+  color: #2b2722;
+
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+
+.timeline-thread-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.timeline-marker-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 70px;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
+  z-index: 5;
+
+  overflow: visible;
+}
+
+.timeline-thread-path {
+  fill: none;
+  stroke: rgba(212, 175, 55, 0.68);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.28));
+  opacity: 0.9;
+
+  transition: none;
+}
+
+.timeline-thread-path.timeline-thread-draw {
+  transition: stroke-dashoffset 0.45s ease-out;
+}
+
+
+.timeline-marker-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+
+  background: rgba(150, 122, 78, 0.75);
+  border: 2px solid rgba(255, 252, 245, 0.95);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.timeline-marker-image {
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
+
+  opacity: 0.82;
+
+  filter:
+    brightness(0) saturate(100%) invert(56%) sepia(17%) saturate(531%) hue-rotate(356deg) brightness(90%) contrast(88%);
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.timeline-marker-active .timeline-marker-dot,
+.timeline-marker:hover .timeline-marker-dot,
+.timeline-marker:focus-visible .timeline-marker-dot {
+  transform: scale(1.25);
+  background: rgba(212, 175, 55, 0.95);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.55);
+}
+
+.timeline-marker-active .timeline-marker-image,
+.timeline-marker:hover .timeline-marker-image,
+.timeline-marker:focus-visible .timeline-marker-image {
+  transform: scale(1.15) rotate(-4deg);
+
+  opacity: 1;
+
+  filter:
+    brightness(0) saturate(100%) invert(76%) sepia(45%) saturate(580%) hue-rotate(356deg) brightness(102%) contrast(92%) drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+}
+
+

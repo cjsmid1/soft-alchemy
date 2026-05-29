@@ -16,9 +16,11 @@ const posts = [
 		content: `<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>A joyful and perfectly reasonable collection of Echo photos.
-		    Frankly, it would have been selfish not to share them.</p>
+		    Frankly, withholding these feels unethical.</p>
 	  </section>
 		<div class="photo-collage photo-collage--3-column" id="echo-gallery"></div>
+		<p>Echo would like it noted that this archive remains ongoing.</p>
+		${divider}
 	`,
 	},
 	{

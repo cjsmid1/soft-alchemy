@@ -556,6 +556,32 @@ html.dark .photo-collage.photo-circle img{
   filter: invert(1);
 }
 
+/* garden timeline */
+html.dark .timeline-month-items::before {
+  border-left-color: rgba(230, 210, 170, 0.35);
+}
+
+html.dark .timeline-entry {
+  background: rgba(35, 31, 27, 0.72);
+  border-color: rgba(230, 210, 170, 0.18);
+}
+
+html.dark .timeline-highlight {
+  border-color: rgba(230, 190, 85, 0.65);
+  box-shadow:
+    0 0 0 2px rgba(230, 190, 85, 0.16),
+    0 8px 24px rgba(230, 190, 85, 0.18);
+}
+
+html.dark .timeline-month-marker {
+  background: #2a251f;
+  border-color: rgba(230, 210, 170, 0.25);
+}
+
+html.dark .timeline-marker-dot {
+  background: rgba(230, 210, 170, 0.6);
+  border-color: rgba(35, 31, 27, 0.95);
+}
 
 /* footer */
 html.dark footer {

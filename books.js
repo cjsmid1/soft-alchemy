@@ -198,7 +198,7 @@ const boardGames = [
     genre: "1h",
     image: "/images/boardGames/catan.webp",
     url: "https://boardgamegeek.com/boardgame/13/catan",
-    note: "James's favourite, though he is yet to beat me!"
+    note: "James' favourite, though he is yet to beat me!"
   },
   {
     title: "Carcassonne",
@@ -383,6 +383,12 @@ const quotes = [
     preview: "They fight with their",
     text: "They fight with their arms, Lady Squire, We fight with our minds. Clever beats strong every time.",
     author: "Practical Guide to Evil, ErraticErrata"
+  },
+  {
+    category: "Rules For Life",
+    preview: "Slow is smooth",
+    text: "Slow is smooth, smooth is fast",
+    author: "US Navy SEALs "
   },
   {
     category: "Doing the Thing",

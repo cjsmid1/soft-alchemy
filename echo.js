@@ -27,14 +27,17 @@ const echoGalleryImages = [
     note: "Ready for adventure"
   },
   {
-    file: "echo-pidgeon.jpeg",
-    note: "The day the pidgeon learned Echo was all bark"
+    file: "echo-pigeon.jpeg",
+    note: "The day the pigeon learned Echo was all bark"
   },
   {
     file: "echo-reflection.jpeg",
     note: "Intruder alert!"
   },
-  {file: "echo-wind.jpeg"},
+  {
+    file: "echo-wind.jpeg",
+    note: "Terminal floof velocity"
+  },
   {file: "echo-garden-ball.jpeg"},
   {file: "echo-garden-sleep.jpeg"},
   {file: "echo-lap-sleep.jpeg"},
@@ -44,17 +47,31 @@ const echoGalleryImages = [
   {file: "echo-sniffer-blanket.jpeg"},
   {
     file: "breeders-group.jpeg",
-    note: "Yes, Echo is the one biting James's fingers..."
+    note: "Yes, Echo is the one biting James' fingers..."
+  },
+  {
+    file: "stone-door.jpg",
+    note: "What's this human doing here?"
   },
   {file: "echo-fidget-toy.jpg"},
   {file: "echo-bath.jpg"},
   {file: "echo-damp.jpg"},
   {file: "echo-frisbee-stand.jpg"},
   {file: "echo-pinecone.jpg"},
+  {file: "echo-frisbee-head.jpg"},
+  {file: "echo-macaw.jpg"},
+  {file: "echo-forest.jpg"},
+  {file: "echo-tree-tongue.jpg"},
+  {file: "echo-stick.jpg"},
+  {file: "echo-sunset.jpg"},
   {
     file: "video/ceilidh-run.mp4",
     note: "No grip, no grip, no grip!"
   },
   {file: "video/echo-water-jump.mp4"},
   {file: "video/echo-wooden-jump.mp4"},
+  {
+    file: "video/puppy-play.mp4",
+    note: "Diplomacy failed immediately"
+  },
 ];
