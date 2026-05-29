@@ -107,7 +107,7 @@ const gardenTimeline = [
     date: "2026-03-19",
     type: "note",
     title: "",
-    text: "Basil & Aubergine seeds join the tomato saplings on what is now a very full windowsill.",
+    text: "Basil & aubergine seeds join the tomato saplings on what is now a very full windowsill.",
   },
   {
     date: "2026-03-23",
@@ -237,7 +237,7 @@ const gardenTimeline = [
     date: "2026-05-21",
     type: "note",
     title: "Heat wave incoming...",
-    text: "Mulch everything! All tomato plants outside now! Woodchip topping and buried olla on standby! Move, people!",
+    text: "Mulch everything! Final tomato plants outside now! Woodchip topping and buried ollas on standby! Move, people!",
   },
   {
     date: "2026-05-25",
@@ -264,7 +264,6 @@ const gardenTimeline = [
   {
     date: "2026-05-27",
     type: "note",
-    title: "Feeding time",
     text: "Lesson learned the hard way: harden plants gently. Turns out when basil says it likes sun, it doesn't mean 6 hours over midday during a heatwave. Six living saplings went out, three lightly cremated saplings returned. Death rate 50%.",
     markerImage: "/images/handwriting/skull-icon.png",
   },

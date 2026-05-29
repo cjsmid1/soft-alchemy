@@ -73,7 +73,7 @@ function loadNavigation() {
         </a>
 
         <div class="nav-right">
-          <a href="/blog/index.html">Archive</a>
+          <a href="/archive/index.html">Archive</a>
           <a href="/about/index.html#contact">Contact</a>
         </div>
       </div>
@@ -117,7 +117,7 @@ const roomData = {
   },
   echo: {
     title: "🐾 Echo's Corner",
-    url: "/blog/index.html?tag=dog-approved",
+    url: "/archive/index.html?tag=dog-approved",
     description: "Dog-approved adventures, a very strange birthday cake, and important announcements about birds outside."
   },
   library: {
@@ -127,7 +127,7 @@ const roomData = {
   },
   archive: {
     title: "📜 The Archive",
-    url: "/blog/index.html",
+    url: "/archive/index.html",
     description: "The unfiltered list of everything."
   },
   dungeon: {
@@ -157,7 +157,7 @@ document.addEventListener("click", (e) => {
   if (activeRoom === roomKey) {
 
     if (roomKey === "interruption") {
-      window.location.href = "/blog/index.html?tag=dog-approved";
+      window.location.href = "/archive/index.html?tag=dog-approved";
       return;
     }
 
@@ -174,7 +174,7 @@ document.addEventListener("click", (e) => {
   // Echo interruption
   if (roomKey === "interruption") {
     result.innerHTML = `
-      <a class="interest-result echo-interruption" href="/blog/index.html?tag=dog-approved">
+      <a class="interest-result echo-interruption" href="/archive/index.html?tag=dog-approved">
         <h2>
           <img class="emoji" src="/images/paw-print.png" alt="">
           Echo Interruption!
@@ -307,7 +307,7 @@ function renderLatestPost(containerId, category = null) {
   container.innerHTML = createPostPreviewHTML(latestPost);
 
   addTagClickHandlers(container, tag => {
-    window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `archive/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -321,7 +321,7 @@ function renderFeaturedPost(postId, containerId) {
   container.innerHTML = createPostPreviewHTML(post);
 
   addTagClickHandlers(container, tag => {
-    window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `archive/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -394,6 +394,8 @@ function updatePostMetadata(post) {
     : "https://softalchemy.uk/images/soft-alchemy-preview.jpg";
   const url = `https://softalchemy.uk/post.html?id=${post.id}`;
 
+  setCanonical(url);
+
   document.title = title;
 
   setMeta("description", description);
@@ -434,6 +436,18 @@ function setMetaProperty(property, content) {
     document.head.appendChild(tag);
   }
   tag.setAttribute("content", content);
+}
+
+function setCanonical(url) {
+  let canonical = document.querySelector("link[rel='canonical']");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href = url;
 }
 
 // -----------------------------
@@ -516,7 +530,7 @@ function renderRelatedPost(currentPost) {
   postContainer.insertAdjacentElement("afterend", relatedSection);
 
   addTagClickHandlers(relatedSection, tag => {
-    window.location.href = `/blog/index.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `/archive/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -592,7 +606,7 @@ if (postContainer) {
     postContainer.querySelectorAll(".tag").forEach(el => {
       el.addEventListener("click", () => {
         const tag = el.dataset.tag;
-        window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
+        window.location.href = `archive/index.html?tag=${encodeURIComponent(tag)}`;
       });
     });
 
@@ -623,7 +637,7 @@ document.querySelectorAll(".chaos-list li").forEach(el => {
 // FUNCTION TO GO TO TAG (USED IN SINGLE POST)
 // -----------------------------
 function goToTag(tag) {
-  window.location.href = `blog/index.html?tag=${encodeURIComponent(tag)}`;
+  window.location.href = `archive/index.html?tag=${encodeURIComponent(tag)}`;
 }
 
 

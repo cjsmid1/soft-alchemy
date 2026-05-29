@@ -27,11 +27,19 @@
   </url>
 
   <url>
-    <loc>https://softalchemy.uk/blog/index.html</loc>
+    <loc>https://softalchemy.uk/archive/</loc>
   </url>
 
   <!-- Posts -->
   <url>
+    <loc>https://softalchemy.uk/post.html?id=echo-collage</loc>
+  </url>
+  
+   <url>
+    <loc>https://softalchemy.uk/post.html?id=chocolate-milkshake</loc>
+  </url>
+  
+   <url>
     <loc>https://softalchemy.uk/post.html?id=affirmations</loc>
   </url>
 

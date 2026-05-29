@@ -132,15 +132,15 @@ const posts = [
 		<br>
 		<h3>Priming the Brain</h3>
 		<p>
-		My philosopher friend may find a way to disagree, but I'm going to start with the assumption that our world view influences what we think, say & do. I would also argue that what we think, say & do, influence our world view (especially when it has immediate physical or social feedback!).
+		My philosopher friend may find a way to disagree, but I'm going to start with the assumption that our worldview influences what we think, say & do. I would also argue that what we think, say & do, influence our worldview (especially when it has immediate physical or social feedback!).
 		</p>
 		<p>
-		Note from a half forgotten statistics lesson: you can think of your current world view as your brain's null hypothesis, and it's running constant tests to check if it needs adjusting. This means, you need some statistically significant evidence to make it reject that current world view otherwise it will continue to default to that null hypothesis (i.e. your current world view) rather than the new alternative.<br>
+		Note from a half forgotten statistics lesson: you can think of your current worldview as your brain's null hypothesis, and it's running constant tests to check if it needs adjusting. This means, you need some statistically significant evidence to make it reject that current worldview otherwise it will continue to default to that null hypothesis (i.e. your current worldview) rather than the new alternative.<br>
 		Whether or not repeating affirmations or mantras to yourself daily is statistically significant enough, is for you to decide.
 		</p>
 		<p>
 		The old adage "sticks and stones may break my bones, but words will never hurt me" makes sense up until the point you remember we're fundamentally social creatures, or until someone says "It's probably better if I do it myself".<br>
-		In short, words have Power. This begs the question: would a phrase I repeat daily have power and, more specifically, would it have enough power to change my world view & hence, my future thoughts, words & actions?
+		In short, words have Power. This begs the question: would a phrase I repeat daily have power and, more specifically, would it have enough power to change my worldview & hence, my future thoughts, words & actions?
 		</p>
 		<p>
 		Personally my curiosity is piqued enough to warrant experimentation...
@@ -151,11 +151,11 @@ const posts = [
 		<ul>
 		<li>Visual prompting: leaving sticky notes around where you see them daily like the bathroom mirror or your phone background (just remember it'll lose novelty over time so changing up the location can help here).<br>
 		I just realised my vision board as my laptop background could actually be considered a kind of "visual affirmation"!</li>
-		<li>Meditative prompting: if you already have a meditition habit you can use your affirmation as an anchor in the same way you would your breath or sound.</li>
+		<li>Meditative prompting: if you already have a meditation habit you can use your affirmation as an anchor in the same way you would your breath or sound.</li>
 		<li>Written prompting: start each journal/diary entry with your affirmation (this worked especially well for me as it would then naturally encourage me to reflect on said affirmation).</li>
 		<li>Verbal prompting: yes this is the traditional speaking to yourself in the mirror idea, and yes it makes me feel very silly so I'll stick to the other options!</li>
 		</ul>
-		<p>There are two types of thinking: active and passive. Active thinking is what you're doing when you're journaling, solving a math problem without a calculator, or desperately trying to come up with a compliment on a first date (basically your conscious brain). Passive thinking is what happens when your brain wanders/daydreams (you can liken it to slow cooker mode), for example it's the source of that eureka moment in the shower, mid dog walk or while doing the dishes (basically your subconscious brain).
+		<p>There are two types of thinking: active and passive. Active thinking is what you're doing when you're journaling, solving a maths problem without a calculator, or desperately trying to come up with a compliment on a first date (basically your conscious brain). Passive thinking is what happens when your brain wanders/daydreams (you can liken it to slow cooker mode), for example it's the source of that eureka moment in the shower, mid dog walk or while doing the dishes (basically your subconscious brain).
 		</p>
 		<p>
 		Why this is relevant is that affirmations tap into both ways of thinking, by actively thinking about the affirmation during the regular prompting, you then encourage the brain to also think about it passively. This helps you come up with new ways to follow through on the affirmation, and new ways to interpret the world according to the affirmation - or at least that's my theory.</p>
@@ -654,7 +654,7 @@ const posts = [
 	  <p>Echo had his first birthday, <a href="#wisley">RHS Wisley gardens</a> do a dog event, he also got <a href="#ice-cream">dog ice cream</a> and his own <a href="#birthday-cake">birthday cake</a>!</p>
 	</section>
 	<p>
-	It turns out for me dog birthdays definitely count. While I won't go as far as to organise a full on birthday party, it is a wonderful excuse to crack out the dog cookbook I got for christmas and give the dog approved birthday cake recipe a go. It is also the perfect excuse to upgrade the usual walk... 
+	It turns out for me dog birthdays definitely count. While I won't go as far as to organise a full-on birthday party, it is a wonderful excuse to crack out the dog cookbook I got for Christmas and give the dog approved birthday cake recipe a go. It is also the perfect excuse to upgrade the usual walk... 
 	<h3 id="wisley">Exploring Wisley Gardens</h3>
 	<img class="card-image" src="/images/echo/echo-wisley.jpg" alt="Nice view">
 	<p>For those of you who live close enough to be interested: yes there is a special event <a href="https://www.rhs.org.uk/gardens/wisley/whats-on/walkies-at-wisley">Walkies at Wisley</a> where you can bring your favourite furry friends along to enjoy the beautiful scenery.
@@ -759,7 +759,7 @@ const posts = [
     </ul>
 	<p>Before you get overwhelmed, I present the answer: Growth Areas!</p>
 	<h3>What are Growth Areas?</h3>
-	<p>A growth area, is an area/topic you want to actively improve in. It's something where you want to focus intentional effort for a set period of time, in order to gain meaningful improvement. Most importantly I'm only allowed to have 3 growth areas per month (your own limit and time period you can of course choose for yourself!). The secret power in only having 3 is that every other potential growth area goes into a backlog list in my journal where it can no longer make me feel guilty for not giving it attention. The daily onslaught of "shoulds" goes <b>way</b> down to only the activities linked to the growth areas I've actively committed myself to (for example this month I'm focusing on daily meditation, this blog and my garden).</p>
+	<p>A growth area, is an area/topic you want to actively improve in. It's something where you want to focus intentional effort for a set period of time, in order to gain meaningful improvement. Most importantly I'm only allowed to have 3 growth areas per month (your own limit and time period you can of course choose for yourself!). The secret power in only having 3 is that every other potential growth area goes into a backlog list in my journal where it can no longer make me feel guilty for not giving it attention. The daily onslaught of "shoulds" goes <b>way</b> down to only the activities linked to the growth areas I've actively committed myself to (for example this month I'm focusing on daily meditation, this site and my garden).</p>
 	<p> As a bonus if you enjoy planning, because you've actively committed to these specific growth areas you can also make a specific plan for what tasks you want to complete relating to that area, which reduces the overwhelm down even more to just the next action for each area.<br>
 	<h3>Planning a Growth Area</h3>
 	Some areas will be fairly simple:</p>
