@@ -119,21 +119,6 @@
   cursor: zoom-in;
 }
 
-.timeline-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2rem;
-
-  background: rgba(20, 18, 16, 0.72);
-  backdrop-filter: blur(8px);
-}
-
 .timeline-lightbox-image {
   max-width: min(96vw, 1200px);
   max-height: 90vh;
@@ -152,30 +137,6 @@
   max-height: 90vh;
 }
 
-.timeline-lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-
-  width: 2.5rem;
-  height: 2.5rem;
-
-  border: 0;
-  border-radius: 999px;
-
-  background: rgba(255, 252, 245, 0.92);
-  color: #2b2722;
-
-  font-size: 1.8rem;
-  line-height: 1;
-  cursor: pointer;
-
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
-}
-
-body.lightbox-open {
-  overflow: hidden;
-}
 
 
 .timeline-thread-layer {

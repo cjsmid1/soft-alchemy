@@ -72,6 +72,18 @@
   text-decoration: none;
 }
 
+.book-card.has-linked-updates,
+.book-card[href] {
+  cursor: pointer;
+}
+
+.book-card.has-linked-updates:hover,
+.book-card[href]:hover {
+  box-shadow:
+    0 14px 24px rgba(0, 0, 0, 0.14),
+    0 0 0 2px rgba(120, 90, 60, 0.08);
+}
+
 .book-card img {
   width: 100%;
   aspect-ratio: 2 / 3;

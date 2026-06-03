@@ -1,49 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soft Alchemy Post</title>
-    <script>
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="preload" as="image" href="images/watercolour-background.jpg" />
-    <link
-      rel="preload"
-      as="image"
-      href="images/watercolour-background-dark.png"
-    />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Alchemy Post</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preload" as="image" href="images/background/watercolour-loop-light.png" />
+  <link rel="preload" as="image" href="images/background/watercolour-loop-dark.png" />
 
-      gtag("config", "G-563L2Z66XJ", {
-        send_page_view: false,
-      });
-    </script>
-  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  <body>
-    <!-- SINGLE POST CONTAINER -->
-    <section id="post" class="card">
-      <!-- Content injected by script.js -->
-    </section>
+    gtag("config", "G-563L2Z66XJ", {
+      send_page_view: false,
+    });
+  </script>
+</head>
 
-    <script src="/echo.js" defer></script>
-    <script src="/books.js" defer></script>
-    <script src="/posts.js" defer></script>
-    <script src="/script.js" defer></script>
-  </body>
+<body>
+  <!-- SINGLE POST CONTAINER -->
+  <section id="post" class="card">
+    <!-- Content injected by script.js -->
+  </section>
+
+  <script src="/js/echo.js" defer></script>
+  <script src="/js/books.js" defer></script>
+  <script src="/js/updates.js" defer></script>
+  <script src="/js/posts.js" defer></script>
+  <script src="/js/update-render.js" defer></script>
+  <script src="/js/script.js" defer></script>
+</body>
+
 </html>

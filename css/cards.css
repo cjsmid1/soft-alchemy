@@ -487,6 +487,38 @@
 
 
 /* -----------------------------
+   MODAL FORMATTING
+   ----------------------------- */
+.update-modal-content {
+  width: min(680px, 92vw);
+  max-width: none;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  position: relative;
+  margin: 0;
+}
+
+.update-modal-card {
+  padding-right: 1.5rem;
+}
+
+.update-modal-card ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.update-modal-card li {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.update-modal-card li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* -----------------------------
    ANIMATIONS FOR CARDS (ARCHIVE PAGE)
    ----------------------------- */
 #posts .card.fade-in {

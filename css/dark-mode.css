@@ -38,19 +38,24 @@
 /* -----------------------------
    DARK MODE
    ----------------------------- */
+
+
 html.dark {
-  background:
-    linear-gradient(
-      rgba(6, 10, 18, 0.45),
-      rgba(10, 14, 24, 0.62)
-    ),
-    url("../images/watercolour-background-dark.png");
-	
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  
   background-color: #07090d;
+
+  background-image:
+    linear-gradient(rgba(6, 10, 18, 0.45),
+        rgba(10, 14, 24, 0.62)),
+    url("../images/background/watercolour-loop-dark.png");
+}
+
+@media (max-width: 700px) {
+  html.dark {
+    background-image:
+      linear-gradient(rgba(6, 10, 18, 0.45),
+          rgba(10, 14, 24, 0.62)),
+      url("../images/background/watercolour-loop-dark-mobile.png");
+  }
 }
 
 html.dark header,
@@ -164,6 +169,10 @@ html.dark .title-row h2 a {
 
 html.dark .title-row h2 a:hover {
   text-shadow: 0 0 12px rgba(235, 195, 115, 0.45);
+}
+
+html.dark .card img.journal {
+  filter: invert(1) sepia(0.05) contrast(0.8);
 }
 
 html.dark .card img.emoji {
@@ -429,8 +438,13 @@ html.dark #post .tag:hover {
 
 /* LINKS*/
 html.dark a {
-  color: #e6ded0;
+  color: #f3d8a9e0;
   border-bottom: 1px solid transparent;
+}
+
+html.dark .card .content a,
+html.dark #post .content a{
+  color: #f3d8a9e0;
 }
 
 html.dark .card .content a:hover,
@@ -556,7 +570,12 @@ html.dark .photo-collage.photo-circle img{
   filter: invert(1);
 }
 
-/* garden timeline */
+html.dark .post-update-drawer {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* timelines*/
 html.dark .timeline-month-items::before {
   border-left-color: rgba(230, 210, 170, 0.35);
 }

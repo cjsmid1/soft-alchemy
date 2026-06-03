@@ -38,8 +38,8 @@
   </script>
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="preload" as="image" href="/images/watercolour-background.jpg">
-  <link rel="preload" as="image" href="/images/watercolour-background-dark.png">
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-light.png">
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-dark.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
@@ -63,12 +63,15 @@
     <div id="gardenTimeline" class="garden-timeline"></div>
   </section>
 
-  <script src="/garden/garden-timeline.js" defer></script>
-  <script src="/posts.js" defer></script>
-  <script src="/script.js" defer></script>
+  <script src="/js/garden-timeline.js" defer></script>
+  <script src="/js/posts.js" defer></script>
+  <script src="/js/script.js" defer></script>
+  <script src="/js/timeline-render.js" defer></script>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-      renderGardenTimeline("gardenTimeline");
+      renderRoomTimeline("gardenTimeline", "garden", {
+        order: "asc"
+      });
     });
   </script>
 </body>
