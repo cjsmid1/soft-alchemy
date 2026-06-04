@@ -184,15 +184,7 @@ document.addEventListener("click", (e) => {
 
         <figure class="card-figure">
           <div class="card-image">
-            <img src="/images/echo/echo-cute.jpg" alt="Echo looking cute">
-
-            <div class="image-text">
-              <img 
-                class="overlay-note overlay-note--top-right" 
-                src="/images/handwriting/I-think-youre-awesome.png"
-                alt=""
-              >
-            </div>
+            <img src="/images/echo/echo-cute-with-text.jpg" alt="Echo looking cute">
           </div>
 
           <figcaption>
@@ -1251,6 +1243,21 @@ function openSiteModal(contentHtml, options = {}) {
   }
 
   modal.addEventListener("click", (event) => {
+    const updateImage = event.target.closest(".update-modal-card img");
+
+    if (updateImage) {
+      event.stopPropagation();
+
+      openSiteModal(
+        `<img src="${updateImage.src}" alt="${updateImage.alt || ""}" class="timeline-lightbox-image">`,
+        {
+          contentClass: "timeline-lightbox-content"
+        }
+      );
+
+      return;
+    }
+    
     if (event.target === modal || event.target.classList.contains("site-modal-close")) {
       closeModal();
       return;

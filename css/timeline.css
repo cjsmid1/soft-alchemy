@@ -45,6 +45,14 @@
   border-left: 3px dashed rgba(120, 95, 65, 0.45);
 }
 
+.timeline-desktop-columns {
+  display: contents;
+}
+
+.timeline-mobile-list {
+  display: none;
+}
+
 .timeline-column {
   display: flex;
   flex-direction: column;
@@ -136,8 +144,6 @@
   max-width: min(96vw, 1200px);
   max-height: 90vh;
 }
-
-
 
 .timeline-thread-layer {
   position: absolute;

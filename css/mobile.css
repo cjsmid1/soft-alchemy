@@ -165,6 +165,10 @@
   .site-modal-footer-nav button:hover {
     opacity: 1;
   }
+
+  .post-update-drawer summary {
+    font-size: 1.3rem;
+  }
 }
 
 
@@ -239,6 +243,11 @@
     width: 100%;
     flex: none;
   }
+
+    html.dark .dog-review {
+      background: transparent;
+      border: none;
+    }
 }
 
 /* Collage Layout */
@@ -304,13 +313,6 @@
 
 }
 
-@media (max-width: 750px) {
-  html.dark .dog-review {
-    background: transparent;
-    border: none;
-  }
-}
-
 @media (max-width: 700px) {
   .timeline-month-marker {
     margin-left: -1rem;
@@ -325,8 +327,13 @@
     left: 1rem;
   }
 
-  .timeline-column {
+  .timeline-desktop-columns {
+    display: none;
+  }
+
+  .timeline-mobile-list {
     display: block;
+    padding-left: 2.25rem;
   }
 
   .timeline-entry {
@@ -338,7 +345,14 @@
   }
 
   .timeline-marker {
+    left: 50%;
     pointer-events: none;
+  }
+
+  .timeline-marker-layer {
+    left: 1rem;
+    width: 32px;
+    transform: translateX(-50%);
   }
 
   .timeline-marker-active .timeline-marker-dot,
@@ -354,5 +368,11 @@
     transform: rotate(var(--timeline-tilt, 0deg));
     border-color: rgba(120, 95, 65, 0.18);
     box-shadow: 0 6px 18px rgba(60, 45, 30, 0.08);
+  }
+}
+
+@media (max-width: 600px) {
+  .related-post .title-row h2 {
+    font-size: 1.6rem;
   }
 }

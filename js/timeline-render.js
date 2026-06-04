@@ -66,20 +66,31 @@ function renderTimeline(containerId, timelineItems, options = {}) {
           <div class="timeline-month-marker">${month.label}</div>
 
           <div class="timeline-month-items">
-            <svg class="timeline-thread-layer" aria-hidden="true"></svg>
+  <svg class="timeline-thread-layer" aria-hidden="true"></svg>
 
-            <div class="timeline-marker-layer">
-              ${month.items.map((item) => renderTimelineMarker(item, order)).join("")}
-            </div>
+  <div class="timeline-marker-layer">
+    ${month.items.map((item) => renderTimelineMarker(item, order)).join("")}
+  </div>
 
-            <div class="timeline-column timeline-column-left">
-              ${columns.left.map(renderTimelineEntry).join("")}
-            </div>
+  <div class="timeline-desktop-columns">
+    <div class="timeline-column timeline-column-left">
+      ${columns.left.map(renderTimelineEntry).join("")}
+    </div>
 
-            <div class="timeline-column timeline-column-right">
-              ${columns.right.map(renderTimelineEntry).join("")}
-            </div>
-          </div>
+    <div class="timeline-column timeline-column-right">
+      ${columns.right.map(renderTimelineEntry).join("")}
+    </div>
+  </div>
+
+  <div class="timeline-mobile-list">
+    ${month.items.map((item) =>
+        renderTimelineEntry({
+          ...item,
+          timelineSpacer: 0,
+        })
+      ).join("")}
+  </div>
+</div>
         </section>
       `;
     })

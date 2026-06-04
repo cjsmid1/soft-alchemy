@@ -6,7 +6,7 @@ const gardenTimeline = [
     image: "/images/garden/garden-snow-roses.jpg",
     markerImage: "/images/handwriting/paw-print-handwritten.png",
     imageSize: "portrait",
-    text: "Having successfully commandeered the neighbour's roses, which clearly don't believe fences apply to them, the previous year: the time has come to begin crafting a green-fingered vision.",
+    text: "Having successfully commandeered the neighbour's roses, which clearly believe fences don't apply to them: the time has come to begin crafting a green-fingered vision.",
   },
   {
     date: "2026-01-27",
@@ -14,7 +14,7 @@ const gardenTimeline = [
     title: "When in doubt, make a plan",
     image: "/images/garden/garden-plan-layout-01-2026.jpg",
     imageSize: "landscape",
-    text: "I was told: this is a small patio kitchen garden with genuine output. It will feel impressive. It will not feel chaotic...<br>If you keep the pot count remotely realistic.",
+    text: "Supposedly this is a small patio kitchen garden with genuine output. It will feel impressive. It will not feel chaotic...<br>If you keep the pot count remotely realistic.",
   },
   {
     date: "2026-01-27",

@@ -38,12 +38,12 @@ const updates = [
       <ul>
         <li>On-track: Meditation, hydration, and breakfasts (albeit varying degrees of healthy and with seemingly no effects other than to cause me to have later lunches).</li>
         <img class="card-image journal" src="/images/journal/75-soft-may-overview.jpg">
-        <li>Reading is going well overall but I have a clear trend of still defaulting to audiobooks. New plan is to have my physical book by my bed and read at night in bed.</li>
-        <li>Exercise is the area of greatest struggle with multiple days being skipped at a time. Weekends and ironically working on Soft Alchemy are the main distraction points. New plan is the workout first thing in the morning, either rucking or jogging with Echo if the weather is good, or a strength workout before I even go downstairs if it isn't.</li>
+        <li>Reading is going well overall but I have a clear trend of still defaulting to audiobooks. New plan is to have my physical book by my bed and read at night.</li>
+        <li>Exercise is the area of greatest struggle with multiple days being skipped at a time. Weekends and ironically working on Soft Alchemy are the main distraction culprits. New plan is to workout first thing in the morning, either rucking or jogging with Echo if the weather is good, or a strength workout before I even go downstairs if it isn't.</li>
       </ul>
       <br>
       <h3>June Tracker</h3>
-      <img class="card-image journal" src="/images/journal/75-soft-june-tracker.jpg">
+      <img class="card-image journal" src="/images/journal/75-soft-june-tracker.jpg" alt="Handwritten June tracker for the 75 Soft challenge">
     `
   },
   {

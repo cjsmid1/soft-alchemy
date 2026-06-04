@@ -63,7 +63,7 @@ const echoGalleryImages = [
   {file: "echo-forest.jpg"},
   {file: "echo-tree-tongue.jpg"},
   {file: "echo-stick.jpg"},
-  {file: "echo-stick-nom.jpg"},
+  {file: "echo-stick-nom.jpeg"},
   {file: "echo-sunset.jpg"},
   {
     file: "video/ceilidh-run.mp4",

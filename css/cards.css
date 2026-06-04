@@ -517,6 +517,9 @@
   margin-bottom: 0;
 }
 
+.update-modal-card img {
+  cursor: zoom-in;
+}
 
 /* -----------------------------
    ANIMATIONS FOR CARDS (ARCHIVE PAGE)
