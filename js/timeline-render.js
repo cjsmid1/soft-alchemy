@@ -207,6 +207,34 @@ function renderTimelineItem(item) {
     `;
   }
 
+  if (item.type === "video") {
+    const videoSrc = item.image;
+    const shouldLoop = item.loop === true;
+    const posterAttr = item.poster ? `poster="${item.poster}"` : "";
+
+    return `
+      <div class="timeline-date">${date}</div>
+      ${item.title ? `<h3>${item.title}</h3>` : ""}
+      ${videoSrc
+        ? `
+            <video
+              class="timeline-image timeline-video"
+              src="${videoSrc}"
+              autoplay
+              muted
+              ${shouldLoop ? "loop" : ""}
+              playsinline
+              preload="metadata"
+              ${posterAttr}
+              aria-label="${item.title || "Garden timeline video"}"
+            ></video>
+          `
+        : ""
+      }
+      ${item.text ? `<p>${item.text}</p>` : ""}
+    `;
+  }
+
   return `
     <div class="timeline-date">${date}</div>
     ${item.title ? `<h3>${item.title}</h3>` : ""}
@@ -327,14 +355,18 @@ function activateTimelineThread(container, marker) {
   const monthItems = marker.closest(".timeline-month-items");
   const svg = monthItems.querySelector(".timeline-thread-layer");
 
-  const entries = monthItems.querySelectorAll(
+  const entries = [...monthItems.querySelectorAll(
     `.timeline-entry[data-date-group="${dateGroup}"]`
-  );
+  )].filter(isVisibleTimelineEntry);
 
   entries.forEach((entry) => {
     entry.classList.add("timeline-highlight");
     drawTimelineThread(monthItems, svg, marker, entry);
   });
+}
+
+function isVisibleTimelineEntry(entry) {
+  return entry.offsetParent !== null;
 }
 
 function setupTimelineEntryHover(container) {
@@ -457,16 +489,33 @@ function formatTimelineMonth(monthKey) {
 }
 
 function setupTimelineImageLightbox(container) {
-  container.querySelectorAll(".timeline-image").forEach((image) => {
-    image.addEventListener("click", () => {
-      openTimelineLightbox(image.src, image.alt);
+  container.querySelectorAll(".timeline-image").forEach((media) => {
+    media.addEventListener("click", () => {
+      const src = media.currentSrc || media.src;
+      const alt = media.alt || media.getAttribute("aria-label") || "";
+
+      openTimelineLightbox(src, alt);
     });
   });
 }
 
 function openTimelineLightbox(src, alt = "") {
+  const isVideo = /\.(mp4|webm|mov)$/i.test(src);
+
   openSiteModal(
-    `<img src="${src}" alt="${alt}" class="timeline-lightbox-image">`,
+    isVideo
+      ? `
+        <video
+          src="${src}"
+          class="timeline-lightbox-image timeline-lightbox-video"
+          controls
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      `
+      : `<img src="${src}" alt="${alt}" class="timeline-lightbox-image">`,
     {
       contentClass: "timeline-lightbox-content"
     }

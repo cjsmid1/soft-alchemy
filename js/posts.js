@@ -6,6 +6,89 @@ const divider = `
 
 const posts = [
 	{
+		id: "brownie",
+		date: "2026-06-04",
+		title: "🤎 The Brownie Recipe Worth Asking For",
+		metaTitle: "🤎 The Brownie Recipe Worth Asking For | Soft Alchemy",
+		metaDescription: "A rich, reliable brownie recipe discovered in a café beside Britain's highest railway station. Fudgy, adaptable, and thoroughly tested over many years of enthusiastic baking.",
+		image: "/images/brownie-pan.png",
+		imageAlt: "Freshly baked chocolate brownies cooling in a cast iron pan",
+		category: "Recipe",
+		tags: ["sweet", "vegetarian"],
+		excerpt: "The time a scrap of paper became one of my most treasured recipes.",
+		content: `
+      <img class="card-image" src="/images/brownie-pan.png">
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>I believe the power of a tried-and-true, fail-safe brownie recipe is underrated. I found mine in the Scottish Highlands, and I invite you to make it yours too.</p>
+	  </section>
+		<p>Beside the highest railway station in Brittain there is a little cafe that serves the best brownie I've ever tasted. During the two days I spent there on a trekking adventure, I somehow managed to justify three separate visits. On the final visit I had the audacity to ask the chef for the recipe. The following scrap of paper will forever hold pride of place in my culinary collection.</p>
+		<img class="card-image" src="/images/brownie-recipe.png">
+	  ${divider}
+	  <p>Enjoy! Over the years, this recipe has been adapted:</p>
+		<ul>
+		<li>to include white chocolate chips (though James insists that's <b>his</b> thing)</li>
+		<li>into a brownie/cheesecake combo (that I completely forgot to take a photo of!)</li>
+		<li>into this enthusiastic attempt at a dessert for an "Ode to the mushroom" dinner party last year...</li>
+		</ul>
+		<figure class="post-image">
+		  <img src="/images/brownie-mushroom-comparison.png">
+		  <figcaption>Lesson learned the hard way: red water-based food colouring with white chocolate does not work. (Here's the <a href="https://pin.it/2vmLpngqo" target="_blank" rel="noopener noreferrer">original inspiration</a> if you want to try it out for yourself!)</figcaption>
+    </figure>
+</section>
+    `,
+	},
+	{
+		id: "mushroom-burger",
+		date: "2026-06-04",
+		title: "🍔 Mushroom Burger",
+		metaTitle: "🍔 Mushroom Burger | Soft Alchemy",
+		metaDescription:
+			"A rich homemade mushroom burger recipe packed with mushrooms, garlic, stock and cheese. Smoky, satisfying, and capable of putting many restaurant veggie burgers to shame.",
+		image: "/images/mushroom-burger.jpeg",
+		imageAlt:"Homemade mushroom burger in a toasted brioche bun with lettuce, cheese, pineapple and crispy onions",
+		category: "Recipe",
+		tags: ["BBQ", "mushrooms", "vegetarian"],
+		excerpt: "The time restaurant veggie burgers were put to shame.",
+		content: `
+      <img class="card-image" src="/images/mushroom-burger.jpeg">
+	  <section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>Mushrooms are amazing and while there are plenty of great veggie burgers out there, nothing beats making your own. If you don't already keep sherry in the pantry as a convenient alternative to wine, I highly recommend it.<br>
+		Recipe makes 4 small, 3 medium or 2 monster burgers.</p>
+	  </section>
+		<p>Most veggie burgers lean heavily on beans, lentils or processed meat substitutes. This one lets mushrooms do what mushrooms do best: become gloriously savoury.</p>
+	  <h2>Ingredients</h2>
+    <ul>
+		  <li>1 Onion</li>
+		  <li>400g Mushrooms</li>
+		  <li>4 cloves Garlic</li>
+		  <li>1 Stock Cube (My absolute favourite is <a href="https://www.sainsburys.co.uk/gol-ui/product/oxo-meat-free-vegan-beef-flavour-stock-cubes-x12-71g?deeplink=true&gclsrc=aw.ds&&cmpid=cpc&utm_source=Google&utm_medium=cpc&utm_campaign=20333793068&utm_content=shopping&utm_term={sku}&utm_custom1=&utm_custom2=759-449-0952&gad_source=1&gad_campaignid=19663891335&gbraid=0AAAAAD17J_DABdILB7a0BNLxkOquI0xvt&gclid=CjwKCAjwxITRBhBYEiwA6mZm7YC1b3zzdKWZDZtN9m2UqhM41cdI6YZLRNyRkmMYxhyy7llBZper5hoCzBEQAvD_BwE">vegan beef stock</a></li>
+		  <li>(Opt) 2 tbsp Sherry or White Wine</li>
+			<li>1 tbsp Soy Sauce</li>
+		  <li>(Opt) 1 tbsp Liquid Smoke</li>
+		  <li>1 Egg</li>
+		  <li>60g Breadcrumbs<br>(less works fine if you run out - just a bit more likely to fall apart!)</li>
+		  <li>30g Cheese (grated)</li>
+	  </ul>
+		
+    <h2>Instructions</h2>
+    <ol class="instructions">
+		    <li>Prep: finely chop the onion, mushrooms & garlic. Fry in a pan over medium heat until nicely browned (~10 mins).</li>
+				<li>Crumble in the stock cube with either the sherry/white wine or a splash of water.</li>
+				<li>Mix in the soy sauce and liquid smoke (if using) and season to taste.</li>
+				<li>Transfer the mixture to a bowl, and mix in the egg, breadcrumbs and grated cheese.</li>
+				<li>Spoon the mixture into a hot frying pan and shape into patties of desired size.</li>
+				<li>Fry until the bottom is golden (~ 4 mins), then flip the burgers (good luck!).</li>
+				<li>Add a glug of water to the pan and cover with a lid - the steam helps ensure the burgers are cooked all the way through.</li>
+      </ol>
+	  ${divider}
+	  <p>Enjoy! We had ours for our traditional rainy-day indoor British BBQ and served it with toasted brioche buns, lettuce, mozzarella, a fried slice of pineapple, crispy onions and a mix of mayo & BBQ sauce. Yes, we went very extra. No, I don't regret a moment of it.<br>
+		I also highly recommend crispy onions as a pantry staple, they make an excellent garnish for almost every meal!</p>
+</section>
+    `,
+	},
+	{
 		id: "echo-collage",
 		date: "2026-05-26",
 		title: "📸 A Completely Normal Amount of Dog Photos",
@@ -884,7 +967,7 @@ const posts = [
     image: "/images/mushroom-wellington-puff.jpg",
     imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
     category: "Recipe",
-    tags: ["dinner-party", "vegetarian"],
+		tags: ["dinner-party", "mushrooms", "vegetarian"],
     excerpt:
       "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
     content: `

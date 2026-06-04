@@ -2,6 +2,10 @@
   overflow: visible;
 }
 
+.garden-timeline-card h2{
+  padding-bottom: 1rem;
+}
+
 .garden-timeline {
   position: relative;
 }
@@ -136,6 +140,27 @@
   border-radius: 1rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   background: rgba(255, 252, 245, 0.95);
+}
+
+.timeline-entry video.timeline-video {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 260px;
+
+  margin: 0.5rem auto;
+
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.timeline-lightbox-video {
+
+  background: #000;
 }
 
 .timeline-lightbox-content {

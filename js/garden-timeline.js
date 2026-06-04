@@ -279,4 +279,21 @@ const gardenTimeline = [
     title: "Strawberry heist",
     text: "It is my tragic duty to inform you that 4 barely ripe strawberries were stolen earlier today. The criminals remain at large. Echo's investigation is ongoing, though birds are currently the prime suspects.",
   },
+  {
+    date: "2026-05-31",
+    type: "video",
+    image: "/images/garden/vid/guttering-loop.mp4",
+    poster: "/images/garden/guttering-poster.png",
+    loop: true,
+    imageSize: "portrait",
+    text: "Getting the new guttering up just before the heavens open. The water butt was already 3/4 full within 12 hours - welcome to England!<br><a href='https://youtube.com/shorts/oZ2M1FoEcr8?si=CIHOhT8vROGDVIyU' target='_blank' rel = 'noopener noreferrer'>(Inspired by this earworm)</a>"
+  },
+  {
+    date: "2026-06-02",
+    type: "photo",
+    title: "Mixed feelings",
+    image: "/images/garden/mushroom-06-2026.jpg",
+    imageSize: "square",
+    text: "Don't get me wrong, this was a delightful surprise. The fact that an unsolicited mushroom succeeded while both the mushroom kit and the beans remain conspicuously absent does take some of the shine off."
+  },
 ];

@@ -67,4 +67,22 @@ const updates = [
       </ul>
     `
   },
+  {
+    id: "sourdough-update-1",
+    room: "kitchen",
+    experiment: "sourdough",
+    title: "Sourdough Revival",
+    previewTitle: "Sourdough<br>Revival",
+    date: "2026-05-27",
+    status: "Success",
+    originalPost: "sourdough-bread",
+    body: `
+      <p>Occasionally you'll do all the hard work of stretching and folding the night before, only for life to get in the way and the dough never quite makes it into the oven. By day five, having still not gotten around to baking it, I had firmly entered the land of overproofing. Rather than risk presenting a dense brick for dinner, I went with another option: focaccia.</p>
+      <img class="card-image" src="/images/focaccia.jpg" alt="Loaf of sourdough focaccia bread">
+      <p>Decanting the dough into a wider dish with a generous drizzle of olive oil, flaky sea salt, and a few borrowed sprigs from the neighbour's rosemary bush turned out to be exactly what this dough needed. As it happens, being past its prime is much less of a problem when you pivot from the traditional bread loaf.</p>
+      <p>
+      <b>Next steps:</b> Time to investigate whether sourdough tang can improve the already high bar that are chocolate chip cookies.
+      </p>
+    `
+  },
 ];
