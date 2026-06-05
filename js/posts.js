@@ -6,6 +6,142 @@ const divider = `
 
 const posts = [
 	{
+		id: "garden-plan",
+		date: "2026-06-05",
+		title: "🪴 Crafting A Garden",
+		metaTitle: "🪴 How to Plan a Garden | Soft Alchemy",
+		metaDescription:
+			"A beginner-friendly guide to planning a garden, from identifying goals and limitations to choosing plants, creating layouts, and avoiding common mistakes.",
+		image: "/images/garden/garden-plan-layout-01-2026.jpg",
+		imageAlt: "Hand-drawn garden planning layout showing planting zones, containers and growing areas",
+		category: "Garden",
+		tags: ["goals", "planning"],
+		excerpt:
+			"The time a vague desire to grow tomatoes spiralled into spreadsheets, sketches, plant research, and an unexpectedly comprehensive master plan.",
+		content: `
+		<section class="summary-note">
+	  <div class="summary-note-label"></div>
+	  <p>"You can get more done with a good idea and a plan than you can with just the good idea." - Soft Alchemy</p>
+		<p>This approach is most useful for anyone starting a new garden from scratch, working with limited space, growing in containers, or simply feeling overwhelmed by the sheer number of possible plants.</p>
+	  </section>
+		<p>
+	Back in January, with a year of potential stretching ahead of me, I decided to get serious about gardening.
+	</p>
+	<p>
+	At the time, my credentials consisted mainly of keeping a handful of houseplants alive since university. Even then, their continued survival owed more to regular holidays at my parents' house and my mother's experienced care than any particular skill on my part.
+	</p>
+	<p>
+	Nevertheless, a combination of boredom, a love of cooking, misplaced frugality, and a gentle nudge from YouTube tipped my brain into full planning mode. What follows is a structured version of the winding path my research and reflections took me down.
+	</p>
+		${divider}
+	<h2>Claire's Plan</h2>
+	<h3>Identify your goals & passions:</h3>
+	<p>No two gardens are alike, and neither are any two gardeners. What do you actually care about for your garden? Is it to keep it super simple with a single mint plant on the kitchen windowsill (in which case a full plan is probably overkill), is it a beautifully ordered vegetable allotment that gives you full self-sufficiency, or else is it to create your own personal rainforest jungle?
+	<ul class="chaos-list">
+      <li>Annuals vs Perennials vs Trees</li>
+      <li>Pretty Flowers</li>
+      <li>Low maintanence</li>
+      <li>Vegetable garden: what do you actually eat?</li>
+      <li>Quick Wins</li>
+      <li>Maximum growth/harvest</li>
+      <li>Orderly appearance/structure</li>
+      <li>Natural looking</li>
+      <li>Bright colours</li>
+      <li>Attracting wildlife/pollinators</li>
+      <li>Companion planting</li>
+      <li>Non-toxic plants</li>
+      <li>Self-sufficiency</li>
+    </ul>
+		<p>My main goals were:</p>
+	<ul>
+	<li>Produce useful ingredients for my cooking</li>
+	<li>Reasonably low effort</li>
+	<li>Ability to still go on holiday</li>
+	<li>Interesting variety</li>
+	<li>Learn how to garden successfully/Run small plant experiments</li>
+	</ul>
+	<br>
+	<h3>Identify your limitations:</h3>
+	<p>Limitations are blessings in disguise, they reduce your options from everything to something a little more manageable. They also provide a challenge for your creativity to really get its teeth into.</p>
+	<ul class="chaos-list">
+      <li>Bought vs Renting</li>
+      <li>Garden vs Balcony vs Allotment</li>
+      <li>Size of potential garden space</li>
+      <li>Potential plant threats 🐶</li>
+      <li>Expected sun levels</li>
+      <li>Location & Climate</li>
+      <li>Exposed vs Wind-sheltered</li>
+      <li>Expected rain levels</li>
+      <li>Any walls/features to work around</li>
+      <li>Any physical restrictions</li>
+      <li>Your reasonable time commitments</li>
+      <li>Budget</li>
+    </ul>
+	<p>My limitations were as follows:</p>
+	<ul>
+	<li>Renting & want to take plants with me when I leave -> Container Garden</li>
+	<li>North east facing medium sized garden split into 3 sections</li>
+	<li>Most of said garden is unsafe for small plants due to Echo's assistance (please note this was a limitation I learned after the planning stage, though fortunately with only minor casualties).</li>
+	<li>South England based with reasonably mild summers (in theory) and plenty of rain</li>
+	<li>Fencing and multiple existing structures provide a lot of wind-sheltered space and vertical walls</li>
+	<li>First-year knowledge gap</li>
+	</ul>
+	<p>Combining this with my goals, I wanted to create a beautiful, productive, renter-friendly container garden that teaches gardening skills, supplies ingredients for the kitchen, and makes everyday life a little interesting.</p>
+	<br>
+	<h3>Identify plants:</h3>
+	<p>This is the fun part when you get to allocate plants to your identified zones based on how well they meet your criteria. The two main questions are: does this plant align with my goals (does it spark joy?) and work within my limitations (does it have a decent survival rate?). Strategies for how best to do this vary considerably:</p>
+	<ul>
+	<li>a first come first served approach, where you continue through plants you can think of till you're out of space.</li>	
+	<li>a full grading system based on how well it meets each specific goal and limitation, then ranked by total score (I may have done this for choosing dog breeds, but that's a story for another time).</li>	
+	<li>asking AI for help, either in the form of asking for plant suggestions based on your criteria, or giving it a list of plants you like the sound of and having it judge which ones actually will work for your space.</li>
+	</ul>
+
+	<div class="qa-board">
+      <details class="qa-card qa-card">
+	    <summary class="qa-click-area">
+        <span class="qa-label">Bear in mind...</span>
+		</summary>
+        <p>Different varieties of the same general plant can vary dramatically, for example I was able to justify getting aubergine plants because the Patio Baby F1 variety works well in containers and is supposedly easier to keep alive in the UK (a claim still under investigation).
+				<br>
+				Additionally I highly recommend leaving room for later additions, as you progress down the gardening rabbit hole you'll encounter new plants & ideas. Leaving yourself future options now, saves you from a full planning rejuggle later!</p>
+      </details>
+
+    </div>
+	<h3>Identify tasks:</h3>
+	<p>The final main planning step is to consider the key tasks required for each of your chosen plants. This will include tasks such as any prep required beforehand; when to purchase plant, bare root, or seeds; roughly when to pot & re-pot; when to harden off seedlings; any fertilising needs; harvesting etc. The easiest method I've found for this is to have an overarching timeline with monthly tasks across all my plants. This is also where existing gardening experience is extremely useful as you'd be better at judging tasks and any missing gaps. Since I, for reasons still beyond me, didn't ask my mother for assistance, I learned the hard way and the majority of the first plan I created has since been edited by reality. Nonetheless I will include it here as an example.</p>
+	<img class="post-image" src="/images/garden/garden-plan-tasks-01-2026.jpg" alt="">
+	<br>
+	<h3>(Opt) Identify zones & microclimates:</h3>
+	<p>For the planning lovers: this step is optional but useful because a garden is rarely universally consistent. You may have sunnier patio areas that can get very warm so are better suited for tomatoes, or perhaps an area that forms a wind tunnel and would therefore benefit from sturdier plants. Activities you may want to consider depending on your level of planning enjoyment:<p>
+	<ul>
+	<li>Taking photos of your garden morning, noon & afternoon to track the sun's path.</li>
+	<img class="small-post-image" src="/images/garden/sunpath-05-2026.png" alt="">
+	<li>Drawing a layout of your garden and allocating rough positions for plants.</li>
+	<figure class="post-image">
+	  <img class="journal" src="/images/garden/garden-plan-layout-01-2026.jpg" alt="">
+	  <figcaption>This was my original back when I thought plants took up way more space than they actually do, and when I was delusional enough to think Echo & plants go well together!</figcaption>
+    </figure>
+	<li>Measuring any existing garden beds, pots & planters, and anticipating which plants will need the premium space.</li>
+	<img class="post-image journal" src="/images/garden/pot-allocation-02-2026.jpg" alt="">
+	</ul>
+
+	<h2>Echo's Plan</h2>
+	<ol class="instructions">
+	<li>Find parts of the garden Claire has changed.</li>
+	<li>Make sure they are marked as new territory.</li>
+	<li>Eat anything vaguely grass like.</li>
+	</ol>
+
+	<h2>James' Plan</h2>
+	<ol class="instructions">
+	<li>Attempt to curtail the ever-increasing plant commitments by encouraging Claire to restrict herself to one extra plant per month.</li>
+	<li>Fail miserably in this attempt and support her anyway with trips to the garden centre and carrying an unhealthy amount of compost bags.</li>
+	<li>Get invested in multiple DIY garden projects.</li>
+	</ol> 
+	${divider}
+	`,
+	},
+	{
 		id: "brownie",
 		date: "2026-06-04",
 		title: "🤎 The Brownie Recipe Worth Asking For",
