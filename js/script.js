@@ -62,7 +62,7 @@ function loadNavigation() {
             <div class="nav-dropdown-menu">
               <a href="/garden/index.html">The Garden</a>
 			        <a href="/kitchen/index.html">The Kitchen</a>
-              <a href="/post.html?id=the-library">The Library</a>
+              <a href="/library/index.html">The Library</a>
               <a href="/study/index.html">The Study</a>
             </div>
           </div>
@@ -101,37 +101,44 @@ document.addEventListener("click", (e) => {
 // -----------------------------
 const roomData = {
   garden: {
-    title: "🌿 The Garden",
+    emoji: "🌿",
+    title: "The Garden",
     url: "/garden/index.html",
     description: "Container gardening, hopeful seedlings, and occasional slug negotiations."
   },
   kitchen: {
-    title: "🍯 The Kitchen",
+    emoji: "🍯",
+    title: "The Kitchen",
     url: "/kitchen/index.html",
     description: "Ferments bubbling, cosy recipes, and experiments that may or may not be edible."
   },
   study: {
-    title: "📝 The Study",
+    emoji: "📝",
+    title: "The Study",
     url: "/study/index.html",
     description: "Journal reflections, organisational systems, and attempts to turn chaos into something useful."
   },
   echo: {
-    title: "🐾 Echo's Corner",
+    emoji: "🐾",
+    title: "Echo's Corner",
     url: "/archive/index.html?tag=dog-approved",
     description: "Dog-approved adventures, a very strange birthday cake, and important announcements about birds outside."
   },
   library: {
-    title: "📚 The Library",
-    url: "/post.html?id=the-library",
+    emoji: "📚",
+    title: "The Library",
+    url: "/library/index.html",
     description: "Story recommendations, board games, and book-related joy."
   },
   archive: {
-    title: "📜 The Archive",
+    emoji: "📜",
+    title: "The Archive",
     url: "/archive/index.html",
-    description: "The unfiltered list of everything."
+    description: "Every recipe, experiment, recommendation, success, failure, and curious detour collected in one place."
   },
   dungeon: {
-    title: "⚔️ The Dungeon",
+    emoji: "⚔️",
+    title: "The Dungeon",
     url: "#",
     description: "Here be dragons: a deep dive into D&D is still being summoned."
   }
@@ -156,11 +163,6 @@ document.addEventListener("click", (e) => {
   // SECOND CLICK = GO THERE
   if (activeRoom === roomKey) {
 
-    if (roomKey === "interruption") {
-      window.location.href = "/archive/index.html?tag=dog-approved";
-      return;
-    }
-
     const room = roomData[roomKey];
     if (!room) return;
 
@@ -174,7 +176,7 @@ document.addEventListener("click", (e) => {
   // Echo interruption
   if (roomKey === "interruption") {
     result.innerHTML = `
-      <a class="interest-result echo-interruption" href="/archive/index.html?tag=dog-approved">
+      <a class="interest-result echo-interruption" href="/post.html?id=echo-collage">
         <h2>
           <img class="emoji" src="/images/paw-print.png" alt="">
           Echo Interruption!
@@ -202,7 +204,7 @@ document.addEventListener("click", (e) => {
 
   result.innerHTML = `
     <a class="interest-result" href="${room.url}">
-      <h3>${room.title}</h3>
+      <h3>${room.emoji} ${room.title}</h3>
       <p>${room.description}</p>
     </a>
   `;
@@ -313,7 +315,7 @@ function renderFeaturedPost(postId, containerId) {
   container.innerHTML = createPostPreviewHTML(post);
 
   addTagClickHandlers(container, tag => {
-    window.location.href = `archive/index.html?tag=${encodeURIComponent(tag)}`;
+    window.location.href = `/archive/index.html?tag=${encodeURIComponent(tag)}`;
   });
 }
 
@@ -527,6 +529,39 @@ function renderRelatedPost(currentPost) {
 }
 
 // -----------------------------
+// POST ROOM LINK
+// -----------------------------
+const postRoomMap = {
+  Recipe: "kitchen",
+  Garden: "garden",
+  Study: "study",
+};
+
+function getPostRoomKey(post) {
+  if (post.tags?.includes("books")) return "library";
+  if (post.tags?.includes("dog-approved")) return "echo";
+
+  return postRoomMap[post.category] || null;
+}
+
+function renderRoomLink(post) {
+  const roomKey = getPostRoomKey(post);
+  if (!roomKey) return "";
+
+  const room = roomData[roomKey];
+  if (!room) return "";
+  const roomName = room.title.replace(/^The\b/, "the");
+
+  return `
+    <div class="related-footer">
+      <h3><a href="${room.url}">
+        ${room.emoji} More from ${roomName} →
+      </a></h3>
+    </div>
+  `;
+}
+
+// -----------------------------
 // TAG CLICK HANDLER
 // -----------------------------
 function setTagFilter(tag) {
@@ -574,9 +609,11 @@ if (postContainer) {
         `).join("")}
       </div>
       <div class="content">${post.content}</div>
+
       ${typeof renderPostUpdateSection === "function"
         ? renderPostUpdateSection(post.id)
         : ""}
+      ${renderRoomLink(post)}
     `;
 
     const pageTitle = post.metaTitle || `${post.title} | Soft Alchemy`;
@@ -605,12 +642,32 @@ if (postContainer) {
       });
     });
 
+    postContainer.querySelectorAll(".lightbox-image").forEach((img) => {
+      img.addEventListener("click", () => {
+        openSiteModal(
+          `<img src="${img.src}" alt="${img.alt || ""}" class="timeline-lightbox-image">`,
+          {
+            contentClass: "timeline-lightbox-content"
+          }
+        );
+      });
+    });
+
     renderRelatedPost(post);
-    renderBookshelvesForPage(bookshelfConfigs);
     if (id === "quote-page") { initFlyingQuotes(); }
     if (id === "echo-collage") { renderEchoGallery(); }
     if (typeof setupUpdateCardModals === "function") {
       setupUpdateCardModals(postContainer);
+    }
+    if (id === "sourdough-starter") {
+      const starterTimelineContainer = document.getElementById("sourdoughStarterTimeline");
+
+      if (starterTimelineContainer) {
+        renderTimeline("sourdoughStarterTimeline", sourdoughStarterTimeline, { timelineMode: "process", showMonthMarker: false });
+      }
+    }
+    if (id === "sourdough-bread") {
+      renderTimeline("sourdoughBreadTimeline", sourdoughBreadTimeline, { timelineMode: "process", showMonthMarker: false });
     }
   }
 }
@@ -1243,13 +1300,13 @@ function openSiteModal(contentHtml, options = {}) {
   }
 
   modal.addEventListener("click", (event) => {
-    const updateImage = event.target.closest(".update-modal-card img");
+    const lightboxImage = event.target.closest(".update-modal-card img, .lightbox-image");
 
-    if (updateImage) {
+    if (lightboxImage) {
       event.stopPropagation();
 
       openSiteModal(
-        `<img src="${updateImage.src}" alt="${updateImage.alt || ""}" class="timeline-lightbox-image">`,
+        `<img src="${lightboxImage.src}" alt="${lightboxImage.alt || ""}" class="timeline-lightbox-image">`,
         {
           contentClass: "timeline-lightbox-content"
         }
@@ -1257,7 +1314,7 @@ function openSiteModal(contentHtml, options = {}) {
 
       return;
     }
-    
+
     if (event.target === modal || event.target.classList.contains("site-modal-close")) {
       closeModal();
       return;

@@ -1,13 +1,14 @@
+.garden-timeline {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
 .garden-timeline-card {
   overflow: visible;
 }
 
 .garden-timeline-card h2{
   padding-bottom: 1rem;
-}
-
-.garden-timeline {
-  position: relative;
 }
 
 .timeline-month-section {

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Fermentation Corner | Recipes & Bubbling Experiments</title>
+
+  <meta name="description"
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures." />
+
+  <link rel="canonical" href="https://softalchemy.uk/kitchen/fermentation/" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph / Pinterest / Facebook -->
+  <meta property="og:site_name" content="Soft Alchemy" />
+  <meta property="og:title" content="The Fermentation Corner | Recipes & Bubbling Experiments" />
+  <meta property="og:description"
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softalchemy.uk/kitchen/fermentation/" />
+  <meta property="og:image" content="https://softalchemy.uk/images/sourdough-bread-half.jpg" />
+  <meta property="og:image:alt" content="A homemade sourdough loaf sliced in half" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Fermentation Corner | Recipes & Bubbling Experiments" />
+  <meta name="twitter:description"
+    content="Explore the Soft Alchemy kitchen: sourdough, fermentation, cosy recipes, bubbling experiments, and slightly chaotic homemade food adventures." />
+  <meta name="twitter:image" content="https://softalchemy.uk/images/sourdough-bread-half.jpg" />
+  <meta name="twitter:image:alt" content="A homemade sourdough loaf sliced in half" />
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-light.png" />
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-dark.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-563L2Z66XJ");
+  </script>
+</head>
+
+<body>
+  <header id="header">
+    <h1>Following the Jars</h1>
+  </header>
+
+  <section class="card">
+    <h2>🫙 How It Started</h2>
+    <p>Having successfully embraced the excitement of starting my own sourdough starter, fermentation isn't something I dove
+    into so much as fell down. It began when I searched for something to do with a pile of satsuma peels I'd been saving in
+    the name of reducing waste.
+    </p>
+    <p>
+    The resulting suggestion was to make my own vinegar, which started life as some skeptical peels floating in water in a
+    jar rescued from the recycling bin. Three months later, it's become a distinctly sour yellowish liquid that is decidedly
+    still not vinegar, but is now surrounded by a neighbourhood of other bubbling jars. (Sadly, the wonderful world of collective nouns has apparently decided jars are undeserving of such things, so I had to
+    make do.)</p>
+  </section>
+
+  <section class="card garden-timeline-card">
+    <h2>🧭 The Journey So Far</h2>
+    <ul class="timeline-month-jump chaos-list"></ul>
+    <div id="fermentationTimeline" class="timeline"></div>
+    <br>
+    <ul class="timeline-month-jump chaos-list"></ul>
+    <div class="related-footer">
+      <h3><a href="#header">Back to the top ↑</a></h3>
+    </div>
+  </section>
+
+  <script src="/js/updates.js" defer></script>
+  <script src="/js/posts.js" defer></script>
+  <script src="/js/fermentation.js" defer></script>
+  <script src="/js/update-render.js" defer></script>
+  <script src="/js/timeline-render.js" defer></script>
+  <script src="/js/script.js" defer></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      renderRoomTimeline("fermentationTimeline", "fermentation", {
+        order: "asc"
+      });
+    });
+  </script>
+</body>
+
+</html>

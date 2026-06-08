@@ -15,7 +15,15 @@
   </url>
 
   <url>
+    <loc>https://softalchemy.uk/kitchen/fermentation/</loc>
+  </url>
+
+  <url>
     <loc>https://softalchemy.uk/study/</loc>
+  </url>
+
+  <url>
+    <loc>https://softalchemy.uk/study/timeline/</loc>
   </url>
 
    <url>
@@ -32,6 +40,18 @@
 
   <!-- Posts -->
   <url>
+    <loc>https://softalchemy.uk/post.html?id=garden-plan</loc>
+  </url>
+  
+  <url>
+    <loc>https://softalchemy.uk/post.html?id=brownie</loc>
+  </url>
+
+  <url>
+    <loc>https://softalchemy.uk/post.html?id=mushroom-burger</loc>
+  </url>
+  
+   <url>
     <loc>https://softalchemy.uk/post.html?id=echo-collage</loc>
   </url>
   
@@ -56,15 +76,11 @@
   </url>
 
   <url>
-    <loc>https://softalchemy.uk/post.html?id=the-library</loc>
-  </url>
-
-  <url>
     <loc>https://softalchemy.uk/post.html?id=sourdough-starter</loc>
   </url>
 
   <url>
-    <loc>https://softalchemy.uk/post.html?id=75-soft-plan</loc>
+    <loc>https://softalchemy.uk/post.html?id=75-soft-challenge</loc>
   </url>
 
   <url>

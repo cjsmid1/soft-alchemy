@@ -4,6 +4,58 @@ const divider = `
   </div>
 `;
 
+
+const sourdoughStarterTimeline = [
+	{
+		date: "2026-03-02",
+		title: "Day 1: Conception",
+		text: "To start your starter, mix together 50g of flour with 50ml water. Then abandon it with a loose lid for ~24 hours."
+	},
+	{
+		date: "2026-03-03",
+		title: "Day 2-6: Nurturing",
+		text: "To grow your doughy lump into a strong bubbly starter you need to feed it daily. It wants equal parts starter, flour and water (e.g. 50g starter mixed with 50g flour & 50ml water).<br>When it inevitably gets too big you'll want to remove some starter before adding the flour and water, this is called sourdough discard & can be used for multiple recipes (pancakes, crumpets, wraps, etc - just don't expect your discard to act as a raising agent the way an active starter will!) "
+	},
+	{
+		date: "2026-03-09",
+		title: "Day 7+: Maturity",
+		text: "After about a week of daily feeding, your sourdough starter is ready to explore the wide world of <a href='/post.html?id=sourdough-bread'>making bread</a>! You should be seeing the starter increase in size after its daily feeding and then partially collapse back down again. Timing your baking to use the starter at peak growth (~4 hours after it's last feeding) will set you up for maximum success."
+	}
+];
+
+const sourdoughBreadTimeline = [
+	{
+		date: "step-1",
+		title: "Feed Starter",
+		text: "Feed your starter and wait until it is bubbly and roughly doubled in volume (~4 hours)."
+	},
+	{
+		date: "step-2",
+		title: "Mix Flour & Water",
+		text: "Mix flour and water, then leave for 20-60 minutes."
+	},
+	{
+		date: "step-3",
+		title: "Add Starter & Salt",
+		text: "Mix in the starter and salt, then let the dough rest ~30 minutes."
+	},
+	{
+		date: "step-4",
+		title: "Stretch & Folds",
+		text: "Do at least 3 rounds of stretch and folds, roughly 30 minutes apart."
+	},
+	{
+		date: "step-5",
+		title: "Overnight: Fridge Proof",
+		text: "Shape if desired, then leave in the fridge overnight."
+	},
+	{
+		date: "step-6",
+		title: "Day 2: Bake",
+		text: "Bake at 220°C fan for 20 minutes covered, then 20-25 minutes uncovered."
+	}
+];
+
 const posts = [
 	{
 		id: "garden-plan",
@@ -109,13 +161,16 @@ const posts = [
     </div>
 	<h3>Identify tasks:</h3>
 	<p>The final main planning step is to consider the key tasks required for each of your chosen plants. This will include tasks such as any prep required beforehand; when to purchase plant, bare root, or seeds; roughly when to pot & re-pot; when to harden off seedlings; any fertilising needs; harvesting etc. The easiest method I've found for this is to have an overarching timeline with monthly tasks across all my plants. This is also where existing gardening experience is extremely useful as you'd be better at judging tasks and any missing gaps. Since I, for reasons still beyond me, didn't ask my mother for assistance, I learned the hard way and the majority of the first plan I created has since been edited by reality. Nonetheless I will include it here as an example.</p>
-	<img class="post-image" src="/images/garden/garden-plan-tasks-01-2026.jpg" alt="">
+	<img class="small-post-image lightbox-image" src="/images/garden/garden-plan-tasks-01-2026.jpg" alt="">
 	<br>
 	<h3>(Opt) Identify zones & microclimates:</h3>
 	<p>For the planning lovers: this step is optional but useful because a garden is rarely universally consistent. You may have sunnier patio areas that can get very warm so are better suited for tomatoes, or perhaps an area that forms a wind tunnel and would therefore benefit from sturdier plants. Activities you may want to consider depending on your level of planning enjoyment:<p>
 	<ul>
 	<li>Taking photos of your garden morning, noon & afternoon to track the sun's path.</li>
-	<img class="small-post-image" src="/images/garden/sunpath-05-2026.png" alt="">
+	<figure class="post-image">
+	  <img class="small-post-image lightbox-image" src="/images/garden/sunpath-05-2026.png" alt="">
+	  <figcaption>AI generated from three garden photographs</figcaption>
+  </figure>
 	<li>Drawing a layout of your garden and allocating rough positions for plants.</li>
 	<figure class="post-image">
 	  <img class="journal" src="/images/garden/garden-plan-layout-01-2026.jpg" alt="">
@@ -158,8 +213,29 @@ const posts = [
 	  <div class="summary-note-label"></div>
 	  <p>I believe the power of a tried-and-true, fail-safe brownie recipe is underrated. I found mine in the Scottish Highlands, and I invite you to make it yours too.</p>
 	  </section>
-		<p>Beside the highest railway station in Brittain there is a little cafe that serves the best brownie I've ever tasted. During the two days I spent there on a trekking adventure, I somehow managed to justify three separate visits. On the final visit I had the audacity to ask the chef for the recipe. The following scrap of paper will forever hold pride of place in my culinary collection.</p>
+		<p>Beside the highest railway station in Britain there is a little cafe that serves the best brownie I've ever tasted. During the two days I spent there on a trekking adventure, I somehow managed to justify three separate visits. On the final visit I had the audacity to ask the chef for the recipe. The following scrap of paper will forever hold pride of place in my culinary collection.</p>
 		<img class="card-image" src="/images/brownie-recipe.png">
+		<br>
+		<h2>Ingredients</h2>
+    <ul>
+		  <li>3 Eggs</li>
+		  <li>275g Caster Sugar</li>
+		  <li>1 tsp Vanilla Extract</li>
+		  <li>225g Butter</li>
+		  <li>200g Dark Chocolate</li>
+		  <li>135g Plain Flour</li>
+		  <li>100g Chocolate Chips (I recommend milk, white or a mix of both!)</li>
+	  </ul>
+
+    <h2>Instructions</h2>
+    <ol class="instructions">
+		  <li>Preheat the oven to 180°C.</li>
+		  <li>In a bowl, whisk together the eggs, sugar and vanilla.</li>
+		  <li>Melt the butter and dark chocolate together in a pan until smooth, then add to the bowl.</li>
+		  <li>Sieve in the flour, stirring gently.</li>
+		  <li>Add the chocolate chips and transfer to a prepped/lined oven dish of your choice.</li>
+		  <li>Bake in oven until just a light jiggle (~10-15 mins)</li>
+    </ol>
 	  ${divider}
 	  <p>Enjoy! Over the years, this recipe has been adapted:</p>
 		<ul>
@@ -181,8 +257,8 @@ const posts = [
 		metaTitle: "🍔 Mushroom Burger | Soft Alchemy",
 		metaDescription:
 			"A rich homemade mushroom burger recipe packed with mushrooms, garlic, stock and cheese. Smoky, satisfying, and capable of putting many restaurant veggie burgers to shame.",
-		image: "/images/mushroom-burger.jpeg",
-		imageAlt:"Homemade mushroom burger in a toasted brioche bun with lettuce, cheese, pineapple and crispy onions",
+		image: "/images/mushroom-burger-square.png",
+		imageAlt: "Homemade mushroom burger in a toasted brioche bun with lettuce, cheese, pea fritter and crispy onions",
 		category: "Recipe",
 		tags: ["BBQ", "mushrooms", "vegetarian"],
 		excerpt: "The time restaurant veggie burgers were put to shame.",
@@ -244,19 +320,19 @@ const posts = [
 	`,
 	},
 	{
-    id: "chocolate-milkshake",
+		id: "chocolate-milkshake",
 		date: "2026-05-25",
 		title: "🥤 Mint Chocolate Milkshake",
 		metaTitle: "🥤 Mint Chocolate Milkshake | Soft Alchemy",
 		metaDescription:
 			"A ridiculously indulgent homemade mint chocolate milkshake recipe made with Aero, vanilla ice cream, and chocolate spread. Easily adapted into Biscoff, Banoffee, Honeycomb and more.",
-    image: "/images/milkshake-portrait.jpg",
+		image: "/images/milkshake-portrait.jpg",
 		imageAlt:
 			"Homemade mint chocolate milkshake topped with crushed Aero chocolate",
-    category: "Recipe",
-    tags: ["quick", "sweet", "vegetarian"],
+		category: "Recipe",
+		tags: ["quick", "sweet", "vegetarian"],
 		excerpt: "The time a milkshake earned an instant second order and a homemade remake.",
-    content: `
+		content: `
       <img class="card-image" src="/images/milkshake-cover.jpg">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -333,17 +409,17 @@ const posts = [
 </section>
     `,
 	},
-  {
-    id: "affirmations",
+	{
+		id: "affirmations",
 		date: "2026-05-22",
-    title: "💭 Tiny Stories We Tell Ourselves",
-    metaTitle: "Tiny Stories We Tell Ourselves | Soft Alchemy",
-    metaDescription:
-      "A reflective exploration of affirmations, attention, identity and the quiet ways repeated words may shape the person we become.",
-    category: "Study",
-    tags: ["reflection", "self-improvement"],
-    excerpt: "The time I investigated the value of affirmations...",
-    content: `
+		title: "💭 Tiny Stories We Tell Ourselves",
+		metaTitle: "Tiny Stories We Tell Ourselves | Soft Alchemy",
+		metaDescription:
+			"A reflective exploration of affirmations, attention, identity and the quiet ways repeated words may shape the person we become.",
+		category: "Study",
+		tags: ["reflection", "self-improvement"],
+		excerpt: "The time I investigated the value of affirmations...",
+		content: `
 		<p>
 		I must admit that the quote "if you open your mind too much, your brain will fall out" never fails to make me chuckle. Having said that, I prefer to lead with empathetic curiosity and so when I encountered the world of affirmations, especially given the cynicism it brings out in many, further exploration was required.
 		</p>
@@ -404,21 +480,21 @@ const posts = [
 
 		<p>Regardless of any further debate around affirmations and their effectiveness; even if they're just tiny course corrections repeated often enough to matter. I suspect the stories we tell ourselves quietly shape the people we become, and that alone makes them worth experimenting with.</p>
 		`,
-  },
-  {
-    id: "roasted-aubergine",
+	},
+	{
+		id: "roasted-aubergine",
 		date: "2026-05-21",
-    title: "🍆 Roasted Aubergine",
-    metaTitle: "🍆 Roasted Aubergine | Soft Alchemy",
-    metaDescription:
-      "Sticky roasted aubergine with bulgogi glaze, crispy pak choi, noodles & vegetables. An easy vegetarian comfort recipe packed with savoury umami flavour.",
-    image: "/images/roasted-aubergine.jpg",
-    imageAlt:
-      "Roasted glazed aubergine served with noodles, pak choi and vegetables",
-    category: "Recipe",
-    tags: ["asian", "vegan", "vegetarian"],
-    excerpt: "The time I got hold of the Korean answer to barbecue sauce...",
-    content: `
+		title: "🍆 Roasted Aubergine",
+		metaTitle: "🍆 Roasted Aubergine | Soft Alchemy",
+		metaDescription:
+			"Sticky roasted aubergine with bulgogi glaze, crispy pak choi, noodles & vegetables. An easy vegetarian comfort recipe packed with savoury umami flavour.",
+		image: "/images/roasted-aubergine.jpg",
+		imageAlt:
+			"Roasted glazed aubergine served with noodles, pak choi and vegetables",
+		category: "Recipe",
+		tags: ["asian", "vegan", "vegetarian"],
+		excerpt: "The time I got hold of the Korean answer to barbecue sauce...",
+		content: `
       <img class="card-image" src="/images/roasted-aubergine.jpg">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -457,20 +533,20 @@ const posts = [
 	  ${divider}
 	  <p>Enjoy! While writing this post I learned that bulgogi sauce is actually reasonably easy to make yourself according to <a href="https://www.chilipeppermadness.com/recipes/bulgogi-sauce/#wprm-recipe-container-26186">Chili Pepper Madness</a>. However with a name like that, and my personal spice tolerance hovering only just above "startled by black pepper", I'll definitely be making James taste any future attempts first. Bulgogi is apparently most commonly used with meat, but as a pescatarian all I heard was: "this would probably be incredible with mushrooms."</p>
     `,
-  },
-  {
-    id: "quote-page",
+	},
+	{
+		id: "quote-page",
 		date: "2026-05-19",
-    title: "💎 Verbal Treasures",
-    metaTitle: "Verbal Treasures | Favourite Quotes & Tiny Reflections",
-    metaDescription:
-      "A playful collection of favourite quotes, thoughtful lines, and tiny reflections gathered in the Soft Alchemy quote aviary.",
-    image: "/images/pinterest/quote-page-pin.jpg",
-    imageAlt: "A screenshot of floating quotes",
-    category: "Life",
-    tags: ["books"],
-    excerpt: "The time other people said it better...",
-    content: `
+		title: "💎 Verbal Treasures",
+		metaTitle: "Verbal Treasures | Favourite Quotes & Tiny Reflections",
+		metaDescription:
+			"A playful collection of favourite quotes, thoughtful lines, and tiny reflections gathered in the Soft Alchemy quote aviary.",
+		image: "/images/pinterest/quote-page-pin.jpg",
+		imageAlt: "A screenshot of floating quotes",
+		category: "Life",
+		tags: ["books"],
+		excerpt: "The time other people said it better...",
+		content: `
 	    <section class="summary-note">
 	      <div class="summary-note-label"></div>
 	 	  <p>I have a habit of hoarding good quotations whenever I come across them.<br>
@@ -488,21 +564,44 @@ const posts = [
           <p id="revealAuthor" class="quote-author"></p>
           <p id="revealCommentary" class="quote-commentary handwritten"></p>
         </article>
+				<br>
+			<h2>Favourite Treasures</h2>
+<ul>
+  <li>
+    "Anything worth doing is worth doing badly." - <em>G.K. Chesterton</em>
+  </li>
+
+  <li>
+    "The best time to plant a tree was 20 years ago. The second best time is now." - <em>Chinese proverb</em>
+  </li>
+
+  <li>
+    "A trap is only a trap if you don't know about it. If you know about it, it's a challenge." - <em>King Rat, China Miéville</em>
+  </li>
+
+  <li>
+    "The single biggest problem in communication is the illusion that it has taken place." - <em>George Bernard Shaw</em>
+  </li>
+
+  <li>
+    "Life is what you share with others. Hoard it and you will die all the poorer for it." - <em>Practical Guide to Evil, ErraticErrata</em>
+  </li>
+</ul>
     `,
-  },
-  {
-    id: "bingo-life",
+	},
+	{
+		id: "bingo-life",
 		date: "2026-05-14",
-    title: "🔢 A Bingo Life",
-    metaTitle: "A Bingo Life | Gamify Your Goals with Personal Bingo Cards",
-    metaDescription:
-      "How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
-    image: "/images/bingo-year.jpg",
-    imageAlt: "A handwritten yearly bingo goal card",
-    category: "Study",
-    tags: ["goals", "self-improvement"],
-    excerpt: "The time I gamified my goals and made bingo nerdy...",
-    content: `
+		title: "🔢 A Bingo Life",
+		metaTitle: "A Bingo Life | Gamify Your Goals with Personal Bingo Cards",
+		metaDescription:
+			"How to use personalised bingo cards to make goals, habits, dates, and monthly challenges more playful and achievable.",
+		image: "/images/bingo-year.jpg",
+		imageAlt: "A handwritten yearly bingo goal card",
+		category: "Study",
+		tags: ["goals", "self-improvement"],
+		excerpt: "The time I gamified my goals and made bingo nerdy...",
+		content: `
 	<section class="summary-note">
 	    <div class="summary-note-label"></div>
 		<p>Create your own personalised bingo cards to make goals fun & set yourself a challenge. Make a grid to complete this week/month/year - you choose!</p>
@@ -523,11 +622,11 @@ const posts = [
 	    <li>5x5: This is the traditional size so you'll have 25 boxes to fill out.</li>
 	  </ul>	
 	  <ul class="picture-list picture-square">
-        <li><img class="journal" src="/images/bingo-jan.jpg"></li>
-        <li><img class="journal" src="/images/bingo-feb.jpg"></li>
-        <li><img class="journal" src="/images/bingo-march.jpg"></li>
-        <li><img class="journal" src="/images/bingo-april.jpg"></li>
-        <li><img class="journal" src="/images/bingo-may.jpg"></li>
+        <li><img class="journal lightbox-image" src="/images/bingo-jan.jpg"></li>
+        <li><img class="journal lightbox-image" src="/images/bingo-feb.jpg"></li>
+        <li><img class="journal lightbox-image" src="/images/bingo-march.jpg"></li>
+        <li><img class="journal lightbox-image" src="/images/bingo-april.jpg"></li>
+        <li><img class="journal lightbox-image" src="/images/bingo-may.jpg"></li>
       </ul>
 	  <ul>
 	    <li>4x4: Easier to complete as it's only 16 boxes and might be a good way to try out "Hard Mode" without it getting too crazy.</li>
@@ -539,7 +638,7 @@ const posts = [
 	    <li>Month: Useful for specifying goals for the month, I keep mine in my bullet journal's monthly spreads.</li>
 	    <li>Year: Think of it as new years resolutions but without the guilt!
 		<figure class="post-image">
-		  <img src="/images/bingo-year.jpg">
+		  <img class="lightbox-image" src="/images/bingo-year.jpg">
 		  <figcaption>I got creative with some friends & we each make one for the Chinese New Year - yes technically "Create a Blog" should be ticked off by now</figcaption>
         </figure>
 		</li>
@@ -558,137 +657,66 @@ const posts = [
 	  </ul>
 	  ${divider}
 	`,
-  },
-  {
-    id: "the-library",
-		date: "2026-05-13",
-    title: "📚 The Library",
-    metaTitle:
-      "The Soft Alchemy Library | Book Recommendations for Curious Minds",
-    metaDescription:
-      "A growing collection of fantasy, thoughtful nonfiction, cosy reads, and quietly life-changing books from the Soft Alchemy library.",
-    image: "/images/echo/echo-book.jpg",
-    imageAlt: "Echo the papillon sitting beside a travel book",
-    category: "Life",
-    tags: ["books", "recommendation"],
-    excerpt:
-      "The time I tried to read in peace and was immediately supervised...",
-    content: `
-	<div class="two-column-layout left-wide">
-
-      <section class="card start-here-card">
-    
-        <div class="start-here-content">
-          <h3 class="start-here-title">
-            Follow the Paw Prints
-          </h3>
-    
-          <p>
-            Wander through the shelves...
-          </p>
-	  	<ul class="chaos-list">
-          <li><a href="/post.html?id=the-library#fantasy">Fantasy</a></li>
-          <li><a href="/post.html?id=the-library#nonfic">Non-Fiction</a></li>
-          <li><a href="/post.html?id=the-library#child">Young Adult</a></li>
-          <li><a href="/post.html?id=the-library#games">Board Games</a></li>
-          <li><a href="/post.html?id=quote-page">Quotes</a></li>
-          <li><a href="/post.html?id=the-library#media">Youtube</a></li>
-	    </ul> 
-        
-        </div>
-        <div class="start-paw-trail">
-          <img class="paw-print" style="--i:1" src="/images/paw-print.png" alt="">
-          <img class="paw-print" style="--i:2" src="/images/paw-print.png" alt="">
-          <img class="paw-print" style="--i:3" src="/images/paw-print.png" alt="">
-          <img class="paw-print" style="--i:4" src="/images/paw-print.png" alt="">
-          <img class="paw-print" style="--i:5" src="/images/paw-print.png" alt="">
-        </div>
-      </section>
-
-			<section class="card quote-content">
-	  <a href="/post.html?id=quote-page" class="quote-card-link">
-        <blockquote>
-          “Books are a uniquely portable magic.”
-        </blockquote>
-        <cite>
-          — On Writing, Stephen King
-        </cite>
-	  </a>
-    </section>
-</div>
-
-	<section class="card reading-shelf">
-      <h3>⏳ Current Bookshelf</h3>
-      <div id="current-bookshelf" class="shelf"></div>
-    </section>
-	<section id="fantasy" class="card reading-shelf">
-	  <h3>✨ For Escaping Reality</h3>
-      <div id="fantasy-bookshelf" class="shelf"></div>
-    </section> 
-	<section id="nonfic" class="card reading-shelf">
-	  <h3>🔍 For Understanding the World</h3>
-      <div id="nonfiction-bookshelf" class="shelf"></div>
-    </section>
-	<section id="child" class="card reading-shelf">
-	  <h3>💖 For Your Inner Child</h3>
-      <div id="nostalgia-bookshelf" class="shelf"></div>
-    </section>
-	<section id="media" class="card reading-shelf">
-	  <h3>🎥 For Digital Rabbit Holes</h3>
-      <div id="other-media-bookshelf" class="shelf"></div>
-    </section>
-	<section id="games" class="card reading-shelf">
-	  <h3>🎲 For Gathering Around a Table</h3>
-      <div id="board-game-bookshelf" class="shelf"></div>
-    </section>
-	
-	<section class="card quote-content">
-	  <a href="/post.html?id=quote-page">
-	    <blockquote>
-          “You want weapons? We're in a library. Books are the best weapon in the world. This room's the greatest arsenal we could have. Arm yourself!”
-        </blockquote>
-        
-        <cite>
-          — Doctor Who, Russell T. Davies
-        </cite>
-	  </a>
-    </section>
-		${divider}
-	`,
-  },
-  {
-    id: "sourdough-starter",
+	},
+	{
+		id: "sourdough-starter",
 		date: "2026-05-12",
-    title: "🥣 Starting a Sourdough Starter",
-    metaTitle: "How to Start a Sourdough Starter | Beginner Guide",
-    metaDescription:
-      "A beginner-friendly guide to making a sourdough starter from flour, water, and a willingness to adopt a needy yeast pet.",
-    image: "/images/sourdough-starter.jpg",
-    imageAlt: "Homemade sourdough starter in a container",
-    category: "Recipe",
-    tags: ["sourdough", "vegan", "vegetarian"],
-    excerpt:
-      "The time I made a stinky, needy yeast pet and never looked back...",
-    content: `
+		title: "🥣 Starting a Sourdough Starter",
+		metaTitle: "How to Start a Sourdough Starter | Beginner Guide",
+		metaDescription:
+			"A beginner-friendly guide to making a sourdough starter from flour, water, and a willingness to adopt a needy yeast pet.",
+		image: "/images/sourdough-starter.jpg",
+		imageAlt: "Homemade sourdough starter in a container",
+		category: "Recipe",
+		tags: ["fermentation", "sourdough", "vegan", "vegetarian"],
+		excerpt:
+			"The time I made a stinky, needy yeast pet and never looked back...",
+		content: `
 	  <img class="card-image" src="/images/sourdough-starter.jpg">
 	  <section class="summary-note">
 	    <div class="summary-note-label"></div>
 		<p>All sourdough recipes call for a mysterious "starter", this is how you actually make your own: congrats on your new yeast baby! Yes it does take at least a week of daily feeding unless you can steal some from a friend or want to throw money at the problem.</p>
-      </section>
-      <h2>Ingredients</h2>
+    </section>
+    <h2>Ingredients</h2>
       <ul>
         <li>Flour (Which type? <a href="#qa">Check the Q&A below</a>)</li>
         <li>Water</li>
         <li>Patience</li>
       </ul>
-      <h2>Instructions</h2>
-      <ol>
-        <li><b>Conception:</b> To start your starter mix together 50g of flour with 50ml water. Then abandon it with a loose lid for ~24 hours.</li>
-        <li><b>Nurturing:</b> To grow your doughy lump into a strong bubbly starter you need to feed it daily. It wants equal parts starter, flour and water (e.g. 50g starter mixed with 50g flour & 50ml water).<br> 
-		When it inevitably gets too big you'll want to remove some starter before adding the flour and water, this is called sourdough discard & can be used for multiple recipes (pancakes, crumpets, wraps, etc - just don't expect your discard to act as a raising agent the way an active starter will!)</li>
-        <li><b>Maturity:</b> After about a week of daily feeding, your sourdough starter is ready to explore the wide world of making bread! You should be seeing the starter increase in size after its daily feeding and then partially collapse back down again. Timing your baking to use the starter at peak growth (~4 hours after it's last feeding) will set you up for maximum success.</li>
-	  </ol>
-	  <div class="qa-board" id="qa">
+    <h2>Instructions</h2>
+		<div id="sourdoughStarterTimeline" class="timeline"></div>
+
+		<br>
+		<h2>Starter Experiments</h2>
+		<p>Naturally, after learning the sensible method, I immediately started interfering.</p>
+		<section class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Starter</th>
+        <th>Details</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Phyllis</td>
+        <td>Standard white bread flour starter</td>
+        <td>First bread a bit dense, works great since</td>
+      </tr>
+			<tr>
+        <td>Dax</td>
+        <td>Rye flour starter with apple peel, left outside for ~24 hours</td>
+        <td>Worked perfectly well, but tended to produce denser loaves than Phyllis</td>
+      </tr>
+		</tbody>
+	</table>
+	<p>Much to my disappointment, the sensible option won. I also had to deal with an alarming amount of discard from juggling two growing starters. Have since fed Dax to Phyllis (yes it felt wrong but not as wrong as throwing Dax away) and now continue on with white bread flour.</p>
+	<br>
+
+		<h2 id="qa">Queries & Starter Crises</h2>
+	  <div class="qa-board">
 	  <details class="qa-card">
 	    <summary class="qa-click-area">
         <span class="qa-label">Does the container matter?</span>
@@ -730,22 +758,22 @@ const posts = [
       </details>
     </div>
     `,
-  },
-  {
-    id: "75-soft-challenge",
+	},
+	{
+		id: "75-soft-challenge",
 		date: "2026-05-06",
-    title: "🏆 75 Soft Challenge",
-    metaTitle:
-      "75 Soft Challenge Plan | Gentle Habits, Fitness & Self Improvement",
-    metaDescription:
-      "My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
-    image: "/images/75-soft-plan.jpg",
-    imageAlt: "Handwritten 75 Soft Challenge commitment notes",
-    category: "Study",
-    tags: ["challenge", "goals", "self-improvement"],
-    excerpt:
-      "The time I joined the self-improvement internet hype three years late...",
-    content: `
+		title: "🏆 75 Soft Challenge",
+		metaTitle:
+			"75 Soft Challenge Plan | Gentle Habits, Fitness & Self Improvement",
+		metaDescription:
+			"My personalised 75 Soft Challenge plan with meditation, reading, hydration, protein breakfasts, and 45 minutes of daily exercise.",
+		image: "/images/75-soft-plan.jpg",
+		imageAlt: "Handwritten 75 Soft Challenge commitment notes",
+		category: "Study",
+		tags: ["challenge", "goals", "self-improvement"],
+		excerpt:
+			"The time I joined the self-improvement internet hype three years late...",
+		content: `
 	<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>My 75 soft challenge daily commitment to a protein breakfast, meditation, reading, 6 glasses of water & 45 minutes of exercise. The plan is set in theory, time will tell how it works out in practice.</p>
@@ -773,7 +801,7 @@ const posts = [
 	  <li>🎧 <b>Reading:</b> I love reading, especially fantasy. Needless to say I'm not overly worried about this part. Having said that, I seem to have an existing to-do item in my backlog to actually read the many physical books gathering dust on the bookshelves, what's more I've had this to-do item for at least 6 years... 😅<br>
 	  While I will happily add the daily commitment to either listen to 10 mins of audiobook or read 10 physical pages, I'm secretly hoping I won't always default to the audiobook and may actually finish a physical book or two!</li>
 	  <br>
-	  <li><img class="emoji" src="/images/medito-logo.png"><b>Meditation:</b> This is where I'm ahead of the game because one of last month's growth areas was learning how to meditate! (Yes I might have been paranoid about committing to so many things in the 75 soft challenge and figured I would set myself up for success as much as possible without cheating the system.)<br>
+	  <li><img class="emoji" src="/images/medito-logo.png"><b>Meditation:</b> This is where I'm ahead of the game because one of last month's <a href="/post.html?id=growth-areas">growth areas</a> was learning how to meditate! (Yes I might have been paranoid about committing to so many things in the 75 soft challenge and figured I would set myself up for success as much as possible without cheating the system.)<br>
 	  I currently am using the Medito app to follow daily guided meditations in the morning before my first tea (don't underestimate that specific caveat, it's a very powerful motivator for me!). The plan is to aim for 10 minutes with the option to increase or decrease the time as required by the day's commitments.</li>
 	  <br>
 	  <li>🏃🏻‍♀️ <b>Exercise:</b> Ah yes the final boss. Granted I would consider myself reasonably fit, and having a certain fluffball who insists on being walked certainly doesn't hurt when it comes to forcing myself to exercise. However, I want to actually challenge myself rather than just coasting through this on a 45 minute dog walk a day. I've also been wanting to improve my strength based exercise so that I might have visible abs sometime this year, and given bikinis are much better at showing off abs than Christmas jumpers, there's no time like the present to get started! Hence each day I get to take my pick of 45 minutes of the following exercise options:
@@ -795,21 +823,21 @@ const posts = [
 	<p>Did you notice how the tracker in my 75 Soft journal plan started with 1st May? That was meant to be my test day before I start properly on Wednesday 6th May after getting back from my Devon trip (yes James & I went to Devon to celebrate our 2 year anniversary - more on that in a later post!). Did you also notice how that test day doesn't have a complete row of ticks, and just a normal walk as my exercise? Turns out I might have been wrong to be so confident in all my commitment areas... 😅<br>
 	Now that I've been suitably humbled, it's Wednesday 6th May 2026 and just turned 3pm on my first proper day of 75 Soft, and I think it's time to actually have lunch & do some exercise before I have to go back and pretend I meant to start tomorrow all along!</p>
 	`,
-  },
-  {
-    id: "tuna-sweetcorn-dumplings",
+	},
+	{
+		id: "tuna-sweetcorn-dumplings",
 		date: "2026-04-29",
-    title: "🥟 Tuna Sweetcorn Dumplings",
-    metaTitle: "Tuna Sweetcorn Dumplings | Easy Pierogi-Inspired Recipe",
-    metaDescription:
-      "A cosy pierogi-inspired tuna sweetcorn dumpling recipe with homemade dough, creamy filling, and freezer-friendly batch cooking potential.",
-    image: "/images/tuna-sweetcorn-dumplings.jpg",
-    imageAlt: "Homemade tuna sweetcorn dumplings served with garnish",
-    category: "Recipe",
-    tags: ["dinner-party", "fish"],
-    excerpt:
-      "The time I discovered pierogi and immediately made them less traditional...",
-    content: `
+		title: "🥟 Tuna Sweetcorn Dumplings",
+		metaTitle: "Tuna Sweetcorn Dumplings | Easy Pierogi-Inspired Recipe",
+		metaDescription:
+			"A cosy pierogi-inspired tuna sweetcorn dumpling recipe with homemade dough, creamy filling, and freezer-friendly batch cooking potential.",
+		image: "/images/tuna-sweetcorn-dumplings.jpg",
+		imageAlt: "Homemade tuna sweetcorn dumplings served with garnish",
+		category: "Recipe",
+		tags: ["dinner-party", "fish"],
+		excerpt:
+			"The time I discovered pierogi and immediately made them less traditional...",
+		content: `
       <img class="card-image" src="/images/tuna-sweetcorn-dumplings.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -864,21 +892,21 @@ const posts = [
 	  ${divider}
 	  <p>Enjoy! My partner & I made a mix of these and the traditional cheesy potato Pierogi filling, needless to say we lost track of which was which and had mystery dumplings for dinner 😂 We served them with butter, crispy onions & parsley; ate half and froze the rest for a dumpling soup.</p>
     `,
-  },
-  {
-    id: "echo-first-birthday",
+	},
+	{
+		id: "echo-first-birthday",
 		date: "2026-04-27",
-    title: "🎂 Do Dog Birthdays Count?",
-    metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
-    metaDescription:
-      "Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
-    image: "/images/echo/echo-wisley.jpg",
-    imageAlt: "Echo the papillon visiting RHS Wisley gardens",
-    category: "Life",
-    tags: ["dog-approved", "dog recipe", "recommendation"],
-    excerpt:
-      "The time my puppy turned one and somehow acquired an itinerary...",
-    content: `
+		title: "🎂 Do Dog Birthdays Count?",
+		metaTitle: "Do Dog Birthdays Count? | Echo’s First Birthday Adventure",
+		metaDescription:
+			"Echo the papillon celebrates his first birthday with Walkies at Wisley, dog ice cream, birthday cake, and a very serious dog review.",
+		image: "/images/echo/echo-wisley.jpg",
+		imageAlt: "Echo the papillon visiting RHS Wisley gardens",
+		category: "Life",
+		tags: ["dog-approved", "dog recipe", "recommendation"],
+		excerpt:
+			"The time my puppy turned one and somehow acquired an itinerary...",
+		content: `
 	<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>Echo had his first birthday, <a href="#wisley">RHS Wisley gardens</a> do a dog event, he also got <a href="#ice-cream">dog ice cream</a> and his own <a href="#birthday-cake">birthday cake</a>!</p>
@@ -942,20 +970,20 @@ const posts = [
     </div>
 
 	`,
-  },
-  {
-    id: "growth-areas",
+	},
+	{
+		id: "growth-areas",
 		date: "2026-04-24",
-    title: "🌿 Growth Areas",
-    metaTitle: "Growth Areas | A Gentle System for Focused Self Improvement",
-    metaDescription:
-      "A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
-    image: "/images/grow-area-summary.jpg",
-    imageAlt: "A handwritten growth areas planning page",
-    category: "Study",
-    tags: ["goals", "self-improvement"],
-    excerpt: "The time I learned how to not overcommit myself...",
-    content: `
+		title: "🌿 Growth Areas",
+		metaTitle: "Growth Areas | A Gentle System for Focused Self Improvement",
+		metaDescription:
+			"A simple monthly planning system for choosing three growth areas, reducing overwhelm, and turning too many goals into a focused plan.",
+		image: "/images/grow-area-summary.jpg",
+		imageAlt: "A handwritten growth areas planning page",
+		category: "Study",
+		tags: ["goals", "self-improvement"],
+		excerpt: "The time I learned how to not overcommit myself...",
+		content: `
 	<p>
 	Have you ever felt overwhelmed & like you should be doing a thousand things, while each day ends with the disappointment of having done what feels like nothing? If so, then I empathise and have been there with you most of my adult life! Each day dawns with the potential of 24 glorious hours to be filled with...
 	</p>
@@ -985,7 +1013,7 @@ const posts = [
       <li>Sell Unwanted Clothes on Vinted</li>
       <li>Learn to Meditate</li>
       <li>Tidy the Kitchen</li>
-      <li>Start 75 Soft Challenge</li>
+      <li><a href="/post.html?id=75-soft-challenge">Start 75 Soft Challenge</a></li>
       <li>Start the Bookclub Book</li>
     </ul>
 	<p>Before you get overwhelmed, I present the answer: Growth Areas!</p>
@@ -998,7 +1026,7 @@ const posts = [
 	<p>Others will be a lot more complicated and can include:
 	<ul>
 	<li>Books to read</li> 
-	<li>Things to buy (such as seeds & soil for my Garden Grow Area)</li>
+	<li>Things to buy (such as seeds & soil for my <a href="/post.html?id=garden-plan">future garden</a> growth area)</li>
 	<li>General research (though I recommend being careful with this one as it's easy to fall down the "research" rabbit hole and come out the other end of the month wondering what you actually achieved. In short wherever possible be specific!)</li>
 	<li>A list of tasks to do (I tend to keep mine in my monthly spread BuJo style given the growth areas span a month)</li>
 	</ul>
@@ -1009,7 +1037,7 @@ const posts = [
 	  <figcaption>I tried combining cooking, interior design, and more into a home making monster growth area.<br> As you can see I overcommitted 😅 </figcaption>
     </figure>
 	<p>
-	If you've already heard of the concept of a personal curriculum where you build your own learning pathway outside of the structure of school/university, growth areas fit in perfectly as they essentially represent one module/subject each which can be combined together to create the ultimate personal learning semester! Assuming you're onboard and ready to give it a go (given you've read this far) this is what a summary page of your grow areas can look like along with the tasks for my May Gardening Growth Area (a list on your phone also works fine, I'm just addicted to my journal):
+	If you've already heard of the concept of a personal curriculum where you build your own learning pathway outside of the structure of school/university, growth areas fit in perfectly as they essentially represent one module/subject each which can be combined together to create the ultimate personal learning semester! Assuming you're onboard and ready to give it a go (given you've read this far) this is what a summary page of your grow areas can look like (a list on your phone also works fine, I'm just addicted to my journal):
 	</p>
 	<figure class="small-post-image">
 	  <img class="journal" src="/images/grow-area-summary.jpg" alt="Grow Area Overview">
@@ -1029,22 +1057,22 @@ const posts = [
       </details>
     </div>
 	`,
-  },
-  {
-    id: "sourdough-bread",
+	},
+	{
+		id: "sourdough-bread",
 		date: "2026-04-23",
-    title: "🍞 Sourdough Bread",
-    metaTitle:
-      "Simple Sourdough Bread Recipe | Beginner-Friendly Homemade Loaf",
-    metaDescription:
-      "A beginner-friendly sourdough bread recipe using simple ingredients, stretch and folds, overnight fridge proofing, and no fancy equipment.",
-    image: "/images/sourdough-bread-half.jpg",
-    imageAlt: "A homemade sourdough loaf cut in half",
-    category: "Recipe",
-    tags: ["sourdough", "vegan", "vegetarian"],
-    excerpt:
-      "The time I joined the 30 year old woman bandwagon and made sourdough bread...",
-    content: `
+		title: "🍞 Sourdough Bread",
+		metaTitle:
+			"Simple Sourdough Bread Recipe | Beginner-Friendly Homemade Loaf",
+		metaDescription:
+			"A beginner-friendly sourdough bread recipe using simple ingredients, stretch and folds, overnight fridge proofing, and no fancy equipment.",
+		image: "/images/sourdough-bread-half.jpg",
+		imageAlt: "A homemade sourdough loaf cut in half",
+		category: "Recipe",
+		tags: ["sourdough", "vegan", "vegetarian"],
+		excerpt:
+			"The time I joined the 30 year old woman bandwagon and made sourdough bread...",
+		content: `
 	  <img class="card-image" src="/images/sourdough-bread-half.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
@@ -1056,8 +1084,12 @@ const posts = [
 		<li>350ml Water</li>
 		<li>150g Sourdough Starter</li>
 		<li>10g Salt</li>
-		<li class="section-title">That's it unless you want to have fun with fillings or flavourings!</li>
       </ul>
+			<p>That's it unless you want to have fun with fillings or flavourings!<br>
+			Don't have a starter yet? <a href="/post.html?id=sourdough-starter">Here's how I made mine.</a></p>
+			<br>
+			<h2>Timeline Overview</h2>
+			<div id="sourdoughBreadTimeline" class="timeline"></div>
       <h2>Instructions</h2>
       <ol class="instructions">
         <li class="section-title">Making the Dough (Day 1):</li>
@@ -1091,26 +1123,28 @@ const posts = [
 	  If you do get as obsessed with making sourdough as I have I highly recommend an electric bread knife!</p>
 	  <img class="card-image" src="/images/sourdough-slices.jpg" alt="Nice view">
     `,
-  },
-  {
-    id: "mushroom-wellington",
+	},
+	{
+		id: "mushroom-wellington",
 		date: "2026-04-22",
-    title: "🍄 Mushroom Wellington",
-    metaTitle:
-      "Vegetarian Mushroom Wellington | Puff Pastry Dinner Party Centrepiece",
-    metaDescription:
-      "A vegetarian mushroom wellington with hoisin-style filling, puff pastry, rice paper anti-sog layer, and dinner party centrepiece energy.",
-    image: "/images/mushroom-wellington-puff.jpg",
-    imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
-    category: "Recipe",
+		title: "🍄 Mushroom Wellington",
+		metaTitle:
+			"Vegetarian Mushroom Wellington | Puff Pastry Dinner Party Centrepiece",
+		metaDescription:
+			"A vegetarian mushroom wellington with hoisin-style filling, puff pastry, rice paper anti-sog layer, and dinner party centrepiece energy.",
+		image: "/images/mushroom-wellington-puff.jpg",
+		imageAlt: "A golden vegetarian mushroom wellington wrapped in puff pastry",
+		category: "Recipe",
 		tags: ["dinner-party", "mushrooms", "vegetarian"],
-    excerpt:
-      "The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
-    content: `
+		excerpt:
+			"The time I took a beef wellington, turned it vegetarian and sent it off to Asia...",
+		content: `
       <img class="card-image" src="/images/mushroom-wellington-puff.jpg" alt="Nice view">
 	  <section class="summary-note">
 	  <div class="summary-note-label"></div>
-	  <p>Great pastry centre piece for a roast, I fed 7 people and had leftover filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!</p>
+	  <p>Great pastry centre piece for a roast, I fed 7 people and had leftover filling for sandwiches so feel free to half the recipe if desired. Be sure to leave enough time as the recipe includes some cooling steps and 20 minutes in the fridge before final bake!<br>
+		Secret weapon: Rice paper creates a moisture barrier between the filling and pastry.
+		</p>
 	  </section>
 	  <h2>Ingredients</h2>
 	  <p class="ingredient-section">Filling:</p>
@@ -1159,15 +1193,15 @@ const posts = [
 	  ${divider}
 	  <p>Enjoy! I served mine with a honey onion gravy, though if you want to fully embrace the Asian influence you can also use a soy & rice vinegar dip, or just more hoisin sauce!</p>
     `,
-  },
-  {
-    id: "sabbatical-plans",
+	},
+	{
+		id: "sabbatical-plans",
 		date: "2026-03-01",
-    title: "🌿 Sabbatical Plans",
-    category: "Life",
-    tags: ["goals", "reflection"],
-    excerpt: "What I want to explore during my time off...",
-    content: `
+		title: "🌿 Sabbatical Plans",
+		category: "Life",
+		tags: ["goals", "reflection"],
+		excerpt: "What I want to explore during my time off...",
+		content: `
 		<section class="summary-note">
 	  <div class="summary-note-label"></div>
 	  <p>
@@ -1175,5 +1209,5 @@ const posts = [
 	  I use it as a shameless template, who knows maybe one day I'll actually fill in the details 😅</p>
 	  </section>
 		`,
-  },
+	},
 ];

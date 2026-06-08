@@ -5,10 +5,22 @@ function renderRoomTimeline(containerId, room, options = {}) {
     timelineItems.push(...gardenTimeline);
   }
 
+  if (room === "fermentation" && typeof fermentationTimeline !== "undefined") {
+    timelineItems.push(...fermentationTimeline);
+  }
+
   if (typeof posts !== "undefined") {
     timelineItems.push(
       ...posts
-        .filter((post) => post.category?.toLowerCase() === room)
+        .filter((post) => {
+          const categoryMatches = post.category?.toLowerCase() === room;
+
+          const tagMatches = post.tags?.some(
+            (tag) => tag.toLowerCase() === room
+          );
+
+          return categoryMatches || tagMatches;
+        })
         .filter((post) => post.date)
         .map((post) => ({
           ...post,
@@ -38,56 +50,81 @@ function renderTimeline(containerId, timelineItems, options = {}) {
   if (!container || !timelineItems) return;
 
   const order = options.order || "asc";
+  const showMonthMarker = options.showMonthMarker !== false;
+  const timelineMode = options.timelineMode || "date";
 
-  const sortedItems = [...timelineItems].sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+  const sortedItems = timelineMode === "process"
+    ? [...timelineItems]
+    : [...timelineItems].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
 
-    return order === "desc"
-      ? dateB - dateA
-      : dateA - dateB;
-  });
+      return order === "desc"
+        ? dateB - dateA
+        : dateA - dateB;
+    });
 
-  const monthOrder =
-    options.monthOrder || getTimelineMonthOrder(sortedItems, order);
+  let groupedItems;
 
-  const groupedItems = monthOrder.map((monthKey) => ({
-    monthKey,
-    label: formatTimelineMonth(monthKey),
-    items: sortedItems.filter((item) => item.date.startsWith(monthKey)),
-  }));
+  if (timelineMode === "process") {
+    groupedItems = [
+      {
+        monthKey: "process",
+        label: options.processLabel || "",
+        items: sortedItems,
+      }
+    ];
+  } else {
+    const monthOrder =
+      options.monthOrder || getTimelineMonthOrder(sortedItems, order);
+
+    groupedItems = monthOrder.map((monthKey) => ({
+      monthKey,
+      label: formatTimelineMonth(monthKey),
+      items: sortedItems.filter((item) => item.date.startsWith(monthKey)),
+    }));
+  }
 
   container.innerHTML = groupedItems
     .map((month) => {
-      const columns = balanceTimelineItems(month.items, order);
+      const columns = balanceTimelineItems(month.items, order, options);
 
       return `
         <section class="timeline-month-section" id="timeline-${month.monthKey}">
-          <div class="timeline-month-marker">${month.label}</div>
+          ${showMonthMarker
+          ? `<div class="timeline-month-marker">${month.label}</div>`
+          : ""}
 
           <div class="timeline-month-items">
   <svg class="timeline-thread-layer" aria-hidden="true"></svg>
 
   <div class="timeline-marker-layer">
-    ${month.items.map((item) => renderTimelineMarker(item, order)).join("")}
+    ${month.items.map((item, index) =>
+      renderTimelineMarker(item, order, index, month.items.length, options)
+    ).join("")}
   </div>
 
   <div class="timeline-desktop-columns">
     <div class="timeline-column timeline-column-left">
-      ${columns.left.map(renderTimelineEntry).join("")}
+      ${columns.left.map(item =>
+        renderTimelineEntry({ ...item, timelineMode })
+      ).join("")}
     </div>
 
     <div class="timeline-column timeline-column-right">
-      ${columns.right.map(renderTimelineEntry).join("")}
+      ${columns.right.map(item =>
+        renderTimelineEntry({ ...item, timelineMode })
+      ).join("")}
     </div>
   </div>
 
   <div class="timeline-mobile-list">
     ${month.items.map((item) =>
-        renderTimelineEntry({
-          ...item,
-          timelineSpacer: 0,
-        })
+      renderTimelineEntry({
+        ...item,
+        timelineMode,
+        timelineSpacer: 0,
+      })
       ).join("")}
   </div>
 </div>
@@ -143,9 +180,20 @@ function renderTimelineEntry(item) {
       data-date-group="${dateGroup}"
       style="margin-top: ${spacer}rem; --timeline-tilt: ${tilt}deg;"
     >
-      ${renderTimelineItem(item)}
+      ${renderTimelineItem(item, { timelineMode: item.timelineMode })}
     </article>
   `;
+}
+
+function getTimelinePosition(item, order = "asc", index = 0, total = 1, options = {}) {
+  if (options.timelineMode === "process") {
+    if (total <= 1) return 50;
+
+    const position = (index / (total - 1)) * 100;
+    return order === "desc" ? 100 - position : position;
+  }
+
+  return getDayPositionInMonth(item.date, order);
 }
 
 function getDayPositionInMonth(dateString, order = "asc") {
@@ -161,9 +209,15 @@ function getDayPositionInMonth(dateString, order = "asc") {
   return order === "desc" ? 100 - position : position;
 }
 
-function renderTimelineMarker(item, order = "asc") {
+function renderTimelineMarker(
+  item,
+  order = "asc",
+  index = 0,
+  total = 1,
+  options = {}
+) {
   const dateGroup = getTimelineDateGroup(item);
-  const position = getDayPositionInMonth(item.date, order);
+  const position = getTimelinePosition(item, order, index, total, options);
 
   const markerContent = item.markerImage
     ? `<img src="${item.markerImage}" alt="" class="timeline-marker-image">`
@@ -175,7 +229,7 @@ function renderTimelineMarker(item, order = "asc") {
       type="button" 
       data-date-group="${dateGroup}" 
       style="top: ${position}%"
-      aria-label="Highlight entries for ${formatTimelineDate(item.date)}"
+      aria-label="Highlight entries for ${item.title || formatTimelineDate(item.date)}"
     >
       ${markerContent}
     </button>
@@ -183,7 +237,8 @@ function renderTimelineMarker(item, order = "asc") {
 }
 
 function renderTimelineItem(item) {
-  const date = formatTimelineDate(item.date);
+  const showDate = item.timelineMode !== "process";
+  const date = showDate ? formatTimelineDate(item.date) : "";
 
   if (item.type === "post") {
     return createPostPreviewHTML(item);
@@ -197,8 +252,17 @@ function renderTimelineItem(item) {
     const imageSrc = item.image;
 
     return `
-      <div class="timeline-date">${date}</div>
-      ${item.title ? `<h3>${item.title}</h3>` : ""}
+      ${showDate ? `<div class="timeline-date">${date}</div>` : ""}
+
+      ${(item.title || item.status)
+        ? `<h3>
+        ${item.title || ""}
+        ${item.title && item.status ? " → " : ""}
+        ${item.status || ""}
+      </h3>`
+        : ""
+      }
+
       ${imageSrc
         ? `<img class="timeline-image" src="${imageSrc}" alt="${item.title || "Garden timeline photo"}">`
         : ""
@@ -242,7 +306,7 @@ function renderTimelineItem(item) {
   `;
 }
 
-function balanceTimelineItems(items, order = "asc") {
+function balanceTimelineItems(items, order = "asc", options = {}) {
   const columns = { left: [], right: [] };
 
   const MAX_SPACER = 2; // prevents giant empty holes
@@ -261,7 +325,7 @@ function balanceTimelineItems(items, order = "asc") {
 
   items.forEach((item, index) => {
     const itemHeight = estimateTimelineItemWeight(item);
-    const markerPosition = getDayPositionInMonth(item.date, order) / 100;
+    const markerPosition = getTimelinePosition(item, order, index, items.length, options) / 100;
     const markerY = markerPosition * monthHeight;
 
     let chosenSide = index === 0
@@ -523,33 +587,24 @@ function openTimelineLightbox(src, alt = "") {
 }
 
 function renderTimelineMonthJump(groupedItems) {
-  const jumpList = document.getElementById("timelineMonthJump");
-  if (!jumpList) return;
+  const jumpLists = document.querySelectorAll(".timeline-month-jump");
+  if (!jumpLists.length) return;
 
-  const jumpMonths = [...groupedItems].sort((a, b) =>
-    a.monthKey.localeCompare(b.monthKey)
-  );
-
-  jumpList.innerHTML = jumpMonths
+  const jumpMonths = [...groupedItems]
     .filter((month) => month.items.length > 0)
+    .sort((a, b) => a.monthKey.localeCompare(b.monthKey));
+
+  const jumpHtml = jumpMonths
     .map(
       (month) => `
         <li>
-          <a href="#timeline-${month.monthKey}">${month.label}</a>
+        <a href="#timeline-${month.monthKey}">${month.label}</a>
         </li>
       `
     )
     .join("");
 
-  jumpList.querySelectorAll("[data-month-target]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = document.getElementById(button.dataset.monthTarget);
-      if (!target) return;
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
+  jumpLists.forEach((jumpList) => {
+    jumpList.innerHTML = jumpHtml;
   });
 }

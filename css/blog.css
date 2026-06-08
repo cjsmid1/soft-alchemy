@@ -629,7 +629,7 @@ p, ul {
   flex-wrap: wrap;
   gap: 2.2rem;              /* more breathing room */
   justify-content: flex-start; /* less “centered grid” feel */
-  margin: 3rem 0;
+  margin: 2rem 0 1.5rem;
   justify-content: center;
 }
 
@@ -651,7 +651,7 @@ p, ul {
   cursor: pointer;
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 600px;
   padding: 1rem 1.2rem 0.5rem;
   background: linear-gradient(
     to bottom,
@@ -1086,6 +1086,7 @@ p, ul {
 /* Post Updates */
 .post-update-drawer {
   margin-top: 2rem;
+  margin-bottom: 1rem;
   padding: 0;
 
   border-radius: 18px;

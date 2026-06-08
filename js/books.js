@@ -1,6 +1,3 @@
-const bookclubBook = [
-  
-]
 const currentBooks = [
   {
     title: "The Fifth Season",
@@ -243,47 +240,7 @@ const boardGames = [
   },
   
 ];
-const currentBubbling = [
-  {
-    title: "Preserved Satsumas",
-	author: "Started 23/4/26",
-	status: "In Progress",
-    image: "/images/preserved-satsumas.jpg"
-  },
-  {
-    title: "Garlic Honey",
-    author: "Started 31/3/26",
-	status: "Aging Gracefully",
-    image: "/images/honey-garlic.jpg",
-  },
-  {
-    title: "Kombucha Scoby",
-    author: "Started 16/4/26",
-    status: "Deceased",
-    experiment: "kombucha",
-    image: "/images/kombucha-scoby.jpg",
-    note: "The heat mat was not enough."
-  },
-  {
-    title: "Satsuma Vinegar",
-	author: "Started 3/3/26",
-	status: "Almost Ready?",
-    image: "/images/satsuma-vinegar.jpg",
-    note: "Taking much longer than normal vinegars, may need to try again."
-  },
-  {
-    title: "'Soy' Sauce",
-    author: "Started 5/3/26",
-    status: "Deceased",
-    image: "/images/fake-soy-sauce.jpg",
-    note: "Possibly too much air space above the mixture & left it too long."
-  },
-];
 const bookshelfConfigs = [
-  {
-    id: "bookclub-bookshelf",
-    books: bookclubBook
-  },
   {
     id: "current-bookshelf",
     books: currentBooks
@@ -411,6 +368,12 @@ const quotes = [
     author: "The Internet"
   },
   {
+    category: "Doing the Thing",
+    preview: "The best time to",
+    text: "The best time to plant a tree was 20 years ago. The second best time is now.",
+    author: "Chinese proverb"
+  },
+  {
     category: "Whimsey",
     preview: "It’s still magic",
     text: "It’s still magic even if you know how it’s done.",
@@ -427,5 +390,23 @@ const quotes = [
     preview: "The single biggest problem",
     text: "The single biggest problem in communication is the illusion that it has taken place.",
     author: "George Bernard Shaw"
-  }
+  },
+  {
+    category: "Rules For Life",
+    preview: "Wisdom comes from experience",
+    text: "Wisdom comes from experience. Experience is often a result of lack of wisdom.",
+    author: "Terry Pratchett"
+  },
+  {
+    category: "Rules For Life",
+    preview: "If you trust in yourself",
+    text: "If you trust in yourself. . .and believe in your dreams. . .and follow your star. . . you'll still get beaten by people who spent their time working hard and learning things and weren't so lazy.",
+    author: "The Wee Free Men, Terry Pratchett"
+  },
+  {
+    category: "Rules For Life",
+    preview: "Life before Death",
+    text: "Life before Death. Strength before Weakness. Journey before Destination.",
+    author: "The Way of Kings, Brandon Sanderson"
+  },
 ];

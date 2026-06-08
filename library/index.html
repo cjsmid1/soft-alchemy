@@ -1,15 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>The Library | Redirecting...</title>
+  <title>The Library | Books, Board Games & Rabbit Holes</title>
 
-  <link rel="canonical" href="https://softalchemy.uk/post.html?id=the-library">
+  <meta name="description"
+    content="Explore the Soft Alchemy library: fantasy novels, thoughtful nonfiction, favourite board games, memorable quotes, and digital rabbit holes worth falling into." />
+
+  <link rel="canonical" href="https://softalchemy.uk/library/" />
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <meta http-equiv="refresh" content="0; url=/post.html?id=the-library">
+  <!-- Open Graph / Pinterest / Facebook -->
+  <meta property="og:site_name" content="Soft Alchemy" />
+  <meta property="og:title" content="The Library | Books, Board Games & Rabbit Holes" />
+  <meta property="og:description"
+    content="Explore the Soft Alchemy library: fantasy novels, thoughtful nonfiction, favourite board games, memorable quotes, and digital rabbit holes worth falling into." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softalchemy.uk/library/" />
+  <meta property="og:image" content="https://softalchemy.uk/images/echo/echo-book.jpg" />
+  <meta property="og:image:alt" content="Echo the papillon sitting beside a travel book" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Library | Books, Board Games & Rabbit Holes" />
+  <meta name="twitter:description"
+    content="Explore the Soft Alchemy library: fantasy novels, thoughtful nonfiction, favourite board games, memorable quotes, and digital rabbit holes worth falling into." />
+  <meta name="twitter:image" content="https://softalchemy.uk/images/echo/echo-book.jpg" />
+  <meta name="twitter:image:alt" content="Echo the papillon sitting beside a travel book" />
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-light.png" />
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-dark.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-563L2Z66XJ");
+  </script>
 </head>
+
 <body>
+  <header>
+    <h1>The Library</h1>
+  </header>
+
+  <div class="two-column-layout left-wide">
+    <section class="card start-here-card">
+      <div class="start-here-content">
+        <h3 class="start-here-title">Follow the Paw Prints</h3>
+
+        <p>
+          Wander through the shelves...
+        </p>
+
+        <ul class="chaos-list">
+          <li><a href="#fantasy">Fantasy</a></li>
+          <li><a href="#nonfic">Non-Fiction</a></li>
+          <li><a href="#child">Young Adult</a></li>
+          <li><a href="#games">Board Games</a></li>
+          <li><a href="/post.html?id=quote-page">Quotes</a></li>
+          <li><a href="#media">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="start-paw-trail">
+        <img class="paw-print" style="--i:1" src="/images/paw-print.png" alt="">
+        <img class="paw-print" style="--i:2" src="/images/paw-print.png" alt="">
+        <img class="paw-print" style="--i:3" src="/images/paw-print.png" alt="">
+        <img class="paw-print" style="--i:4" src="/images/paw-print.png" alt="">
+      </div>
+    </section>
+
+    <section class="card quote-content">
+      <a href="/post.html?id=quote-page" class="quote-card-link">
+        <blockquote>
+          “Books are a uniquely portable magic.”
+        </blockquote>
+        <cite>— On Writing, Stephen King</cite>
+      </a>
+    </section>
+  </div>
+
+  <section class="card reading-shelf">
+    <h3>⏳ Current Bookshelf</h3>
+    <div id="current-bookshelf" class="shelf"></div>
+  </section>
+
+  <section id="fantasy" class="card reading-shelf">
+    <h3>✨ For Escaping Reality</h3>
+    <div id="fantasy-bookshelf" class="shelf"></div>
+  </section>
+
+  <section id="nonfic" class="card reading-shelf">
+    <h3>🔍 For Understanding the World</h3>
+    <div id="nonfiction-bookshelf" class="shelf"></div>
+  </section>
+
+  <section id="child" class="card reading-shelf">
+    <h3>💖 For Your Inner Child</h3>
+    <div id="nostalgia-bookshelf" class="shelf"></div>
+  </section>
+
+  <section id="media" class="card reading-shelf">
+    <h3>🎥 For Digital Rabbit Holes</h3>
+    <div id="other-media-bookshelf" class="shelf"></div>
+  </section>
+
+  <section id="games" class="card reading-shelf">
+    <h3>🎲 For Gathering Around a Table</h3>
+    <div id="board-game-bookshelf" class="shelf"></div>
+  </section>
+
+  <section class="card quote-content">
+    <a href="/post.html?id=quote-page" class="quote-card-link">
+      <blockquote>
+        “You want weapons? We're in a library. Books are the best weapon in the world. This room's the greatest arsenal
+        we
+        could have. Arm yourself!”
+      </blockquote>
+      <cite>— Doctor Who, Russell T. Davies</cite>
+    </a>
+  </section>
+
+  <script src="/js/books.js" defer></script>
+  <script src="/js/posts.js" defer></script>
+  <script src="/js/script.js" defer></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      renderBookshelvesForPage(bookshelfConfigs);
+    });
+  </script>
 </body>
+
 </html>

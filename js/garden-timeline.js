@@ -14,7 +14,7 @@ const gardenTimeline = [
     title: "When in doubt, make a plan",
     image: "/images/garden/garden-plan-layout-01-2026.jpg",
     imageSize: "landscape",
-    text: "Supposedly this is a small patio kitchen garden with genuine output. It will feel impressive. It will not feel chaotic...<br>If you keep the pot count remotely realistic.",
+    text: "Supposedly this is a small patio kitchen garden with genuine output. It will feel impressive. It will not feel chaotic... If you keep the pot count remotely realistic.<br><a href='/post.html?id=garden-plan'>See the original garden plan →</a>",
   },
   {
     date: "2026-01-27",
@@ -22,7 +22,12 @@ const gardenTimeline = [
     title: "Break it into tasks",
     image: "/images/garden/garden-plan-tasks-01-2026.jpg",
     imageSize: "square",
-    text: "Spoiler: absolutely none of this happens as planned...",
+    text: "Spoiler: absolutely none of this happens as planned...<br>Though this did help structure my <a href='/post.html?id=growth-areas'>Gardening Growth Area</a>.",
+  },
+  {
+    date: "2026-01-29",
+    type: "note",
+    text: "Buy a mushroom grow kit and get very excited before realising it needs at least 20°C, and nowhere in the house is warm enough.",
   },
   {
     date: "2026-02-04",
@@ -42,7 +47,7 @@ const gardenTimeline = [
     title: "Pot juggling",
     image: "/images/garden/pot-allocation-02-2026.jpg",
     imageSize: "landscape",
-    text: "Getting inventive during a no-buy month & raiding my parents' unwanted pots & bucket collection.",
+    text: "Getting inventive during a no-buy month and raiding my parents' unwanted pots & bucket collection.",
   },
   {
     date: "2026-02-26",
@@ -94,20 +99,23 @@ const gardenTimeline = [
   {
     date: "2026-03-13",
     type: "note",
-    title: "",
     text: "Twice as many comfrey bare roots arrive as intended, pot negotiations begin as the comfrey, a daylily, and parsley & coriander seeds all find questionable new homes.",
   },
   {
     date: "2026-03-14",
     type: "note",
-    title: "",
     text: "Realise my intel was wrong and I should really get the raspberry plant now rather than wait until April - back to the garden centre!<br>(I choose the Autumn Bliss variety in the hope that means berries sooner rather than an impatient year of waiting.)",
   },
   {
     date: "2026-03-19",
     type: "note",
-    title: "",
     text: "Basil & aubergine seeds join the tomato saplings on what is now a very full windowsill.",
+  },
+  {
+    title: "An attempt was made",
+    date: "2026-03-19",
+    type: "note",
+    text: "I decide the house is officially warm enough to start the mushroom kit we bought back in January.<br>✅ Pour boiling water over the straw in the grow bag<br>✅ Leave for 6 hours<br>❎ Add the mushroom spores...<br>✅ Order the mushroom spores and wait another week!",
   },
   {
     date: "2026-03-23",
@@ -116,6 +124,11 @@ const gardenTimeline = [
     image: "/images/garden/window-sill-03-2026.jpeg",
     imageSize: "portrait",
     text: "Finally convinced that the tomatoes shouldn't stay in their tiny seed trays until May and get repotted. Spoiler: only half survived this 'generosity'.",
+  },
+  {
+    date: "2026-03-24",
+    type: "note",
+    text: "One of the fermentation jars gets commandeered in the name of growing broccoli sprouts.<br>Spoiler: whilst successful, they were deemed too healthy by James, leaving me to eat an entire jar of sprouts within two days before they could go bad.",
   },
   {
     date: "2026-03-25",
@@ -167,7 +180,6 @@ const gardenTimeline = [
     imageSize: "portrait",
     text: "Presenting the first green growth of the potatoes, what I believed to be the future of my salad collection & a fresh pot of leek seeds sown in a clever gully technique that backfired instantly."
   },
-
   {
     date: "2026-05-06",
     type: "photo",
@@ -202,7 +214,7 @@ const gardenTimeline = [
     date: "2026-05-09",
     type: "note",
     title: "Garden Sabotage",
-    text: "Lesson learned the hard way: when you leave enough room for your tomato saplings' future growth in their new outdoor homes... you also leave room for your neighbour's cat to say 'Thank you for this thoughtfully prepared litter box.'",
+    text: "Lesson learned the hard way: when you leave enough room for your tomato saplings' future growth in their new outdoor homes... you also leave room for your neighbour's cat to say, 'Thank you for this thoughtfully prepared litter tray.'",
   },
   {
     date: "2026-05-09",
@@ -286,14 +298,30 @@ const gardenTimeline = [
     poster: "/images/garden/guttering-poster.png",
     loop: true,
     imageSize: "portrait",
-    text: "Getting the new guttering up just before the heavens open. The water butt was already 3/4 full within 12 hours - welcome to England!<br><a href='https://youtube.com/shorts/oZ2M1FoEcr8?si=CIHOhT8vROGDVIyU' target='_blank' rel = 'noopener noreferrer'>(Inspired by this earworm)</a>"
+    text: "Getting the new guttering up just before the heavens open. The water butt was already 3/4 full within 12 hours. Welcome to England.<br><a href='https://youtube.com/shorts/oZ2M1FoEcr8?si=CIHOhT8vROGDVIyU' target='_blank' rel = 'noopener noreferrer'>(Inspired by this earworm)</a>"
   },
   {
     date: "2026-06-02",
     type: "photo",
-    title: "Mixed feelings",
+    title: "Mixed feelings in the bean trough",
     image: "/images/garden/mushroom-06-2026.jpg",
     imageSize: "square",
     text: "Don't get me wrong, this was a delightful surprise. The fact that an unsolicited mushroom succeeded while both the mushroom kit and the beans remain conspicuously absent does take some of the shine off."
+  },
+  {
+    date: "2026-06-06",
+    type: "photo",
+    title: "This is just getting insulting",
+    image: "/images/garden/mushroom-with-aubergine-06-2026.jpeg",
+    imageSize: "square",
+    text: "Left: almost three month old aubergine sapling.<br>Right: Overnight mushroom."
+  },
+  {
+    date: "2026-06-07",
+    type: "photo",
+    title: "James' answer to the berry thief",
+    image: "/images/garden/berry-protection-06-2026.png",
+    imageSize: "square",
+    text: "When the simple netting plan become a chicken-wire Fort Knox."
   },
 ];
