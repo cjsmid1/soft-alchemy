@@ -1,28 +1,31 @@
 const currentBubbling = [
   {
-    title: "Pineapple tepache",
+    title: "Pineapple Tepache",
     author: "Started 3/6/26<br>Finished 7/6/26",
     image: "/images/pineapple-tepache.png",
     status: "Complete",
-    note: "A little too sour for my liking, but nothing sugar can't fix!"
+    note: "A little too sour for my liking, but nothing sugar can't fix!",
+    url: "/kitchen/fermentation/index.html#pineapple-tepache"
   },
   {
     title: "Preserved Satsumas",
     author: "Started 23/4/26",
     status: "In Progress",
-    image: "/images/preserved-satsumas.jpg"
+    image: "/images/preserved-satsumas.jpg",
+    url: "/kitchen/fermentation/index.html#preserved-satsumas"
   },
   {
     title: "Garlic Honey",
     author: "Started 31/3/26",
     status: "Aging Gracefully",
     image: "/images/honey-garlic.jpg",
+    url: "/kitchen/fermentation/index.html#garlic-honey"
   },
   {
-    title: "Kombucha Scoby",
+    title: "Kombucha SCOBY",
     author: "Started 16/4/26",
     status: "Deceased",
-    experiment: "kombucha",
+    project: "kombucha",
     image: "/images/kombucha-scoby.jpg",
     note: "The heat mat was not enough."
   },
@@ -31,13 +34,15 @@ const currentBubbling = [
     author: "Started 3/3/26",
     status: "Almost Ready?",
     image: "/images/satsuma-vinegar.jpg",
-    note: "Taking much longer than normal vinegars, may need to try again."
+    note: "Taking much longer than normal vinegars, may need to try again.",
+    url: "/kitchen/fermentation/index.html#satsuma-vinegar"
   },
 ];
 
 const fermentationTimeline = [
 
   {
+    id: "sourdough-one",
     title: "A yeast pet is born",
     date: "2026-03-02",
     type: "photo",
@@ -111,6 +116,7 @@ const fermentationTimeline = [
     text: "An attempt at cultured butter is made. Twenty-four hours later, and after a considerable amount of manual shaking delegated to James, I present butter. It looks and tastes exactly like supermarket butter. Whether this is an impressive success or a spectacular waste of effort remains unclear.",
   },
   {
+    id: "kombucha-one",
     title: "Starting a kombucha SCOBY - attempt #1",
     date: "2026-03-23",
     type: "photo",
@@ -125,6 +131,7 @@ const fermentationTimeline = [
     text: "A meal fit for kings: homemade sourdough bread, homemade butter, two types of homemade cheese, and chestnut soup.<br>What a satisfying end to a successful month of learning about fermentation. What do you mean there's more?",
   },
   {
+    id: "garlic-honey",
     title: "Garlic Honey",
     date: "2026-03-31",
     type: "photo",
@@ -170,6 +177,7 @@ const fermentationTimeline = [
     text: "<b>Shio Koji:</b> Successful and since used in multiple dishes, but not distinctive enough to warrant a remake once it's gone.<br><b>Amazake:</b> Tasted odd, and I was secretly not devastated when I accidentally spilled half of it on the kitchen floor. In fairness, mistaking a water bottle for a thermos may not have helped the 'keep warm' stage of fermentation.<br><b>Miso:</b> I ran out of jars, so it ended up split between three increasingly small pots. So far, so good, but only time will tell.",
   },
   {
+    id: "satsuma-vinegar",
     title: "How long should vinegar take again?",
     date: "2026-04-15",
     type: "note",
@@ -191,6 +199,7 @@ const fermentationTimeline = [
     text: "Began a second <a href='/post.html?id=sourdough-starter'>sourdough starter</a> in the name of science. Decided to leave him outside for a couple of hours just to see what would happen. He remained there somewhat longer than intended and was rescued the following morning.",
   },
   {
+    id: "preserved-satsumas",
     title: "Preserved <s>lemons</s> satsumas",
     date: "2026-04-23",
     type: "photo",
@@ -245,7 +254,7 @@ const fermentationTimeline = [
     type: "photo",
     image: "/images/mushroom-garum.png",
     imageSize: "portrait",
-    text: "I don't need to know what a garum is. I just need to know it contains mushrooms.<br>Finally googles it for the sake of this timeline: 'Garum was the ancient Roman world's most popular and prized condiment, created by layering whole fish (like mackerel, sardines, or anchovies), their entrails, and herbs inside a large terracotta vat'<br>Well. That wasn't what I was expecting."
+    text: "I don't need to know what a garum is. I just need to know it contains mushrooms.<br>Finally googles it for the sake of this timeline: 'Garum was the ancient Roman world's most popular and prized condiment, created by layering whole fish (like mackerel, sardines, or anchovies), their entrails, and herbs inside a large terracotta vat'.<br>Well. That wasn't what I was expecting."
   },
   {
     title: "Throw money at the problem!",
@@ -258,7 +267,7 @@ const fermentationTimeline = [
     date: "2026-05-26",
     type: "note",
     markerImage: "/images/handwriting/skull-icon.png",
-    text: "Committed full to the cheese making life and bought a cheese cloth. Used it for making a mega amount of labneh. Multiple failed attempts to roll it into balls later, I finally forgot about it in the fridge and mould claims another meal.",
+    text: "Committed fully to the cheese making life and bought a cheese cloth. Used it for making a mega amount of labneh. Multiple failed attempts to roll it into balls later, I finally forgot about it in the fridge and mould claims another meal.",
   },
   {
     title: "Mozzarella time",
@@ -269,6 +278,7 @@ const fermentationTimeline = [
     text: "Did it taste the same as the supermarket? Yes. Is it somehow slightly more expensive to make at home? Yes. Do I regret it? Course not - the ball was so big, James had to cut it in half to get it back out of the jar!"
   },
   {
+    id: "pineapple-tepache",
     title: "Getting exotic",
     date: "2026-06-07",
     type: "photo",

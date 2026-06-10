@@ -9,6 +9,14 @@
         rgba(244, 243, 240, 0.68)),
       url("../images/background/watercolour-loop-light-mobile.png");
   }
+
+  header {
+    padding: 3rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: clamp(2.9rem, 8vw, 5rem);
+  }
 }
 
 
@@ -244,11 +252,31 @@
     flex: none;
   }
 
-    html.dark .dog-review {
-      background: transparent;
-      border: none;
-    }
+  html.dark .dog-review {
+    background: transparent;
+    border: none;
+  }
 }
+
+/* Chaos List Layout */
+@media (max-width: 700px) {
+  .chaos-list {
+    gap: 0;
+    justify-content: center;
+  }
+
+  .chaos-list li {
+    padding: 0.35rem 0.65rem;
+    margin: -0.15rem 0.12rem;
+    font-size: 0.82rem;
+  }
+
+  .timeline-month-jump li a {
+    display: block;
+    padding: 0.25rem 0.2rem;
+  }
+}
+
 
 /* Collage Layout */
 @media (max-width: 600px) {
@@ -313,14 +341,15 @@
 
 }
 
+/* Timeline Layout */
 @media (max-width: 700px) {
   .timeline-month-marker {
-    margin-left: -1rem;
+    margin-left: -0.7rem;
   }
 
   .timeline-month-items {
     display: block;
-    padding-left: 2.25rem;
+    padding-left: 1.25rem;
   }
 
   .timeline-month-items::before {
@@ -333,7 +362,7 @@
 
   .timeline-mobile-list {
     display: block;
-    padding-left: 2.25rem;
+    padding-left: 1.5rem;
   }
 
   .timeline-entry {
@@ -374,5 +403,68 @@
 @media (max-width: 600px) {
   .related-post .title-row h2 {
     font-size: 1.6rem;
+  }
+}
+
+
+/* Plant Profiles Layout */
+@media (max-width: 700px) {
+  .plant-profile-card--landscape .plant-profile-facts {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 1rem 4rem;
+  }
+
+  .plant-profile-card--square .plant-profile-main {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.9fr) 1fr;
+    gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  .plant-profile-card--square .plant-profile-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 2;
+    gap: 1rem 1.5rem 0rem;
+  }
+
+  .plant-profile-card--square .plant-profile-image {
+    margin: 0;
+  }
+
+  .plant-profile-card--square .plant-profile-info {
+    display: contents;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .plant-profile-card--square .plant-profile-note {
+    grid-column: 1 / -1;
+    margin-top: -1.5rem;
+  }
+
+
+  .plant-profile-card--portrait .plant-profile-main {
+    grid-template-columns: minmax(130px, 0.8fr) 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .plant-profile-card--portrait .plant-profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .plant-profile-card--portrait .plant-profile-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
   }
 }

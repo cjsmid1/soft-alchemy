@@ -27,17 +27,20 @@ const gardenTimeline = [
   {
     date: "2026-01-29",
     type: "note",
+    tags: ["mushroom"],
     text: "Buy a mushroom grow kit and get very excited before realising it needs at least 20°C, and nowhere in the house is warm enough.",
   },
   {
     date: "2026-02-04",
     type: "note",
+    tags: ["tomato"],
     title: "First tomato seeds sown",
     text: "Recycling pots collected, knives stabbed into the bottom in the name of drainage, and lovingly misted daily on the sunniest windowsill my house has to offer.",
   },
   {
     date: "2026-02-04",
     type: "note",
+    tags: ["garlic"],
     title: "In the name of more garlic!",
     text: "An abandoned terracotta pot discovered in the garden is swiftly repurposed into a garlic kingdom.",
   },
@@ -65,6 +68,7 @@ const gardenTimeline = [
   {
     date: "2026-03-03",
     type: "note",
+    tags: ["tomato"],
     title: "Seeds pronounced dead ➔ attempt #2",
     markerImage: "/images/handwriting/skull-icon.png",
     text: "Proximity to the radiator and not enough water blamed as the cause... Second seedlings receive thorough soakings and mild elevation courtesy of a tissue box. I get ambitious and plant both Cherry Tomatoes & Mint.",
@@ -72,24 +76,28 @@ const gardenTimeline = [
   {
     date: "2026-03-05",
     type: "note",
+    tags: ["garlic"],
     title: "Weather forecast: Rain.",
     text: "I get paranoid about my precious garlic being drowned & move it to the sunnier back part of the garden.",
   },
   {
     date: "2026-03-09",
     type: "note",
+    tags: ["blueberry", "strawberry"],
     title: "First proper plants arrive!",
     text: "A Patriot Blueberry plant and 5 Albion Strawberry bare roots get lovingly potted into their new homes.",
   },
   {
     date: "2026-03-10",
     type: "note",
+    tags: ["chives", "lambs-lettuce", "spinach", "spring-onion"],
     title: "Maybe sowing seeds outdoors will work better...",
     text: "Four ambitious troughs get coated in spinach, chives, lamb's lettuce & spring onion seeds. Tentative daydreams of a harvest by April emerge.",
   },
   {
     date: "2026-03-10",
     type: "photo",
+    tags: ["aubergine", "comfrey", "daylily", "nasturtium", "rosemary"],
     title: "A couple extra plants can't hurt",
     image: "/images/garden/garden-plan-addition-03-2026.jpg",
     imageSize: "landscape",
@@ -99,27 +107,32 @@ const gardenTimeline = [
   {
     date: "2026-03-13",
     type: "note",
+    tags: ["comfrey", "daylily", "herb"],
     text: "Twice as many comfrey bare roots arrive as intended, pot negotiations begin as the comfrey, a daylily, and parsley & coriander seeds all find questionable new homes.",
   },
   {
     date: "2026-03-14",
     type: "note",
+    tags: ["raspberry"],
     text: "Realise my intel was wrong and I should really get the raspberry plant now rather than wait until April - back to the garden centre!<br>(I choose the Autumn Bliss variety in the hope that means berries sooner rather than an impatient year of waiting.)",
   },
   {
     date: "2026-03-19",
     type: "note",
+    tags: ["aubergine", "basil"],
     text: "Basil & aubergine seeds join the tomato saplings on what is now a very full windowsill.",
   },
   {
     title: "An attempt was made",
     date: "2026-03-19",
     type: "note",
+    tags: ["mushroom"],
     text: "I decide the house is officially warm enough to start the mushroom kit we bought back in January.<br>✅ Pour boiling water over the straw in the grow bag<br>✅ Leave for 6 hours<br>❎ Add the mushroom spores...<br>✅ Order the mushroom spores and wait another week!",
   },
   {
     date: "2026-03-23",
     type: "photo",
+    tags: ["tomato"],
     title: "The tomatoes get an upgrade",
     image: "/images/garden/window-sill-03-2026.jpeg",
     imageSize: "portrait",
@@ -147,18 +160,21 @@ const gardenTimeline = [
   {
     date: "2026-04-01",
     type: "note",
+    tags: ["lambs-lettuce", "spring-onion"],
     title: "Outdoor seeds attempt #2",
     text: "New month, new success? Lamb's lettuce & spring onion seeds both declared in need of a complete resow.",
   },
   {
     date: "2026-04-01",
     type: "note",
+    tags: ["potato"],
     title: "Channel your inner martian",
     text: "I can't wait any longer and plant the 3 potatoes that have been 'chitting' in the kitchen since January. Yes, the grow bag cost more than a full bag of potatoes, I resist spending more money to buy special seed potatoes.",
   },
   {
     date: "2026-04-07",
     type: "photo",
+    tags: ["strawberry"],
     title: "How concerning is a 40% death rate anyway?",
     image: "/images/garden/strawberry-death-04-2026.jpeg",
     imageSize: "square",
@@ -167,6 +183,7 @@ const gardenTimeline = [
   {
     date: "2026-04-14",
     type: "photo",
+    tags: ["tomato"],
     title: "The survivors",
     image: "/images/garden/tomato-death-04-2026.jpeg",
     imageSize: "landscape",
@@ -175,6 +192,7 @@ const gardenTimeline = [
   {
     date: "2026-04-16",
     type: "photo",
+    tags: ["lambs-lettuce", "leek", "potato", "spinach"],
     title: "Gentle progress",
     image: "/images/garden/garden-saplings-04-2026.jpeg",
     imageSize: "portrait",
@@ -183,6 +201,7 @@ const gardenTimeline = [
   {
     date: "2026-05-06",
     type: "photo",
+    tags: ["mint", "tomato"],
     image: "/images/garden/label-mistake-05-2026.jpg",
     imageSize: "square",
     text: "Lesson learned the hard way: label all your pots.<br>Time to sow some actual mint seeds..."
@@ -190,6 +209,7 @@ const gardenTimeline = [
   {
     date: "2026-05-07",
     type: "photo",
+    tags: ["lambs-lettuce"],
     title: "Google, please identify these plants...",
     image: "/images/garden/weed-trough-05-2026.jpeg",
     imageSize: "portrait",
@@ -198,6 +218,7 @@ const gardenTimeline = [
   {
     date: "2026-05-07",
     type: "photo",
+    tags: ["comfrey"],
     image: "/images/garden/comfrey-05-2026.jpg",
     imageSize: "portrait",
     text: "The time has come for you to be made into fertiliser!"
@@ -205,6 +226,7 @@ const gardenTimeline = [
   {
     date: "2026-05-08",
     type: "photo",
+    tags: ["herb", "spinach", "spring-onion"],
     title: "Try, try again",
     image: "/images/garden/bernie-sanders-meme.jpg",
     imageSize: "square",
@@ -213,6 +235,7 @@ const gardenTimeline = [
   {
     date: "2026-05-09",
     type: "note",
+    tags: ["tomato"],
     title: "Garden Sabotage",
     text: "Lesson learned the hard way: when you leave enough room for your tomato saplings' future growth in their new outdoor homes... you also leave room for your neighbour's cat to say, 'Thank you for this thoughtfully prepared litter tray.'",
   },
@@ -227,6 +250,7 @@ const gardenTimeline = [
   {
     date: "2026-05-13",
     type: "photo",
+    tags: ["aubergine", "basil"],
     title: "Slow & steady?",
     image: "/images/garden/tiny-aubergine-05-2026.jpg",
     imageSize: "landscape",
@@ -235,11 +259,13 @@ const gardenTimeline = [
   {
     date: "2026-05-14",
     type: "note",
+    tags: ["basil"],
     text: "Heat mat bought in an attempt to throw money at the basil problem.",
   },
   {
     date: "2026-05-15",
     type: "note",
+    tags: ["bean", "tomato"],
     text: "Most tomato saplings lovingly moved out, and the dawn of the cobra climbing bean era.",
   },
   {
@@ -254,12 +280,14 @@ const gardenTimeline = [
   {
     date: "2026-05-21",
     type: "note",
+    tags: ["tomato"],
     title: "Heat wave incoming...",
     text: "Mulch everything! Final tomato plants outside now! Woodchip topping and buried ollas on standby! Move, people!",
   },
   {
     date: "2026-05-25",
     type: "photo",
+    tags: ["leek"],
     image: "/images/garden/sad-leek-05-2026.jpeg",
     imageSize: "portrait",
     text: "Worthy warriors: you have survived countless soil cave-ins and emergency excavations. You are the chosen ones."
@@ -267,6 +295,7 @@ const gardenTimeline = [
   {
     date: "2026-05-26",
     type: "photo",
+    tags: ["daylily"],
     title: "Small rewards",
     image: "/images/garden/daylily-flower-05-2026.jpg",
     imageSize: "square",
@@ -276,18 +305,21 @@ const gardenTimeline = [
   {
     date: "2026-05-27",
     type: "note",
+    tags: ["comfrey"],
     title: "Feeding time",
     text: "Will the comfrey fertiliser 'tea' make any difference? Who knows!",
   },
   {
     date: "2026-05-27",
     type: "note",
+    tags: ["basil"],
     text: "Lesson learned the hard way: harden plants gently. Turns out when basil says it likes sun, it doesn't mean 6 hours over midday during a heatwave. Six living saplings went out, three lightly cremated saplings returned. Death rate 50%.",
     markerImage: "/images/handwriting/skull-icon.png",
   },
   {
     date: "2026-05-29",
     type: "note",
+    tags: ["strawberry"],
     title: "Strawberry heist",
     text: "It is my tragic duty to inform you that 4 barely ripe strawberries were stolen earlier today. The criminals remain at large. Echo's investigation is ongoing, though birds are currently the prime suspects.",
   },
@@ -303,6 +335,7 @@ const gardenTimeline = [
   {
     date: "2026-06-02",
     type: "photo",
+    tags: ["bean", "mushroom"],
     title: "Mixed feelings in the bean trough",
     image: "/images/garden/mushroom-06-2026.jpg",
     imageSize: "square",
@@ -311,6 +344,7 @@ const gardenTimeline = [
   {
     date: "2026-06-06",
     type: "photo",
+    tags: ["aubergine", "mushroom"],
     title: "This is just getting insulting",
     image: "/images/garden/mushroom-with-aubergine-06-2026.jpeg",
     imageSize: "square",
@@ -319,6 +353,7 @@ const gardenTimeline = [
   {
     date: "2026-06-07",
     type: "photo",
+    tags: ["blueberry", "raspberry", "strawberry"],
     title: "James' answer to the berry thief",
     image: "/images/garden/berry-protection-06-2026.png",
     imageSize: "square",

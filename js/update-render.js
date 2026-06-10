@@ -9,8 +9,8 @@ function getLatestUpdatePerProject(room) {
   const latest = {};
 
   roomUpdates.forEach(update => {
-    if (!latest[update.experiment]) {
-      latest[update.experiment] = update;
+    if (!latest[update.project]) {
+      latest[update.project] = update;
     }
   });
 
@@ -136,12 +136,4 @@ function renderRoomUpdateBoard(containerId, room) {
     .join("");
 
   setupUpdateCardModals(container);
-}
-
-function formatDate(dateString) {
-  return new Date(dateString).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric"
-  });
 }

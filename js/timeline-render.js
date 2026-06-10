@@ -69,7 +69,7 @@ function renderTimeline(containerId, timelineItems, options = {}) {
   if (timelineMode === "process") {
     groupedItems = [
       {
-        monthKey: "process",
+        monthKey: timelineMode,
         label: options.processLabel || "",
         items: sortedItems,
       }
@@ -95,7 +95,7 @@ function renderTimeline(containerId, timelineItems, options = {}) {
           ? `<div class="timeline-month-marker">${month.label}</div>`
           : ""}
 
-          <div class="timeline-month-items">
+         <div class="timeline-month-items ${timelineMode === "compact" ? "timeline-compact-items" : ""}">
   <svg class="timeline-thread-layer" aria-hidden="true"></svg>
 
   <div class="timeline-marker-layer">
@@ -104,28 +104,30 @@ function renderTimeline(containerId, timelineItems, options = {}) {
     ).join("")}
   </div>
 
-  <div class="timeline-desktop-columns">
-    <div class="timeline-column timeline-column-left">
-      ${columns.left.map(item =>
-        renderTimelineEntry({ ...item, timelineMode })
-      ).join("")}
-    </div>
+  ${timelineMode !== "compact" ? `
+    <div class="timeline-desktop-columns">
+      <div class="timeline-column timeline-column-left">
+        ${columns.left.map(item =>
+      renderTimelineEntry({ ...item, timelineMode })
+    ).join("")}
+      </div>
 
-    <div class="timeline-column timeline-column-right">
-      ${columns.right.map(item =>
-        renderTimelineEntry({ ...item, timelineMode })
-      ).join("")}
+      <div class="timeline-column timeline-column-right">
+        ${columns.right.map(item =>
+      renderTimelineEntry({ ...item, timelineMode })
+    ).join("")}
+      </div>
     </div>
-  </div>
+  ` : ""}
 
-  <div class="timeline-mobile-list">
+  <div class="timeline-mobile-list ${timelineMode === "compact" ? "timeline-compact-list" : ""}">
     ${month.items.map((item) =>
       renderTimelineEntry({
         ...item,
         timelineMode,
         timelineSpacer: 0,
       })
-      ).join("")}
+    ).join("")}
   </div>
 </div>
         </section>
@@ -172,9 +174,11 @@ function renderTimelineEntry(item) {
   const dateGroup = getTimelineDateGroup(item);
   const spacer = item.timelineSpacer || 0;
   const tilt = getTimelineTilt(entryId);
+  const htmlId = item.id ? `id="${item.id}"` : "";
 
   return `
     <article 
+      ${htmlId}
       class="timeline-entry timeline-${item.type}" 
       data-entry="${entryId}"
       data-date-group="${dateGroup}"
@@ -186,7 +190,7 @@ function renderTimelineEntry(item) {
 }
 
 function getTimelinePosition(item, order = "asc", index = 0, total = 1, options = {}) {
-  if (options.timelineMode === "process") {
+  if (options.timelineMode === "process" || options.timelineMode === "compact") {
     if (total <= 1) return 50;
 
     const position = (index / (total - 1)) * 100;

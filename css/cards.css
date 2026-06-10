@@ -86,10 +86,10 @@
   backdrop-filter: blur(2px);
 
   transition:
-      background 0.3s,
-      color 0.3s,
-      transform 0.18s ease,
-      box-shadow 0.18s ease;
+    background 0.3s,
+    color 0.3s,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .card .tag.active {
@@ -558,4 +558,82 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+.plant-profile-card {
+  max-width: 100%;
+}
+
+.plant-profile-card h2 {
+  margin-bottom: 1rem;
+}
+
+.plant-profile-facts {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.plant-profile-facts p {
+  margin: 0;
+}
+
+.plant-profile-image {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.plant-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.plant-profile-card .plant-profile-note {
+  margin: 0;
+}
+
+/* Landscape: header, 4-column facts, image, note, timeline */
+.plant-profile-card--landscape .plant-profile-facts {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+
+  justify-content: center;
+  gap: 5rem;
+
+  margin-bottom: 1rem;
+}
+
+.plant-profile-card--landscape .plant-profile-image {
+  max-height: 380px;
+}
+
+/* Portrait: image left, facts + note right */
+.plant-profile-card--square .plant-profile-main,
+.plant-profile-card--portrait .plant-profile-main {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.plant-profile-card--square .plant-profile-facts,
+.plant-profile-card--portrait .plant-profile-facts {
+  grid-template-columns: 1fr 1fr;
+}
+
+.plant-profile-card--square .plant-profile-note,
+.plant-profile-card--portrait .plant-profile-note {
+  padding-top: 2rem;
+  grid-column: 1 / -1;
+}
+
+.plant-profile-card--square .plant-profile-image,
+.plant-profile-card--portrait .plant-profile-image {
+  max-height: 520px;
+  margin: 0;
 }

@@ -2,7 +2,7 @@ const updates = [
   {
   id: "kombucha-update-1",
   room: "fermentation",
-  experiment: "kombucha",
+  project: "kombucha",
   title: "Kombucha SCOBY: All hope lost",
   previewTitle: "Kombucha SCOBY:<br>All hope lost",
   date: "2026-06-03",
@@ -25,12 +25,13 @@ const updates = [
       <p>
       <b>Next steps:</b> I shall abandon the noble DIY route, throw money at the problem properly, and purchase a SCOBY and starter liquid. A fresh batch will begin shortly, assuming my kombucha enthusiasm hasn't already fermented into apathy.
       </p>
+      <div class="related-footer"><h3><a href="/kitchen/fermentation/index.html#kombucha-one">🫙 Follow the full journey →</a></h3></div>
     `
 },
   {
     id: "75-soft-update-1",
     room: "study",
-    experiment: "75-soft",
+    project: "75-soft",
     title: "🏆 75 Soft Challenge: Progress Report",
     previewTitle: "75 Soft Challenge:<br>Progress Report",
     date: "2026-06-01",
@@ -51,7 +52,7 @@ const updates = [
   {
     id: "growth-areas-update-1",
     room: "study",
-    experiment: "growth-areas",
+    project: "growth-areas",
     title: "🌿 Growth Areas: Looking Back",
     previewTitle: "Growth Areas:<br>Looking Back",
     date: "2026-05-31",
@@ -72,7 +73,7 @@ const updates = [
   {
     id: "sourdough-update-1",
     room: "fermentation",
-    experiment: "sourdough",
+    project: "sourdough",
     title: "Sourdough Revival",
     previewTitle: "Sourdough<br>Revival",
     date: "2026-05-27",
@@ -85,6 +86,7 @@ const updates = [
       <p>
       <b>Next steps:</b> Time to investigate whether sourdough tang can improve the already high bar that are chocolate chip cookies.
       </p>
+      <div class="related-footer"><h3><a href="/kitchen/fermentation/index.html#sourdough-one">🍞 Follow the full journey →</a></h3></div>
     `
   },
 ];

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Garden Residents | Soft Alchemy</title>
+
+  <meta name="description"
+    content="Meet the plants growing in the Soft Alchemy garden, from tomatoes and herbs to berries, potatoes, aubergines, and other small green experiments.">
+
+  <link rel="canonical" href="https://softalchemy.uk/garden/residents/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:site_name" content="Soft Alchemy">
+  <meta property="og:title" content="Meet the Garden Residents | Soft Alchemy">
+  <meta property="og:description"
+    content="Browse the Soft Alchemy garden residents: container-grown fruit, vegetables, herbs, flowers, and occasional botanical drama.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://softalchemy.uk/garden/residents/">
+  <meta property="og:image" content="https://softalchemy.uk/images/garden/daylily-flower-05-2026.jpg">
+  <meta property="og:image:alt" content="Daylily flower growing in a container garden">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meet the Garden Residents | Soft Alchemy">
+  <meta name="twitter:description"
+    content="Browse the Soft Alchemy garden residents: container-grown fruit, vegetables, herbs, flowers, and occasional botanical drama.">
+  <meta name="twitter:image" content="https://softalchemy.uk/images/garden/daylily-flower-05-2026.jpg">
+  <meta name="twitter:image:alt" content="Daylily flower growing in a container garden">
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-light.png">
+  <link rel="preload" as="image" href="/images/background/watercolour-loop-dark.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563L2Z66XJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-563L2Z66XJ");
+  </script>
+</head>
+
+<body>
+  <header id="header">
+    <h1>Meet the Residents</h1>
+  </header>
+
+  <section class="card">
+    <div class="photo-collage photo-collage--3-column" id="plant-gallery"></div>
+  </section>
+
+
+  <script src="/js/plants.js" defer></script>
+  <script src="/js/garden-timeline.js" defer></script>
+  <script src="/js/script.js" defer></script>
+  <script src="/js/timeline-render.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      renderPlantGallery();
+    });
+  </script>
+</body>
+
+</html>

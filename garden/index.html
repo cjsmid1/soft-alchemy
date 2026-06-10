@@ -76,6 +76,14 @@
     </section>
   </div>
 
+  <section class="card reading-shelf">
+    <h2>The Usual Suspects</h2>
+    <div id="featured-plants" class="shelf"></div>
+    <div class="related-footer">
+      <h3><a href="/garden/residents/index.html">Meet the other residents →</a></h3>
+    </div>
+  </section>
+
   <section class="card garden-timeline-card">
     <h2>Garden Log: Year One</h2>
     <ul class="timeline-month-jump chaos-list"></ul>
@@ -86,6 +94,7 @@
     </div>
   </section>
 
+  <script src="/js/plants.js" defer></script>
   <script src="/js/garden-timeline.js" defer></script>
   <script src="/js/posts.js" defer></script>
   <script src="/js/script.js" defer></script>
@@ -96,6 +105,7 @@
         order: "asc"
       });
       renderFeaturedPost("garden-plan", "garden-plan-post");
+      renderBookshelf("featured-plants", featuredResidents);
     });
   </script>
 </body>

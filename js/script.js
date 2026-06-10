@@ -797,6 +797,23 @@ function createPlainCollageImage(item) {
   });
 
   button.addEventListener("click", () => {
+    if (item.plantId && typeof plantResidents !== "undefined") {
+      const plantIndex = plantResidents.findIndex(
+        plant => plant.id === item.plantId
+      );
+
+      if (plantIndex !== -1) {
+        openSiteModal("", {
+          contentClass: "card update-modal-content",
+          items: plantResidents,
+          currentIndex: plantIndex,
+          renderItem: renderPlantProfile
+        });
+
+        return;
+      }
+    }
+
     button.classList.toggle("show-note");
 
     if (isVideo) {
@@ -830,6 +847,28 @@ function renderEchoGallery() {
   });
 }
 
+function renderPlantGallery() {
+  const collage = document.getElementById("plant-gallery");
+  if (!collage) return;
+
+  if (typeof plantResidents === "undefined") {
+    console.warn("plantResidents is not loaded. Check plants.js is loaded before script.js.");
+    return;
+  }
+
+  const galleryItems = shuffleArray(plantResidents);
+
+  collage.innerHTML = "";
+  galleryItems.forEach(item => {
+    collage.appendChild(createPlainCollageImage({
+      image: item.image,
+      alt: item.alt || item.name || "Plant photo",
+      note: `${item.emoji} ${item.name}`,
+      plantId: item.id
+    }));
+  });
+}
+
 function renderRecipeCollage() {
   const collage = document.getElementById("recipe-collage");
   if (!collage) return;
@@ -846,7 +885,7 @@ function renderRecipeCollage() {
 
   const manualAdditions = [
     {
-      title: "Dog birthday cake",
+      title: "🐕 Dog birthday cake",
       href: "/post.html?id=echo-first-birthday#birthday-cake",
       image: "/images/cake-cutting.jpg",
       alt: "Dog birthday cake",
@@ -864,8 +903,6 @@ function renderRecipeCollage() {
     collage.appendChild(createLinkedCollageItem(item));
   });
 }
-
-renderRecipeCollage();
 
 // -----------------------------
 // AUTO-GENERATE STUDY POSTS CHAOS LIST
@@ -907,12 +944,32 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
 
   shelf.innerHTML = books.map((book, index) => {
     const linkedUpdates = getBookLinkedUpdates(book);
-    const hasLinkedUpdates = !book.url && linkedUpdates.length > 0;
+    const hasPlantProfile =
+      typeof plantResidents !== "undefined" &&
+      plantResidents.some(plant =>
+        normaliseProjectName(plant.id) === normaliseProjectName(book.project || book.title)
+      );
+
+    const hasLinkedUpdates =
+      !book.url && (linkedUpdates.length > 0 || hasPlantProfile);
 
     const tag = book.url ? "a" : hasLinkedUpdates ? "button" : "div";
 
     const hasNote = Boolean(book.note);
     const hasGenre = Boolean(book.genre);
+
+    const isExternalUrl = book.url && !(
+      book.url.startsWith("/") ||
+      book.url.startsWith("#") ||
+      book.url.includes("softalchemy.uk")
+    );
+
+    const linkAttributes = book.url
+      ? `
+    href="${book.url}"
+    ${isExternalUrl ? `target="_blank" rel="noopener noreferrer"` : ""}
+  `
+      : "";
 
     return `
       <${tag}
@@ -923,16 +980,11 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
         ${book.featured ? "is-featured" : ""}
         ${hasLinkedUpdates ? "has-linked-updates" : ""}
         "
-
-        ${book.url ? `
-          href="${book.url}"
-          target="_blank"
-          rel="noopener noreferrer"
-        ` : ""}
+        ${linkAttributes}
 
         ${hasLinkedUpdates ? `
           type="button"
-          data-book-experiment="${normaliseExperimentName(book.experiment || book.title)}"
+          data-book-project="${normaliseProjectName(book.project || book.title)}"
         ` : ""}
 
         data-original-title="${book.title}"
@@ -974,23 +1026,44 @@ function renderBookshelf(shelfId, books, allowEcho = false) {
 }
 
 function setupBookshelfUpdateModals(shelf) {
+  if (!shelf) return;
+
   shelf.querySelectorAll(".book-card.has-linked-updates").forEach((card) => {
     card.addEventListener("click", () => {
-      const experiment = card.dataset.bookExperiment;
+      const project = card.dataset.bookProject;
 
-      const linkedUpdates = updates
-        .filter(update =>
-          normaliseExperimentName(update.experiment) === experiment
+      const linkedUpdates = typeof updates !== "undefined"
+        ? updates
+          .filter(update =>
+            normaliseProjectName(update.project) === project
+          )
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+        : [];
+
+      if (linkedUpdates.length) {
+        openSiteModal("", {
+          contentClass: "card update-modal-content",
+          items: linkedUpdates,
+          currentIndex: 0,
+          renderItem: renderFullUpdateCard
+        });
+
+        return;
+      }
+
+      const plantIndex = typeof plantResidents !== "undefined"
+        ? plantResidents.findIndex(plant =>
+          normaliseProjectName(plant.id) === project
         )
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
+        : -1;
 
-      if (!linkedUpdates.length) return;
+      if (plantIndex === -1) return;
 
       openSiteModal("", {
         contentClass: "card update-modal-content",
-        items: linkedUpdates,
-        currentIndex: 0,
-        renderItem: renderFullUpdateCard
+        items: plantResidents,
+        currentIndex: plantIndex,
+        renderItem: renderPlantProfile
       });
     });
   });
@@ -1011,7 +1084,7 @@ function renderBookshelvesForPage(configs = []) {
   });
 }
 
-function normaliseExperimentName(value = "") {
+function normaliseProjectName(value = "") {
   return value
     .toLowerCase()
     .replace(/<br>/g, " ")
@@ -1022,11 +1095,11 @@ function normaliseExperimentName(value = "") {
 function getBookLinkedUpdates(book) {
   if (typeof updates === "undefined") return [];
 
-  const bookExperiment = normaliseExperimentName(book.experiment || book.title);
+  const bookProject = normaliseProjectName(book.project || book.title);
 
   return updates
     .filter(update =>
-      normaliseExperimentName(update.experiment) === bookExperiment
+      normaliseProjectName(update.project) === bookProject
     )
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
@@ -1333,6 +1406,104 @@ function openSiteModal(contentHtml, options = {}) {
   document.addEventListener("keydown", handleKeydown);
 }
 
+// -----------------------------
+// PLANT PROFILES
+// -----------------------------
+function renderPlantProfile(plant) {
+  const relatedEntries = getPlantTimelineEntries(plant.id);
+  const timelineId = `plant-timeline-${plant.id}`;
+  const imageSize = plant.imageSize || "landscape";
+  const usesSideBySideLayout = ["portrait", "square"].includes(imageSize);
+
+  setTimeout(() => {
+    if (relatedEntries.length) {
+      renderTimeline(timelineId, relatedEntries, {
+        order: "asc",
+        timelineMode: "compact",
+        showMonthMarker: true
+      });
+    }
+  }, 0);
+
+  const factGrid = `
+    <div class="plant-profile-facts">
+      <p><strong>Started:</strong><br>${formatDate(plant.started)}</p>
+      <p><strong>Status:</strong><br>${plant.status}</p>
+      ${plant.variety ? `<p><strong>Variety:</strong><br>${plant.variety}</p>` : ""}
+      <p><strong>Type:</strong><br>${plant.type}</p>
+    </div>
+  `;
+
+  const imageHtml = `
+    <img
+      src="${plant.image}"
+      alt="${plant.name}"
+      class="lightbox-image plant-profile-image"
+    >
+  `;
+
+  const noteHtml = `<p class="plant-profile-note">${plant.note}</p>`;
+
+  const storyHtml = relatedEntries.length ? `
+    <details class="post-update-drawer">
+      <summary>
+        The story so far...
+        <span>${relatedEntries.length} ${relatedEntries.length === 1 ? "entry" : "entries"}</span>
+      </summary>
+
+      <div
+        id="${timelineId}"
+        class="garden-timeline plant-profile-timeline-render"
+      ></div>
+    </details>
+  ` : "";
+
+  const profileBody = usesSideBySideLayout ? `
+    <div class="plant-profile-main">
+      <div class="plant-profile-photo">
+        ${imageHtml}
+      </div>
+
+      <div class="plant-profile-info">
+        ${factGrid}
+        ${noteHtml}
+      </div>
+    </div>
+
+    ${storyHtml}
+  ` : `
+    ${factGrid}
+    ${imageHtml}
+    ${noteHtml}
+    ${storyHtml}
+  `;
+
+  return `
+    <article class="plant-profile-card plant-profile-card--${imageSize}">
+      <h2>${plant.emoji} ${plant.name}</h2>
+      ${profileBody}
+    </article>
+  `;
+}
+
+function getPlantTimelineEntries(plantId) {
+  if (typeof gardenTimeline === "undefined") return [];
+
+  return gardenTimeline
+    .filter(entry => entry.tags?.includes(plantId))
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+function renderPlantTimelineEntry(entry) {
+  return `
+    <article class="plant-mini-timeline-entry timeline-${entry.type}">
+      ${renderTimelineItem({
+    ...entry,
+    timelineMode: "date"
+  })}
+    </article>
+  `;
+}
 
 // -----------------------------
 // FOOTER
@@ -1393,3 +1564,15 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme();
   initFlyingQuotes();
 });
+
+
+// -----------------------------
+// UTILS
+// -----------------------------
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+}
