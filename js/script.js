@@ -214,15 +214,52 @@ document.addEventListener("click", (e) => {
 // -----------------------------
 // POPULATE CATEGORY FILTER
 // -----------------------------
-if (categoryFilter) {
-  const categories = [...new Set(posts.map(p => p.category))];
-  categories.forEach(cat => {
-    const option = document.createElement("option");
-    option.value = cat;
-    option.textContent = cat;
-    categoryFilter.appendChild(option);
-  });
+const archiveFilterMenu = document.getElementById("archiveFilterMenu");
+const archiveFilterToggle = archiveFilterMenu?.querySelector(".archive-filter-toggle");
+const categoryOptions = document.getElementById("categoryOptions");
+const showPostsInput = document.getElementById("showPosts");
+const showUpdatesInput = document.getElementById("showUpdates");
+
+let activeCategory = "";
+
+if (categoryOptions) {
+  const categories = [...new Set(posts.map(post => post.category))];
+
+  categoryOptions.innerHTML = categories.map(category => `
+  <label>
+    <input type="radio" name="archiveCategory" value="${category}">
+    <span>${category}</span>
+  </label>
+`).join("");
 }
+
+archiveFilterToggle?.addEventListener("click", () => {
+  archiveFilterMenu.classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (!archiveFilterMenu?.contains(e.target)) {
+    archiveFilterMenu?.classList.remove("open");
+  }
+});
+
+document.addEventListener("change", (e) => {
+  if (e.target.name === "archiveCategory") {
+    activeCategory = e.target.value;
+
+    filterPosts();
+    updateFilterButtonState();
+
+    archiveFilterMenu.classList.remove("open");
+  }
+
+  if (e.target.id === "showPosts" ||
+    e.target.id === "showUpdates") {
+    filterPosts();
+    updateFilterButtonState();
+  }
+
+});
 
 // -----------------------------
 // FORMAT TAGS
@@ -231,6 +268,17 @@ function formatTag(tag) {
   return tag
     .replace(/-/g, " ")              // replace hyphens with spaces
     .replace(/\b\w/g, c => c.toUpperCase()); // capitalise each word
+}
+
+function getUpdateTags(update) {
+  const parentPost = posts.find(
+    post => post.id === update.originalPost
+  );
+
+  return [
+    ...(parentPost?.tags || []),
+    ...(update.tags || [])
+  ];
 }
 
 // -----------------------------
@@ -262,6 +310,36 @@ function createPostPreviewHTML(post, options = {}) {
   `;
 }
 
+function createUpdatePreviewHTML(update) {
+  const category = update.category || update.room || "Update";
+  return `
+
+    <div class="angled-title">Update</div>
+
+    <div class="title-row">
+
+    <p class="update-preview-meta">
+      ${formatDate(update.date)}${update.status ? ` · ${update.status}` : ""}
+    </p>
+
+      <div class="category-title ${category.toLowerCase()}">
+        ${category}
+      </div>
+    </div>
+
+    <h2>${update.title}</h2>
+    <p>${update.excerpt || update.summary || ""}</p>
+
+    <div class="tag-list">
+  ${getUpdateTags(update).map(tag => `
+    <span class="tag ${tag === activeTag ? "active" : ""}" data-tag="${tag}">
+      ${formatTag(tag)}
+    </span>
+  `).join("")}
+</div>
+  `;
+}
+
 function addTagClickHandlers(container, callback) {
   container.querySelectorAll(".tag").forEach(el => {
     el.addEventListener("click", () => {
@@ -270,23 +348,82 @@ function addTagClickHandlers(container, callback) {
   });
 }
 
-function renderPosts(filteredPosts) {
+function renderArchiveItems(items) {
   if (!postsContainer) return;
 
   postsContainer.innerHTML = "";
 
-  filteredPosts.forEach((post, i) => {
+  items.forEach((item, i) => {
     const card = document.createElement("div");
-    card.className = "card fade-in";
+    card.className = `card fade-in ${item.type === "update" ? "archive-update-card" : ""}`;
     card.style.animationDelay = `${i * 50}ms`;
+    card.setAttribute("tabindex", "0");
 
-    card.innerHTML = createPostPreviewHTML(post, { activeTag });
+    if (item.type === "update") {
+      card.dataset.updateId = item.data.id;
+      card.setAttribute("role", "button");
+    }
+
+    if (item.type === "post") {
+      card.dataset.postId = item.data.id;
+      card.setAttribute("role", "link");
+    }
+
+    card.innerHTML = item.type === "update"
+      ? createUpdatePreviewHTML(item.data)
+      : createPostPreviewHTML(item.data, { activeTag });
 
     postsContainer.appendChild(card);
   });
 
   addTagClickHandlers(postsContainer, setTagFilter);
 }
+
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".card[data-post-id]");
+  if (!card) return;
+
+  if (e.target.closest(".tag")) return;
+  if (e.target.closest("a")) return;
+
+  window.location.href = `/post.html?id=${card.dataset.postId}`;
+});
+
+document.addEventListener("keydown", (e) => {
+  const card = e.target.closest(".card[data-post-id], .archive-update-card");
+  if (!card) return;
+  if (e.key !== "Enter" && e.key !== " ") return;
+
+  e.preventDefault();
+  card.click();
+});
+
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".archive-update-card");
+  if (!card) return;
+
+  if (e.target.closest(".tag")) return;
+
+  const updateId = card.dataset.updateId;
+  const updateIndex = updates.findIndex(update => update.id === updateId);
+
+  if (updateIndex === -1) {
+    console.warn("No update found for:", updateId);
+    return;
+  }
+
+  if (typeof renderFullUpdateCard !== "function") {
+    console.warn("renderFullUpdateCard is not loaded");
+    return;
+  }
+
+  openSiteModal("", {
+    contentClass: "card update-modal-content",
+    items: updates,
+    currentIndex: updateIndex,
+    renderItem: renderFullUpdateCard
+  });
+});
 
 function renderLatestPost(containerId, category = null) {
   const container = document.getElementById(containerId);
@@ -448,36 +585,131 @@ function setCanonical(url) {
 // FILTER POSTS
 // -----------------------------
 function filterPosts(updateURL = true) {
-  let filtered = posts;
+  const search = searchInput?.value.toLowerCase().trim() || "";
+  const showPosts = showPostsInput?.checked ?? true;
+  const showUpdates = showUpdatesInput?.checked ?? false;
 
-  const search = searchInput?.value.toLowerCase() || "";
-  const category = categoryFilter?.value;
+  let archiveItems = [];
 
-  if (search) {
-    filtered = filtered.filter(
-      p => p.title.toLowerCase().includes(search) ||
-        p.tags.some(t => t.includes(search))
-    );
+  if (showPosts) {
+    const postItems = posts.map(post => ({
+      type: "post",
+      date: post.date,
+      data: post
+    }));
+
+    archiveItems.push(...postItems);
   }
 
-  if (category) {
-    filtered = filtered.filter(p => p.category === category);
+  if (showUpdates && typeof updates !== "undefined") {
+    const updateItems = updates.map(update => ({
+      type: "update",
+      date: update.date,
+      data: update
+    }));
+
+    archiveItems.push(...updateItems);
+  }
+
+  // Search should include updates even if Show Updates is off
+  if (search && typeof updates !== "undefined") {
+    const existingUpdateIds = new Set(
+      archiveItems
+        .filter(item => item.type === "update")
+        .map(item => item.data.id)
+    );
+
+    const matchingUpdates = updates
+      .filter(update => !existingUpdateIds.has(update.id))
+      .map(update => ({
+        type: "update",
+        date: update.date,
+        data: update
+      }));
+
+    archiveItems.push(...matchingUpdates);
+  }
+
+  if (search) {
+    archiveItems = archiveItems.filter(item => {
+      const entry = item.data;
+
+      const searchableText = [
+        entry.title,
+        entry.excerpt,
+        entry.summary,
+        entry.status,
+        entry.category,
+        entry.room,
+        entry.project,
+        ...(entry.tags || []),
+        ...(item.type === "update"
+          ? getUpdateTags(entry)
+          : (entry.tags || []))
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(search);
+    });
+  }
+
+  if (activeCategory) {
+    archiveItems = archiveItems.filter(item => {
+      const entry = item.data;
+      const entryCategory = entry.category || entry.room;
+
+      return entryCategory === activeCategory;
+    });
   }
 
   if (activeTag) {
-    filtered = filtered.filter(p => p.tags.includes(activeTag));
+    archiveItems = archiveItems.filter(item => {
+
+      if (item.type === "post") {
+        return item.data.tags?.includes(activeTag);
+      }
+
+      if (item.type === "update") {
+        return getUpdateTags(item.data).includes(activeTag);
+      }
+
+      return false;
+    });
   }
 
-  renderPosts(filtered);
+  archiveItems.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Update URL without reloading
+  renderArchiveItems(archiveItems);
+
   if (updateURL) {
     const params = new URLSearchParams(window.location.search);
+
     if (activeTag) params.set("tag", activeTag);
     else params.delete("tag");
+
+    if (activeCategory) params.set("category", activeCategory);
+    else params.delete("category");
+
+    if (showUpdates) params.set("updates", "true");
+    else params.delete("updates");
+
     window.history.replaceState({}, "", `${location.pathname}?${params}`);
   }
 }
+
+function updateFilterButtonState() {
+  const hasActiveFilter =
+    activeCategory !== "";
+
+  archiveFilterToggle?.classList.toggle(
+    "has-active-filter",
+    hasActiveFilter
+  );
+}
+
+searchInput?.addEventListener("input", () => filterPosts());
 
 // -----------------------------
 // RECOMMENDED NEXT POST
@@ -570,21 +802,34 @@ function setTagFilter(tag) {
 }
 
 // -----------------------------
-// EVENT LISTENERS
-// -----------------------------
-searchInput?.addEventListener("input", () => filterPosts());
-categoryFilter?.addEventListener("change", () => filterPosts());
-
-// -----------------------------
 // INITIAL BLOG RENDER
 // -----------------------------
 if (postsContainer) {
-  // Apply tag from URL on load
   const urlParams = new URLSearchParams(window.location.search);
+
   const tagFromUrl = urlParams.get("tag");
+  const categoryFromUrl = urlParams.get("category");
+  const showUpdatesFromUrl = urlParams.get("updates") === "true";
+
   if (tagFromUrl) activeTag = tagFromUrl;
 
+  if (categoryFromUrl) {
+    activeCategory = categoryFromUrl;
+
+    const matchingRadio = document.querySelector(
+      `input[name="archiveCategory"][value="${categoryFromUrl}"]`
+    );
+
+    if (matchingRadio) matchingRadio.checked = true;
+  }
+
+  if (showUpdatesInput) {
+    showUpdatesInput.checked = showUpdatesFromUrl;
+  }
+
   filterPosts(false);
+  updateFilterButtonState();
+  
 }
 
 // -----------------------------

@@ -2,12 +2,14 @@ const updates = [
   {
   id: "kombucha-update-1",
   room: "fermentation",
+  category: "Recipe",
   project: "kombucha",
-  title: "Kombucha SCOBY: All hope lost",
+    title: "🫙 Kombucha SCOBY: All hope lost",
   previewTitle: "Kombucha SCOBY:<br>All hope lost",
   date: "2026-06-03",
   status: "Deceased",
   markerImage: "/images/handwriting/skull-icon.png",
+  tags: ["fermentation"],
   body: `
       <p>In a noble attempt to look after my gut while accepting I still don't like fizzy drinks, I turned to the art of kombucha fermentation. The internet made it seem simple enough, first you acquire a mysterious jelly disc called a SCOBY, and from there you transform tea into kombucha. Did I just buy a SCOBY to make my life easier - of course not! Did I spend a solid 30 minutes in front of the kombucha section of Sainsbury's desperately researching which would give me the highest success for creating my own SCOBY? No comment.<br>
       The first attempt began, and after about a fortnight of patience, the first attempt failed with the great mould invasion claiming another sacrifice.
@@ -31,6 +33,7 @@ const updates = [
   {
     id: "75-soft-update-1",
     room: "study",
+    category: "Study",
     project: "75-soft",
     title: "🏆 75 Soft Challenge: Progress Report",
     previewTitle: "75 Soft Challenge:<br>Progress Report",
@@ -52,6 +55,7 @@ const updates = [
   {
     id: "growth-areas-update-1",
     room: "study",
+    category: "Study",
     project: "growth-areas",
     title: "🌿 Growth Areas: Looking Back",
     previewTitle: "Growth Areas:<br>Looking Back",
@@ -73,8 +77,9 @@ const updates = [
   {
     id: "sourdough-update-1",
     room: "fermentation",
+    category: "Recipe",
     project: "sourdough",
-    title: "Sourdough Revival",
+    title: "🍞 Sourdough Revival",
     previewTitle: "Sourdough<br>Revival",
     date: "2026-05-27",
     status: "Success",

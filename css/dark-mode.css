@@ -125,18 +125,77 @@ html.dark .nav-dropdown-menu {
 
 html.dark .filters input,
 html.dark .filters select {
-  background: #333;
-  color: #eee;
-  border: 1px solid #555;
+  background: rgba(35, 35, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+html.dark #search:focus,
+html.dark #search:focus-visible {
+  outline: none;
+
+  border-color: rgba(235, 195, 115, 0.85);
+
+  box-shadow:
+    0 0 0 1px rgba(235, 195, 115, 0.25),
+    0 0 18px rgba(235, 195, 115, 0.30);
 }
 
 html.dark .archive-paw-button {
-  background: #333;
-  border-color: #555;
+  background: rgba(35, 35, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 html.dark .archive-paw-button img {
   filter: brightness(1.2);
+}
+
+html.dark .archive-paw-button:hover {
+  border-color: rgba(235, 195, 115, 0.85);
+  
+    box-shadow: 0 0 0 1px rgba(235, 195, 115, 0.25),
+      0 0 18px rgba(235, 195, 115, 0.30);
+}
+
+.dark .archive-filter-toggle {
+  background: rgba(35, 35, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .archive-filter-toggle.has-active-filter {
+  border-color: rgba(235, 195, 115, 0.85);
+
+  box-shadow:
+    0 0 0 1px rgba(235, 195, 115, 0.25),
+    0 0 18px rgba(235, 195, 115, 0.30);
+
+  text-shadow: 0 0 10px rgba(255, 245, 220, 0.98);
+  ;
+}
+
+.dark .archive-filter-panel {
+  background: rgba(28, 28, 32, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.45);
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .filter-section-label {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.dark .archive-filter-panel label {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.dark .archive-filter-panel label:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
 }
 
 /* CARDS & SINGLE POST IN DARK MODE */
@@ -542,7 +601,7 @@ html.dark .small-post-image {
   border: 1px dashed rgba(255,255,255,0.2);
 }
 
-.dark .dog-title {
+.dark .angled-title {
   background: #1a1a1a;
   border-color: rgba(255,255,255,0.4);
   color: #fff;

@@ -932,7 +932,7 @@ const posts = [
 	<h3 id="ice-cream">Time to cool down</h3>
 	<p>Another special event linked to Echo's birthday was his first introduction to dog ice cream! </p>
 	<section class="dog-review">
-      <div class="dog-title">Echo's Review - Ice Cream</div>
+      <div class="angled-title dog-title">Echo's Review - Ice Cream</div>
       <div class="dog-image">
  	   <img src="/images/echo/echo-ice-cream.jpg" alt="Dog Ice Cream">
  	   </div>
