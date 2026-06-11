@@ -52,6 +52,13 @@
 
 }
 
+@media (max-width: 600px) {
+  #posts {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 /* Filters */
 @media (max-width: 600px) {
   .filters input {
@@ -62,6 +69,38 @@
   .filters select {
     flex: 0 1 150px;
   }
+
+  .archive-filter-panel {
+    left: auto;
+      right: 0;
+      transform: none;
+  
+  }
+
+    .archive-filter-panel label {
+      display: grid !important;
+      grid-template-columns: 1.2rem 1fr;
+      column-gap: 0.65rem;
+  
+      align-items: center;
+      justify-items: start;
+  
+      text-align: left;
+    }
+  
+    .archive-filter-panel input {
+      grid-column: 1;
+      justify-self: start;
+    }
+  
+    .archive-filter-panel label span {
+      grid-column: 2;
+      justify-self: start;
+  
+      flex: none !important;
+      text-align: left !important;
+    }
+  
 }
 
 /* Multi Column Layout */
